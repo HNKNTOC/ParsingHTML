@@ -2,12 +2,10 @@ package com.company.parsingHTML.logic.loader;
 
 import com.company.parsingHTML.logic.file.FileManager;
 import com.company.parsingHTML.logic.file.FileManagerDefault;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.net.URL;
 
 /**

@@ -18,8 +18,7 @@ import java.util.Objects;
  */
 public class Main {
     public static void main(String[] args) {
-        LoaderHTML loaderHTMLDefault = new LoaderHTMLDefault();
-        File file = loaderHTMLDefault.loadHTML("http://rasp.bukep.ru/");
+        File file = getFile("rasp.bukep.ru");
         System.out.println(file.getAbsolutePath());
     }
 
