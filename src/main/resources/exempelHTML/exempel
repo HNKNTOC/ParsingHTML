@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schedule>
+    <updateTime>09:30</updateTime>
+    <university name="БУКЭП">
+        <time numerato="false">
+            <dayTime name="monday">
+                <lessonTime number="1" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lessonTime number="2" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lessonTime number="3" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lessonTime number="4" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lessonTime number="5" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lessonTime number="6" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lessonTime number="7" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+            </dayTime>
+            <dayTime name="tuesday" override="1"/>
+            <dayTime name="wednesday" override="1"/>
+            <dayTime name="thursday" override="1"/>
+            <dayTime name="friday" override="1"/>
+            <dayTime name="saturday">
+                <lessonTime number="1" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lessonTime number="2" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lessonTime number="3" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lessonTime number="4" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lessonTime number="5" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lessonTime number="6" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lessonTime number="7" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+            </dayTime>
+            <sundayTime/>
+        </time>
+        <group faculty="СПО2" specifically="И" course="1" name="И-11">
+            <day name="monday">
+                <lesson number="3" name="Естествознание" audience="405н" teacher="Иванов И." numerato="true"/>
+                <lesson number="3" name="Физика" audience="311н" teacher="Иванов И." numerato="false"/>
+                <lesson number="4" name="Математика" audience="513н" teacher="Иванов И."/>
+                <lesson number="5" name="Обшество" audience="403н" teacher="Иванов И."/>
+            </day>
+        </group>
+    </university>
+</schedule>
