@@ -107,12 +107,12 @@ style="-moz-user-select: none">
     </script>
 </head>
 <body onload="ScheduleClock();">
-    <form name="aspnetForm" method="post" action="Default.aspx" id="aspnetForm">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="BygGvxhoz0xAlAHTTrnFV0Mj+XvqwdorknOgMihX4/2o/ma/u4kfHHJC4mlK9GFY4IZZo0I9KkUR9dXH9Gv3VI/uDxs=" />
+    <form dayName="aspnetForm" method="post" action="Default.aspx" id="aspnetForm">
+<input type="hidden" dayName="__VIEWSTATE" id="__VIEWSTATE" value="BygGvxhoz0xAlAHTTrnFV0Mj+XvqwdorknOgMihX4/2o/ma/u4kfHHJC4mlK9GFY4IZZo0I9KkUR9dXH9Gv3VI/uDxs=" />
 
-<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
-<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
-<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="ncy18M/IjhmvUN8VnXpA2cxkm4RIGnqsk5qrYUzjB39F31f6jDLXSk0DfkTdfbpiXhgV1XRdRkDnSm9mfUXha6/K9syJgWDJpnCi9f0Vi63Fcxsw" />
+<input type="hidden" dayName="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+<input type="hidden" dayName="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" dayName="__EVENTVALIDATION" id="__EVENTVALIDATION" value="ncy18M/IjhmvUN8VnXpA2cxkm4RIGnqsk5qrYUzjB39F31f6jDLXSk0DfkTdfbpiXhgV1XRdRkDnSm9mfUXha6/K9syJgWDJpnCi9f0Vi63Fcxsw" />
     <table width="100%" style="border-collapse: collapse">
         <tr>
             <td style="height: 124px; background: url(images/grad.jpg) repeat-x; vertical-align: top;">

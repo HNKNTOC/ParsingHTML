@@ -4,7 +4,6 @@ package com.company.parsingHTML.logic;
 import com.company.parsingHTML.logic.file.FileManagerDefault;
 import com.company.parsingHTML.logic.loader.LoaderHTML;
 import com.company.parsingHTML.logic.loader.LoaderHTMLDefault;
-import com.company.parsingHTML.logic.parsing.HtmlHelper;
 import org.htmlcleaner.ContentNode;
 import org.htmlcleaner.TagNode;
 
@@ -24,7 +23,7 @@ public class Main {
 
 
     public static void testParsing(File fileXML){
-        System.out.println(fileXML.getAbsoluteFile());
+        /*System.out.println(fileXML.getAbsoluteFile());
         try {
             HtmlHelper htmlHelper = new HtmlHelper(fileXML);
             List<TagNode> listTag = htmlHelper.getLinksByClass("knock", "table");
@@ -48,7 +47,7 @@ public class Main {
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public static File getFile(String name){
