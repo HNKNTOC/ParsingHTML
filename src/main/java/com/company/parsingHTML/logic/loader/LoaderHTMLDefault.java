@@ -32,7 +32,7 @@ public class LoaderHTMLDefault implements LoaderHTML {
         InputStream inputStream = null;
         try {
             url = new URL(stringURL);
-            file = createFile(url.getHost());
+            file = createFile(getNameFile(url));
             logger.debug("Write in file "+file.getName());
             inputStream = url.openConnection().getInputStream();
             writeInFile(file,inputStream);
@@ -52,6 +52,10 @@ public class LoaderHTMLDefault implements LoaderHTML {
         }
     }
 
+    private String getNameFile(URL url) {
+        return url.getHost()+".html";
+    }
+
     protected File createFile(String name){
         fileManager.createFile(name);
         return fileManager.getFile(name);
@@ -67,21 +71,29 @@ public class LoaderHTMLDefault implements LoaderHTML {
         logger.debug("WriteInFile "+file.getName());
         String s;
         BufferedReader bufferedReader = null;
-        FileWriter fileWriter;
+        FileWriter fileWriter = null;
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             fileWriter = new FileWriter(file);
             String txt = "";
-            while((s=bufferedReader.readLine())!=null){
-                txt = txt+s+"\n";
+            while(true){
+                s=bufferedReader.readLine();
+                if (s!=null) {
+                    txt = txt+s+"\n";
+                }else {
+                    fileWriter.write(txt);
+                    return;
+                }
             }
-            fileWriter.write(txt);
         } catch (IOException e) {
             e.printStackTrace();
         }finally {
             try {
                 if (bufferedReader != null) {
                     bufferedReader.close();
+                }
+                if (fileWriter != null) {
+                    fileWriter.close();
                 }
             } catch (IOException e) {
                 logger.warn(e);

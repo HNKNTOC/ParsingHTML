@@ -13,11 +13,9 @@ public class Schedule {
     private WeekLesson weekLesson;
     private GroupLesson groupLesson;
 
-    public Schedule(boolean numerator, String updateTime, String university) {
-        this.weekLesson = new WeekLesson(numerator);
+    public Schedule(String updateTime, String university) {
         this.updateTime = updateTime;
         this.university = university;
-        this.groupLesson = new GroupLesson();
         LOGGER.info("Create "+toString());
     }
 
@@ -50,8 +48,6 @@ public class Schedule {
         return "Schedule{" +
                 "updateTime='" + updateTime + '\'' +
                 ", university='" + university + '\'' +
-                ", weekLesson=" + weekLesson +
-                ", groupLesson=" + groupLesson +
                 '}';
     }
 }

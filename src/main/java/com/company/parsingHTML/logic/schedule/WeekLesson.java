@@ -20,7 +20,6 @@ public class WeekLesson {
     private final boolean numerator;
 
     public WeekLesson(boolean numerator) {
-        LOGGER.info("Create numerator"+numerator);
         this.dayTimeList = new ArrayList<>();
         this.numerator = numerator;
         LOGGER.info("Create "+toString());

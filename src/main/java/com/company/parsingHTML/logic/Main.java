@@ -4,50 +4,35 @@ package com.company.parsingHTML.logic;
 import com.company.parsingHTML.logic.file.FileManagerDefault;
 import com.company.parsingHTML.logic.loader.LoaderHTML;
 import com.company.parsingHTML.logic.loader.LoaderHTMLDefault;
-import org.htmlcleaner.ContentNode;
-import org.htmlcleaner.TagNode;
+import com.company.parsingHTML.logic.parsing.helper.ParserFileHTML;
+import com.company.parsingHTML.logic.parsing.tag.ParserDayTime;
+import com.company.parsingHTML.logic.parsing.tag.ParserRoot;
+import com.company.parsingHTML.logic.parsing.tag.ParserTagAbstract;
+import com.company.parsingHTML.logic.schedule.Schedule;
+
 
 import java.io.File;
-import java.io.IOException;
-import java.util.List;
-import java.util.Objects;
+import java.util.Date;
 
 /**
  * Created by Nikita on 03.05.2016.
  */
 public class Main {
     public static void main(String[] args) {
-        File file = getFile("rasp.bukep.ru");
-        System.out.println(file.getAbsolutePath());
+        //loadHTML("http://rasp.bukep.ru/");
+        File file = getFile("rasp.bukep.ru.html");
+        ParserFileHTML parserFileHTML = new ParserFileHTML();
+
+        Schedule schedule = new Schedule(new Date().toString(), "БУКЭП");
+        ParserTagAbstract parserRoot = new ParserRoot();
+        parserRoot.getObservableParing().addObserver(new ParserDayTime());
+        
+        parserRoot.parsing(parserFileHTML.parsing(file),schedule);
     }
 
 
     public static void testParsing(File fileXML){
-        /*System.out.println(fileXML.getAbsoluteFile());
-        try {
-            HtmlHelper htmlHelper = new HtmlHelper(fileXML);
-            List<TagNode> listTag = htmlHelper.getLinksByClass("knock", "table");
-            System.out.println("ListTag size="+listTag.size());
-            TagNode tagNode1 = listTag.get(0);
 
-            for (TagNode tagNode : tagNode1.getElementsByName("tr",true)) {
-                for (TagNode td : tagNode.getElementsByName("td", true)) {
-                    if (Objects.equals(td.getAttributeByName("class"), "n_para")) {
-                        System.out.println("      ====="+td.getText()+"===");
-                    }
-                    if (Objects.equals(td.getAttributeByName("class"), "time")) {
-                        TagNode child = new TagNode("h1");
-                        child.addChild(new ContentNode("     "));
-                        td.getElementsByName("br",true)[0].addChild(child);
-                        String text = td.getText().toString();
-                        text = text.replace("&ndash;","-");
-                        System.out.println(text);
-                    }
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 
     public static File getFile(String name){

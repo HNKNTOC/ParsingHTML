@@ -1,44 +1,44 @@
 package com.company.parsingHTML.logic.parsing;
 
-import org.htmlcleaner.TagNode;
-
-import java.util.ArrayList;
+import com.company.parsingHTML.logic.observer.ObservableParing;
+import com.company.parsingHTML.logic.observer.ObserverParing;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 /**
- * Обстрактный класс для любого парсипа xml.
+ * Абстрактный класс реализуюший основной функционал интерфейса Parser.
  */
-public abstract class ParserAbstract implements ParserTagNode {
-    private ArrayList<ParserTagNode> parserTagNodeList;
-
-    public ParserAbstract() {
-        parserTagNodeList = new ArrayList<>();
-    }
-
-    public void addTagHandler(ParserTagNode parserTagNode){
-        parserTagNodeList.add(parserTagNode);
-    }
-
-    public ArrayList<ParserTagNode> getParserTagNodeList() {
-        return parserTagNodeList;
-    }
+public abstract class ParserAbstract<S, T> implements Parser<S, T>, ObserverParing<T,S> {
+    private static final Logger LOGGER = LogManager.getLogger(ParserAbstract.class);
+    /**
+     * Объект в который записываем полученую во время парсинга информацию.
+     */
+    private ObservableParing<T,S> observableParing;
 
     /**
-     * Оповешвет все ParserTagNode о новом TagNode.
-     * @param tagNode
+     * Создание Parser.
      */
-    protected void newTagNode(TagNode tagNode){
-        String name = tagNode.getName();
-        for (ParserTagNode parserTagNode : parserTagNodeList) {
-            if(parserTagNode.isParsing(name)){
-                parserTagNode.parsing(tagNode);
-            }
+    public ParserAbstract() {
+        this.observableParing = new ObservableParing<>();
+        LOGGER.info("Create " + toString());
+    }
+
+
+    public ObservableParing<T,S> getObservableParing() {
+        return observableParing;
+    }
+
+    @Override
+    public void update(T t,S s) {
+        LOGGER.debug("update t = "+t.toString()+" s = "+s.toString());
+        if (isParsing(t)) {
+            LOGGER.debug("parsing");
+            parsing(t,s);
         }
     }
 
     @Override
-    public void alertTagNode(TagNode tagNode) {
-        if(isParsing(tagNode.getName())){
-            parsing(tagNode);
-        }
+    public String toString() {
+        return super.toString();
     }
 }

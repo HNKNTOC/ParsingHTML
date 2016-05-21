@@ -1,6 +1,5 @@
 package com.company.parsingHTML.logic.parsing.helper;
 
-import com.company.parsingHTML.logic.parsing.ParserAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.htmlcleaner.HtmlCleaner;
@@ -10,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Парсит из файла HTML.
+ * Парсит TagNode из File.
  */
 public class ParserFileHTML implements TagNodeHelper<File> {
     private static final Logger LOGGER = LogManager.getLogger(ParserFileHTML.class);
