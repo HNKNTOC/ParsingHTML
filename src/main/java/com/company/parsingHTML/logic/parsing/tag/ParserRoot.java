@@ -1,7 +1,7 @@
 package com.company.parsingHTML.logic.parsing.tag;
 
 import com.company.parsingHTML.logic.schedule.Schedule;
-import com.company.parsingHTML.logic.schedule.WeekLesson;
+import com.company.parsingHTML.logic.schedule.WeekTime;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.htmlcleaner.TagNode;
@@ -19,14 +19,14 @@ public class ParserRoot extends ParserTagAbstract {
     @Override
     public void parsing(TagNode tagNode, Schedule schedule) {
         System.out.println(tagNode.toString());
-        TagNode[] scripts = tagNode.getElementsByAttValue("class","zv",true,true);
-        schedule.setWeekLesson(createWeekLesson(false));
+        TagNode[] scripts = tagNode.getElementsByAttValue("class","knock",true,true);
+        schedule.setWeekTime(createWeekLesson(false));
 
         getObservableParing().notifyObserver(scripts[0],schedule);
     }
 
-    private WeekLesson createWeekLesson(boolean numerator) {
-        return new WeekLesson(numerator);
+    private WeekTime createWeekLesson(boolean numerator) {
+        return new WeekTime(numerator);
     }
 
 }

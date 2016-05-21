@@ -2,7 +2,7 @@
 <schedule>
     <updateTime>09:30</updateTime>
     <university dayName="БУКЭП">
-        <weekLesson numerato="false">
+        <weekTime numerato="false">
             <dayTime dayName="monday">
                 <lessonTime number="1" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
                 <lessonTime number="2" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
@@ -26,7 +26,7 @@
                 <lessonTime number="7" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
             </dayTime>
             <sundayTime/>
-        </weekLesson>
+        </weekTime>
         <groupLesson faculty="СПО2" specifically="И" course="1" dayName="И-11">
             <day dayName="monday">
                 <lesson number="3" dayName="Естествознание" audience="405н" teacher="Иванов И." numerato="true"/>

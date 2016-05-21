@@ -8,18 +8,18 @@ import java.util.List;
 
 /**
  * В удобном виде хранит информацию о днях.
- * В WeekLesson указанны все учебные дни на неделю.
+ * В WeekTime указанны все учебные дни на неделю.
  * Также указанно евляется ли неделя числителем.
  */
-public class WeekLesson {
-    private static final Logger LOGGER = LogManager.getLogger(WeekLesson.class);
+public class WeekTime {
+    private static final Logger LOGGER = LogManager.getLogger(WeekTime.class);
     private final List<DayTime> dayTimeList;
     /**
      * Евляется ли неделя числителем.
      */
     private final boolean numerator;
 
-    public WeekLesson(boolean numerator) {
+    public WeekTime(boolean numerator) {
         this.dayTimeList = new ArrayList<>();
         this.numerator = numerator;
         LOGGER.info("Create "+toString());
@@ -40,7 +40,7 @@ public class WeekLesson {
 
     @Override
     public String toString() {
-        return "WeekLesson{" +
+        return "WeekTime{" +
                 "numerator=" + numerator +
                 '}';
     }

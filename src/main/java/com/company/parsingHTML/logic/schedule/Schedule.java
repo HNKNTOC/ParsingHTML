@@ -10,7 +10,7 @@ public class Schedule {
     private static final Logger LOGGER = LogManager.getLogger(Schedule.class);
     private final String updateTime;
     private final String university;
-    private WeekLesson weekLesson;
+    private WeekTime weekTime;
     private GroupLesson groupLesson;
 
     public Schedule(String updateTime, String university) {
@@ -27,12 +27,12 @@ public class Schedule {
         return university;
     }
 
-    public WeekLesson getWeekLesson() {
-        return weekLesson;
+    public WeekTime getWeekTime() {
+        return weekTime;
     }
 
-    public void setWeekLesson(WeekLesson weekLesson) {
-        this.weekLesson = weekLesson;
+    public void setWeekTime(WeekTime weekTime) {
+        this.weekTime = weekTime;
     }
 
     public GroupLesson getGroupLesson() {
