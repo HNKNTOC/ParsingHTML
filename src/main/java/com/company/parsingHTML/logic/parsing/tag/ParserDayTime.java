@@ -44,7 +44,9 @@ public class ParserDayTime extends ParserTagAbstract {
             newTr(tr);
         }
         pytDay();
-        System.out.println();
+        for (DayTime dayTime : schedule.getWeekTime().getDayTimeList()) {
+            System.out.println(dayTime.toXML());
+        }
     }
 
     private void newTr(TagNode tr) {

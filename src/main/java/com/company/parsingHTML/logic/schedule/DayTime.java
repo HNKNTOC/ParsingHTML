@@ -11,7 +11,7 @@ import java.util.List;
  * В DayTime указывается все уроки которые пройдут в этот день и
  * имя дня к примеру monday,tuesday и ТД.
  */
-public class DayTime {
+public class DayTime implements DataXML {
     private static final Logger LOGGER = LogManager.getLogger(DayTime.class);
 
     /**
@@ -111,6 +111,15 @@ public class DayTime {
         }
         LOGGER.warn(dayName + " do not match!");
         return false;
+    }
+
+    @Override
+    public String toXML() {
+        String xml = "<dayTime dayName=\""+dayName+"\">";
+        for (LessonTime lessonTime : getLessonTimeList()) {
+            xml = xml+"\n    "+lessonTime.toXML();
+        }
+        return xml+"\n</dayTime>";
     }
 
     @Override
