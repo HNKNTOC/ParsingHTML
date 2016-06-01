@@ -18,11 +18,19 @@ public class ParserRoot extends ParserTagAbstract {
 
     @Override
     public void parsing(TagNode tagNode, Schedule schedule) {
-        System.out.println(tagNode.toString());
-        TagNode[] scripts = tagNode.getElementsByAttValue("class","knock",true,true);
+        LOGGER.info("parsing Tag name = "+tagNode.getName());
         schedule.setWeekTime(createWeekLesson(false));
 
-        getObservableParing().notifyObserver(scripts[0],schedule);
+        TagNode[] knock = tagNode.getElementsByAttValue("class","knock",true,true);
+        TagNode[] table = tagNode.getElementsByAttValue("id","ctl00_head_TblAll",true,true);
+
+        if(table.length != 0) {
+            getObservableParing().notifyObserver(table[0], schedule);
+        }
+
+        if(knock.length != 0) {
+            getObservableParing().notifyObserver(knock[0], schedule);
+        }
     }
 
     private WeekTime createWeekLesson(boolean numerator) {

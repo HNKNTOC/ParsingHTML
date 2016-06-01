@@ -11,7 +11,7 @@ import java.util.List;
  * В WeekTime указанны все учебные дни на неделю.
  * Также указанно евляется ли неделя числителем.
  */
-public class WeekTime {
+public class WeekTime implements DataXML {
     private static final Logger LOGGER = LogManager.getLogger(WeekTime.class);
     private final List<DayTime> dayTimeList;
     /**
@@ -36,6 +36,15 @@ public class WeekTime {
     public void addDayTime(DayTime dayTime) {
         LOGGER.debug("addDayTime "+dayTime);
         this.dayTimeList.add(dayTime);
+    }
+
+    @Override
+    public String toXML() {
+        String xml = "<weekTime numerator=\""+numerator+"\">";
+        for (DayTime dayTime : dayTimeList) {
+            xml = xml+"\n"+dayTime.toXML();
+        }
+        return xml+"\n</weekTime>";
     }
 
     @Override

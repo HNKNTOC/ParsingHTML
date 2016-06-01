@@ -1,5 +1,6 @@
-package com.company.parsingHTML.logic.parsing.tag;
+package com.company.parsingHTML.logic.parsing.tag.daytime;
 
+import com.company.parsingHTML.logic.parsing.tag.ParserTagAbstract;
 import com.company.parsingHTML.logic.schedule.DayTime;
 import com.company.parsingHTML.logic.schedule.LessonTime;
 import com.company.parsingHTML.logic.schedule.Schedule;
@@ -44,13 +45,10 @@ public class ParserDayTime extends ParserTagAbstract {
             newTr(tr);
         }
         pytDay();
-        for (DayTime dayTime : schedule.getWeekTime().getDayTimeList()) {
-            System.out.println(dayTime.toXML());
-        }
     }
 
     private void newTr(TagNode tr) {
-        LOGGER.debug("newTr tr = "+tr.getText());
+        LOGGER.debug("newTr tr = "+tr.getName());
         TagNode[] elementsN_para = tr.getElementsByAttValue("class", "n_para", true, true);
         if (elementsN_para.length == 0) return;
         TagNode n_para = elementsN_para[0];
