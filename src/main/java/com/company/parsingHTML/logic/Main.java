@@ -38,7 +38,7 @@ public class Main {
         parserRoot.parsing(parserFileHTML.parsing(file),schedule);
 
         System.out.println(schedule.toString());
-        System.out.println(schedule.getWeekTime().toXML());
+        System.out.println(schedule.getWeekTime());
     }
 
     public static File getFile(String name){

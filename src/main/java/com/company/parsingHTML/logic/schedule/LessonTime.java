@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
  * В удобном виде хранит информацию о времени начала и конца урока.
  * В LessonTime указанно время начала и конца полу уроков.
  */
-public class LessonTime implements DataXML {
+public class LessonTime {
     private static final Logger LOGGER = LogManager.getLogger(LessonTime.class);
     /**
      * Номер урока.
@@ -48,11 +48,6 @@ public class LessonTime implements DataXML {
 
     public String getEnd2() {
         return end2;
-    }
-
-    @Override
-    public String toXML() {
-        return "<lessonTime number=\""+number+"\" start1=\""+start1+"\" end1=\""+end1+"\" start2=\""+start2+"\" end2=\""+end2+"\"/>";
     }
 
     @Override
