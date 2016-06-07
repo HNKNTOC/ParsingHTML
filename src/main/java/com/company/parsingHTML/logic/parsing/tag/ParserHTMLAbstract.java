@@ -1,10 +1,11 @@
 package com.company.parsingHTML.logic.parsing.tag;
 
-import com.company.parsingHTML.logic.parsing.ParserAbstract;
-import com.company.parsingHTML.logic.schedule.Schedule;
+
+import com.company.parsingHTML.logic.parsing.Parser;
+import com.company.parsingHTML.logic.xml.ElementXML;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.htmlcleaner.TagNode;
+import org.jsoup.nodes.Element;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,32 +14,32 @@ import java.util.Objects;
 /**
  * Все парсеры расписания дожны записывать спарсенную информацию в Schedule.
  */
-public abstract class ParserTagAbstract extends ParserAbstract<Schedule,TagNode> {
-    private static final Logger LOGGER = LogManager.getLogger(ParserTagAbstract.class);
+public abstract class ParserHTMLAbstract implements Parser<Element,ElementXML> {
+    private static final Logger LOGGER = LogManager.getLogger(ParserHTMLAbstract.class);
     /**
      * Список имен TagNode которые обрабатывает данный парсер.
      */
     private final List<String> nameParsingTagList;
 
     /**
-     * Создание ParserTagAbstract
+     * Создание ParserHTMLAbstract
      * @param nameParsingTag в моссиве перечеслет список имён TagNode
      *                       которые он может парсить.
      */
-    public ParserTagAbstract(String[] nameParsingTag) {
+    public ParserHTMLAbstract(String[] nameParsingTag) {
         nameParsingTagList = Arrays.asList(nameParsingTag);
         LOGGER.info("Create "+toString());
     }
 
     /**
-     * Проверяет есть ли имя tagNodeName в nameParsingTagList.
-     * @param tagNode TagNode который хотим проверить.
-     * @return true если может с парсить данный TagNode.
+     * Проверяет есть ли имя tagName() в nameParsingTagList.
+     * @param element Element который хотим проверить.
+     * @return true если может с парсить данный Element.
      */
     @Override
-    public boolean isParsing(TagNode tagNode) {
-        String nameTag = tagNode.getName();
-        LOGGER.debug("isParsing nameTag = "+nameTag);
+    public boolean isParsing(Element element) {
+        String nameTag = element.tagName();
+        LOGGER.debug("isParsing tagName = "+nameTag);
         for (String s : nameParsingTagList) {
             if(Objects.equals(nameTag, s)){
                 LOGGER.debug(nameTag+" equals "+s);

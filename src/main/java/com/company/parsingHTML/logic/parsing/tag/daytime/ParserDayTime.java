@@ -1,143 +1,92 @@
 package com.company.parsingHTML.logic.parsing.tag.daytime;
 
-import com.company.parsingHTML.logic.parsing.tag.ParserTagAbstract;
-import com.company.parsingHTML.logic.schedule.DayTime;
-import com.company.parsingHTML.logic.schedule.LessonTime;
-import com.company.parsingHTML.logic.schedule.Schedule;
-import com.company.parsingHTML.logic.schedule.WeekTime;
+import com.company.parsingHTML.logic.parsing.tag.ParserHTMLAbstract;
+import com.company.parsingHTML.logic.xml.ElementXML;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.htmlcleaner.ContentNode;
-import org.htmlcleaner.TagNode;
-
-import java.util.Arrays;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 /**
  * Парсит тег table в котором находятся время для каждой пары.
  */
-public class ParserDayTime extends ParserTagAbstract {
+public class ParserDayTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayTime.class);
 
     /**
      * Разделитель для time.
      */
-    private static final String replacement = "=";
-
-    private Schedule schedule;
-    private DayTime monday;
-    private DayTime saturday;
+    private final static String cssQueryNumberLesson = "td.n_para";
+    private static final String cssQueryTimeMonday = " td.n_para + td.time";
+    private static final String cssQueryTimeSaturday = " td.time ~ td";
 
     public ParserDayTime() {
         super(new String[]{"table"});
-        monday = new DayTime(DayTime.MONDAY);
-        saturday = new DayTime(DayTime.SATURDAY);
-        LOGGER.info("Create " + toString());
     }
 
     @Override
-    public void parsing(TagNode tagNode, Schedule schedule) {
-        LOGGER.debug("parsing tagNode= " + tagNode.toString() + " schedule = " + schedule.toString());
-        this.schedule = schedule;
-        TagNode[] trs = tagNode.getElementsByName("tr", true);
-        LOGGER.debug("trs = " + Arrays.toString(trs));
-        for (TagNode tr : trs) {
+    public ElementXML parsing(Element element) {
+        LOGGER.info("parsing Tag name = " + element.nodeName());
+        ElementXML weekTime = new ElementXML("weekTime");
+        weekTime.addAttribute("numerator", "false");
 
-            newTr(tr);
+        ElementXML dayTimeMonday = new ElementXML("dayTime");
+
+        weekTime.addChildren(dayTimeMonday);
+
+        ElementXML monday = newDayTime("monday", weekTime);
+        addLessonTime(element, monday, cssQueryTimeMonday);
+
+        newDayTimeOverride("tuesday", weekTime);
+        newDayTimeOverride("wednesday", weekTime);
+        newDayTimeOverride("thursday", weekTime);
+        newDayTimeOverride("friday", weekTime);
+        ElementXML saturday = newDayTime("saturday", weekTime);
+        addLessonTime(element, saturday, cssQueryTimeSaturday);
+
+        return weekTime;
+    }
+
+    private void addLessonTime(Element element, ElementXML dayTime, String cssSelect) {
+        LOGGER.debug("addLessonTime dayTime = "+dayTime.getAttributes("dayName")+" cssSelect = "+cssSelect);
+        Elements selectTimeLesson = element.select(cssSelect);
+
+        Elements selectNumberLesson = element.select(cssQueryNumberLesson);
+        for (int i = 0; i <7; i++) {
+            selectTimeLesson.get(i).appendChild(selectNumberLesson.get(i));
         }
-        pytDay();
-    }
 
-    private void newTr(TagNode tr) {
-        LOGGER.debug("newTr tr = "+tr.getName());
-        TagNode[] elementsN_para = tr.getElementsByAttValue("class", "n_para", true, true);
-        if (elementsN_para.length == 0) return;
-        TagNode n_para = elementsN_para[0];
-        TagNode[] times = tr.getElementsByAttValue("class", "time", true, true);
-        newLessonTime(n_para, times);
-    }
-
-    /**
-     * Обработка n_para и times
-     *
-     * @param n_para
-     * @param times
-     */
-    private void newLessonTime(TagNode n_para, TagNode[] times) {
-        LOGGER.debug("newLessonTime n_para = "+n_para.getText()+" times = "+ Arrays.toString(times));
-        String[] time0 = timeHandler(times[0]);
-        String[] time1 = timeHandler(times[1]);
-        String substring = n_para.getText().toString().substring(0, 1);
-        LessonTime lessonTime0 = createLessonTime(Integer.parseInt(substring), time0);
-        LessonTime lessonTime1 = createLessonTime(Integer.parseInt(substring), time1);
-        monday.addLessonTime(lessonTime0);
-        saturday.addLessonTime(lessonTime1);
-    }
-
-    /**
-     * Создаёт LessonTime.
-     * @param times моссив с временем.
-     * @param number номер пары.
-     * @return null если не удолось создать LessonTime.
-     */
-    private LessonTime createLessonTime(int number, String[] times){
-        LOGGER.debug("createLessonTime number = "+number +
-                " times = "+ Arrays.toString(times));
-        if (times.length != 4) {
-            LOGGER.warn("times.length must be equal to 4 length=" + times.length);
-            return null;
-        }
-        LessonTime lessonTimeMonday = new LessonTime(
-                number,times[0], times[1], times[2], times[3]);
-        LOGGER.info("return "+lessonTimeMonday+toString());
-        return lessonTimeMonday;
-    }
-
-
-    /**
-     * Форматирует строку в более удобный вид.
-     *
-     * @param time
-     * @return
-     */
-    private String[] timeHandler(TagNode time) {
-        LOGGER.debug("timeHandler time = "+time.getName());
-        addSeparator(time.getElementsByName("br", true));
-        LOGGER.debug("after addSeparator = "+time.getText());
-        String replace = time.getText().toString().replace("&ndash;", replacement);
-        LOGGER.debug("after replace = "+replace);
-        return  replace.split(replacement);
-    }
-
-
-
-    /**
-     * Добавляет в тег br разделитель.
-     * @param brs лист с br тегами в которых нужно добавить зазделители.
-     */
-    private void addSeparator(TagNode[] brs) {
-        if (brs.length != 1) {
-            LOGGER.warn("brs.length must be equal to 1 length=" + brs.length);
+        if (checkTrs(selectTimeLesson)) {
             return;
         }
-        for (TagNode br:brs) {
-            TagNode childSeparator = new TagNode("h1");
-            childSeparator.addChild(new ContentNode(replacement));
-            br.addChild(childSeparator);
+
+        ParserTr parserTr = new ParserTr();
+        for (Element tr : selectTimeLesson) {
+            ElementXML lessonTime = parserTr.parsing(tr);
+            if (lessonTime != null) {
+                dayTime.addChildren(lessonTime);
+            }
         }
     }
 
-    /**
-     * Добовляет день
-     */
-    private void pytDay() {
-        WeekTime weekTime = schedule.getWeekTime();
-        weekTime.addDayTime(monday);
-        weekTime.addDayTime(saturday);
-
-        weekTime.addDayTime(new DayTime(DayTime.THURSDAY, monday));
-        weekTime.addDayTime(new DayTime(DayTime.WEDNESDAY, monday));
-        weekTime.addDayTime(new DayTime(DayTime.THURSDAY, monday));
-        weekTime.addDayTime(new DayTime(DayTime.FRIDAY, monday));
+    private ElementXML newDayTime(String s, ElementXML weekTime) {
+        ElementXML dayTime = new ElementXML("dayTime");
+        dayTime.addAttribute("dayName", s);
+        weekTime.addChildren(dayTime);
+        return dayTime;
     }
 
+    private ElementXML newDayTimeOverride(String s, ElementXML weekTime) {
+        ElementXML dayTime = newDayTime(s,weekTime);
+        dayTime.addAttribute("override", "1");
+        return dayTime;
+    }
+
+    private boolean checkTrs(Elements selectTr) {
+        if (selectTr.size() == 0) {
+            LOGGER.debug("Wrong structure selectTr.size =" + selectTr.size());
+            return true;
+        }
+        return false;
+    }
 }
