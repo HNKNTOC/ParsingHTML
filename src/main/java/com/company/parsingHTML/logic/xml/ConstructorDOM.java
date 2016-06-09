@@ -56,7 +56,7 @@ public class ConstructorDOM implements ConstructorXML<Document> {
     }
 
     private void setText(Element element, String text) {
-        LOGGER.debug("addText = "+text);
+        LOGGER.debug("setText = "+text);
         element.setTextContent(text);
     }
 

@@ -16,18 +16,12 @@ import java.util.Objects;
  */
 public abstract class ParserHTMLAbstract implements Parser<Element,ElementXML> {
     private static final Logger LOGGER = LogManager.getLogger(ParserHTMLAbstract.class);
-    /**
-     * Список имен TagNode которые обрабатывает данный парсер.
-     */
-    private final List<String> nameParsingTagList;
+
 
     /**
      * Создание ParserHTMLAbstract
-     * @param nameParsingTag в моссиве перечеслет список имён TagNode
-     *                       которые он может парсить.
      */
-    public ParserHTMLAbstract(String[] nameParsingTag) {
-        nameParsingTagList = Arrays.asList(nameParsingTag);
+    public ParserHTMLAbstract() {
         LOGGER.info("Create "+toString());
     }
 
@@ -38,16 +32,6 @@ public abstract class ParserHTMLAbstract implements Parser<Element,ElementXML> {
      */
     @Override
     public boolean isParsing(Element element) {
-        String nameTag = element.tagName();
-        LOGGER.debug("isParsing tagName = "+nameTag);
-        for (String s : nameParsingTagList) {
-            if(Objects.equals(nameTag, s)){
-                LOGGER.debug(nameTag+" equals "+s);
-                return true;
-            }else {
-                LOGGER.debug(nameTag+" not equals "+s);
-            }
-        }
-        return false;
+        return true;
     }
 }

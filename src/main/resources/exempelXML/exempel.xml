@@ -3,7 +3,7 @@
     <updateTime>09:30</updateTime>
     <university dayName="БУКЭП">
         <weekTime numerator="false">
-            <dayTime dayName="monday">
+            <dayTime dayName="Понедельник">
                 <lessonTime number="1" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
                 <lessonTime number="2" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
                 <lessonTime number="3" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
@@ -12,11 +12,11 @@
                 <lessonTime number="6" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
                 <lessonTime number="7" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
             </dayTime>
-            <dayTime dayName="tuesday" override="1"/>
-            <dayTime dayName="wednesday" override="1"/>
-            <dayTime dayName="thursday" override="1"/>
-            <dayTime dayName="friday" override="1"/>
-            <dayTime dayName="saturday">
+            <dayTime dayName="Вторник" override="1"/>
+            <dayTime dayName="Среда" override="1"/>
+            <dayTime dayName="Четверг" override="1"/>
+            <dayTime dayName="Пятница" override="1"/>
+            <dayTime dayName="Суббота">
                 <lessonTime number="1" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
                 <lessonTime number="2" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
                 <lessonTime number="3" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
@@ -27,12 +27,12 @@
             </dayTime>
         </weekTime>
         <groupLesson faculty="СПО2" specifically="И" course="1" dayName="И-11">
-            <day dayName="monday">
-                <lesson number="3" dayName="Естествознание" audience="405н" teacher="Иванов И." numerato="true"/>
-                <lesson number="3" dayName="Физика" audience="311н" teacher="Иванов И." numerato="false"/>
-                <lesson number="4" dayName="Математика" audience="513н" teacher="Иванов И."/>
-                <lesson number="5" dayName="Обшество" audience="403н" teacher="Иванов И."/>
-            </day>
+            <dayLesson dayName="Понедельник">
+                <lesson number="3" lessonName="Естествознание" audience="405н" teacher="Иванов И." numerator="true"/>
+                <lesson number="3" lessonName="Физика" audience="311н" teacher="Иванов И." numerator="false"/>
+                <lesson number="4" lessonName="Математика" audience="513н" teacher="Иванов И."/>
+                <lesson number="5" lessonName="Обшество" audience="403н" teacher="Иванов И."/>
+            </dayLesson>
         </groupLesson>
     </university>
 </schedule>

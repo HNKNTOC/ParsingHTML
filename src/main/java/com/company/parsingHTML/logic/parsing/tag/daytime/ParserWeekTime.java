@@ -1,6 +1,6 @@
-package com.company.parsingHTML.logic.parsing.tag;
+package com.company.parsingHTML.logic.parsing.tag.daytime;
 
-import com.company.parsingHTML.logic.parsing.tag.daytime.ParserDayTime;
+import com.company.parsingHTML.logic.parsing.tag.ParserHTMLAbstract;
 import com.company.parsingHTML.logic.xml.ElementXML;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -10,13 +10,10 @@ import org.jsoup.select.Elements;
 /**
  * Начальный HTML парсер.
  */
-public class ParserRoot extends ParserHTMLAbstract {
-    private static final Logger LOGGER = LogManager.getLogger(ParserRoot.class);
+public class ParserWeekTime extends ParserHTMLAbstract {
+    private static final Logger LOGGER = LogManager.getLogger(ParserWeekTime.class);
     private static final String cssQueryTableTime = ".knock";
 
-    public ParserRoot() {
-        super(new String[]{"html"});
-    }
 
     @Override
     public ElementXML parsing(Element element) {
@@ -30,7 +27,7 @@ public class ParserRoot extends ParserHTMLAbstract {
         Elements select = element.select(cssQueryTableTime);
         LOGGER.debug("select "+select.size());
         ElementXML weekTime = new ElementXML("weekTime");
-        if(checkSelectCss(select)){
+        if(check(select)){
             LOGGER.debug("parseDayTime");
             ParserDayTime parserDayTime = new ParserDayTime();
             weekTime = parserDayTime.parsing(select.get(0));
@@ -40,7 +37,7 @@ public class ParserRoot extends ParserHTMLAbstract {
         return weekTime;
     }
 
-    private boolean checkSelectCss(Elements elements) {
+    private boolean check(Elements elements) {
         if(elements.size() !=1) {
             LOGGER.debug("Wrong structure elements.size ="+elements.size());
             return false;

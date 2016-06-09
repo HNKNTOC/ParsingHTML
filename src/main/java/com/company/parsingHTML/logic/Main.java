@@ -4,7 +4,8 @@ package com.company.parsingHTML.logic;
 import com.company.parsingHTML.logic.file.FileManagerDefault;
 import com.company.parsingHTML.logic.loader.LoaderHTML;
 import com.company.parsingHTML.logic.loader.LoaderHTMLDefault;
-import com.company.parsingHTML.logic.parsing.tag.ParserRoot;
+import com.company.parsingHTML.logic.parsing.tag.daytime.ParserWeekTime;
+import com.company.parsingHTML.logic.parsing.tag.grouplesson.ParserGroupLesson;
 import com.company.parsingHTML.logic.xml.ConstructorDOM;
 import com.company.parsingHTML.logic.xml.ElementXML;
 import org.jsoup.Jsoup;
@@ -27,12 +28,13 @@ public class Main {
 
         org.jsoup.nodes.Document parse0 = Jsoup.parse(getFile("rasp.bukep.ru.html"), null);
         org.jsoup.nodes.Document parse1 = Jsoup.parse(getFile("rasp.bukep.ru2.html"), null);
-        ParserRoot parserRoot = new ParserRoot();
         ElementXML schedule = new ElementXML("schedule");
         startingSetting(schedule);
 
-        ElementXML weekTime = parserRoot.parsing(parse0);
-        ElementXML groupLesson = parserRoot.parsing(parse1);
+        ParserWeekTime parserWeekTime = new ParserWeekTime();
+        ElementXML weekTime = parserWeekTime.parsing(parse0);
+        ParserGroupLesson parserGroupLesson = new ParserGroupLesson();
+        ElementXML groupLesson = parserGroupLesson.parsing(parse1);
 
         schedule.addChildren(weekTime);
         schedule.addChildren(groupLesson);

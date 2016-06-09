@@ -10,17 +10,11 @@ import org.jsoup.select.Elements;
 /**
  * Парсит lessonTime из tr.
  */
-public class ParserTr extends ParserHTMLAbstract {
-    private static final Logger LOGGER = LogManager.getLogger(ParserTr.class);
+public class ParserLessonTime extends ParserHTMLAbstract {
+    private static final Logger LOGGER = LogManager.getLogger(ParserLessonTime.class);
     private final static String cssQueryNumberLesson = "td.n_para";
     private final static String cssQueryTimeLesson = "td.time";
 
-    /**
-     * Создание ParserHTMLAbstract
-     */
-    public ParserTr() {
-        super(new String[]{"tr"});
-    }
 
     @Override
     public ElementXML parsing(Element element) {

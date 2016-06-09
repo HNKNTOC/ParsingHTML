@@ -20,9 +20,6 @@ public class ParserDayTime extends ParserHTMLAbstract {
     private static final String cssQueryTimeMonday = " td.n_para + td.time";
     private static final String cssQueryTimeSaturday = " td.time ~ td";
 
-    public ParserDayTime() {
-        super(new String[]{"table"});
-    }
 
     @Override
     public ElementXML parsing(Element element) {
@@ -34,19 +31,25 @@ public class ParserDayTime extends ParserHTMLAbstract {
 
         weekTime.addChildren(dayTimeMonday);
 
-        ElementXML monday = newDayTime("monday", weekTime);
+        ElementXML monday = newDayTime("Понедельник", weekTime);
         addLessonTime(element, monday, cssQueryTimeMonday);
 
-        newDayTimeOverride("tuesday", weekTime);
-        newDayTimeOverride("wednesday", weekTime);
-        newDayTimeOverride("thursday", weekTime);
-        newDayTimeOverride("friday", weekTime);
-        ElementXML saturday = newDayTime("saturday", weekTime);
+        newDayTimeOverride("Вторник", weekTime);
+        newDayTimeOverride("Среда", weekTime);
+        newDayTimeOverride("Четверг", weekTime);
+        newDayTimeOverride("Пятница", weekTime);
+        ElementXML saturday = newDayTime("Суббота", weekTime);
         addLessonTime(element, saturday, cssQueryTimeSaturday);
 
         return weekTime;
     }
 
+    /**
+     * Создаёт LessonTime.
+     * @param element элемент из которого нужно спарсить.
+     * @param dayTime элемент в который нужно полодить полученый LessonTime.
+     * @param cssSelect запрос который получает элементы с временем.
+     */
     private void addLessonTime(Element element, ElementXML dayTime, String cssSelect) {
         LOGGER.debug("addLessonTime dayTime = "+dayTime.getAttributes("dayName")+" cssSelect = "+cssSelect);
         Elements selectTimeLesson = element.select(cssSelect);
@@ -60,9 +63,9 @@ public class ParserDayTime extends ParserHTMLAbstract {
             return;
         }
 
-        ParserTr parserTr = new ParserTr();
+        ParserLessonTime parserLessonTime = new ParserLessonTime();
         for (Element tr : selectTimeLesson) {
-            ElementXML lessonTime = parserTr.parsing(tr);
+            ElementXML lessonTime = parserLessonTime.parsing(tr);
             if (lessonTime != null) {
                 dayTime.addChildren(lessonTime);
             }
