@@ -8,6 +8,21 @@
         </layout>
     </appender>
 
+    <appender name="com.company" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="log/gameComponents/log.txt"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-5p][%-6.6t][%-20.20c{1}] - %m %n"/>
+        </layout>
+    </appender>
+
+    <logger name="com.GameEngine.logic.gameComponents">
+        <level value="DEBUG"/>
+        <appender-ref ref="com.GameEngine.logic.gameComponents"/>
+    </logger>
+
     <root>
         <priority value="debug"/>
         <appender-ref ref="Console" />
