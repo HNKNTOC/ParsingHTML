@@ -1,7 +1,6 @@
 package com.parsingHTML.logic.parsing.tag.grouplesson;
 
 import com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract;
-import com.parsingHTML.logic.xml.ElementXML;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -15,22 +14,27 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
     private final static String cssQuery = ".day_in_table";
 
     @Override
-    public ElementXML parsing(Element element) {
-        LOGGER.info("parsing Tag name = "+element.nodeName());
-        ElementXML groupLesson = new ElementXML("groupLesson");
+    public Element parsing(Element element) {
+        LOGGER.debug("==== Parsing Element = " + element.tagName()+" ====");
+        Element groupLesson = elementFactory.createGroupLesson();
         Elements days = element.select(cssQuery);
         if(days.size()!=6){
             LOGGER.warn("Wrong structure dayTable.size() = "+days.size());
             return groupLesson;
         }
+        parsingDayLesson(groupLesson, days);
+        LOGGER.debug("====== return ="+groupLesson);
+        return groupLesson;
+    }
+
+    private void parsingDayLesson(Element groupLesson, Elements days) {
         ParserDayLesson parserDayLesson = new ParserDayLesson();
         for (Element day : days) {
-            ElementXML dayLesson = parserDayLesson.parsing(day);
+            Element dayLesson = parserDayLesson.parsing(day);
             if(dayLesson!=null){
-                groupLesson.addChildren(dayLesson);
+                groupLesson.appendChild(dayLesson);
             }
         }
-        return groupLesson;
     }
 
 }

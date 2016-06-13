@@ -1,7 +1,6 @@
 package com.parsingHTML.logic.parsing.tag.grouplesson;
 
 import com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract;
-import com.parsingHTML.logic.xml.ElementXML;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -14,19 +13,24 @@ public class ParserDayLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayLesson.class);
 
     @Override
-    public ElementXML parsing(Element element) {
-        LOGGER.info("parsing Tag name = " + element.nodeName());
-        ElementXML dayLesson = new ElementXML("dayLesson");
-        Elements dayName = element.select(".day");
-        dayLesson.addAttribute("dayName",dayName.text());
+    public Element parsing(Element element) {
+        LOGGER.debug("==== Parsing Element = " + element.tagName()+" ====");
+        String dayName = element.select(".day").text();
+        LOGGER.debug("select dayName = "+dayName);
+
         Elements select = element.select(".num_para");
+        LOGGER.debug("select .num_para return "+select);
         ParserLesson parserLesson = new ParserLesson();
+
+        Element dayLesson = elementFactory.createDayLesson(dayName);
+
         for (Element numberLesson : select) {
-            ElementXML lesson = parserLesson.parsing(numberLesson);
+            Element lesson = parserLesson.parsing(numberLesson);
             if (lesson != null) {
-                dayLesson.addChildren(lesson);
+                dayLesson.appendChild(lesson);
             }
         }
+        LOGGER.debug("====== return ="+dayLesson);
         return dayLesson;
     }
 }

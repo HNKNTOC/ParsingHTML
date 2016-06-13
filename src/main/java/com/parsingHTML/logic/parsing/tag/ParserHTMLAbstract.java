@@ -1,8 +1,8 @@
 package com.parsingHTML.logic.parsing.tag;
 
 
+import com.parsingHTML.logic.factory.ElementJsoupFactory;
 import com.parsingHTML.logic.parsing.Parser;
-import com.parsingHTML.logic.xml.ElementXML;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -10,15 +10,15 @@ import org.jsoup.nodes.Element;
 /**
  * Все парсеры расписания дожны записывать спарсенную информацию в Schedule.
  */
-public abstract class ParserHTMLAbstract implements Parser<Element,ElementXML> {
+public abstract class ParserHTMLAbstract implements Parser<Element,Element> {
     private static final Logger LOGGER = LogManager.getLogger(ParserHTMLAbstract.class);
-
+    protected final ElementJsoupFactory elementFactory;
 
     /**
      * Создание ParserHTMLAbstract
      */
     public ParserHTMLAbstract() {
-        LOGGER.info("Create "+toString());
+        elementFactory = new ElementJsoupFactory();
     }
 
     /**

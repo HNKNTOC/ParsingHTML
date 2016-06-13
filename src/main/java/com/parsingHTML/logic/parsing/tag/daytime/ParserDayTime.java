@@ -1,7 +1,6 @@
 package com.parsingHTML.logic.parsing.tag.daytime;
 
 import com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract;
-import com.parsingHTML.logic.xml.ElementXML;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -22,25 +21,22 @@ public class ParserDayTime extends ParserHTMLAbstract {
 
 
     @Override
-    public ElementXML parsing(Element element) {
-        LOGGER.info("parsing Tag name = " + element.nodeName());
-        ElementXML weekTime = new ElementXML("weekTime");
-        weekTime.addAttribute("numerator", "false");
+    public Element parsing(Element element) {
+        LOGGER.info("==== Parsing Element = " + element.tagName()+" ====");
+        Element weekTime = elementFactory.createWeekTime();
 
-        ElementXML dayTimeMonday = new ElementXML("dayTime");
-
-        weekTime.addChildren(dayTimeMonday);
-
-        ElementXML monday = newDayTime("Понедельник", weekTime);
+        Element monday = elementFactory.createDayTime("Понедельник");
+        weekTime.appendChild(monday);
         addLessonTime(element, monday, cssQueryTimeMonday);
 
-        newDayTimeOverride("Вторник", weekTime);
-        newDayTimeOverride("Среда", weekTime);
-        newDayTimeOverride("Четверг", weekTime);
-        newDayTimeOverride("Пятница", weekTime);
-        ElementXML saturday = newDayTime("Суббота", weekTime);
+        weekTime.appendChild(elementFactory.createDayTime("Вторник","1"));
+        weekTime.appendChild(elementFactory.createDayTime("Среда","1"));
+        weekTime.appendChild(elementFactory.createDayTime("Четверг","1"));
+        weekTime.appendChild(elementFactory.createDayTime("Пятница","1"));
+        Element saturday = elementFactory.createDayTime("Суббота");
+        weekTime.appendChild(saturday);
         addLessonTime(element, saturday, cssQueryTimeSaturday);
-
+        LOGGER.info("==== Parsing return : " + weekTime.toString()+" ====");
         return weekTime;
     }
 
@@ -50,8 +46,8 @@ public class ParserDayTime extends ParserHTMLAbstract {
      * @param dayTime элемент в который нужно полодить полученый LessonTime.
      * @param cssSelect запрос который получает элементы с временем.
      */
-    private void addLessonTime(Element element, ElementXML dayTime, String cssSelect) {
-        LOGGER.debug("addLessonTime dayTime = "+dayTime.getAttributes("dayName")+" cssSelect = "+cssSelect);
+    private void addLessonTime(Element element, Element dayTime, String cssSelect) {
+        LOGGER.debug("addLessonTime dayTime = "+dayTime.attr("dayName")+" cssSelect = "+cssSelect);
         Elements selectTimeLesson = element.select(cssSelect);
 
         Elements selectNumberLesson = element.select(cssQueryNumberLesson);
@@ -65,29 +61,17 @@ public class ParserDayTime extends ParserHTMLAbstract {
 
         ParserLessonTime parserLessonTime = new ParserLessonTime();
         for (Element tr : selectTimeLesson) {
-            ElementXML lessonTime = parserLessonTime.parsing(tr);
+            Element lessonTime = parserLessonTime.parsing(tr);
             if (lessonTime != null) {
-                dayTime.addChildren(lessonTime);
+                LOGGER.debug("add "+lessonTime+toString());
+                dayTime.appendChild(lessonTime);
             }
         }
     }
 
-    private ElementXML newDayTime(String s, ElementXML weekTime) {
-        ElementXML dayTime = new ElementXML("dayTime");
-        dayTime.addAttribute("dayName", s);
-        weekTime.addChildren(dayTime);
-        return dayTime;
-    }
-
-    private ElementXML newDayTimeOverride(String s, ElementXML weekTime) {
-        ElementXML dayTime = newDayTime(s,weekTime);
-        dayTime.addAttribute("override", "1");
-        return dayTime;
-    }
-
     private boolean checkTrs(Elements selectTr) {
         if (selectTr.size() == 0) {
-            LOGGER.debug("Wrong structure selectTr.size =" + selectTr.size());
+            LOGGER.warn("Wrong structure selectTr.size =" + selectTr.size());
             return true;
         }
         return false;

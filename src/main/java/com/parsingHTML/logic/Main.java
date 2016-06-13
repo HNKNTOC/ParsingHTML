@@ -1,64 +1,103 @@
 package com.parsingHTML.logic;
 
 
+import com.parsingHTML.logic.factory.ElementJsoupFactory;
 import com.parsingHTML.logic.file.FileManagerDefault;
 import com.parsingHTML.logic.loader.LoaderHTML;
 import com.parsingHTML.logic.loader.LoaderHTMLDefault;
 import com.parsingHTML.logic.parsing.tag.daytime.ParserWeekTime;
 import com.parsingHTML.logic.parsing.tag.grouplesson.ParserGroupLesson;
-import com.parsingHTML.logic.xml.ConstructorDOM;
-import com.parsingHTML.logic.xml.ElementXML;
 import org.jsoup.Jsoup;
+import org.jsoup.helper.W3CDom;
+import org.jsoup.nodes.Element;
+import org.jsoup.parser.Tag;
 import org.w3c.dom.Document;
 
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
 
 /**
  * Created by Nikita on 03.05.2016.
  */
 public class Main {
-    public static void main(String[] args) throws TransformerException, ParserConfigurationException, IOException {
-        ConstructorDOM constructorDOM = new ConstructorDOM();
+    public static void main(String[] args) throws TransformerException, ParserConfigurationException, IOException {newStart();
+        start();
+    }
 
-        org.jsoup.nodes.Document parse0 = Jsoup.parse(getFile("rasp.bukep.ru.html"), null);
-        org.jsoup.nodes.Document parse1 = Jsoup.parse(getFile("rasp.bukep.ru2.html"), null);
-        ElementXML schedule = new ElementXML("schedule");
-        startingSetting(schedule);
+    private static ElementJsoupFactory elementFactory = new ElementJsoupFactory();
 
-        ParserWeekTime parserWeekTime = new ParserWeekTime();
-        ElementXML weekTime = parserWeekTime.parsing(parse0);
-        ParserGroupLesson parserGroupLesson = new ParserGroupLesson();
-        ElementXML groupLesson = parserGroupLesson.parsing(parse1);
+    private static void newStart() throws ParserConfigurationException, TransformerException {
+        Document documentDom = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
 
-        schedule.addChildren(weekTime);
-        schedule.addChildren(groupLesson);
+        Element element = new Element(Tag.valueOf("testtag"),"");
+        element.appendChild(new Element(Tag.valueOf("lol"),""));
 
-        constructorDOM.newElement(schedule);
-        Document designing = constructorDOM.getXML();
+        transformation(documentDom, element);
 
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
         Result output = new StreamResult(new File("src\\main\\resources\\test\\output.xml"));
-        Source input = new DOMSource(designing);
+        Source input = new DOMSource(documentDom);
 
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
         transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
         transformer.transform(input, output);
     }
 
-    private static void startingSetting(ElementXML elementXML) {
-        ElementXML updateTime = new ElementXML("updateTime");
-        updateTime.setText(new Date().toString());
-        elementXML.addChildren(updateTime);
+    private static void transformation(Document documentDom, Element element) {
+        org.jsoup.nodes.Document document = new org.jsoup.nodes.Document("");
+        W3CDom w3CDom = new W3CDom();
+        document.appendChild(element);
+        w3CDom.convert(document,documentDom);
+    }
 
-        ElementXML university = new ElementXML("university");
-        university.addAttribute("dayName","БУКЭП");
-        elementXML.addChildren(university);
+    private static void start() throws IOException, TransformerException {
+
+        org.jsoup.nodes.Document parse0 = Jsoup.parse(getFile("rasp.bukep.ru.html"), null);
+        org.jsoup.nodes.Document parse1 = Jsoup.parse(getFile("rasp.bukep.ru2.html"), null);
+        Element schedule = elementFactory.createSchedule();
+        Element root = createRoot(schedule);
+
+        ParserWeekTime parserWeekTime = new ParserWeekTime();
+        Element weekTime = parserWeekTime.parsing(parse0);
+        ParserGroupLesson parserGroupLesson = new ParserGroupLesson();
+        Element groupLesson = parserGroupLesson.parsing(parse1);
+
+        root.appendChild(weekTime);
+        root.appendChild(groupLesson);
+
+        Document doc = createDOC();
+        transformation(doc,schedule);
+
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        Result output = new StreamResult(new File("src\\main\\resources\\test\\output.xml"));
+        Source input = new DOMSource(doc);
+
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+        transformer.transform(input, output);
+    }
+
+    private static Document createDOC() {
+        try {
+            return DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private static Element createRoot(Element schedule) {
+        Element updateTime = elementFactory.createUpdateTime();
+        schedule.appendChild(updateTime);
+        Element university = elementFactory.createUniversity();
+        schedule.appendChild(university);
+
+        return university;
     }
 
 

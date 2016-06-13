@@ -1,7 +1,6 @@
 package com.parsingHTML.logic.parsing.tag.grouplesson;
 
 import com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract;
-import com.parsingHTML.logic.xml.ElementXML;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -12,9 +11,8 @@ import org.jsoup.nodes.Element;
 public class ParserLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserLesson.class);
     @Override
-    public ElementXML parsing(Element element) {
-        LOGGER.info("parsing Tag name = " + element.nodeName());
-        ElementXML lesson = new ElementXML("lesson");
+    public Element parsing(Element element) {
+        LOGGER.info("==== Parsing Element = " + element.tagName()+" ====");
         Element sibling = element.nextElementSibling();
 
         String number = parsingNumber(element);
@@ -25,12 +23,14 @@ public class ParserLesson extends ParserHTMLAbstract {
         String nameLesson = split[0];
         String descriptionLesson = split[1];
 
+        Element dayLesson;
         if(numerator==null){
-            return createLesson(number,nameLesson,descriptionLesson,"Name Teacher");
+            dayLesson = elementFactory.createLesson(number,nameLesson,descriptionLesson,"Name Teacher");
         }else {
-            return createLesson(number,nameLesson,descriptionLesson,"Name Teacher",numerator);
+            dayLesson =  elementFactory.createLesson(number,nameLesson,descriptionLesson,"Name Teacher",numerator);
         }
-
+        LOGGER.debug("====== return ="+dayLesson);
+        return dayLesson;
     }
 
     /**
@@ -74,20 +74,4 @@ public class ParserLesson extends ParserHTMLAbstract {
         }
         return text;
     }
-
-    private ElementXML createLesson(String number, String lessonName, String audience, String teacher){
-        ElementXML lesson = new ElementXML("lesson");
-        lesson.addAttribute("number", number);
-        lesson.addAttribute("lessonName", lessonName);
-        lesson.addAttribute("audience", audience);
-        lesson.addAttribute("teacher", teacher);
-        return lesson;
-    }
-
-    private ElementXML createLesson(String number, String lessonName, String audience, String teacher,String numerator){
-        ElementXML lesson = createLesson(number,lessonName,audience,teacher);
-        lesson.addAttribute("numerator", numerator);
-        return lesson;
-    }
-
 }
