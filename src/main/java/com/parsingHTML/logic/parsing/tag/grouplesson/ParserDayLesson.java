@@ -12,6 +12,7 @@ import org.jsoup.select.Elements;
 public class ParserDayLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayLesson.class);
 
+
     @Override
     public Element parsing(Element element) {
         LOGGER.debug("==== Parsing Element = " + element.tagName()+" ====");

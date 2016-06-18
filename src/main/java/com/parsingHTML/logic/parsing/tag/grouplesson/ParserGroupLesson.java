@@ -13,6 +13,7 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserGroupLesson.class);
     private final static String cssQuery = ".day_in_table";
 
+
     @Override
     public Element parsing(Element element) {
         LOGGER.debug("==== Parsing Element = " + element.tagName()+" ====");

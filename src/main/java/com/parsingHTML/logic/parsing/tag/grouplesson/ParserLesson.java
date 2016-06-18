@@ -10,6 +10,8 @@ import org.jsoup.nodes.Element;
  */
 public class ParserLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserLesson.class);
+
+
     @Override
     public Element parsing(Element element) {
         LOGGER.info("==== Parsing Element = " + element.tagName()+" ====");

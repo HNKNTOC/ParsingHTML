@@ -17,7 +17,7 @@ public class FileManagerTest {
 
     private FileManager fileManager = new FileManagerDefault();
     private static final Logger LOGGER = LogManager.getLogger(FileManagerTest.class);
-    private static final String defaultDirectory = "src\\main\\resources\\html";
+    private static final String defaultDirectory = "src\\main\\resources\\html\\test";
     private static File newPathDirectory;
     private static final File fileDefault = new File("Test.txt");
 
@@ -26,7 +26,7 @@ public class FileManagerTest {
         if (!fileManager.setDirectory(defaultDirectory)) {
             LOGGER.warn("Failed set defaultDirectory!!");
         }
-        newPathDirectory = new File("src\\main\\resources\\html\\test");
+        newPathDirectory = new File("src\\main\\resources\\html\\test2");
     }
 
     /**
