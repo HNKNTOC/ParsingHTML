@@ -1,12 +1,13 @@
 package com.parsingHTML.logic;
 
 
-import com.parsingHTML.logic.factory.ElementJsoupFactory;
 import com.parsingHTML.logic.file.FileManagerDefault;
 import com.parsingHTML.logic.loader.LoaderHTML;
 import com.parsingHTML.logic.loader.LoaderHTMLDefault;
 import com.parsingHTML.logic.parsing.tag.daytime.ParserWeekTime;
 import com.parsingHTML.logic.parsing.tag.grouplesson.ParserGroupLesson;
+import com.parsingHTML.logic.xml.factory.ElementFactoryJsoup;
+import com.parsingHTML.logic.xml.factory.XMLFactory;
 import org.jsoup.Jsoup;
 import org.jsoup.helper.W3CDom;
 import org.jsoup.nodes.Element;
@@ -29,7 +30,7 @@ public class Main {
         start();
     }
 
-    private static ElementJsoupFactory elementFactory = new ElementJsoupFactory();
+    private static XMLFactory XMLFactory = new ElementFactoryJsoup();
 
     private static void newStart() throws ParserConfigurationException, TransformerException {
         Document documentDom = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
@@ -59,7 +60,7 @@ public class Main {
 
         org.jsoup.nodes.Document parse0 = Jsoup.parse(getFile("rasp.bukep.ru.html"), null);
         org.jsoup.nodes.Document parse1 = Jsoup.parse(getFile("rasp.bukep.ru2.html"), null);
-        Element schedule = elementFactory.createSchedule();
+        Element schedule = XMLFactory.createSchedule();
         Element root = createRoot(schedule);
 
         ParserWeekTime parserWeekTime = new ParserWeekTime();
@@ -92,9 +93,9 @@ public class Main {
     }
 
     private static Element createRoot(Element schedule) {
-        Element updateTime = elementFactory.createUpdateTime();
+        Element updateTime = XMLFactory.createUpdateTime();
         schedule.appendChild(updateTime);
-        Element university = elementFactory.createUniversity();
+        Element university = XMLFactory.createUniversity();
         schedule.appendChild(university);
 
         return university;

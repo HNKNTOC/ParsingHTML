@@ -11,7 +11,7 @@ public interface Parser<T,S> {
     /**
      * Может ли данный Parser обработать t.
      * @param t объект который мы хотим проверить.
-     * @return true если может обработать t.
+     * @return true если Parser может обработать t.
      */
     boolean isParsing(T t);
 

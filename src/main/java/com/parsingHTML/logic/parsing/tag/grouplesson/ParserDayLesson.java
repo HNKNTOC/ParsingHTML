@@ -22,7 +22,7 @@ public class ParserDayLesson extends ParserHTMLAbstract {
         LOGGER.debug("select .num_para return "+select);
         ParserLesson parserLesson = new ParserLesson();
 
-        Element dayLesson = elementFactory.createDayLesson(dayName);
+        Element dayLesson = XMLFactory.createDayLesson(dayName);
 
         for (Element numberLesson : select) {
             Element lesson = parserLesson.parsing(numberLesson);

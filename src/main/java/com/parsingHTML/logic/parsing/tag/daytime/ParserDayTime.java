@@ -23,17 +23,17 @@ public class ParserDayTime extends ParserHTMLAbstract {
     @Override
     public Element parsing(Element element) {
         LOGGER.info("==== Parsing Element = " + element.tagName()+" ====");
-        Element weekTime = elementFactory.createWeekTime();
+        Element weekTime = XMLFactory.createWeekTime();
 
-        Element monday = elementFactory.createDayTime("Понедельник");
+        Element monday = XMLFactory.createDayTime("Понедельник");
         weekTime.appendChild(monday);
         addLessonTime(element, monday, cssQueryTimeMonday);
 
-        weekTime.appendChild(elementFactory.createDayTime("Вторник","1"));
-        weekTime.appendChild(elementFactory.createDayTime("Среда","1"));
-        weekTime.appendChild(elementFactory.createDayTime("Четверг","1"));
-        weekTime.appendChild(elementFactory.createDayTime("Пятница","1"));
-        Element saturday = elementFactory.createDayTime("Суббота");
+        weekTime.appendChild(XMLFactory.createDayTime("Вторник", "1"));
+        weekTime.appendChild(XMLFactory.createDayTime("Среда", "1"));
+        weekTime.appendChild(XMLFactory.createDayTime("Четверг", "1"));
+        weekTime.appendChild(XMLFactory.createDayTime("Пятница", "1"));
+        Element saturday = XMLFactory.createDayTime("Суббота");
         weekTime.appendChild(saturday);
         addLessonTime(element, saturday, cssQueryTimeSaturday);
         LOGGER.info("==== Parsing return : " + weekTime.toString()+" ====");

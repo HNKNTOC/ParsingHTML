@@ -1,31 +1,36 @@
 package com.parsingHTML.logic.parsing.tag;
 
 
-import com.parsingHTML.logic.factory.ElementJsoupFactory;
 import com.parsingHTML.logic.parsing.Parser;
+import com.parsingHTML.logic.xml.factory.ElementFactoryJsoup;
+import com.parsingHTML.logic.xml.factory.XMLFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
 
 /**
- * Все парсеры расписания дожны записывать спарсенную информацию в Schedule.
+ * Абстрактный класс для всех парсеров HTML.
+ * Парсер XML элемента из HTML элементов.
  */
 public abstract class ParserHTMLAbstract implements Parser<Element,Element> {
     private static final Logger LOGGER = LogManager.getLogger(ParserHTMLAbstract.class);
-    protected final ElementJsoupFactory elementFactory;
+    protected final XMLFactory XMLFactory;
 
     /**
      * Создание ParserHTMLAbstract
      */
     public ParserHTMLAbstract() {
-        elementFactory = new ElementJsoupFactory();
+        this(new ElementFactoryJsoup());
     }
 
     /**
-     * Проверяет есть ли имя tagName() в nameParsingTagList.
-     * @param element Element который хотим проверить.
-     * @return true если может с парсить данный Element.
+     * Создание ParserHTMLAbstract.
+     * @param XMLFactory фабрика создаюшая XML элементы.
      */
+    public ParserHTMLAbstract(XMLFactory XMLFactory) {
+        this.XMLFactory = XMLFactory;
+    }
+
     @Override
     public boolean isParsing(Element element) {
         return true;

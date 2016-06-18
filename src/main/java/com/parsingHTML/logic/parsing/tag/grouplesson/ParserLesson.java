@@ -25,9 +25,9 @@ public class ParserLesson extends ParserHTMLAbstract {
 
         Element dayLesson;
         if(numerator==null){
-            dayLesson = elementFactory.createLesson(number,nameLesson,descriptionLesson,"Name Teacher");
+            dayLesson = XMLFactory.createLesson(number, nameLesson, descriptionLesson, "Name Teacher");
         }else {
-            dayLesson =  elementFactory.createLesson(number,nameLesson,descriptionLesson,"Name Teacher",numerator);
+            dayLesson = XMLFactory.createLesson(number, nameLesson, descriptionLesson, "Name Teacher", numerator);
         }
         LOGGER.debug("====== return ="+dayLesson);
         return dayLesson;

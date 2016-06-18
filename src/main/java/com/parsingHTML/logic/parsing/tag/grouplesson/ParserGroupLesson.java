@@ -16,7 +16,7 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
     @Override
     public Element parsing(Element element) {
         LOGGER.debug("==== Parsing Element = " + element.tagName()+" ====");
-        Element groupLesson = elementFactory.createGroupLesson();
+        Element groupLesson = XMLFactory.createGroupLesson();
         Elements days = element.select(cssQuery);
         if(days.size()!=6){
             LOGGER.warn("Wrong structure dayTable.size() = "+days.size());

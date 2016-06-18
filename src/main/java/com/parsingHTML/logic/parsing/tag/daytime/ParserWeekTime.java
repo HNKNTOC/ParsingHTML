@@ -35,7 +35,7 @@ public class ParserWeekTime extends ParserHTMLAbstract {
                 return parsing;
             }
         }
-        return elementFactory.createWeekTime();
+        return XMLFactory.createWeekTime();
     }
 
     private boolean check(Elements elements) {
