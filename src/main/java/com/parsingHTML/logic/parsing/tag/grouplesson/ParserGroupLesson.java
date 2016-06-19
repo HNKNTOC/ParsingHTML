@@ -24,7 +24,7 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
             return groupLesson;
         }
         parsingDayLesson(groupLesson, days);
-        LOGGER.debug("====== return ="+groupLesson);
+        LOGGER.debug("====== return " + groupLesson);
         return groupLesson;
     }
 

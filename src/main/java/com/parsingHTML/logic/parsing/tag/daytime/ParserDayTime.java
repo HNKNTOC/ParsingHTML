@@ -36,7 +36,7 @@ public class ParserDayTime extends ParserHTMLAbstract {
         Element saturday = XMLFactory.createDayTime("Суббота");
         weekTime.appendChild(saturday);
         addLessonTime(element, saturday, cssQueryTimeSaturday);
-        LOGGER.info("==== Parsing return : " + weekTime.toString()+" ====");
+        LOGGER.debug("====== return " + weekTime);
         return weekTime;
     }
 

@@ -8,18 +8,18 @@
         </layout>
     </appender>
 
-    <appender name="Parsing" class="org.apache.log4j.RollingFileAppender">
-        <param name="File" value="log/parsing/log.txt"/>
+    <appender name="parsing" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="log/parsing/main.log"/>
         <param name="MaxFileSize" value="100MB"/>
         <param name="MaxBackupIndex" value="10"/>
-        <param name="Encoding" value="UTF-8"/>
+        <param name="Encoding" value="windows-1251"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-5p][%-6.6t][%-20.20c{1}] - %m %n"/>
         </layout>
     </appender>
 
     <appender name="xml" class="org.apache.log4j.RollingFileAppender">
-        <param name="File" value="log/xml/log.txt"/>
+        <param name="File" value="log/xml/main.log"/>
         <param name="MaxFileSize" value="100MB"/>
         <param name="MaxBackupIndex" value="10"/>
         <param name="Encoding" value="UTF-8"/>
@@ -35,7 +35,7 @@
 
     <logger name="com.parsingHTML.logic.parsing">
         <level value="DEBUG"/>
-        <appender-ref ref="Parsing"/>
+        <appender-ref ref="parsing"/>
     </logger>
 
     <root>

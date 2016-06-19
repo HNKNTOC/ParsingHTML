@@ -10,6 +10,7 @@ import org.jsoup.nodes.Element;
  */
 public class ParserLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserLesson.class);
+    private static final String separator = "/-";
 
 
     @Override
@@ -31,7 +32,7 @@ public class ParserLesson extends ParserHTMLAbstract {
         }else {
             dayLesson = XMLFactory.createLesson(number, nameLesson, descriptionLesson, "Name Teacher", numerator);
         }
-        LOGGER.debug("====== return ="+dayLesson);
+        LOGGER.debug("====== return " + dayLesson);
         return dayLesson;
     }
 
@@ -42,8 +43,8 @@ public class ParserLesson extends ParserHTMLAbstract {
      */
     private String[] divideString(Element sibling) {
         Element element1 = sibling.children().get(0).children().get(0);
-        element1.appendText("-");
-        String[] split = sibling.text().split("-");
+        element1.appendText(separator);
+        String[] split = sibling.text().split(separator);
         if(split.length!=2){
             LOGGER.warn("divideString failed to divide string = "+sibling.text());
             return new String[]{"",""};

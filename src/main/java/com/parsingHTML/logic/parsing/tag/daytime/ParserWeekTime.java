@@ -22,7 +22,7 @@ public class ParserWeekTime extends ParserHTMLAbstract {
         LOGGER.debug("Find "+cssQueryTableTime+"size = "+select.size());
 
         Element weekTime = parseDayTime(select);
-        LOGGER.debug("====== return ="+weekTime);
+        LOGGER.debug("====== return " + weekTime);
         return weekTime;
     }
 

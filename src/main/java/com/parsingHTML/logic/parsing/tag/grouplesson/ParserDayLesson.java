@@ -31,7 +31,7 @@ public class ParserDayLesson extends ParserHTMLAbstract {
                 dayLesson.appendChild(lesson);
             }
         }
-        LOGGER.debug("====== return ="+dayLesson);
+        LOGGER.debug("====== return " + dayLesson);
         return dayLesson;
     }
 }

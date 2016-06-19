@@ -34,7 +34,7 @@ public class ParserLessonTime extends ParserHTMLAbstract {
 
         Element lessonTime = XMLFactory.createLessonTime(n_para.text().substring(0, 1)
                 ,time[0],time[1],time[2],time[3]);
-        LOGGER.debug("====== return ="+lessonTime);
+        LOGGER.debug("====== return " + lessonTime);
         return lessonTime;
     }
 
