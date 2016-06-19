@@ -15,7 +15,7 @@ public class FileManagerDefault implements FileManager {
     private static final Logger LOGGER = LogManager.getLogger(FileManagerDefault.class);
 
     public FileManagerDefault() {
-        this(new File("src\\main\\resources\\html\\test"));
+        this(new File("src\\main\\resources\\html\\save"));
     }
 
     public FileManagerDefault(File fileDirectory) {
