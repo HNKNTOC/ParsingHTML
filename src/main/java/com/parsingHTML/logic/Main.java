@@ -26,11 +26,13 @@ import java.io.IOException;
  * Created by Nikita on 03.05.2016.
  */
 public class Main {
+    private static XMLFactory XMLFactory = new ElementFactoryJsoup();
+    private static final String path = "src\\main\\resources\\out";
+    private static final String nameOUTFile = "output.xml";
+
     public static void main(String[] args) throws TransformerException, ParserConfigurationException, IOException {
         start();
     }
-
-    private static XMLFactory XMLFactory = new ElementFactoryJsoup();
 
     private static void transformation(Document documentDom, Element element) {
         org.jsoup.nodes.Document document = new org.jsoup.nodes.Document("");
@@ -57,8 +59,12 @@ public class Main {
         Document doc = createDOC();
         transformation(doc, schedule);
 
+        saveOut(doc);
+    }
+
+    private static void saveOut(Document doc) throws TransformerException {
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
-        Result output = new StreamResult(new File("src\\main\\resources\\test\\output.xml"));
+        Result output = new StreamResult(createFile(nameOUTFile));
         Source input = new DOMSource(doc);
 
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
@@ -86,7 +92,14 @@ public class Main {
 
 
     public static File getFile(String name) {
-        return new FileManagerDefault().getFile(name);
+        FileManagerDefault fileManagerDefault = new FileManagerDefault(new File("src\\main\\resources\\html\\save"));
+        return fileManagerDefault.getFile(name);
+    }
+
+    private static File createFile(String name){
+        FileManagerDefault fileManagerDefault = new FileManagerDefault(new File(path));
+        fileManagerDefault.createFile(name);
+        return fileManagerDefault.getFile(name);
     }
 
     /**
