@@ -28,7 +28,7 @@ import java.io.IOException;
 public class Main {
     private static XMLFactory XMLFactory = new ElementFactoryJsoup();
     private static final String path = "src\\main\\resources\\out";
-    private static final String nameOUTFile = "output.xml";
+    private static final String nameOUTFile = "output.html";
 
     public static void main(String[] args) throws TransformerException, ParserConfigurationException, IOException {
         start();
@@ -68,7 +68,7 @@ public class Main {
         Source input = new DOMSource(doc);
 
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+        transformer.setOutputProperty("{http://html.apache.org/xslt}indent-amount", "2");
         transformer.transform(input, output);
     }
 
