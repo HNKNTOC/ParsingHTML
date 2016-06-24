@@ -28,7 +28,7 @@ import java.io.IOException;
 public class Main {
     private static XMLFactory XMLFactory = new ElementFactoryJsoup();
     private static final String path = "src\\main\\resources\\out";
-    private static final String nameOUTFile = "output.html";
+    private static final String nameOUTFile = "output.xml";
 
     public static void main(String[] args) throws TransformerException, ParserConfigurationException, IOException {
         start();

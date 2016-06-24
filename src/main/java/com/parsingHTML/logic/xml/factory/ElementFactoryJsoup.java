@@ -25,14 +25,14 @@ public class ElementFactoryJsoup implements XMLFactory {
 
     @Override
     public Element createWeekTime() {
-        Element element = createElement("weekTime");
+        Element element = createElement(ElementName.WEEK_TIME);
         element.attr("numerator", "false");
         return element;
     }
 
     @Override
     public Element createDayTime(String dayName) {
-        Element element = createElement("dayTime");
+        Element element = createElement(ElementName.DAY_TIME);
         element.attr("dayName", dayName);
         return element;
     }
@@ -46,7 +46,7 @@ public class ElementFactoryJsoup implements XMLFactory {
 
     @Override
     public Element createLessonTime(String number, String start1, String end1, String start2, String end2) {
-        Element lessonTime = createElement("lessonTime");
+        Element lessonTime = createElement(ElementName.LESSON_TIME);
         lessonTime.attr("number", number);
         lessonTime.attr("start1", start1);
         lessonTime.attr("end1", end1);
@@ -57,14 +57,14 @@ public class ElementFactoryJsoup implements XMLFactory {
 
     @Override
     public Element createDayLesson(String dayName) {
-        Element lessonTime = createElement("dayLesson");
+        Element lessonTime = createElement(ElementName.DAY_LESSON);
         lessonTime.attr("dayName", dayName);
         return lessonTime;
     }
 
     @Override
     public Element createLesson(String number, String nameLesson, String descriptionLesson, String teacher) {
-        Element lesson = createElement("lesson");
+        Element lesson = createElement(ElementName.LESSON);
         lesson.attr("number", number);
         lesson.attr("lessonName", nameLesson);
         lesson.attr("audience", descriptionLesson);
@@ -81,24 +81,24 @@ public class ElementFactoryJsoup implements XMLFactory {
 
     @Override
     public Element createGroupLesson() {
-        return createElement("groupLesson");
+        return createElement(ElementName.GROUP_LESSON);
     }
 
     @Override
     public Element createSchedule() {
-        return createElement("schedule");
+        return createElement(ElementName.SCHEDULE);
     }
 
     @Override
     public Element createUpdateTime() {
-        Element updateTime = createElement("updateTime");
+        Element updateTime = createElement(ElementName.UPDATE_TIME);
         updateTime.text(new Date().toString());
         return updateTime;
     }
 
     @Override
     public Element createUniversity() {
-        Element university = createElement("university");
+        Element university = createElement(ElementName.UNIVERSITY);
         university.attr("universityName", "БУКЭП");
         return university;
     }
