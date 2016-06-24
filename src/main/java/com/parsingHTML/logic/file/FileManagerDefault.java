@@ -7,12 +7,16 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by Nikita on 14.05.2016.
+ * Реализация FileManager.
  */
 public class FileManagerDefault implements FileManager {
 
     private File fileDirectory;
     private static final Logger LOGGER = LogManager.getLogger(FileManagerDefault.class);
+
+    public FileManagerDefault(String directory) {
+        this(new File(directory));
+    }
 
     public FileManagerDefault() {
         this(new File("src\\main\\resources\\html\\save"));
