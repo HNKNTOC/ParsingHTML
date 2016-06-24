@@ -2,7 +2,7 @@ package com.parsingHTML.logic.parsing.tag;
 
 import com.parsingHTML.logic.file.FileManager;
 import com.parsingHTML.logic.file.FileManagerDefault;
-import com.parsingHTML.logic.xml.factory.ElementFactoryJsoup;
+import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 
@@ -38,7 +38,7 @@ public abstract class ParserElementTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return ElementFactoryJsoup.createElementEmpty();
+        return ElementJsoupFactory.createElementEmpty();
     }
 
     protected void checkName(final String tagName){

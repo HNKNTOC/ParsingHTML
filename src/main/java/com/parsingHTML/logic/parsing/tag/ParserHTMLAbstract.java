@@ -2,7 +2,7 @@ package com.parsingHTML.logic.parsing.tag;
 
 
 import com.parsingHTML.logic.parsing.Parser;
-import com.parsingHTML.logic.xml.factory.ElementFactoryJsoup;
+import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
 import com.parsingHTML.logic.xml.factory.XMLFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -20,7 +20,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * Создание ParserHTMLAbstract.
      */
     public ParserHTMLAbstract() {
-        this(new ElementFactoryJsoup());
+        this(new ElementJsoupFactory());
     }
 
     /**

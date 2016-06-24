@@ -6,12 +6,11 @@ import com.parsingHTML.logic.loader.LoaderHTML;
 import com.parsingHTML.logic.loader.LoaderHTMLDefault;
 import com.parsingHTML.logic.parsing.tag.daytime.ParserWeekTime;
 import com.parsingHTML.logic.parsing.tag.grouplesson.ParserGroupLesson;
-import com.parsingHTML.logic.xml.factory.ElementFactoryJsoup;
+import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
 import com.parsingHTML.logic.xml.factory.XMLFactory;
 import org.jsoup.Jsoup;
 import org.jsoup.helper.W3CDom;
 import org.jsoup.nodes.Element;
-import org.jsoup.parser.Tag;
 import org.w3c.dom.Document;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -26,7 +25,7 @@ import java.io.IOException;
  * Created by Nikita on 03.05.2016.
  */
 public class Main {
-    private static XMLFactory XMLFactory = new ElementFactoryJsoup();
+    private static XMLFactory XMLFactory = new ElementJsoupFactory();
     private static final String path = "src\\main\\resources\\out";
     private static final String nameOUTFile = "output.xml";
 

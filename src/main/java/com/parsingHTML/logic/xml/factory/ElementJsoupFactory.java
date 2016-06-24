@@ -10,8 +10,8 @@ import java.util.Date;
 /**
  * Фабрика для Jsoup Element.
  */
-public class ElementFactoryJsoup implements XMLFactory {
-    private static final Logger LOGGER = LogManager.getLogger(ElementFactoryJsoup.class);
+public class ElementJsoupFactory implements XMLFactory {
+    private static final Logger LOGGER = LogManager.getLogger(ElementJsoupFactory.class);
 
     private Element createElement(String name) {
         LOGGER.debug("createElement name = "+name);
