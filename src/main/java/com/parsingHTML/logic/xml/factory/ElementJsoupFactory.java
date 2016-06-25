@@ -13,14 +13,14 @@ import java.util.Date;
 public class ElementJsoupFactory implements XMLFactory {
     private static final Logger LOGGER = LogManager.getLogger(ElementJsoupFactory.class);
 
-    private Element createElement(String name) {
+    private static Element createElement(String name) {
         LOGGER.debug("createElement name = "+name);
         return new Element(Tag.valueOf(name), "");
     }
 
     public static Element createElementEmpty() {
         LOGGER.warn("createElementEmpty!!");
-        Element element = new Element(Tag.valueOf("ElementEmpty"), "");
+        Element element = createElement("ElementEmpty");
         element.text("This element was created instead of null!");
         return element;
     }

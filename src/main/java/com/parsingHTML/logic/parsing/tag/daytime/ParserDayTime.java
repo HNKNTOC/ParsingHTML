@@ -7,7 +7,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- * Парсит тег table в котором находятся время для каждой пары.
+ * Парсит елемент table в котором находятся время для каждой пары.
  */
 public class ParserDayTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayTime.class);
@@ -51,7 +51,8 @@ public class ParserDayTime extends ParserHTMLAbstract {
         Elements selectTimeLesson = element.select(cssSelect);
 
         Elements selectNumberLesson = element.select(cssQueryNumberLesson);
-        for (int i = 0; i <7; i++) {
+
+        for (int i = 0; i <selectNumberLesson.size(); i++) {
             selectTimeLesson.get(i).appendChild(selectNumberLesson.get(i));
         }
 
