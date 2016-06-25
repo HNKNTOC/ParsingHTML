@@ -29,11 +29,7 @@ public class ParserWeekTimeTest extends ParserElementTest {
 
         Elements dayTimes = elementResults.select("dayTime");
         int sizeDayTimes = 6;
-        assertTrue("ElementResults does not contain " + sizeDayTimes + " dayTime. dayTime = " + dayTimes.size(), dayTimes.size() == sizeDayTimes);
-
-        /*Elements lessonTimes = elementResults.select("lessonTime");
-        int sizeLessonTimes = 14;
-        assertTrue("In elementResults should be " + sizeLessonTimes + " lessonTime. lessonTime = " + lessonTimes.size(),
-                lessonTimes.size() == sizeLessonTimes);*/
+        assertTrue("ElementResults does not contain " + sizeDayTimes + " dayTime. dayTime size " + dayTimes.size(),
+                dayTimes.size() == sizeDayTimes);
     }
 }

@@ -37,8 +37,8 @@ public abstract class ParserElementTest {
             return Jsoup.parse(fileManager.getFile(fileName), null);
         } catch (IOException e) {
             e.printStackTrace();
+            return ElementJsoupFactory.createElementEmpty();
         }
-        return ElementJsoupFactory.createElementEmpty();
     }
 
     protected void checkName(final String tagName){
