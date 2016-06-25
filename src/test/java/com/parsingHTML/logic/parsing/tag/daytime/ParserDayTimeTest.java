@@ -22,10 +22,8 @@ public class ParserDayTimeTest extends ParserElementTest {
     @Override
     public void checkElementResults() {
         checkName(ElementName.WEEK_TIME);
-
-        Elements lessonTimes = elementResults.select("lessonTime");
-        int sizeLessonTimes = 14;
-        assertTrue("ElementResults does not contain " + sizeLessonTimes + " lessonTime. lessonTime size = " + lessonTimes.size(),
-                lessonTimes.size() == sizeLessonTimes);
+        checkElementSize("lessonTime",14);
+        checkElementSize("dayTime",6);
     }
+
 }
