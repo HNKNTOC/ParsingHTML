@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Реализация FileManager.
@@ -85,12 +86,19 @@ public class FileManagerDefault implements FileManager {
 
     @Override
     public File getFile(String name) {
-        return new File(fileDirectory.getAbsolutePath()+"\\"+name);
+        File file = new File(fileDirectory.getAbsolutePath() + "\\" + name);
+        if (!file.exists()) {
+            LOGGER.warn("Failed get file "+file.getAbsolutePath());
+        }
+        LOGGER.debug("getFile return "+file);
+        return file;
     }
 
     @Override
     public File[] getAllFile() {
-        return fileDirectory.listFiles();
+        File[] files = fileDirectory.listFiles();
+        LOGGER.debug("getAllFile return "+ Arrays.toString(files));
+        return files;
     }
 
     @Override
