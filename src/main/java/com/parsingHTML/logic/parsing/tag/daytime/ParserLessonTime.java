@@ -56,7 +56,7 @@ public class ParserLessonTime extends ParserHTMLAbstract {
             return false;
         }
         if(n_para.text().length()!=6){
-            LOGGER.warn("n_para not form \"* para\"");
+            LOGGER.warn("n_para not form text \"* para\"");
             return false;
         }
         return true;

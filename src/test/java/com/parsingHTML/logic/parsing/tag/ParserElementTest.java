@@ -12,20 +12,21 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Класс нужен для упрошения тестирования наследников ParserHTMLAbstract.
+ * Класс нужен для упрощения тестирования наследников ParserHTMLAbstract.
  * Использование:
  * 1) Передать в конструктор тестируемы парсер;
  * 2) Передать в конструктор имя тестового файла который будем парсить;
- * 3) Реалезовать метод check();
+ * 3) Реализовать метод check();
  */
 public abstract class ParserElementTest {
     private static final Logger LOGGER = LogManager.getLogger(ParserElementTest.class);
     private final static FileManager fileManager = new FileManagerDefault("src\\test\\resources\\html");
     /**
-     * Елемент который был получен вовремя парсинга.
+     * Элемент который был получен вовремя парсинга.
      */
     protected final Element elementResults;
 
@@ -48,22 +49,42 @@ public abstract class ParserElementTest {
         }
     }
 
-    protected void checkName(final String tagName){
-        final String tagNameResults = elementResults.tagName();
+    /**
+     * Проверка имени у элемента.
+     * @param element Элемент имя которого нужно проверить.
+     * @param tagName Имя которое должно быть у элемента.
+     */
+    protected void checkName(Element element,final String tagName){
+        final String tagNameResults = element.tagName();
         assertTrue("Tag Name not equal "+tagName+". Tag Name = "+tagNameResults,
                 tagName.equals(tagNameResults));
     }
 
     /**
-     * Проверка количества элементов в elementResults.
+     * Проверка количества элементов в элементе.
+     * @param element Элемент в котором нужно проверить.
      * @param tagName Имя элемента.
-     * @param elementSize Колличество которое должно быть в elementResults.
+     * @param elementSize Количество которое должно быть в elementResults.
      */
-    public void checkElementSize(final String tagName, final int elementSize){
-        Elements elements = elementResults.select(tagName);
+    public void checkElementSize(Element element,final String tagName, final int elementSize){
+        Elements elements = element.select(tagName);
         String message = String.format("ElementResults does not contain %d %s. %s size =  %d."
                 ,elementSize,tagName,tagName,elements.size());
         TestCase.assertTrue(message, elements.size() == elementSize);
+    }
+
+    /**
+     * Проверка значения атрибута.
+     *
+     * @param elementResults Элемент атрибут которого нужно проверить.
+     * @param name           Имя атрибута.
+     * @param value          Значение атрибута.
+     */
+    protected void checkElementAttribute(final Element elementResults, final String name, final String value) {
+        final String valueResult = elementResults.attr(name);
+        final String message = String.format("Value attribute %s does not equal %s.Value %s equal %s",
+                name, value, name, valueResult);
+        assertEquals(message, value, valueResult);
     }
 
     /**

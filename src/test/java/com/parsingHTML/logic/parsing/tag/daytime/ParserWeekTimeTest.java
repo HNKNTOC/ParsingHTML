@@ -24,7 +24,7 @@ public class ParserWeekTimeTest extends ParserElementTest {
     @Test
     @Override
     public void checkElementResults() {
-        checkName(ElementName.WEEK_TIME);
-        checkElementSize("dayTime",6);
+        checkName(elementResults,ElementName.WEEK_TIME);
+        checkElementSize(elementResults,"dayTime",6);
     }
 }
