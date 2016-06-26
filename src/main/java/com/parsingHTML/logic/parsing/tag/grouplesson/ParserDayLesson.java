@@ -7,7 +7,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- * Created by Nikita on 08.06.2016.
+ * Присит элемент DayLesson из html.
  */
 public class ParserDayLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayLesson.class);

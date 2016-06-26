@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
 
 /**
- * Created by Nikita on 08.06.2016.
+ * Присит элемент Lesson из html.
  */
 public class ParserLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserLesson.class);

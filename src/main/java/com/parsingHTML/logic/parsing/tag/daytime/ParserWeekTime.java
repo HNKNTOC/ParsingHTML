@@ -7,7 +7,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- * Парсит WeekTime.
+ * Присит элемент WeekTime из html.
  */
 public class ParserWeekTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserWeekTime.class);

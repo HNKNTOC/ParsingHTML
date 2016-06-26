@@ -8,7 +8,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- * Парсит елемент table в котором находятся время для каждой пары.
+ * Присит элемент DayTime из html.
  */
 public class ParserDayTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayTime.class);

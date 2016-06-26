@@ -7,7 +7,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- * Created by Nikita on 31.05.2016.
+ * Присит элемент GroupLesson из html.
  */
 public class ParserGroupLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserGroupLesson.class);
