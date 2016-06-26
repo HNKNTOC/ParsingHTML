@@ -1,5 +1,6 @@
 package com.parsingHTML.logic.parsing.tag.daytime;
 
+import com.parsingHTML.logic.parsing.DayName;
 import com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -25,15 +26,15 @@ public class ParserDayTime extends ParserHTMLAbstract {
         LOGGER.info("==== Parsing Element = " + element.tagName()+" ====");
         Element weekTime = XMLFactory.createWeekTime();
 
-        Element monday = XMLFactory.createDayTime("Понедельник");
+        Element monday = XMLFactory.createDayTime(DayName.MONDAY);
         weekTime.appendChild(monday);
         addLessonTime(element, monday, cssQueryTimeMonday);
 
-        weekTime.appendChild(XMLFactory.createDayTime("Вторник", "1"));
-        weekTime.appendChild(XMLFactory.createDayTime("Среда", "1"));
-        weekTime.appendChild(XMLFactory.createDayTime("Четверг", "1"));
-        weekTime.appendChild(XMLFactory.createDayTime("Пятница", "1"));
-        Element saturday = XMLFactory.createDayTime("Суббота");
+        weekTime.appendChild(XMLFactory.createDayTime(DayName.TUESDAY, "1"));
+        weekTime.appendChild(XMLFactory.createDayTime(DayName.WEDNESDAY, "1"));
+        weekTime.appendChild(XMLFactory.createDayTime(DayName.THURSDAY, "1"));
+        weekTime.appendChild(XMLFactory.createDayTime(DayName.FRIDAY, "1"));
+        Element saturday = XMLFactory.createDayTime(DayName.SATURDAY);
         weekTime.appendChild(saturday);
         addLessonTime(element, saturday, cssQueryTimeSaturday);
         LOGGER.debug("====== return " + weekTime);
