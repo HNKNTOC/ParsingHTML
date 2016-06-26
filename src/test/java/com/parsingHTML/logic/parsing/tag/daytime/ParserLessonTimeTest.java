@@ -9,24 +9,17 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Created by Nikita on 25.06.2016.
+ * Тестирование ParserLessonTime.
  */
 public class ParserLessonTimeTest extends ParserElementTest {
-
-
-    public ParserLessonTimeTest() {
-        super(new ParserLessonTime(), "LessonTime.html");
-    }
-
     @Test
-    @Override
-    public void checkElementResults() {
-        checkName(elementResults,ElementName.LESSON_TIME);
-        checkElementAttribute(elementResults, "number", "3");
-        checkElementAttribute(elementResults, "start1", "08:30");
-        checkElementAttribute(elementResults, "end1", "09:15");
-        checkElementAttribute(elementResults, "start2", "09:20");
-        checkElementAttribute(elementResults, "end2", "10:05");
+    public void parsing() throws Exception {
+        Element elementResults = ParserElementTest.parsingElement(new ParserLessonTime(),"LessonTime.html");
+        ParserElementTest.checkName(elementResults,ElementName.LESSON_TIME);
+        ParserElementTest.checkElementAttribute(elementResults, "number", "3");
+        ParserElementTest.checkElementAttribute(elementResults, "start1", "08:30");
+        ParserElementTest.checkElementAttribute(elementResults, "end1", "09:15");
+        ParserElementTest.checkElementAttribute(elementResults, "start2", "09:20");
+        ParserElementTest.checkElementAttribute(elementResults, "end2", "10:05");
     }
-
 }

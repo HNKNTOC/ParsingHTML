@@ -1,29 +1,20 @@
 package com.parsingHTML.logic.parsing.tag.daytime;
 
 import com.parsingHTML.logic.parsing.tag.ParserElementTest;
-import com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract;
 import com.parsingHTML.logic.xml.factory.ElementName;
-import org.jsoup.select.Elements;
+import org.jsoup.nodes.Element;
 import org.junit.Test;
-
-import static junit.framework.TestCase.assertTrue;
-import static org.junit.Assert.*;
 
 /**
  * Тестирование ParserDayTime.
  */
-public class ParserDayTimeTest extends ParserElementTest {
-
-    public ParserDayTimeTest() {
-        super(new ParserDayTime(), "DayTime.html");
-    }
+public class ParserDayTimeTest {
 
     @Test
-    @Override
-    public void checkElementResults() {
-        checkName(elementResults,ElementName.WEEK_TIME);
-        checkElementSize(elementResults,"lessonTime",14);
-        checkElementSize(elementResults,"dayTime",6);
+    public void parsing() throws Exception {
+        Element elementResults = ParserElementTest.parsingElement(new ParserDayTime(), "DayTime.html");
+        ParserElementTest.checkName(elementResults, ElementName.WEEK_TIME);
+        ParserElementTest.checkElementSize(elementResults, "lessonTime", 14);
+        ParserElementTest.checkElementSize(elementResults, "dayTime", 6);
     }
-
 }
