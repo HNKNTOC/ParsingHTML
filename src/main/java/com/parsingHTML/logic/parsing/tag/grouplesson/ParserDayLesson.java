@@ -7,31 +7,60 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- * Присит элемент DayLesson из html.
+ * Парсит элемент DayLesson из html.
  */
 public class ParserDayLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayLesson.class);
+    private final static String cssQueryNumPara = ".num_para";
+    private final static String cssQueryDay = ".day";
 
 
+    /**
+     * Из element выбирает элемент через cssQuery в cssQueryNumPara.
+     *
+     * @param element
+     * @return
+     */
     @Override
     public Element parsing(Element element) {
         LOGGER.debug("==== Parsing Element = " + element.tagName()+" ====");
-        String dayName = element.select(".day").text();
-        LOGGER.debug("select dayName = "+dayName);
 
-        Elements select = element.select(".num_para");
-        LOGGER.debug("select .num_para return "+select);
+        Element dayLesson = XMLFactory.createDayLesson(parsingDay(element));
+
+        Elements select = selectElements(element,cssQueryNumPara);
+        parsingLesson(select, dayLesson);
+        LOGGER.debug("====== return " + dayLesson);
+        return dayLesson;
+    }
+
+    /**
+     * Парсит из select Lesson с помощью ParserLesson и добавляет в dayLesson.
+     * @param select Elements из которых нужно спарсить Lesson.
+     * @param dayLesson Element в который нужно добавить Lesson.
+     */
+    private void parsingLesson(Elements select, Element dayLesson) {
         ParserLesson parserLesson = new ParserLesson();
-
-        Element dayLesson = XMLFactory.createDayLesson(dayName);
-
-        for (Element numberLesson : select) {
-            Element lesson = parserLesson.parsing(numberLesson);
+        for (Element element : select) {
+            Element lesson = parserLesson.parsing(element.parent());
             if (lesson != null) {
                 dayLesson.appendChild(lesson);
             }
         }
-        LOGGER.debug("====== return " + dayLesson);
-        return dayLesson;
+    }
+
+    /**
+     * Из element выбирает элемент через cssQuery в cssQueryDay.
+     * Получает из выбранного элемента text.
+     * @param element элемент из которого нужно спарсить день.
+     * @return Имя дня.
+     */
+    private String parsingDay(Element element) {
+        Elements select = element.select(cssQueryDay);
+        String dayName = "null";
+        if(checkElementSize(select,1)){
+            dayName = select.text();
+        }
+        LOGGER.debug("parsingDay return "+dayName);
+        return dayName;
     }
 }

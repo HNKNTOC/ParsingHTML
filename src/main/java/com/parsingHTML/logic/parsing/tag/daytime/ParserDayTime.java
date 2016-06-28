@@ -8,7 +8,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- * Присит элемент DayTime из html.
+ * Просит элемент DayTime из html.
  */
 public class ParserDayTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayTime.class);
@@ -44,12 +44,12 @@ public class ParserDayTime extends ParserHTMLAbstract {
     /**
      * Создаёт LessonTime.
      * @param element элемент из которого нужно спарсить.
-     * @param dayTime элемент в который нужно полодить полученый LessonTime.
-     * @param cssSelect запрос который получает элементы с временем.
+     * @param dayTime элемент в который нужно положить полученный LessonTime.
+     * @param cssQuery запрос который получает элементы с временем.
      */
-    private void addLessonTime(Element element, Element dayTime, String cssSelect) {
-        LOGGER.debug("addLessonTime dayTime = "+dayTime.attr("dayName")+" cssSelect = "+cssSelect);
-        Elements selectTimeLesson = element.select(cssSelect);
+    private void addLessonTime(Element element, Element dayTime, String cssQuery) {
+        LOGGER.debug("addLessonTime dayTime = "+dayTime.attr("dayName")+" cssQuery = "+cssQuery);
+        Elements selectTimeLesson = element.select(cssQuery);
 
         Elements selectNumberLesson = element.select(cssQueryNumberLesson);
 
