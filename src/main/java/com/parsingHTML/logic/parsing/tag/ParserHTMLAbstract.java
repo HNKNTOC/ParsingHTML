@@ -47,7 +47,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
                 returnElements.add(parsing);
             }
         }
-        checkElementSize(returnElements, 0);
+        LOGGER.debug("parsingElements return " + elements);
         return returnElements;
     }
 

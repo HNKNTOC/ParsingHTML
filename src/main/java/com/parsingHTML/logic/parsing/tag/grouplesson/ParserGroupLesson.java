@@ -27,6 +27,7 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
         Elements days = element.select(cssQuery);
 
         if(!checkElementSize(days,6)){
+            LOGGER.debug("====== return " + groupLesson);
             return groupLesson;
         }
 
