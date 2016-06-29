@@ -33,6 +33,18 @@
                 <lesson number="4" lessonName="Математика" audience="513н" teacher="Иванов И."/>
                 <lesson number="5" lessonName="Обшество" audience="403н" teacher="Иванов И."/>
             </dayLesson>
+            <dayLesson dayName="Вторник">
+                <lesson number="3" lessonName="Естествознание" audience="405н" teacher="Иванов И." numerator="true"/>
+                <lesson number="3" lessonName="Физика" audience="311н" teacher="Иванов И." numerator="false"/>
+                <lesson number="4" lessonName="Математика" audience="513н" teacher="Иванов И."/>
+                <lesson number="5" lessonName="Обшество" audience="403н" teacher="Иванов И."/>
+            </dayLesson>
+            <dayLesson dayName="Среда">
+                <lesson number="3" lessonName="Естествознание" audience="405н" teacher="Иванов И." numerator="true"/>
+                <lesson number="3" lessonName="Физика" audience="311н" teacher="Иванов И." numerator="false"/>
+                <lesson number="4" lessonName="Математика" audience="513н" teacher="Иванов И."/>
+                <lesson number="5" lessonName="Обшество" audience="403н" teacher="Иванов И."/>
+            </dayLesson>
         </groupLesson>
     </university>
 </schedule>

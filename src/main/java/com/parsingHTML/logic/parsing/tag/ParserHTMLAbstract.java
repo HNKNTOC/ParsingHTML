@@ -113,7 +113,8 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
             LOGGER.debug("selectElement return " + returnElement);
             return returnElement;
         }
-        LOGGER.debug("selectElement return ElementEmpty! select.size = " + select.size());
+        String message = String.format("Failed get Element. Element = %s , cssQuery = %s , index = %s", element, cssQuery, index);
+        LOGGER.warn(message);
         return ElementJsoupFactory.createElementEmpty();
     }
 

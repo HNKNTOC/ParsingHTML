@@ -7,7 +7,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- * Присит элемент GroupLesson из html.
+ * Парсит элемент GroupLesson из html.
  */
 public class ParserGroupLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserGroupLesson.class);
@@ -15,9 +15,9 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
 
 
     /**
-     * Из переданого element выбирает элементы по cssQuery который нахлдится в перемннной cssQuery.
+     * Из переданного element выбирает элементы по cssQuery который находится в переменной cssQuery.
      * Полученный элементы отправляет parsingDayLesson().
-     * @param element Элемент из которого будет парсится groupLesson.
+     * @param element Элемент из которого будет парсит groupLesson.
      * @return groupLesson.
      */
     @Override
@@ -25,11 +25,6 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
         LOGGER.debug("==== Parsing Element = " + element.tagName()+" ====");
         Element groupLesson = XMLFactory.createGroupLesson();
         Elements days = element.select(cssQuery);
-
-        if(!checkElementSize(days,6)){
-            LOGGER.debug("====== return " + groupLesson);
-            return groupLesson;
-        }
 
         parsingDayLesson(groupLesson, days);
         LOGGER.debug("====== return " + groupLesson);
@@ -39,7 +34,7 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
 
     /**
      * Полученный дни парсит через ParserDayLesson.
-     * @param groupLesson элемент в который будут добовлятся DayLesson.
+     * @param groupLesson элемент в который будут добавляться DayLesson.
      * @param days дни который нужно спарсить.
      */
     private void parsingDayLesson(Element groupLesson, Elements days) {

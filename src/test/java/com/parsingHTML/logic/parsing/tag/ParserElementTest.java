@@ -80,7 +80,7 @@ public abstract class ParserElementTest {
      */
     public static void checkElementAttribute(final Element elementResults, final String name, final String value) {
         final String valueResult = elementResults.attr(name);
-        final String message = String.format("Value attribute %s does not equal %s.Value %s equal %s",
+        final String message = String.format("Value attribute %s does not equal %s.Value %s = %s",
                 name, value, name, valueResult);
         assertEquals(message, value, valueResult);
     }

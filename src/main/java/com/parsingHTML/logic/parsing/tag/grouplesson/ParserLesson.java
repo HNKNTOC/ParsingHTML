@@ -90,8 +90,11 @@ public class ParserLesson extends ParserHTMLAbstract {
         String text = element.text();
         LOGGER.debug("parsingNumber txt = " + text);
         if (text.length() != 1) {
-            return text.split(" ")[0];
+            String number = text.split(" ")[0];
+            LOGGER.debug("parsingNumber return " + number);
+            return number;
         }
-        return text;
+        LOGGER.warn("parsingNumber failed! return null");
+        return "null";
     }
 }
