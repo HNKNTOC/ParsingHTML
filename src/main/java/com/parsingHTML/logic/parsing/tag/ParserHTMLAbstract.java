@@ -82,23 +82,6 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
     }
 
     /**
-     * cssQuery получает элементы и возвращает их.
-     *
-     * @param element  Element из которому получим Elements.
-     * @param cssQuery cssQuery который нужно использовать.
-     * @return Elements полученные от cssQuery.
-     */
-    public Elements selectElements(Element element, String cssQuery) {
-        Elements select = element.select(cssQuery);
-        if (!checkNotElementSize(select, 0)) {
-            String message = String.format("cssQuery %s return 0 element!", cssQuery);
-            LOGGER.warn(message);
-        }
-        return select;
-    }
-
-
-    /**
      * cssQuery получает элементы и возвращает один из них.
      *
      * @param element  Element из которому получим Elements.
@@ -116,6 +99,23 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
         String message = String.format("Failed get Element. Element = %s , cssQuery = %s , index = %s", element, cssQuery, index);
         LOGGER.warn(message);
         return ElementJsoupFactory.createElementEmpty();
+    }
+
+
+    /**
+     * cssQuery получает элементы и возвращает их.
+     *
+     * @param element  Element из которому получим Elements.
+     * @param cssQuery cssQuery который нужно использовать.
+     * @return Elements полученные от cssQuery.
+     */
+    public Elements selectElements(Element element, String cssQuery) {
+        Elements select = element.select(cssQuery);
+        if (!checkNotElementSize(select, 0)) {
+            String message = String.format("cssQuery %s return 0 element!", cssQuery);
+            LOGGER.warn(message);
+        }
+        return select;
     }
 
     /**

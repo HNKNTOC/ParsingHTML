@@ -20,10 +20,17 @@ import static org.junit.Assert.assertTrue;
 public class ParserHTMLAbstractTest {
     private static final Logger LOGGER = LogManager.getLogger(ParserHTMLAbstractTest.class);
     private ParserHTMLAbstract parserHTMLAbstract;
+    private Elements elements = new Elements();
+    private final int size = new Random().nextInt(20);
 
     @Before
     public void setUp() throws Exception {
         parserHTMLAbstract = new ParserHTMLAbstractDummy();
+        LOGGER.debug("size = " + size);
+        for (int i = 0; i < size; i++) {
+            elements.add(ElementJsoupFactory.createElementEmpty());
+        }
+
     }
 
     @Test
@@ -33,13 +40,6 @@ public class ParserHTMLAbstractTest {
 
     @Test
     public void checkElementSize() throws Exception {
-        LOGGER.debug("checkElementSize");
-        final int size = new Random().nextInt(20);
-        LOGGER.debug("size = "+size);
-        Elements elements = new Elements();
-        for (int i = 0; i < size; i++) {
-            elements.add(ElementJsoupFactory.createElementEmpty());
-        }
         assertTrue(parserHTMLAbstract.checkElementSize(elements,size));
     }
 
@@ -58,10 +58,16 @@ public class ParserHTMLAbstractTest {
         assertFalse(parserHTMLAbstract.checkNotElementSize(new Elements(),0));
     }
 
+    @Test
+    public void parsingElements() throws Exception {
+        Elements results = parserHTMLAbstract.parsingElements(elements);
+        assertTrue(results.size() == size);
+    }
+
     private class ParserHTMLAbstractDummy extends ParserHTMLAbstract {
         @Override
         public Element parsing(Element element) {
-            return null;
+            return ElementJsoupFactory.createElementEmpty();
         }
     }
 
