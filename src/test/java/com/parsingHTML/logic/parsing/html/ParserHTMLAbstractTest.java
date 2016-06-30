@@ -1,4 +1,4 @@
-package com.parsingHTML.logic.parsing.tag;
+package com.parsingHTML.logic.parsing.html;
 
 import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
 import org.apache.log4j.LogManager;

@@ -1,7 +1,7 @@
-package com.parsingHTML.logic.parsing.tag.daytime;
+package com.parsingHTML.logic.parsing.html.daytime;
 
 import com.parsingHTML.logic.parsing.DayName;
-import com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract;
+import com.parsingHTML.logic.parsing.html.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;

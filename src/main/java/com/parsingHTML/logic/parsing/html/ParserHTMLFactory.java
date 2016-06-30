@@ -1,11 +1,11 @@
-package com.parsingHTML.logic.parsing.tag;
+package com.parsingHTML.logic.parsing.html;
 
-import com.parsingHTML.logic.parsing.tag.daytime.ParserDayTime;
-import com.parsingHTML.logic.parsing.tag.daytime.ParserLessonTime;
-import com.parsingHTML.logic.parsing.tag.daytime.ParserWeekTime;
-import com.parsingHTML.logic.parsing.tag.grouplesson.ParserDayLesson;
-import com.parsingHTML.logic.parsing.tag.grouplesson.ParserGroupLesson;
-import com.parsingHTML.logic.parsing.tag.grouplesson.ParserLesson;
+import com.parsingHTML.logic.parsing.html.daytime.ParserDayTime;
+import com.parsingHTML.logic.parsing.html.daytime.ParserLessonTime;
+import com.parsingHTML.logic.parsing.html.daytime.ParserWeekTime;
+import com.parsingHTML.logic.parsing.html.grouplesson.ParserDayLesson;
+import com.parsingHTML.logic.parsing.html.grouplesson.ParserGroupLesson;
+import com.parsingHTML.logic.parsing.html.grouplesson.ParserLesson;
 
 /**
  * Фабрика создающая Parser унаследовванный от ParserHTMLAbstract.

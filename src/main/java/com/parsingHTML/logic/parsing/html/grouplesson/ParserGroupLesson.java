@@ -1,6 +1,6 @@
-package com.parsingHTML.logic.parsing.tag.grouplesson;
+package com.parsingHTML.logic.parsing.html.grouplesson;
 
-import com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract;
+import com.parsingHTML.logic.parsing.html.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;

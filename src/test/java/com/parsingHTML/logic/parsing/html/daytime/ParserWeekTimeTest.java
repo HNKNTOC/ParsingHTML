@@ -1,6 +1,6 @@
-package com.parsingHTML.logic.parsing.tag.daytime;
+package com.parsingHTML.logic.parsing.html.daytime;
 
-import com.parsingHTML.logic.parsing.tag.ParserElementTest;
+import com.parsingHTML.logic.parsing.html.ParserElementTest;
 import com.parsingHTML.logic.xml.ElementName;
 import org.jsoup.nodes.Element;
 import org.junit.Test;

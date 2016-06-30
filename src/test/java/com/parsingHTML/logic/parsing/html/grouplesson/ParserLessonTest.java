@@ -1,6 +1,6 @@
-package com.parsingHTML.logic.parsing.tag.grouplesson;
+package com.parsingHTML.logic.parsing.html.grouplesson;
 
-import com.parsingHTML.logic.parsing.tag.ParserElementTest;
+import com.parsingHTML.logic.parsing.html.ParserElementTest;
 import org.jsoup.nodes.Element;
 import org.junit.Test;
 
