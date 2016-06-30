@@ -19,10 +19,8 @@ public class ParserLessonTime extends ParserHTMLAbstract {
     public Element parsing(Element element) {
         LOGGER.info("======parsing Tag name = "+element.nodeName()+"======");
 
-        if(!check(element.children())) return null;
+        Elements n_para = selectElements(element, cssQueryNumberLesson);
 
-        Elements n_para = element.select(cssQueryNumberLesson);
-        LOGGER.debug("select n_para return "+n_para);
         if (!checkNumber(n_para)) return null;
 
         Elements elementsTime = element.select(cssQueryTimeLesson);
@@ -69,14 +67,6 @@ public class ParserLessonTime extends ParserHTMLAbstract {
             return new String[]{"","","",""};
         }
         return split;
-    }
-
-    private boolean check(Elements elements) {
-        if(elements.size()==0) {
-            LOGGER.warn("Wrong structure elements elements.size = "+elements.size());
-            return false;
-        }
-        return true;
     }
 
 }

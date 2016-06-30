@@ -18,8 +18,7 @@ public class ParserWeekTime extends ParserHTMLAbstract {
     public Element parsing(Element element) {
         LOGGER.debug("==== Parsing Element = " + element.tagName()+" ====");
 
-        Elements select = element.select(cssQueryTableTime);
-        LOGGER.debug("Find "+cssQueryTableTime+"size = "+select.size());
+        Elements select = selectElements(element, cssQueryTableTime);
 
         Element weekTime = parseDayTime(select);
         LOGGER.debug("====== return " + weekTime);
@@ -41,10 +40,6 @@ public class ParserWeekTime extends ParserHTMLAbstract {
     private boolean check(Elements elements) {
         if(elements.size() !=1) {
             LOGGER.warn("Wrong structure elements.size ="+elements.size());
-            return false;
-        }
-        if(!elements.get(0).nodeName().equals("table")) {
-            LOGGER.warn("Wrong structure elements nodeName = "+elements.get(0).nodeName());
             return false;
         }
         return true;

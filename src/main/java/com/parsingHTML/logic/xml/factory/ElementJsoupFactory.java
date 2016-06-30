@@ -13,7 +13,7 @@ import java.util.Date;
 public class ElementJsoupFactory implements XMLFactory {
     private static final Logger LOGGER = LogManager.getLogger(ElementJsoupFactory.class);
 
-    private static Element createElement(String name) {
+    public static Element createElement(String name) {
         LOGGER.debug("createElement name = "+name);
         return new Element(Tag.valueOf(name), "");
     }
