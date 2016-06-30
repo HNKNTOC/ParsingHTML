@@ -33,13 +33,6 @@ public class Main {
         start();
     }
 
-    private static void transformation(Document documentDom, Element element) {
-        org.jsoup.nodes.Document document = new org.jsoup.nodes.Document("");
-        W3CDom w3CDom = new W3CDom();
-        document.appendChild(element);
-        w3CDom.convert(document, documentDom);
-    }
-
     private static void start() throws IOException, TransformerException {
 
         org.jsoup.nodes.Document parse0 = Jsoup.parse(getFile("rasp.bukep.ru.html"), null);
@@ -71,6 +64,13 @@ public class Main {
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
         transformer.setOutputProperty("{http://html.apache.org/xslt}indent-amount", "2");
         transformer.transform(input, output);
+    }
+
+    private static void transformation(Document documentDom, Element element) {
+        org.jsoup.nodes.Document document = new org.jsoup.nodes.Document("");
+        W3CDom w3CDom = new W3CDom();
+        document.appendChild(element);
+        w3CDom.convert(document, documentDom);
     }
 
     private static Document createDOC() {

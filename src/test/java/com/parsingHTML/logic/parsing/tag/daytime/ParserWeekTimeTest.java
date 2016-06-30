@@ -1,13 +1,9 @@
 package com.parsingHTML.logic.parsing.tag.daytime;
 
 import com.parsingHTML.logic.parsing.tag.ParserElementTest;
-import com.parsingHTML.logic.xml.factory.ElementName;
+import com.parsingHTML.logic.xml.ElementName;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-import org.junit.Before;
 import org.junit.Test;
-
-import static junit.framework.TestCase.assertTrue;
 
 /**
  * Тестирует реализацию ParserWeekTime.
