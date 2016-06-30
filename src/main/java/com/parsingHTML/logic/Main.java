@@ -4,8 +4,8 @@ package com.parsingHTML.logic;
 import com.parsingHTML.logic.file.FileManagerDefault;
 import com.parsingHTML.logic.loader.LoaderHTML;
 import com.parsingHTML.logic.loader.LoaderHTMLDefault;
-import com.parsingHTML.logic.parsing.tag.daytime.ParserWeekTime;
-import com.parsingHTML.logic.parsing.tag.grouplesson.ParserGroupLesson;
+import com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract;
+import com.parsingHTML.logic.parsing.tag.ParserHTMLFactory;
 import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
 import com.parsingHTML.logic.xml.factory.XMLFactory;
 import org.jsoup.Jsoup;
@@ -47,9 +47,11 @@ public class Main {
         Element schedule = XMLFactory.createSchedule();
         Element root = createRoot(schedule);
 
-        ParserWeekTime parserWeekTime = new ParserWeekTime();
+        ParserHTMLFactory parserFactory = new ParserHTMLFactory();
+
+        ParserHTMLAbstract parserWeekTime = parserFactory.createParserWeekTime();
         Element weekTime = parserWeekTime.parsing(parse0);
-        ParserGroupLesson parserGroupLesson = new ParserGroupLesson();
+        ParserHTMLAbstract parserGroupLesson = parserFactory.createParserGroupLesson();
         Element groupLesson = parserGroupLesson.parsing(parse1);
 
         root.appendChild(weekTime);

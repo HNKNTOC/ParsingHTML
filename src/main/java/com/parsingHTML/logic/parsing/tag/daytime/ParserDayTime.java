@@ -61,7 +61,7 @@ public class ParserDayTime extends ParserHTMLAbstract {
             return;
         }
 
-        ParserLessonTime parserLessonTime = new ParserLessonTime();
+        ParserHTMLAbstract parserLessonTime = parserFactory.createParserLessonTime();
         for (Element tr : selectTimeLesson) {
             Element lessonTime = parserLessonTime.parsing(tr);
             if (lessonTime != null) {

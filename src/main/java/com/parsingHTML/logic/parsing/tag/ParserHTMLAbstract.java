@@ -16,21 +16,24 @@ import org.jsoup.select.Elements;
 public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
     private static final Logger LOGGER = LogManager.getLogger(ParserHTMLAbstract.class);
     protected final XMLFactory XMLFactory;
+    protected final ParserHTMLFactory parserFactory;
 
     /**
      * Создание ParserHTMLAbstract.
      */
     public ParserHTMLAbstract() {
-        this(new ElementJsoupFactory());
+        this(new ElementJsoupFactory(), new ParserHTMLFactory());
     }
 
     /**
      * Создание ParserHTMLAbstract.
      *
      * @param XMLFactory Фабрика создающая XML элементы.
+     * @param parserHTMLFactory
      */
-    public ParserHTMLAbstract(XMLFactory XMLFactory) {
+    public ParserHTMLAbstract(XMLFactory XMLFactory, ParserHTMLFactory parserHTMLFactory) {
         this.XMLFactory = XMLFactory;
+        this.parserFactory = parserHTMLFactory;
     }
 
     /**

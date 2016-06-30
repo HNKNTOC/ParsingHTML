@@ -38,7 +38,7 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
      * @param days дни который нужно спарсить.
      */
     private void parsingDayLesson(Element groupLesson, Elements days) {
-        ParserDayLesson parserDayLesson = new ParserDayLesson();
+        ParserHTMLAbstract parserDayLesson = parserFactory.createParserDayLesson();
         Elements elements = parserDayLesson.parsingElements(days);
         for (Element element : elements) {
             groupLesson.appendChild(element);

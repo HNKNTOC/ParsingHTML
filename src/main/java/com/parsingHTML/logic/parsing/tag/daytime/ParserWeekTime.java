@@ -29,7 +29,7 @@ public class ParserWeekTime extends ParserHTMLAbstract {
     private Element parseDayTime(Elements select) {
         if(check(select)){
             LOGGER.debug("parseDayTime");
-            ParserDayTime parserDayTime = new ParserDayTime();
+            ParserHTMLAbstract parserDayTime = parserFactory.createParserDayTime();
             Element parsing = parserDayTime.parsing(select.get(0));
             if (parsing != null) {
                 return parsing;

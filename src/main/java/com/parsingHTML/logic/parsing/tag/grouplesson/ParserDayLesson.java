@@ -39,7 +39,7 @@ public class ParserDayLesson extends ParserHTMLAbstract {
      * @param dayLesson Element в который нужно добавить Lesson.
      */
     private void parsingLesson(Elements select, Element dayLesson) {
-        ParserLesson parserLesson = new ParserLesson();
+        ParserHTMLAbstract parserLesson = parserFactory.createParserLesson();
         for (Element element : select) {
             Element lesson = parserLesson.parsing(element.parent());
             if (lesson != null) {
