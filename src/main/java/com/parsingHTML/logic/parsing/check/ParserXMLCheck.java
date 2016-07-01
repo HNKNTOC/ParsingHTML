@@ -22,11 +22,11 @@ public class ParserXMLCheck {
 
 
     /**
-     * Парсит элемент из передоного файла с помошью передоного парсера.
+     * Парсит элемент из переданного файла с помощью переданного парсера.
      *
-     * @param parserHTMLAbstract Парсер который будет раприть елемент.
+     * @param parserHTMLAbstract Парсер который будет парсить элемент.
      * @param fileName           Имя тестового файла который будем парсить.
-     * @return Спарсенный элемент.
+     * @return полученный элемент.
      */
     public static Element parsingElement(ParserHTMLAbstract parserHTMLAbstract, String fileName) {
         LOGGER.debug("parsingElement " + parserHTMLAbstract + " fileName = " + fileName);
@@ -65,6 +65,7 @@ public class ParserXMLCheck {
      * @param element     Элемент в котором нужно проверить.
      * @param tagName     Имя элемента.
      * @param elementSize Количество которое должно быть в elementResults.
+     * @return false если в element не совпадает количество element с tagName.
      */
     public static boolean checkElementSize(Element element, final String tagName, final int elementSize) {
         Elements elements = element.select(tagName);
@@ -83,6 +84,7 @@ public class ParserXMLCheck {
      * @param elementResults Элемент атрибут которого нужно проверить.
      * @param name           Имя атрибута.
      * @param value          Значение атрибута.
+     * @return false если значения атрибута не совпало.
      */
     public static boolean checkElementAttribute(final Element elementResults, final String name, final String value) {
         final String valueResult = elementResults.attr(name);
