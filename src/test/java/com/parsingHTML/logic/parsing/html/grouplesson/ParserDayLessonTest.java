@@ -1,6 +1,6 @@
 package com.parsingHTML.logic.parsing.html.grouplesson;
 
-import com.parsingHTML.logic.parsing.html.ParserElementTest;
+import com.parsingHTML.logic.parsing.check.ParserXMLCheck;
 import org.jsoup.nodes.Element;
 import org.junit.Test;
 
@@ -10,9 +10,9 @@ import org.junit.Test;
 public class ParserDayLessonTest {
     @Test
     public void parsing() throws Exception {
-        Element elementResults = ParserElementTest.parsingElement(new ParserDayLesson(),"DayLesson.html");
-        ParserElementTest.checkElementSize(elementResults,"lesson",5);
-        ParserElementTest.checkElementAttribute(elementResults,"dayName","Понедельник");
+        Element elementResults = ParserXMLCheck.parsingElement(new ParserDayLesson(), "DayLesson.html");
+        ParserXMLCheck.checkElementSize(elementResults, "lesson", 5);
+        ParserXMLCheck.checkElementAttribute(elementResults, "dayName", "Понедельник");
     }
 
 }

@@ -1,5 +1,6 @@
 package com.parsingHTML.logic.parsing.html;
 
+import com.parsingHTML.logic.parsing.check.ParserXMLCheck;
 import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -63,6 +64,30 @@ public class ParserHTMLAbstractTest {
         Elements results = parserHTMLAbstract.parsingElements(elements);
         assertTrue(results.size() == size);
     }
+
+    @Test
+    public void selectElement() throws Exception {
+        Element test1 = ElementJsoupFactory.createElement("test1");
+        Element test2 = ElementJsoupFactory.createElement("test2");
+        test2.attr("id", "20");
+        test1.appendChild(test2);
+        Element element = parserHTMLAbstract.selectElement(test1, "[id=20]", 0);
+        ParserXMLCheck.checkName(element, "test2");
+    }
+
+    @Test
+    public void selectElements() throws Exception {
+        Element test1 = ElementJsoupFactory.createElement("test1");
+        Element test2 = ElementJsoupFactory.createElement("test");
+        Element test3 = ElementJsoupFactory.createElement("test");
+        test2.attr("id", "20");
+        test3.attr("id", "20");
+        test1.appendChild(test2);
+        test1.appendChild(test3);
+        Elements element = parserHTMLAbstract.selectElements(test1, "[id=20]");
+        assertTrue(element.size() == 2);
+    }
+
 
     private class ParserHTMLAbstractDummy extends ParserHTMLAbstract {
         @Override
