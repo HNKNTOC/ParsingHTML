@@ -19,7 +19,7 @@ public class ParserLesson extends ParserHTMLAbstract {
 
     @Override
     public Element parsing(Element element) {
-        LOGGER.info("==== Parsing Element = " + element.tagName() + " ====");
+        LOGGER.info("==== Parsing Element = " + element.nodeName() + " ====");
 
         String number = parsingNumber(element);
         String numerator = parsingNumerator(element);

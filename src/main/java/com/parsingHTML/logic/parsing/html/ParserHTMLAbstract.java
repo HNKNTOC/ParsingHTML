@@ -29,7 +29,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * Создание ParserHTMLAbstract.
      *
      * @param XMLFactory Фабрика создающая XML элементы.
-     * @param parserHTMLFactory
+     * @param parserHTMLFactory фабрика создающая парсеры.
      */
     public ParserHTMLAbstract(XMLFactory XMLFactory, ParserHTMLFactory parserHTMLFactory) {
         this.XMLFactory = XMLFactory;
@@ -61,7 +61,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * @param size     размер который должен быть у Elements.
      * @return true если размеры Elements.size() и size совпадают.
      */
-    public boolean checkElementSize(Elements elements, int size) {
+    protected boolean checkElementSize(Elements elements, int size) {
         if (elements.size() != size) {
             LOGGER.warn("checkElementSize Element size not equals " + size + " Element size = " + elements.size());
             return false;
@@ -76,7 +76,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * @param size     размер который должен быть у Elements.
      * @return true если размеры Elements.size() и size не совпадают.
      */
-    public boolean checkNotElementSize(Elements elements, int size) {
+    protected boolean checkNotElementSize(Elements elements, int size) {
         if (elements.size() == size) {
             LOGGER.warn("checkNotElementSize Element size equals " + size);
             return false;
@@ -92,7 +92,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * @param index    Индекс Элемента который нужно вернуть.
      * @return Element полученные от cssQuery.
      */
-    public Element selectElement(Element element, String cssQuery, int index) {
+    protected Element selectElement(Element element, String cssQuery, int index) {
         Elements select = element.select(cssQuery);
         if (select.size() >= index + 1) {
             Element returnElement = select.get(index);
@@ -112,10 +112,10 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * @param cssQuery cssQuery который нужно использовать.
      * @return Elements полученные от cssQuery.
      */
-    public Elements selectElements(Element element, String cssQuery) {
+    protected Elements selectElements(Element element, String cssQuery) {
         Elements select = element.select(cssQuery);
-        if (!checkNotElementSize(select, 0)) {
-            String message = String.format("cssQuery %s return 0 element!", cssQuery);
+        if (checkElementSize(select, 0)) {
+            String message = String.format("cssQuery \"%s\" return 0 element!", cssQuery);
             LOGGER.warn(message);
         }
         return select;

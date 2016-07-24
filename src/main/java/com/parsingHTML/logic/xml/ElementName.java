@@ -5,7 +5,7 @@ package com.parsingHTML.logic.xml;
  */
 public final class ElementName {
     public static final String SCHEDULE = "schedule";
-    public static final String UPDATE_TIME = "updatetime";
+    public static final String UPDATE_TIME = "parsingtime";
     public static final String UNIVERSITY = "university";
     public static final String WEEK_TIME = "weektime";
     public static final String DAY_TIME = "daytime";
@@ -16,7 +16,7 @@ public final class ElementName {
 
 
     /*public static final String SCHEDULE = "schedule";
-    public static final String UPDATE_TIME = "updateTime";
+    public static final String UPDATE_TIME = "parsingTime";
     public static final String UNIVERSITY = "university";
     public static final String WEEK_TIME = "weekTime";
     public static final String DAY_TIME = "dayTime";

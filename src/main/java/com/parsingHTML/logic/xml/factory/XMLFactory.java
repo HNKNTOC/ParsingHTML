@@ -24,7 +24,7 @@ public interface XMLFactory {
 
     Element createSchedule();
 
-    Element createUpdateTime();
+    Element createParsingTime();
 
     Element createUniversity();
 }

@@ -23,7 +23,7 @@ public class ParserDayTime extends ParserHTMLAbstract {
 
     @Override
     public Element parsing(Element element) {
-        LOGGER.info("==== Parsing Element = " + element.tagName()+" ====");
+        LOGGER.info("==== Parsing Element = " + element.nodeName() + " ====");
         Element weekTime = XMLFactory.createWeekTime();
 
         Element monday = XMLFactory.createDayTime(DayName.MONDAY);

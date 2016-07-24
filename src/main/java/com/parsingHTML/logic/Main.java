@@ -4,11 +4,8 @@ package com.parsingHTML.logic;
 import com.parsingHTML.logic.file.FileManagerDefault;
 import com.parsingHTML.logic.loader.LoaderHTML;
 import com.parsingHTML.logic.loader.LoaderHTMLDefault;
-import com.parsingHTML.logic.parsing.html.ParserHTMLAbstract;
-import com.parsingHTML.logic.parsing.html.ParserHTMLFactory;
 import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
 import com.parsingHTML.logic.xml.factory.XMLFactory;
-import org.jsoup.Jsoup;
 import org.jsoup.helper.W3CDom;
 import org.jsoup.nodes.Element;
 import org.w3c.dom.Document;
@@ -28,6 +25,7 @@ public class Main {
     private static XMLFactory XMLFactory = new ElementJsoupFactory();
     private static final String path = "src\\main\\resources\\out";
     private static final String nameOUTFile = "output.xml";
+    private static String charsetName = "UTF-8";
 
     public static void main(String[] args) throws TransformerException, ParserConfigurationException, IOException {
         start();
@@ -35,25 +33,13 @@ public class Main {
 
     private static void start() throws IOException, TransformerException {
 
-        org.jsoup.nodes.Document parse0 = Jsoup.parse(getFile("rasp.bukep.ru.html"), null);
-        org.jsoup.nodes.Document parse1 = Jsoup.parse(getFile("rasp.bukep.ru2.html"), null);
-        Element schedule = XMLFactory.createSchedule();
-        Element root = createRoot(schedule);
+        File timeContent = getFile("rasp.bukep.ru.html");
+        File scheduleContent = getFile("rasp.bukep.ru2.html");
 
-        ParserHTMLFactory parserFactory = new ParserHTMLFactory();
+        Element schedule = ParsingHTML.parsingSchedule(timeContent, scheduleContent, charsetName);
 
-        ParserHTMLAbstract parserWeekTime = parserFactory.createParserWeekTime();
-        Element weekTime = parserWeekTime.parsing(parse0);
-        ParserHTMLAbstract parserGroupLesson = parserFactory.createParserGroupLesson();
-        Element groupLesson = parserGroupLesson.parsing(parse1);
 
-        root.appendChild(weekTime);
-        root.appendChild(groupLesson);
-
-        Document doc = createDOC();
-        transformation(doc, schedule);
-
-        saveOut(doc);
+        saveOut(ParsingHTML.transformation(schedule));
     }
 
     private static void saveOut(Document doc) throws TransformerException {
@@ -83,7 +69,7 @@ public class Main {
     }
 
     private static Element createRoot(Element schedule) {
-        Element updateTime = XMLFactory.createUpdateTime();
+        Element updateTime = XMLFactory.createParsingTime();
         schedule.appendChild(updateTime);
         Element university = XMLFactory.createUniversity();
         schedule.appendChild(university);

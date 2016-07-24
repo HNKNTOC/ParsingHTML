@@ -22,9 +22,9 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
      */
     @Override
     public Element parsing(Element element) {
-        LOGGER.debug("==== Parsing Element = " + element.tagName()+" ====");
+        LOGGER.debug("==== Parsing Element = " + element.nodeName() + " ====");
         Element groupLesson = XMLFactory.createGroupLesson();
-        Elements days = element.select(cssQuery);
+        Elements days = selectElements(element, cssQuery);
 
         parsingDayLesson(groupLesson, days);
         LOGGER.debug("====== return " + groupLesson);

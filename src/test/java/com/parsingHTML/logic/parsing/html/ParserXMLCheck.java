@@ -1,8 +1,7 @@
-package com.parsingHTML.logic.parsing.check;
+package com.parsingHTML.logic.parsing.html;
 
 import com.parsingHTML.logic.file.FileManager;
 import com.parsingHTML.logic.file.FileManagerDefault;
-import com.parsingHTML.logic.parsing.html.ParserHTMLAbstract;
 import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -52,11 +51,11 @@ public class ParserXMLCheck {
      */
     public static boolean checkName(Element element, final String tagName) {
         final String tagNameResults = element.tagName();
-        boolean equals = tagName.equals(tagNameResults);
-        if (!equals) {
+        if (tagName.equals(tagNameResults)) {
             LOGGER.warn(String.format("Tag Name not equal %s . Tag Name = %s", tagName, tagNameResults));
+            return false;
         }
-        return equals;
+        return true;
     }
 
     /**
@@ -69,13 +68,13 @@ public class ParserXMLCheck {
      */
     public static boolean checkElementSize(Element element, final String tagName, final int elementSize) {
         Elements elements = element.select(tagName);
-        boolean b = elements.size() == elementSize;
-        if (!b) {
+        if (elements.size() != elementSize) {
             String message = String.format("ElementResults does not contain %d %s. %s size =  %d."
                     , elementSize, tagName, tagName, elements.size());
             LOGGER.warn(message);
+            return false;
         }
-        return b;
+        return true;
     }
 
     /**
@@ -88,12 +87,12 @@ public class ParserXMLCheck {
      */
     public static boolean checkElementAttribute(final Element elementResults, final String name, final String value) {
         final String valueResult = elementResults.attr(name);
-        boolean equals = Objects.equals(value, valueResult);
-        if (!equals) {
+        if (!Objects.equals(value, valueResult)) {
             final String message = String.format("Value attribute %s does not equal %s.Value %s = %s",
                     name, value, name, valueResult);
             LOGGER.warn(message);
+            return false;
         }
-        return equals;
+        return true;
     }
 }

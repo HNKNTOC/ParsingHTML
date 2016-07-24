@@ -1,4 +1,4 @@
-package com.parsingHTML.logic.parsing.check;
+package com.parsingHTML.logic.parsing.html;
 
 import com.parsingHTML.logic.parsing.html.daytime.ParserDayTime;
 import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
@@ -9,9 +9,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Created by Nikita on 01.07.2016.
+ * Тестит ParserXMLCheck.
  */
-public class ParserElementTestTest {
+public class ParserXMLCheckTest {
 
     private Element main;
 

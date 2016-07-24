@@ -23,7 +23,7 @@ public class ParserDayLesson extends ParserHTMLAbstract {
      */
     @Override
     public Element parsing(Element element) {
-        LOGGER.debug("==== Parsing Element = " + element.tagName()+" ====");
+        LOGGER.debug("==== Parsing Element = " + element.nodeName() + " ====");
 
         Element dayLesson = XMLFactory.createDayLesson(parsingDay(element));
 

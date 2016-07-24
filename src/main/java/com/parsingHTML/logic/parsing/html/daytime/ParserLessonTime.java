@@ -17,7 +17,7 @@ public class ParserLessonTime extends ParserHTMLAbstract {
 
     @Override
     public Element parsing(Element element) {
-        LOGGER.info("======parsing Tag name = "+element.nodeName()+"======");
+        LOGGER.debug("==== Parsing Element = " + element.nodeName() + " ====");
 
         Elements n_para = selectElements(element, cssQueryNumberLesson);
 

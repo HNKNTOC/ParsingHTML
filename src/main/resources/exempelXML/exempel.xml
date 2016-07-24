@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <schedule>
-    <updateTime>09:30</updateTime>
+    <parsingTime>09:30</parsingTime>
     <university dayName="БУКЭП">
         <weekTime numerator="false">
             <dayTime dayName="Понедельник">

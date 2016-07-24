@@ -1,6 +1,5 @@
 package com.parsingHTML.logic.parsing.html;
 
-import com.parsingHTML.logic.parsing.check.ParserXMLCheck;
 import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

@@ -104,10 +104,10 @@ public class ElementJsoupFactory implements XMLFactory {
     }
 
     @Override
-    public Element createUpdateTime() {
+    public Element createParsingTime() {
         Element element = createElement(ElementName.UPDATE_TIME);
         element.text(new Date().toString());
-        LOGGER.debug("createUpdateTime "+element);
+        LOGGER.debug("createParsingTime " + element);
         return element;
     }
 
