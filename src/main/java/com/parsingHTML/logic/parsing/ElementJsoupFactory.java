@@ -1,6 +1,5 @@
-package com.parsingHTML.logic.xml.factory;
+package com.parsingHTML.logic.parsing;
 
-import com.parsingHTML.logic.xml.ElementName;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -14,9 +13,9 @@ import java.util.Date;
 public class ElementJsoupFactory implements XMLFactory {
     private static final Logger LOGGER = LogManager.getLogger(ElementJsoupFactory.class);
 
-    public static Element createElement(String name) {
-        LOGGER.debug("createElement name = "+name);
-        return new Element(Tag.valueOf(name), "");
+    public static Element createElement(String tagName) {
+        LOGGER.debug("createElement name = " + tagName);
+        return new Element(Tag.valueOf(tagName), "");
     }
 
     public static Element createElementEmpty() {

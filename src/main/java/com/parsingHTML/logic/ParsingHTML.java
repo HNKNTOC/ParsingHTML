@@ -1,8 +1,8 @@
 package com.parsingHTML.logic;
 
+import com.parsingHTML.logic.parsing.ElementJsoupFactory;
 import com.parsingHTML.logic.parsing.html.ParserHTMLAbstract;
 import com.parsingHTML.logic.parsing.html.ParserHTMLFactory;
-import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
@@ -16,7 +16,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Фасад управления библеотекой ParsingHTML.
+ * Фасад управления ParsingHTML.
  */
 public class ParsingHTML {
     private static final Logger LOGGER = LogManager.getLogger(ParsingHTML.class);
@@ -52,7 +52,7 @@ public class ParsingHTML {
     }
 
     /**
-     * Спарсить содержание с посощью ParserWeekTime File.
+     * Спарсить содержание с помощью ParserWeekTime File.
      *
      * @param file        Файл с HTML.
      * @param charsetName установить характер содержимого файла.
@@ -65,7 +65,7 @@ public class ParsingHTML {
     }
 
     /**
-     * Спарсить содержание с посощью ParserGroupLesson File.
+     * Спарсить содержание с помощью ParserGroupLesson File.
      *
      * @param file        Файл с HTML.
      * @param charsetName установить характер содержимого файла.
@@ -95,8 +95,8 @@ public class ParsingHTML {
     /**
      * Трансформирует org.jsoup.nodes.Element in org.w3c.dom.Document.
      *
-     * @param element Element который пужно трансформировать в Document.
-     * @return полученый при трансформации Document.
+     * @param element Element который нужно трансформировать в Document.
+     * @return полученный при трансформации Document.
      */
     public static org.w3c.dom.Document transformation(Element element) {
         LOGGER.info("transformation element " + element);

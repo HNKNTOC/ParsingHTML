@@ -1,7 +1,8 @@
 package com.parsingHTML.logic.parsing.html.daytime;
 
+import com.parsingHTML.logic.parsing.ElementHelper;
+import com.parsingHTML.logic.parsing.ElementName;
 import com.parsingHTML.logic.parsing.html.ParserXMLCheck;
-import com.parsingHTML.logic.xml.ElementName;
 import org.jsoup.nodes.Element;
 import org.junit.Test;
 
@@ -13,8 +14,8 @@ public class ParserDayTimeTest {
     @Test
     public void parsing() throws Exception {
         Element elementResults = ParserXMLCheck.parsingElement(new ParserDayTime(), "DayTime.html");
-        ParserXMLCheck.checkName(elementResults, ElementName.WEEK_TIME);
-        ParserXMLCheck.checkElementSize(elementResults, "lessonTime", 14);
-        ParserXMLCheck.checkElementSize(elementResults, "dayTime", 6);
+        ElementHelper.checkTagName(elementResults, ElementName.WEEK_TIME);
+        ElementHelper.checkElementsSize(elementResults.children(), "lessonTime", 14);
+        ElementHelper.checkElementsSize(elementResults.children(), "dayTime", 6);
     }
 }

@@ -1,5 +1,6 @@
 package com.parsingHTML.logic.parsing.html.grouplesson;
 
+import com.parsingHTML.logic.parsing.ElementHelper;
 import com.parsingHTML.logic.parsing.html.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -24,7 +25,7 @@ public class ParserLesson extends ParserHTMLAbstract {
         String number = parsingNumber(element);
         String numerator = parsingNumerator(element);
 
-        String[] split = divideString(selectElement(element,".para",0));
+        String[] split = divideString(ElementHelper.selectElement(element, ".para", 0));
 
         String nameLesson = split[0];
         String descriptionLesson = split[1];

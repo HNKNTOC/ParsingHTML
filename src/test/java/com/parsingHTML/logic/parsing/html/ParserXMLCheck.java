@@ -2,18 +2,16 @@ package com.parsingHTML.logic.parsing.html;
 
 import com.parsingHTML.logic.file.FileManager;
 import com.parsingHTML.logic.file.FileManagerDefault;
-import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
+import com.parsingHTML.logic.parsing.ElementJsoupFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.util.Objects;
 
 /**
- * Класс нужен для упрощения тестирования парсеров.
+ * Класс нужен для упрощения тестирования ParserHTMLAbstract.
  */
 public class ParserXMLCheck {
     private static final Logger LOGGER = LogManager.getLogger(ParserXMLCheck.class);
@@ -40,59 +38,5 @@ public class ParserXMLCheck {
             LOGGER.warn("Failed get file " + fileName, e);
             return ElementJsoupFactory.createElementEmpty();
         }
-    }
-
-    /**
-     * Проверка имени у элемента.
-     *
-     * @param element Элемент имя которого нужно проверить.
-     * @param tagName Имя которое должно быть у элемента.
-     * @return false если имя не совпадает.
-     */
-    public static boolean checkName(Element element, final String tagName) {
-        final String tagNameResults = element.tagName();
-        if (tagName.equals(tagNameResults)) {
-            LOGGER.warn(String.format("Tag Name not equal %s . Tag Name = %s", tagName, tagNameResults));
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * Проверка количества элементов в элементе.
-     *
-     * @param element     Элемент в котором нужно проверить.
-     * @param tagName     Имя элемента.
-     * @param elementSize Количество которое должно быть в elementResults.
-     * @return false если в element не совпадает количество element с tagName.
-     */
-    public static boolean checkElementSize(Element element, final String tagName, final int elementSize) {
-        Elements elements = element.select(tagName);
-        if (elements.size() != elementSize) {
-            String message = String.format("ElementResults does not contain %d %s. %s size =  %d."
-                    , elementSize, tagName, tagName, elements.size());
-            LOGGER.warn(message);
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * Проверка значения атрибута.
-     *
-     * @param elementResults Элемент атрибут которого нужно проверить.
-     * @param name           Имя атрибута.
-     * @param value          Значение атрибута.
-     * @return false если значения атрибута не совпало.
-     */
-    public static boolean checkElementAttribute(final Element elementResults, final String name, final String value) {
-        final String valueResult = elementResults.attr(name);
-        if (!Objects.equals(value, valueResult)) {
-            final String message = String.format("Value attribute %s does not equal %s.Value %s = %s",
-                    name, value, name, valueResult);
-            LOGGER.warn(message);
-            return false;
-        }
-        return true;
     }
 }

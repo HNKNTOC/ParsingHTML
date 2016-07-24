@@ -1,6 +1,7 @@
 package com.parsingHTML.logic.parsing.html;
 
-import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
+import com.parsingHTML.logic.parsing.ElementHelper;
+import com.parsingHTML.logic.parsing.ElementJsoupFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -40,22 +41,22 @@ public class ParserHTMLAbstractTest {
 
     @Test
     public void checkElementSize() throws Exception {
-        assertTrue(parserHTMLAbstract.checkElementSize(elements,size));
+        assertTrue(ElementHelper.checkElementsSize(elements, size));
     }
 
     @Test
     public void checkElementSizeFalse() throws Exception {
-        assertFalse(parserHTMLAbstract.checkElementSize(new Elements(),2));
+        assertFalse(ElementHelper.checkElementsSize(new Elements(), 2));
     }
 
     @Test
     public void checkNotElementSize() throws Exception {
-        assertTrue(parserHTMLAbstract.checkNotElementSize(new Elements(),2));
+        assertTrue(ElementHelper.checkNotElementSize(new Elements(), 2));
     }
 
     @Test
     public void checkNotElementSizeFalse() throws Exception {
-        assertFalse(parserHTMLAbstract.checkNotElementSize(new Elements(),0));
+        assertFalse(ElementHelper.checkNotElementSize(new Elements(), 0));
     }
 
     @Test
@@ -70,8 +71,8 @@ public class ParserHTMLAbstractTest {
         Element test2 = ElementJsoupFactory.createElement("test2");
         test2.attr("id", "20");
         test1.appendChild(test2);
-        Element element = parserHTMLAbstract.selectElement(test1, "[id=20]", 0);
-        ParserXMLCheck.checkName(element, "test2");
+        Element element = ElementHelper.selectElement(test1, "[id=20]", 0);
+        ElementHelper.checkTagName(element, "test2");
     }
 
     @Test
@@ -83,7 +84,7 @@ public class ParserHTMLAbstractTest {
         test3.attr("id", "20");
         test1.appendChild(test2);
         test1.appendChild(test3);
-        Elements element = parserHTMLAbstract.selectElements(test1, "[id=20]");
+        Elements element = ElementHelper.selectElements(test1, "[id=20]");
         assertTrue(element.size() == 2);
     }
 

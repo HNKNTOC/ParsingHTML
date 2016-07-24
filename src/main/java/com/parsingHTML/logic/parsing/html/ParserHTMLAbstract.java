@@ -1,9 +1,9 @@
 package com.parsingHTML.logic.parsing.html;
 
 
+import com.parsingHTML.logic.parsing.ElementJsoupFactory;
 import com.parsingHTML.logic.parsing.Parser;
-import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
-import com.parsingHTML.logic.xml.factory.XMLFactory;
+import com.parsingHTML.logic.parsing.XMLFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -54,72 +54,6 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
         return returnElements;
     }
 
-    /**
-     * Проверяет равны ли Elements.size() и size.
-     *
-     * @param elements Elements размер которого нужно проверить.
-     * @param size     размер который должен быть у Elements.
-     * @return true если размеры Elements.size() и size совпадают.
-     */
-    protected boolean checkElementSize(Elements elements, int size) {
-        if (elements.size() != size) {
-            LOGGER.warn("checkElementSize Element size not equals " + size + " Element size = " + elements.size());
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * Проверяет не равны ли Elements.size() и size.
-     *
-     * @param elements Elements размер которого нужно проверить.
-     * @param size     размер который должен быть у Elements.
-     * @return true если размеры Elements.size() и size не совпадают.
-     */
-    protected boolean checkNotElementSize(Elements elements, int size) {
-        if (elements.size() == size) {
-            LOGGER.warn("checkNotElementSize Element size equals " + size);
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * cssQuery получает элементы и возвращает один из них.
-     *
-     * @param element  Element из которому получим Elements.
-     * @param cssQuery cssQuery который нужно использовать.
-     * @param index    Индекс Элемента который нужно вернуть.
-     * @return Element полученные от cssQuery.
-     */
-    protected Element selectElement(Element element, String cssQuery, int index) {
-        Elements select = element.select(cssQuery);
-        if (select.size() >= index + 1) {
-            Element returnElement = select.get(index);
-            LOGGER.debug("selectElement return " + returnElement);
-            return returnElement;
-        }
-        String message = String.format("Failed get Element. Element = %s , cssQuery = %s , index = %s", element, cssQuery, index);
-        LOGGER.warn(message);
-        return ElementJsoupFactory.createElementEmpty();
-    }
-
-
-    /**
-     * cssQuery получает элементы и возвращает их.
-     *
-     * @param element  Element из которому получим Elements.
-     * @param cssQuery cssQuery который нужно использовать.
-     * @return Elements полученные от cssQuery.
-     */
-    protected Elements selectElements(Element element, String cssQuery) {
-        Elements select = element.select(cssQuery);
-        if (checkElementSize(select, 0)) {
-            String message = String.format("cssQuery \"%s\" return 0 element!", cssQuery);
-            LOGGER.warn(message);
-        }
-        return select;
-    }
 
     /**
      * Проверка может ли данный парсер с парсить element.

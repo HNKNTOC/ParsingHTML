@@ -1,5 +1,6 @@
 package com.parsingHTML.logic.parsing.html.grouplesson;
 
+import com.parsingHTML.logic.parsing.ElementHelper;
 import com.parsingHTML.logic.parsing.html.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -27,7 +28,7 @@ public class ParserDayLesson extends ParserHTMLAbstract {
 
         Element dayLesson = XMLFactory.createDayLesson(parsingDay(element));
 
-        Elements select = selectElements(element,cssQueryNumPara);
+        Elements select = ElementHelper.selectElements(element, cssQueryNumPara);
         parsingLesson(select, dayLesson);
         LOGGER.debug("====== return " + dayLesson);
         return dayLesson;
@@ -57,7 +58,7 @@ public class ParserDayLesson extends ParserHTMLAbstract {
     private String parsingDay(Element element) {
         Elements select = element.select(cssQueryDay);
         String dayName = "null";
-        if(checkElementSize(select,1)){
+        if (ElementHelper.checkElementsSize(select, 1)) {
             dayName = select.text();
         }
         LOGGER.debug("parsingDay return "+dayName);

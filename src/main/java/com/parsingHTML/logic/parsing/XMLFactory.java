@@ -1,4 +1,4 @@
-package com.parsingHTML.logic.xml.factory;
+package com.parsingHTML.logic.parsing;
 
 import org.jsoup.nodes.Element;
 

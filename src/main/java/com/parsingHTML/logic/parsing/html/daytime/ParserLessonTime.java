@@ -1,5 +1,6 @@
 package com.parsingHTML.logic.parsing.html.daytime;
 
+import com.parsingHTML.logic.parsing.ElementHelper;
 import com.parsingHTML.logic.parsing.html.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -19,7 +20,7 @@ public class ParserLessonTime extends ParserHTMLAbstract {
     public Element parsing(Element element) {
         LOGGER.debug("==== Parsing Element = " + element.nodeName() + " ====");
 
-        Elements n_para = selectElements(element, cssQueryNumberLesson);
+        Elements n_para = ElementHelper.selectElements(element, cssQueryNumberLesson);
 
         if (!checkNumber(n_para)) return null;
 

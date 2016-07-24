@@ -1,5 +1,6 @@
 package com.parsingHTML.logic.parsing.html.daytime;
 
+import com.parsingHTML.logic.parsing.ElementHelper;
 import com.parsingHTML.logic.parsing.html.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -17,7 +18,7 @@ public class ParserWeekTime extends ParserHTMLAbstract {
     public Element parsing(Element element) {
         LOGGER.debug("==== Parsing Element = " + element.nodeName() + " ====");
 
-        Element select = selectElement(element, cssQueryTableTime, 0);
+        Element select = ElementHelper.selectElement(element, cssQueryTableTime, 0);
 
         Element weekTime = parseDayTime(select);
         LOGGER.debug("====== return " + weekTime);

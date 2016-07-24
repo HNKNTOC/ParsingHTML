@@ -4,13 +4,11 @@ package com.parsingHTML.logic;
 import com.parsingHTML.logic.file.FileManagerDefault;
 import com.parsingHTML.logic.loader.LoaderHTML;
 import com.parsingHTML.logic.loader.LoaderHTMLDefault;
-import com.parsingHTML.logic.xml.factory.ElementJsoupFactory;
-import com.parsingHTML.logic.xml.factory.XMLFactory;
-import org.jsoup.helper.W3CDom;
+import com.parsingHTML.logic.parsing.ElementJsoupFactory;
+import com.parsingHTML.logic.parsing.XMLFactory;
 import org.jsoup.nodes.Element;
 import org.w3c.dom.Document;
 
-import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
@@ -40,6 +38,7 @@ public class Main {
 
 
         saveOut(ParsingHTML.transformation(schedule));
+
     }
 
     private static void saveOut(Document doc) throws TransformerException {
@@ -50,31 +49,6 @@ public class Main {
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
         transformer.setOutputProperty("{http://html.apache.org/xslt}indent-amount", "2");
         transformer.transform(input, output);
-    }
-
-    private static void transformation(Document documentDom, Element element) {
-        org.jsoup.nodes.Document document = new org.jsoup.nodes.Document("");
-        W3CDom w3CDom = new W3CDom();
-        document.appendChild(element);
-        w3CDom.convert(document, documentDom);
-    }
-
-    private static Document createDOC() {
-        try {
-            return DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    private static Element createRoot(Element schedule) {
-        Element updateTime = XMLFactory.createParsingTime();
-        schedule.appendChild(updateTime);
-        Element university = XMLFactory.createUniversity();
-        schedule.appendChild(university);
-
-        return university;
     }
 
 
