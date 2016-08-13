@@ -13,7 +13,7 @@ public class ParserDayTimeTest {
 
     @Test
     public void parsing() throws Exception {
-        Element elementResults = ParserXMLCheck.parsingElement(new ParserDayTime(), "DayTime.html");
+        Element elementResults = ParserXMLCheck.parsingElement(new ParserDayTime(), "DayTime.com.parsingHTML.logic.html");
         ElementHelper.checkTagName(elementResults, ElementName.WEEK_TIME);
         ElementHelper.checkElementsSize(elementResults.children(), "lessonTime", 14);
         ElementHelper.checkElementsSize(elementResults.children(), "dayTime", 6);

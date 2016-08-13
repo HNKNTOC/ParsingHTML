@@ -19,12 +19,12 @@ import java.util.ArrayList;
  */
 public class Main {
     private static XMLFactory XMLFactory = new ElementJsoupFactory();
-    private static final String path = "src\\main\\resources\\out";
+    private static final String path = "src\\test\\resources\\com.parsingHTML.logic.out";
     private static final String nameOUTFile = "output.xml";
     private static String charsetName = "UTF-8";
 
     public static void main(String[] args) throws TransformerException, ParserConfigurationException, IOException {
-        testingGoLink();
+        start();
     }
 
     public static void testingGoLink() throws IOException {
@@ -68,17 +68,17 @@ public class Main {
         Source input = new DOMSource(doc);
 
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        transformer.setOutputProperty("{http://html.apache.org/xslt}indent-amount", "2");
+        transformer.setOutputProperty("{http://com.parsingHTML.logic.html.apache.org/xslt}indent-amount", "2");
         transformer.transform(input, output);
     }
 
 
     private static File getFile(String name) {
-        return new File("src\\main\\resources\\html\\save\\" + name);
+        return new File("src\\test\\resources\\html\\" + name);
     }
 
     private static File createFile(String name){
-        File file = new File("src\\main\\resources\\html\\save\\" + name);
+        File file = new File("src\\test\\resources\\html\\" + name);
         try {
             file.createNewFile();
         } catch (IOException e) {

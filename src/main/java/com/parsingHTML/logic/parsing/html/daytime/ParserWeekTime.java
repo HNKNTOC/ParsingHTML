@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
 
 /**
- * Парсить элемент WeekTime из html.
+ * Парсить элемент WeekTime из com.parsingHTML.logic.html.
  */
 public class ParserWeekTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserWeekTime.class);
