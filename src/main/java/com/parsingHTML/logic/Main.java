@@ -11,6 +11,7 @@ import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -54,7 +55,8 @@ public class Main {
         File timeContent = getFile("rasp.bukep.ru.html");
         File scheduleContent = getFile("rasp.bukep.ru2.html");
 
-        Element schedule = ParsingHTML.parsingSchedule(timeContent, scheduleContent, charsetName);
+        Element schedule = ParsingHTML.parsingSchedule(
+                new FileInputStream(timeContent), new FileInputStream(scheduleContent), charsetName);
 
         Document document = ParsingHTML.transformation(schedule);
 
