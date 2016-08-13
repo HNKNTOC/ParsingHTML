@@ -74,8 +74,9 @@ public class ElementHelper {
      * @return Elements полученные от cssQuery.
      */
     public static Elements selectElements(Element element, String cssQuery) {
+        LOGGER.debug("selectElements element=" + element.nodeName() + " cssQuery = " + cssQuery);
         Elements select = element.select(cssQuery);
-        if (checkElementsSize(select, 0)) {
+        if (!checkNotElementSize(select, 0)) {
             String message = String.format("selectElements cssQuery = \"%s\" return 0 element!", cssQuery);
             LOGGER.warn(message);
         }
