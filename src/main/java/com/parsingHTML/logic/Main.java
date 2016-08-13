@@ -1,11 +1,8 @@
 package com.parsingHTML.logic;
 
-
-import com.parsingHTML.logic.file.FileManagerDefault;
-import com.parsingHTML.logic.loader.LoaderHTML;
-import com.parsingHTML.logic.loader.LoaderHTMLDefault;
 import com.parsingHTML.logic.parsing.ElementJsoupFactory;
 import com.parsingHTML.logic.parsing.XMLFactory;
+import com.parsingHTML.logic.selector.link.SelectorLink;
 import org.jsoup.nodes.Element;
 import org.w3c.dom.Document;
 
@@ -15,9 +12,10 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
- * Created by Nikita on 03.05.2016.
+ * Main
  */
 public class Main {
     private static XMLFactory XMLFactory = new ElementJsoupFactory();
@@ -26,7 +24,29 @@ public class Main {
     private static String charsetName = "UTF-8";
 
     public static void main(String[] args) throws TransformerException, ParserConfigurationException, IOException {
-        start();
+        testingGoLink();
+    }
+
+    public static void testingGoLink() throws IOException {
+        SelectorLink selectorLink = new SelectorLink();
+        show(selectorLink);
+        selectorLink.goButton(1);
+        show(selectorLink);
+        selectorLink.goButton(1);
+        show(selectorLink);
+        selectorLink.goButton(1);
+        show(selectorLink);
+
+    }
+
+    private static void show(SelectorLink selectorLink) throws IOException {
+        ArrayList<String> button = selectorLink.getButtonNames();
+        System.out.println("===========");
+        for (String s : button) {
+            System.out.println(s);
+        }
+        System.out.println("===========");
+
     }
 
     private static void start() throws IOException, TransformerException {
@@ -36,8 +56,9 @@ public class Main {
 
         Element schedule = ParsingHTML.parsingSchedule(timeContent, scheduleContent, charsetName);
 
+        Document document = ParsingHTML.transformation(schedule);
 
-        saveOut(ParsingHTML.transformation(schedule));
+        saveOut(document);
 
     }
 
@@ -52,25 +73,17 @@ public class Main {
     }
 
 
-    public static File getFile(String name) {
-        FileManagerDefault fileManagerDefault = new FileManagerDefault(new File("src\\main\\resources\\html\\save"));
-        return fileManagerDefault.getFile(name);
+    private static File getFile(String name) {
+        return new File("src\\main\\resources\\html\\save\\" + name);
     }
 
     private static File createFile(String name){
-        FileManagerDefault fileManagerDefault = new FileManagerDefault(new File(path));
-        fileManagerDefault.createFile(name);
-        return fileManagerDefault.getFile(name);
+        File file = new File("src\\main\\resources\\html\\save\\" + name);
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return file;
     }
-
-    /**
-     * Загрузка html
-     *
-     * @param stringURL
-     */
-    public static void loadHTML(String stringURL) {
-        LoaderHTML loaderHTMLDefault = new LoaderHTMLDefault();
-        File file = loaderHTMLDefault.loadHTML("http://rasp.bukep.ru/");
-    }
-
 }

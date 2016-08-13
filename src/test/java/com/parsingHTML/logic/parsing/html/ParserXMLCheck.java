@@ -1,13 +1,13 @@
 package com.parsingHTML.logic.parsing.html;
 
-import com.parsingHTML.logic.file.FileManager;
-import com.parsingHTML.logic.file.FileManagerDefault;
+
 import com.parsingHTML.logic.parsing.ElementJsoupFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -15,7 +15,6 @@ import java.io.IOException;
  */
 public class ParserXMLCheck {
     private static final Logger LOGGER = LogManager.getLogger(ParserXMLCheck.class);
-    private final static FileManager fileManager = new FileManagerDefault("src\\test\\resources\\html");
 
 
     /**
@@ -32,7 +31,7 @@ public class ParserXMLCheck {
 
     private static Element createElementHTML(String fileName) {
         try {
-            return Jsoup.parse(fileManager.getFile(fileName), null);
+            return Jsoup.parse(new File("src\\test\\resources\\html\\" + fileName), null);
         } catch (IOException e) {
             e.printStackTrace();
             LOGGER.warn("Failed get file " + fileName, e);
