@@ -12,7 +12,7 @@ import org.junit.Test;
 public class ParserLessonTimeTest extends ParserXMLCheck {
     @Test
     public void parsing() throws Exception {
-        Element elementResults = ParserXMLCheck.parsingElement(new ParserLessonTime(), "LessonTime.com.parsingHTML.logic.html");
+        Element elementResults = ParserXMLCheck.parsingElement(new ParserLessonTime(), "LessonTime.html");
         ElementHelper.checkTagName(elementResults, ElementName.LESSON_TIME);
         ElementHelper.checkElementAttribute(elementResults, "number", "3");
         ElementHelper.checkElementAttribute(elementResults, "start1", "08:30");

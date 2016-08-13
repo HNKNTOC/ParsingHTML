@@ -12,7 +12,7 @@ import org.junit.Test;
 public class ParserWeekTimeTest extends ParserXMLCheck {
     @Test
     public void parsing() throws Exception {
-        Element elementResults = ParserXMLCheck.parsingElement(new ParserWeekTime(), "WeekTime.com.parsingHTML.logic.html");
+        Element elementResults = ParserXMLCheck.parsingElement(new ParserWeekTime(), "WeekTime.html");
         ElementHelper.checkTagName(elementResults, ElementName.WEEK_TIME);
         ElementHelper.checkElementsSize(elementResults.children(), "dayTime", 6);
     }

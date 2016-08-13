@@ -11,7 +11,7 @@ import org.junit.Test;
 public class ParserLessonTest {
     @Test
     public void parsing() throws Exception {
-        Element elementResults = ParserXMLCheck.parsingElement(new ParserLesson(), "Lesson.com.parsingHTML.logic.html");
+        Element elementResults = ParserXMLCheck.parsingElement(new ParserLesson(), "Lesson.html");
         ElementHelper.checkElementAttribute(elementResults, "number", "3");
         ElementHelper.checkElementAttribute(elementResults, "lessonName", "Естествознание");
         ElementHelper.checkElementAttribute(elementResults, "teacher", "Name Teacher");

@@ -68,7 +68,7 @@ public class Main {
         Source input = new DOMSource(doc);
 
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        transformer.setOutputProperty("{http://com.parsingHTML.logic.html.apache.org/xslt}indent-amount", "2");
+        transformer.setOutputProperty("{http://.html.apache.org/xslt}indent-amount", "2");
         transformer.transform(input, output);
     }
 

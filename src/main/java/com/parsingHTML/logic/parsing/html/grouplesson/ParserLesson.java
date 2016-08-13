@@ -9,7 +9,7 @@ import org.jsoup.nodes.Element;
 import java.util.Arrays;
 
 /**
- * Парсить элемент Lesson из com.parsingHTML.logic.html.
+ * Парсить элемент Lesson из .html.
  */
 public class ParserLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserLesson.class);
@@ -48,7 +48,7 @@ public class ParserLesson extends ParserHTMLAbstract {
      */
     private String[] divideString(Element element) {
         String html = element.html();
-        LOGGER.debug("divideString com.parsingHTML.logic.html = " + html);
+        LOGGER.debug("divideString .html = " + html);
         String replace = html.replace("<br>", separator);
         element.html(replace);
         String[] split = element.text().split(separator);

@@ -31,7 +31,7 @@ public class ParserXMLCheck {
 
     private static Element createElementHTML(String fileName) {
         try {
-            return Jsoup.parse(new File("src\\test\\resources\\com.parsingHTML.logic.html\\" + fileName), null);
+            return Jsoup.parse(new File("src\\test\\resources\\test\\" + fileName), null);
         } catch (IOException e) {
             e.printStackTrace();
             LOGGER.warn("Failed get file " + fileName, e);

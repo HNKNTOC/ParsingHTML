@@ -11,7 +11,7 @@ import org.junit.Test;
 public class ParserGroupLessonTest {
     @Test
     public void parsing() throws Exception {
-        Element elementResults = ParserXMLCheck.parsingElement(new ParserGroupLesson(), "GroupLesson.com.parsingHTML.logic.html");
+        Element elementResults = ParserXMLCheck.parsingElement(new ParserGroupLesson(), "GroupLesson.html");
         ElementHelper.checkElementsSize(elementResults.children(), "dayLesson", 6);
     }
 
