@@ -2,6 +2,7 @@ package com.parsingHTML.logic.parsing.html;
 
 import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementJsoupBuilder;
+import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -17,7 +18,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Created by Nikita on 18.06.2016.
+ * Тест для ParserHTMLAbstractTest.
  */
 public class ParserHTMLAbstractTest {
     private static final Logger LOGGER = LogManager.getLogger(ParserHTMLAbstractTest.class);
@@ -69,21 +70,30 @@ public class ParserHTMLAbstractTest {
 
     @Test
     public void selectElement() throws Exception {
-        Element test1 = builder.createElement("test1").getThisElement();
-        Element test2 = builder.createElement("test2").getThisElement();
-        test2.attr("id", "20");
+        ElementName nameTest1 = ElementName.DAY_LESSON;
+        ElementName nameTest2 = ElementName.DAY_TIME;
+
+        Element test1 = builder.createElement(nameTest1).getThisElement();
+        Element test2 = builder.createElement(nameTest2)
+                .setAttr("id", "20")
+                .getThisElement();
+
         test1.appendChild(test2);
+
         Element element = ElementHelper.selectElement(test1, "[id=20]", 0);
-        ElementHelper.checkTagName(element, "test2");
+        ElementHelper.checkTagName(element, nameTest2);
     }
 
     @Test
     public void selectElements() throws Exception {
-        Element test1 = builder.createElement("test1").getThisElement();
-        Element test2 = builder.createElement("test").getThisElement();
-        Element test3 = builder.createElement("test").getThisElement();
-        test2.attr("id", "20");
-        test3.attr("id", "20");
+        ElementName nameTest1 = ElementName.DAY_LESSON;
+        ElementName nameTest2 = ElementName.DAY_TIME;
+        ElementName nameTest3 = ElementName.GROUP_LESSON;
+
+        Element test1 = builder.createElement(nameTest1).getThisElement();
+        Element test2 = builder.createElement(nameTest2).setAttr("id", "20").getThisElement();
+        Element test3 = builder.createElement(nameTest3).setAttr("id", "20").getThisElement();
+
         test1.appendChild(test2);
         test1.appendChild(test3);
         Elements element = ElementHelper.selectElements(test1, "[id=20]");

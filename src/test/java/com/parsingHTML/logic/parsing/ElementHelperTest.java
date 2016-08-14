@@ -2,6 +2,7 @@ package com.parsingHTML.logic.parsing;
 
 import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementJsoupBuilder;
+import com.parsingHTML.logic.element.ElementName;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.junit.Before;
@@ -16,9 +17,12 @@ import static org.junit.Assert.assertTrue;
 public class ElementHelperTest {
 
 
-    Element mainElement;
-    private String elementName = "MainElement";
-    private String childrenName = "children";
+    private Element mainElement;
+    /**
+     * Случайное имя для mainElement.
+     */
+    private ElementName elementName = ElementName.LESSON;
+    private ElementName childrenName = ElementName.LESSON_TIME;
     private ElementJsoupBuilder builder;
 
     @Before
@@ -29,13 +33,13 @@ public class ElementHelperTest {
     /**
      * Вспомагательный метод добовляет Element в mainElement.
      *
-     * @param tagName имя Element.
+     * @param elementName имя Element.
      * @param number  количество.
      */
-    private void addElement(String tagName, int number) {
+    private void addElement(ElementName elementName, int number) {
         for (int j = 0; j < number; j++) {
             builder = new ElementJsoupBuilder();
-            mainElement.appendChild(builder.createElement(tagName).getThisElement());
+            mainElement.appendChild(builder.createElement(elementName).getThisElement());
         }
     }
 
@@ -78,9 +82,9 @@ public class ElementHelperTest {
 
     @Test
     public void selectElements() throws Exception {
-        String cssQuery = childrenName;
+        String cssQuery = childrenName.getName();
         addElement(childrenName, 13);
-        addElement("myElement", 7);
+        addElement(ElementName.WEEK_TIME, 7);
         Elements result = ElementHelper.selectElements(mainElement, cssQuery);
         assertTrue(result.size() == 13);
     }

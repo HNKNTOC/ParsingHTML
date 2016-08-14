@@ -8,7 +8,7 @@
         </layout>
     </appender>
 
-    <appender name="parsing" class="org.apache.log4j.RollingFileAppender">
+    <appender name="parser" class="org.apache.log4j.RollingFileAppender">
         <param name="File" value="log/parsing/main.log"/>
         <param name="MaxFileSize" value="100MB"/>
         <param name="MaxBackupIndex" value="10"/>
@@ -18,7 +18,7 @@
         </layout>
     </appender>
 
-    <appender name="xml" class="org.apache.log4j.RollingFileAppender">
+    <appender name="element" class="org.apache.log4j.RollingFileAppender">
         <param name="File" value="log/xml/main.log"/>
         <param name="MaxFileSize" value="100MB"/>
         <param name="MaxBackupIndex" value="10"/>
@@ -28,14 +28,29 @@
         </layout>
     </appender>
 
-    <logger name="com.parsingHTML.logic.xml">
+    <appender name="selector" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="log/selector/main.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss.SSS} [%-5p][%-6.6t][%-20.20c{1}] - %m %n"/>
+        </layout>
+    </appender>
+
+    <logger name="com.parsingHTML.logic.element">
         <level value="DEBUG"/>
-        <appender-ref ref="xml"/>
+        <appender-ref ref="element"/>
     </logger>
 
-    <logger name="com.parsingHTML.logic.parsing">
+    <logger name="com.parsingHTML.logic.parser">
         <level value="DEBUG"/>
-        <appender-ref ref="parsing"/>
+        <appender-ref ref="parser"/>
+    </logger>
+
+    <logger name="com.parsingHTML.logic.selector">
+        <level value="DEBUG"/>
+        <appender-ref ref="selector"/>
     </logger>
 
     <root>

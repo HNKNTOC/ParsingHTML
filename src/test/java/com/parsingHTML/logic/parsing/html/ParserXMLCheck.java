@@ -1,7 +1,6 @@
 package com.parsingHTML.logic.parsing.html;
 
 
-import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -36,7 +35,7 @@ public class ParserXMLCheck {
         } catch (IOException e) {
             e.printStackTrace();
             LOGGER.warn("Failed get file " + fileName, e);
-            return ElementJsoupBuilder.createElementEmpty();
+            return null;
         }
     }
 }

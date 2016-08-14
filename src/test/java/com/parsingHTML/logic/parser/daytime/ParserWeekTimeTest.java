@@ -14,6 +14,6 @@ public class ParserWeekTimeTest extends ParserXMLCheck {
     public void parsing() throws Exception {
         Element elementResults = ParserXMLCheck.parsingElement(new ParserWeekTime(), "WeekTime.html");
         ElementHelper.checkTagName(elementResults, ElementName.WEEK_TIME);
-        ElementHelper.checkElementsSize(elementResults.children(), "dayTime", 6);
+        ElementHelper.checkElementsSize(elementResults.children(), ElementName.DAY_TIME, 6);
     }
 }

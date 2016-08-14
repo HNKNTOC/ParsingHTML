@@ -17,21 +17,14 @@ public class ElementJsoupBuilder {
         return thisElement;
     }
 
-    public static Element createElementEmpty() {
-        LOGGER.warn("createElementEmpty!!");
-        Element element = new Element(Tag.valueOf("ElementEmpty"), "");
-        element.text("This element was created instead of null!");
-        return element;
-    }
-
     /**
      * Создаёт элемент и помещает его в thisElement.
      *
-     * @param tagName имя элемента.
+     * @param elementName имя элемента.
      */
-    public ElementJsoupBuilder createElement(String tagName) {
-        LOGGER.debug("createElement name = " + tagName);
-        thisElement = new Element(Tag.valueOf(tagName), "");
+    public ElementJsoupBuilder createElement(ElementName elementName) {
+        LOGGER.debug("createElement name = " + elementName);
+        thisElement = new Element(Tag.valueOf(elementName.getName()), "");
         return this;
     }
 
@@ -45,5 +38,12 @@ public class ElementJsoupBuilder {
         LOGGER.debug("setAttr key = " + key + " value = " + value);
         thisElement.attr(key, value);
         return this;
+    }
+
+    public static Element createElementEmpty() {
+        LOGGER.warn("createElementEmpty!!");
+        Element element = new Element(Tag.valueOf("ElementEmpty"), "");
+        element.text("This element was created instead of null!");
+        return element;
     }
 }

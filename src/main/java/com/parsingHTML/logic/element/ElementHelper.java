@@ -8,7 +8,7 @@ import org.jsoup.select.Elements;
 import java.util.Objects;
 
 /**
- * Сюда вынесены часто повторяемые операции с Element.
+ * Сюда вынесины часто повторяймые операции с Element.
  */
 public class ElementHelper {
     private static final Logger LOGGER = LogManager.getLogger(ElementHelper.class);
@@ -18,13 +18,13 @@ public class ElementHelper {
      * Проверяет равны ли element.tagName() и tagName.
      *
      * @param element Элемент имя которого нужно проверить.
-     * @param tagName Имя которое должно быть у элемента.
+     * @param elementName Имя которое должно быть у элемента.
      * @return false если имя не совпадает.
      */
-    public static boolean checkTagName(Element element, final String tagName) {
+    public static boolean checkTagName(Element element, final ElementName elementName) {
         final String tagNameResults = element.tagName();
-        if (tagName.equals(tagNameResults)) {
-            LOGGER.warn(String.format("Tag Name not equal %s . Tag Name = %s", tagName, tagNameResults));
+        if (elementName.getName().equals(tagNameResults)) {
+            LOGGER.warn(String.format("Tag Name not equal %s . Tag Name = %s", elementName, tagNameResults));
             return false;
         }
         return true;
@@ -34,15 +34,15 @@ public class ElementHelper {
      * Проверка n количество элементов с заданным tagName.
      *
      * @param element     Элемент в котором нужно проверить.
-     * @param tagName     tagName элементов которые нужно проверить.
+     * @param elementName     tagName элементов которые нужно проверить.
      * @param elementSize Количество элементов должно быть в element.
      * @return false если в element не совпадает количество element с tagName.
      */
-    public static boolean checkElementsSize(Elements element, final String tagName, final int elementSize) {
-        Elements elements = element.select(tagName);
+    public static boolean checkElementsSize(Elements element, final ElementName elementName, final int elementSize) {
+        Elements elements = element.select(elementName.getName());
         if (elements.size() != elementSize) {
             String message = String.format("checkElementTagNameSize does not contain %d %s. %s size =  %d."
-                    , elementSize, tagName, tagName, elements.size());
+                    , elementSize, elementName, elementName, elements.size());
             LOGGER.warn(message);
             return false;
         }
