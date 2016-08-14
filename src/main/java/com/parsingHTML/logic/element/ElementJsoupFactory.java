@@ -34,15 +34,15 @@ public class ElementJsoupFactory implements ElementFactory {
     }
 
     @Override
-    public Element createDayTime(String dayName) {
+    public Element createDayTime(DayName dayName) {
         Element element = createElement(ElementName.DAY_TIME);
-        element.attr("dayName", dayName);
+        element.attr("dayName", dayName.getNameRU(dayName));
         LOGGER.debug("createDayTime "+element);
         return element;
     }
 
     @Override
-    public Element createDayTime(String dayName, String override) {
+    public Element createDayTime(DayName dayName, String override) {
         Element element = createDayTime(dayName);
         element.attr("override", override);
         LOGGER.debug("createDayTime override "+element);

@@ -8,9 +8,9 @@ import org.jsoup.nodes.Element;
 public interface ElementFactory {
     Element createWeekTime();
 
-    Element createDayTime(String dayName);
+    Element createDayTime(DayName dayName);
 
-    Element createDayTime(String dayName, String override);
+    Element createDayTime(DayName dayName, String override);
 
     Element createLessonTime(String number, String start1, String end1, String start2, String end2);
 
