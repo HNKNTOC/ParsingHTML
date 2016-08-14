@@ -1,8 +1,8 @@
 package com.parsingHTML.logic;
 
-import com.parsingHTML.logic.parsing.ElementJsoupFactory;
-import com.parsingHTML.logic.parsing.html.ParserHTMLAbstract;
-import com.parsingHTML.logic.parsing.html.ParserHTMLFactory;
+import com.parsingHTML.logic.element.ElementJsoupFactory;
+import com.parsingHTML.logic.parser.ParserHTMLAbstract;
+import com.parsingHTML.logic.parser.ParserHTMLFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;

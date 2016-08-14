@@ -1,11 +1,11 @@
-package com.parsingHTML.logic.parsing;
+package com.parsingHTML.logic.element;
 
 import org.jsoup.nodes.Element;
 
 /**
  * Интерфейс для фабрики создаюшей XML елемент.
  */
-public interface XMLFactory {
+public interface ElementFactory {
     Element createWeekTime();
 
     Element createDayTime(String dayName);

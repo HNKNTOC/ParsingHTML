@@ -1,4 +1,4 @@
-package com.parsingHTML.logic.parsing;
+package com.parsingHTML.logic.parser;
 
 /**
  * Интерфейс для парсеров.
@@ -19,7 +19,7 @@ public interface Parser<T,S> {
      * Парсинг t.
      * Перед парсингом лучше проверить t с помощью isParsing().
      * @param t объект который нужно парсить.
-     * @return объект в который записывается полученая информация.
+     * @return объект в который записывается полученная информация.
      */
     S parsing(T t);
 }

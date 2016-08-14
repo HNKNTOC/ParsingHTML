@@ -1,8 +1,8 @@
 package com.parsingHTML.logic;
 
-import com.parsingHTML.logic.parsing.ElementJsoupFactory;
-import com.parsingHTML.logic.parsing.XMLFactory;
-import com.parsingHTML.logic.selector.link.SelectorLink;
+import com.parsingHTML.logic.element.ElementFactory;
+import com.parsingHTML.logic.element.ElementJsoupFactory;
+import com.parsingHTML.logic.selector.SelectorLink;
 import org.jsoup.nodes.Element;
 import org.w3c.dom.Document;
 
@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * Main
  */
 public class Main {
-    private static XMLFactory XMLFactory = new ElementJsoupFactory();
+    private static ElementFactory ElementFactory = new ElementJsoupFactory();
     private static final String path = "src\\test\\resources\\com.parsingHTML.logic.out";
     private static final String nameOUTFile = "output.xml";
     private static String charsetName = "UTF-8";
@@ -41,7 +41,7 @@ public class Main {
     }
 
     private static void show(SelectorLink selectorLink) throws IOException {
-        ArrayList<String> button = selectorLink.getButtonNames();
+        ArrayList<String> button = selectorLink.parsingButtonNames();
         System.out.println("===========");
         for (String s : button) {
             System.out.println(s);

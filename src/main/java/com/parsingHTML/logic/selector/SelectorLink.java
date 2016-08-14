@@ -1,4 +1,4 @@
-package com.parsingHTML.logic.selector.link;
+package com.parsingHTML.logic.selector;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -16,22 +16,28 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 /**
- * Серектор пнужен для выбора расписания.
+ * Селектор нужен для выбора расписания.
  * 1) Парсит Button из {@link SelectorLink#startURL}.
- * 2) Передаёт список Button {@link SelectorLink#getButtonNames()}
+ * 2) Передаёт список Button {@link SelectorLink#parsingButtonNames()}
  * 3) Переход по кнопке {@link SelectorLink#goButton(int)}
- * 4) Получение текушего URL.
+ * 4) Получение текущего URL.
  */
 public class SelectorLink {
     private static final Logger LOGGER = LogManager.getLogger(SelectorLink.class);
+    /**
+     * Стартовая URL.
+     */
     private final URL startURL;
+    /**
+     * URL который сейчас обрабатывается.
+     */
     private URL thisURL;
     /**
      * Время на ожидания загрузки URL.
      */
     private int timeoutMillis = 20000;
     /**
-     * Колличество переходов.
+     * Количество переходов.
      */
     private int move = 0;
     /**
@@ -77,14 +83,19 @@ public class SelectorLink {
     /**
      * Получить button который есть на {@link SelectorLink#thisURL}.
      */
-    public ArrayList<String> getButtonNames() throws IOException {
+    public ArrayList<String> parsingButtonNames() throws IOException {
         Document parse = Jsoup.parse(thisURL, timeoutMillis);
         buttonSelect = parse.select(elementSelectorCSS);
         ArrayList<String> collect = buttonSelect.stream().map(Element::text).collect(Collectors.toCollection(ArrayList::new));
-        LOGGER.debug("getButtonNames return " + collect.toString());
+        LOGGER.debug("parsingButtonNames return " + collect.toString());
         return collect;
     }
 
+    /**
+     * Перейти по кнопке.
+     *
+     * @param index Index кнопки из списка полученного с помощью {@link SelectorLink#parsingButtonNames()}
+     */
     public boolean goButton(int index) throws MalformedURLException {
         LOGGER.debug("goButton " + index);
         int size = buttonSelect.size();

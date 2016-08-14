@@ -1,4 +1,4 @@
-package com.parsingHTML.logic.parsing;
+package com.parsingHTML.logic.element;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * Фабрика для Jsoup Element.
  */
-public class ElementJsoupFactory implements XMLFactory {
+public class ElementJsoupFactory implements ElementFactory {
     private static final Logger LOGGER = LogManager.getLogger(ElementJsoupFactory.class);
 
     public static Element createElement(String tagName) {

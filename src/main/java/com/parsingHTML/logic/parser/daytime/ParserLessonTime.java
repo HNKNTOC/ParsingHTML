@@ -1,7 +1,7 @@
-package com.parsingHTML.logic.parsing.html.daytime;
+package com.parsingHTML.logic.parser.daytime;
 
-import com.parsingHTML.logic.parsing.ElementHelper;
-import com.parsingHTML.logic.parsing.html.ParserHTMLAbstract;
+import com.parsingHTML.logic.element.ElementHelper;
+import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -31,7 +31,7 @@ public class ParserLessonTime extends ParserHTMLAbstract {
 
         String[] time = getTime(elementsTime.get(0));
 
-        Element lessonTime = XMLFactory.createLessonTime(n_para.text().substring(0, 1)
+        Element lessonTime = ElementFactory.createLessonTime(n_para.text().substring(0, 1)
                 ,time[0],time[1],time[2],time[3]);
         LOGGER.debug("====== return " + lessonTime);
         return lessonTime;

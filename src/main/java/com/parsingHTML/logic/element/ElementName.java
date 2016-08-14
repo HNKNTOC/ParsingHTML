@@ -1,4 +1,4 @@
-package com.parsingHTML.logic.parsing;
+package com.parsingHTML.logic.element;
 
 /**
  * Created by Nikita on 24.06.2016.

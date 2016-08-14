@@ -1,5 +1,7 @@
 package com.parsingHTML.logic.parsing;
 
+import com.parsingHTML.logic.element.ElementHelper;
+import com.parsingHTML.logic.element.ElementJsoupFactory;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.junit.Before;

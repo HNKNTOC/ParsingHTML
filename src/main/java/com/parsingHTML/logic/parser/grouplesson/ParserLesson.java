@@ -1,7 +1,7 @@
-package com.parsingHTML.logic.parsing.html.grouplesson;
+package com.parsingHTML.logic.parser.grouplesson;
 
-import com.parsingHTML.logic.parsing.ElementHelper;
-import com.parsingHTML.logic.parsing.html.ParserHTMLAbstract;
+import com.parsingHTML.logic.element.ElementHelper;
+import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -32,9 +32,9 @@ public class ParserLesson extends ParserHTMLAbstract {
 
         Element dayLesson;
         if (numerator == null) {
-            dayLesson = XMLFactory.createLesson(number, nameLesson, descriptionLesson, "Name Teacher");
+            dayLesson = ElementFactory.createLesson(number, nameLesson, descriptionLesson, "Name Teacher");
         } else {
-            dayLesson = XMLFactory.createLesson(number, nameLesson, descriptionLesson, "Name Teacher", numerator);
+            dayLesson = ElementFactory.createLesson(number, nameLesson, descriptionLesson, "Name Teacher", numerator);
         }
         LOGGER.debug("====== return " + dayLesson);
         return dayLesson;

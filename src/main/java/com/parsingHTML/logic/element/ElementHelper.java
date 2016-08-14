@@ -1,4 +1,4 @@
-package com.parsingHTML.logic.parsing;
+package com.parsingHTML.logic.element;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

@@ -1,7 +1,7 @@
-package com.parsingHTML.logic.parsing.html.grouplesson;
+package com.parsingHTML.logic.parser.grouplesson;
 
-import com.parsingHTML.logic.parsing.ElementHelper;
-import com.parsingHTML.logic.parsing.html.ParserHTMLAbstract;
+import com.parsingHTML.logic.element.ElementHelper;
+import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -26,7 +26,7 @@ public class ParserDayLesson extends ParserHTMLAbstract {
     public Element parsing(Element element) {
         LOGGER.debug("==== Parsing Element = " + element.nodeName() + " ====");
 
-        Element dayLesson = XMLFactory.createDayLesson(parsingDay(element));
+        Element dayLesson = ElementFactory.createDayLesson(parsingDay(element));
 
         Elements select = ElementHelper.selectElements(element, cssQueryNumPara);
         parsingLesson(select, dayLesson);

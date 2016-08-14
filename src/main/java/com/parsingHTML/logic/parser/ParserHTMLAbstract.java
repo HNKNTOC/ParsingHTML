@@ -1,9 +1,8 @@
-package com.parsingHTML.logic.parsing.html;
+package com.parsingHTML.logic.parser;
 
 
-import com.parsingHTML.logic.parsing.ElementJsoupFactory;
-import com.parsingHTML.logic.parsing.Parser;
-import com.parsingHTML.logic.parsing.XMLFactory;
+import com.parsingHTML.logic.element.ElementFactory;
+import com.parsingHTML.logic.element.ElementJsoupFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -15,7 +14,7 @@ import org.jsoup.select.Elements;
  */
 public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
     private static final Logger LOGGER = LogManager.getLogger(ParserHTMLAbstract.class);
-    protected final XMLFactory XMLFactory;
+    protected final ElementFactory ElementFactory;
     protected final ParserHTMLFactory parserFactory;
 
     /**
@@ -28,11 +27,11 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
     /**
      * Создание ParserHTMLAbstract.
      *
-     * @param XMLFactory Фабрика создающая XML элементы.
+     * @param ElementFactory Фабрика создающая XML элементы.
      * @param parserHTMLFactory фабрика создающая парсеры.
      */
-    public ParserHTMLAbstract(XMLFactory XMLFactory, ParserHTMLFactory parserHTMLFactory) {
-        this.XMLFactory = XMLFactory;
+    public ParserHTMLAbstract(ElementFactory ElementFactory, ParserHTMLFactory parserHTMLFactory) {
+        this.ElementFactory = ElementFactory;
         this.parserFactory = parserHTMLFactory;
     }
 
@@ -62,6 +61,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * @return false если парсер не может парсить данный элемент.
      */
     @Override
+    //TODO DELETE
     public boolean isParsing(Element element) {
         return false;
     }

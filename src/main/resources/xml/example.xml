@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schedule>
+    <parsing_time>09:30</parsing_time>
+    <university name="БУКЭП">
+        <week_time numerator="false">
+            <day_time name="Понедельник">
+                <lesson_time number="1" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lesson_time number="2" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lesson_time number="3" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lesson_time number="4" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lesson_time number="5" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lesson_time number="6" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lesson_time number="7" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+            </day_time>
+            <day_time name="Вторник" override="Понедельник"/>
+            <day_time name="Среда" override="Понедельник"/>
+            <day_time name="Четверг" override="Понедельник"/>
+            <day_time name="Пятница" override="Понедельник"/>
+            <day_time name="Суббота">
+                <lesson_time number="1" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lesson_time number="2" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lesson_time number="3" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lesson_time number="4" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lesson_time number="5" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lesson_time number="6" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+                <lesson_time number="7" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
+            </day_time>
+        </week_time>
+        <group_lesson faculty="СПО2" specifically="И" course="1" name="И-11">
+            <day_lesson name="Понедельник">
+                <lesson number="3" name="Естествознание" audience="405н" teacher="Иванов И." numerator="true"/>
+                <lesson number="3" name="Физика" audience="311н" teacher="Иванов И." numerator="false"/>
+                <lesson number="4" name="Математика" audience="513н" teacher="Иванов И."/>
+                <lesson number="5" name="Обшество" audience="403н" teacher="Иванов И."/>
+            </day_lesson>
+            <day_lesson name="Вторник">
+                <lesson number="3" name="Естествознание" audience="405н" teacher="Иванов И." numerator="true"/>
+                <lesson number="3" name="Физика" audience="311н" teacher="Иванов И." numerator="false"/>
+                <lesson number="4" name="Математика" audience="513н" teacher="Иванов И."/>
+                <lesson number="5" name="Обшество" audience="403н" teacher="Иванов И."/>
+            </day_lesson>
+            <day_lesson name="Среда">
+                <lesson number="3" name="Естествознание" audience="405н" teacher="Иванов И." numerator="true"/>
+                <lesson number="3" name="Физика" audience="311н" teacher="Иванов И." numerator="false"/>
+                <lesson number="4" name="Математика" audience="513н" teacher="Иванов И."/>
+                <lesson number="5" name="Обшество" audience="403н" teacher="Иванов И."/>
+            </day_lesson>
+        </group_lesson>
+    </university>
+</schedule>

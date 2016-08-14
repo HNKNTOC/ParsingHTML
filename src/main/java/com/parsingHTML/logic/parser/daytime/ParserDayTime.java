@@ -1,7 +1,7 @@
-package com.parsingHTML.logic.parsing.html.daytime;
+package com.parsingHTML.logic.parser.daytime;
 
-import com.parsingHTML.logic.parsing.DayName;
-import com.parsingHTML.logic.parsing.html.ParserHTMLAbstract;
+import com.parsingHTML.logic.element.DayName;
+import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -24,17 +24,17 @@ public class ParserDayTime extends ParserHTMLAbstract {
     @Override
     public Element parsing(Element element) {
         LOGGER.info("==== Parsing Element = " + element.nodeName() + " ====");
-        Element weekTime = XMLFactory.createWeekTime();
+        Element weekTime = ElementFactory.createWeekTime();
 
-        Element monday = XMLFactory.createDayTime(DayName.MONDAY);
+        Element monday = ElementFactory.createDayTime(DayName.MONDAY);
         weekTime.appendChild(monday);
         addLessonTime(element, monday, cssQueryTimeMonday);
 
-        weekTime.appendChild(XMLFactory.createDayTime(DayName.TUESDAY, "1"));
-        weekTime.appendChild(XMLFactory.createDayTime(DayName.WEDNESDAY, "1"));
-        weekTime.appendChild(XMLFactory.createDayTime(DayName.THURSDAY, "1"));
-        weekTime.appendChild(XMLFactory.createDayTime(DayName.FRIDAY, "1"));
-        Element saturday = XMLFactory.createDayTime(DayName.SATURDAY);
+        weekTime.appendChild(ElementFactory.createDayTime(DayName.TUESDAY, "1"));
+        weekTime.appendChild(ElementFactory.createDayTime(DayName.WEDNESDAY, "1"));
+        weekTime.appendChild(ElementFactory.createDayTime(DayName.THURSDAY, "1"));
+        weekTime.appendChild(ElementFactory.createDayTime(DayName.FRIDAY, "1"));
+        Element saturday = ElementFactory.createDayTime(DayName.SATURDAY);
         weekTime.appendChild(saturday);
         addLessonTime(element, saturday, cssQueryTimeSaturday);
         LOGGER.debug("====== return " + weekTime);
