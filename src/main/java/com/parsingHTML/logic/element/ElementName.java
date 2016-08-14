@@ -12,7 +12,8 @@ public enum ElementName {
     LESSON_TIME("lesson_time"),
     GROUP_LESSON("group_lesson"),
     DAY_LESSON("day_lesson"),
-    LESSON("lesson");
+    LESSON("lesson"),
+    EMPTY("empty");
 
     private String name;
 

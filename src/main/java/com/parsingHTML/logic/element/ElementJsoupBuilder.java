@@ -42,7 +42,7 @@ public class ElementJsoupBuilder {
 
     public static Element createElementEmpty() {
         LOGGER.warn("createElementEmpty!!");
-        Element element = new Element(Tag.valueOf("ElementEmpty"), "");
+        Element element = new Element(Tag.valueOf(ElementName.EMPTY.getName()), "");
         element.text("This element was created instead of null!");
         return element;
     }
