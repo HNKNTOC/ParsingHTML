@@ -1,7 +1,7 @@
 package com.parsingHTML.logic.parsing.html;
 
 import com.parsingHTML.logic.element.ElementHelper;
-import com.parsingHTML.logic.element.ElementJsoupFactory;
+import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -24,13 +24,14 @@ public class ParserHTMLAbstractTest {
     private ParserHTMLAbstract parserHTMLAbstract;
     private Elements elements = new Elements();
     private final int size = new Random().nextInt(20);
+    private ElementJsoupBuilder builder;
 
     @Before
     public void setUp() throws Exception {
         parserHTMLAbstract = new ParserHTMLAbstractDummy();
         LOGGER.debug("size = " + size);
         for (int i = 0; i < size; i++) {
-            elements.add(ElementJsoupFactory.createElementEmpty());
+            elements.add(ElementJsoupBuilder.createElementEmpty());
         }
 
     }
@@ -68,8 +69,8 @@ public class ParserHTMLAbstractTest {
 
     @Test
     public void selectElement() throws Exception {
-        Element test1 = ElementJsoupFactory.createElement("test1");
-        Element test2 = ElementJsoupFactory.createElement("test2");
+        Element test1 = builder.createElement("test1").getThisElement();
+        Element test2 = builder.createElement("test2").getThisElement();
         test2.attr("id", "20");
         test1.appendChild(test2);
         Element element = ElementHelper.selectElement(test1, "[id=20]", 0);
@@ -78,9 +79,9 @@ public class ParserHTMLAbstractTest {
 
     @Test
     public void selectElements() throws Exception {
-        Element test1 = ElementJsoupFactory.createElement("test1");
-        Element test2 = ElementJsoupFactory.createElement("test");
-        Element test3 = ElementJsoupFactory.createElement("test");
+        Element test1 = builder.createElement("test1").getThisElement();
+        Element test2 = builder.createElement("test").getThisElement();
+        Element test3 = builder.createElement("test").getThisElement();
         test2.attr("id", "20");
         test3.attr("id", "20");
         test1.appendChild(test2);
@@ -93,7 +94,7 @@ public class ParserHTMLAbstractTest {
     private class ParserHTMLAbstractDummy extends ParserHTMLAbstract {
         @Override
         public Element parsing(Element element) {
-            return ElementJsoupFactory.createElementEmpty();
+            return ElementJsoupBuilder.createElementEmpty();
         }
     }
 

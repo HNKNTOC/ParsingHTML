@@ -119,7 +119,7 @@ public class ElementHelper {
         String message = String.format("selectElement failed get Element. Element = %s , cssQuery = \"%s\" , index = %s",
                 element, cssQuery, index);
         LOGGER.warn(message);
-        return ElementJsoupFactory.createElementEmpty();
+        return ElementJsoupBuilder.createElementEmpty();
     }
 
     /**

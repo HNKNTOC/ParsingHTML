@@ -1,7 +1,7 @@
 package com.parsingHTML.logic.parsing;
 
 import com.parsingHTML.logic.element.ElementHelper;
-import com.parsingHTML.logic.element.ElementJsoupFactory;
+import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.junit.Before;
@@ -19,10 +19,11 @@ public class ElementHelperTest {
     Element mainElement;
     private String elementName = "MainElement";
     private String childrenName = "children";
+    private ElementJsoupBuilder builder;
 
     @Before
     public void setUp() throws Exception {
-        mainElement = ElementJsoupFactory.createElement(elementName);
+        mainElement = new ElementJsoupBuilder().createElement(elementName).getThisElement();
     }
 
     /**
@@ -33,7 +34,8 @@ public class ElementHelperTest {
      */
     private void addElement(String tagName, int number) {
         for (int j = 0; j < number; j++) {
-            mainElement.appendChild(ElementJsoupFactory.createElement(tagName));
+            builder = new ElementJsoupBuilder();
+            mainElement.appendChild(builder.createElement(tagName).getThisElement());
         }
     }
 
@@ -67,7 +69,7 @@ public class ElementHelperTest {
     public void selectElement() throws Exception {
         String cssQuery = childrenName + "[id=12G]";
         addElement(childrenName, 10);
-        Element children = ElementJsoupFactory.createElement(childrenName);
+        Element children = builder.createElement(childrenName).getThisElement();
         children.attr("id", "12G");
         mainElement.appendChild(children);
         Element result = ElementHelper.selectElement(mainElement, cssQuery, 0);

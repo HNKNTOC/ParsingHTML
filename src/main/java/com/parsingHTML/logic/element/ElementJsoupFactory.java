@@ -3,7 +3,6 @@ package com.parsingHTML.logic.element;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
-import org.jsoup.parser.Tag;
 
 import java.util.Date;
 
@@ -12,109 +11,88 @@ import java.util.Date;
  */
 public class ElementJsoupFactory implements ElementFactory {
     private static final Logger LOGGER = LogManager.getLogger(ElementJsoupFactory.class);
-
-    public static Element createElement(String tagName) {
-        LOGGER.debug("createElement name = " + tagName);
-        return new Element(Tag.valueOf(tagName), "");
-    }
-
-    public static Element createElementEmpty() {
-        LOGGER.warn("createElementEmpty!!");
-        Element element = createElement("ElementEmpty");
-        element.text("This element was created instead of null!");
-        return element;
-    }
+    private ElementJsoupBuilder builder = new ElementJsoupBuilder();
 
     @Override
     public Element createWeekTime() {
-        Element element = createElement(ElementName.WEEK_TIME);
-        element.attr("numerator", "false");
-        LOGGER.debug("createWeekTime "+element);
-        return element;
+        builder.createElement(ElementName.WEEK_TIME);
+        builder.setAttr("numerator", "false");
+        return builder.getThisElement();
     }
 
     @Override
     public Element createDayTime(DayName dayName) {
-        Element element = createElement(ElementName.DAY_TIME);
-        element.attr("dayName", dayName.getNameRU(dayName));
-        LOGGER.debug("createDayTime "+element);
-        return element;
+        builder.createElement(ElementName.DAY_TIME);
+        builder.setAttr("dayName", dayName.getNameRU(dayName));
+        return builder.getThisElement();
     }
 
     @Override
     public Element createDayTime(DayName dayName, String override) {
         Element element = createDayTime(dayName);
-        element.attr("override", override);
-        LOGGER.debug("createDayTime override "+element);
+        builder.setAttr("override", override);
+        ;
         return element;
     }
 
     @Override
     public Element createLessonTime(String number, String start1, String end1, String start2, String end2) {
-        Element element = createElement(ElementName.LESSON_TIME);
-        element.attr("number", number);
-        element.attr("start1", start1);
-        element.attr("end1", end1);
-        element.attr("start2", start2);
-        element.attr("end2", end2);
-        LOGGER.debug("createLessonTime "+element);
-        return element;
+        builder.createElement(ElementName.LESSON_TIME);
+        builder.setAttr("number", number);
+        builder.setAttr("start1", start1);
+        builder.setAttr("end1", end1);
+        builder.setAttr("start2", start2);
+        builder.setAttr("end2", end2);
+        return builder.getThisElement();
     }
 
     @Override
     public Element createDayLesson(String dayName) {
-        Element element = createElement(ElementName.DAY_LESSON);
-        element.attr("dayName", dayName);
-        LOGGER.debug("createDayLesson "+element);
-        return element;
+        builder.createElement(ElementName.DAY_LESSON);
+        builder.setAttr("dayName", dayName);
+        return builder.getThisElement();
     }
 
     @Override
     public Element createLesson(String number, String nameLesson, String descriptionLesson, String teacher) {
-        Element element = createElement(ElementName.LESSON);
-        element.attr("number", number);
-        element.attr("lessonName", nameLesson);
-        element.attr("audience", descriptionLesson);
-        element.attr("teacher", teacher);
-        LOGGER.debug("createLesson "+element);
-        return element;
+        builder.createElement(ElementName.LESSON);
+        builder.setAttr("number", number);
+        builder.setAttr("lessonName", nameLesson);
+        builder.setAttr("audience", descriptionLesson);
+        builder.setAttr("teacher", teacher);
+        return builder.getThisElement();
     }
 
     @Override
     public Element createLesson(String number, String nameLesson, String descriptionLesson, String teacher, String numerator) {
-        Element element = createLesson(number, nameLesson, descriptionLesson, teacher);
-        element.attr("numerator", numerator);
-        LOGGER.debug("createLesson "+element);
-        return element;
+        createLesson(number, nameLesson, descriptionLesson, teacher);
+        builder.setAttr("numerator", numerator);
+        return builder.getThisElement();
     }
 
     @Override
     public Element createGroupLesson() {
-        Element element = createElement(ElementName.GROUP_LESSON);
-        LOGGER.debug("createGroupLesson "+element);
-        return element;
+        builder.createElement(ElementName.GROUP_LESSON);
+        return builder.getThisElement();
     }
 
     @Override
     public Element createSchedule() {
-        Element element = createElement(ElementName.SCHEDULE);
-        LOGGER.debug("createSchedule "+element);
-        return element;
+        builder.createElement(ElementName.SCHEDULE);
+        return builder.getThisElement();
     }
 
     @Override
     public Element createParsingTime() {
-        Element element = createElement(ElementName.UPDATE_TIME);
-        element.text(new Date().toString());
-        LOGGER.debug("createParsingTime " + element);
-        return element;
+        builder.createElement(ElementName.UPDATE_TIME);
+        builder.setText(new Date().toString());
+        return builder.getThisElement();
     }
 
     @Override
     public Element createUniversity() {
-        Element element = createElement(ElementName.UNIVERSITY);
-        element.attr("universityName", "БУКЭП");
-        LOGGER.debug("createUniversity "+element);
-        return element;
+        builder.createElement(ElementName.UNIVERSITY);
+        builder.setAttr("universityName", "БУКЭП");
+        return builder.getThisElement();
     }
 }
