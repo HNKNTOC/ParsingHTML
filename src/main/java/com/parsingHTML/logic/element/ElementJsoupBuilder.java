@@ -34,9 +34,9 @@ public class ElementJsoupBuilder {
         return this;
     }
 
-    public ElementJsoupBuilder setAttr(String key, String value) {
-        LOGGER.debug("setAttr key = " + key + " value = " + value);
-        thisElement.attr(key, value);
+    public ElementJsoupBuilder setAttr(AttributeName attributeName, String value) {
+        LOGGER.debug("setAttr key = " + attributeName + " value = " + value);
+        thisElement.attr(attributeName.getName(), value);
         return this;
     }
 

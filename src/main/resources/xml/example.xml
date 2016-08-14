@@ -26,9 +26,9 @@
                 <lesson_time number="7" start1="12:10" end1="13:00" start2="13:10" end2="14:00"/>
             </day_time>
         </week_time>
-        <group_lesson faculty="СПО2" specifically="И" course="1" name="И-11">
+        <group_lesson faculty="СПО2" specialty="ПИ" course="1" name="И-11">
             <day_lesson name="Понедельник">
-                <lesson number="3" name="Естествознание" audience="405н" teacher="Иванов И." numerator="true"/>
+                <lesson number="3" name="Естествознание" description="405н" teacher="Иванов И." numerator="true"/>
                 <lesson number="3" name="Физика" audience="311н" teacher="Иванов И." numerator="false"/>
                 <lesson number="4" name="Математика" audience="513н" teacher="Иванов И."/>
                 <lesson number="5" name="Обшество" audience="403н" teacher="Иванов И."/>

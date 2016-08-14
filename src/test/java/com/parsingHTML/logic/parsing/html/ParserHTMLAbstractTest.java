@@ -1,5 +1,6 @@
 package com.parsingHTML.logic.parsing.html;
 
+import com.parsingHTML.logic.element.AttributeName;
 import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import com.parsingHTML.logic.element.ElementName;
@@ -75,12 +76,12 @@ public class ParserHTMLAbstractTest {
 
         Element test1 = builder.createElement(nameTest1).getThisElement();
         Element test2 = builder.createElement(nameTest2)
-                .setAttr("id", "20")
+                .setAttr(AttributeName.NAME, "name1")
                 .getThisElement();
 
         test1.appendChild(test2);
 
-        Element element = ElementHelper.selectElement(test1, "[id=20]", 0);
+        Element element = ElementHelper.selectElement(test1, "[" + AttributeName.NAME + "=name1]", 0);
         ElementHelper.checkTagName(element, nameTest2);
     }
 
@@ -91,12 +92,12 @@ public class ParserHTMLAbstractTest {
         ElementName nameTest3 = ElementName.GROUP_LESSON;
 
         Element test1 = builder.createElement(nameTest1).getThisElement();
-        Element test2 = builder.createElement(nameTest2).setAttr("id", "20").getThisElement();
-        Element test3 = builder.createElement(nameTest3).setAttr("id", "20").getThisElement();
+        Element test2 = builder.createElement(nameTest2).setAttr(AttributeName.NAME, "name1").getThisElement();
+        Element test3 = builder.createElement(nameTest3).setAttr(AttributeName.NAME, "name1").getThisElement();
 
         test1.appendChild(test2);
         test1.appendChild(test3);
-        Elements element = ElementHelper.selectElements(test1, "[id=20]");
+        Elements element = ElementHelper.selectElements(test1, "[" + AttributeName.NAME + "=name1]");
         assertTrue(element.size() == 2);
     }
 
