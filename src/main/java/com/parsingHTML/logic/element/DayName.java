@@ -4,24 +4,16 @@ package com.parsingHTML.logic.element;
  * Дни недели.
  */
 public enum DayName {
-    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY;
+    MONDAY("Понедельник"), TUESDAY("Вторник"), WEDNESDAY("Среда"), THURSDAY("Четверг"), FRIDAY("Пятница"), SATURDAY("Суббота");
 
-    String getNameRU(DayName dayName) {
-        switch (dayName) {
-            case MONDAY:
-                return "Понедельник";
-            case TUESDAY:
-                return "Вторник";
-            case WEDNESDAY:
-                return "Среда";
-            case THURSDAY:
-                return "Четверг";
-            case FRIDAY:
-                return "Пятница";
-            case SATURDAY:
-                return "Суббота";
-        }
-        return null;
+    private String nameRu;
+
+    DayName(String nameRu) {
+        this.nameRu = nameRu;
+    }
+
+    public String getNameRu() {
+        return nameRu;
     }
 
 }

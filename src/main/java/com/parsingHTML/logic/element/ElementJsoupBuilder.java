@@ -36,12 +36,14 @@ public class ElementJsoupBuilder {
     }
 
     public ElementJsoupBuilder setText(String text) {
+        LOGGER.debug("setText = " + text);
         thisElement.text(text);
         return this;
     }
 
-    public ElementJsoupBuilder setAttr(String attributeKey, String attributeValue) {
-        thisElement.attr(attributeKey, attributeValue);
+    public ElementJsoupBuilder setAttr(String key, String value) {
+        LOGGER.debug("setAttr key = " + key + " value = " + value);
+        thisElement.attr(key, value);
         return this;
     }
 }

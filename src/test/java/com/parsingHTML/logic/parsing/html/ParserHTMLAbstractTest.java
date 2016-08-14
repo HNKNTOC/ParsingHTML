@@ -24,7 +24,7 @@ public class ParserHTMLAbstractTest {
     private ParserHTMLAbstract parserHTMLAbstract;
     private Elements elements = new Elements();
     private final int size = new Random().nextInt(20);
-    private ElementJsoupBuilder builder;
+    private ElementJsoupBuilder builder = new ElementJsoupBuilder();
 
     @Before
     public void setUp() throws Exception {

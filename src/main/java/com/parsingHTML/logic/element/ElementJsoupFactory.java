@@ -15,6 +15,7 @@ public class ElementJsoupFactory implements ElementFactory {
 
     @Override
     public Element createWeekTime() {
+        LOGGER.debug("createWeekTime");
         builder.createElement(ElementName.WEEK_TIME);
         builder.setAttr("numerator", "false");
         return builder.getThisElement();
@@ -22,21 +23,23 @@ public class ElementJsoupFactory implements ElementFactory {
 
     @Override
     public Element createDayTime(DayName dayName) {
+        LOGGER.debug("createDayTime");
         builder.createElement(ElementName.DAY_TIME);
-        builder.setAttr("dayName", dayName.getNameRU(dayName));
+        builder.setAttr("dayName", dayName.getNameRu());
         return builder.getThisElement();
     }
 
     @Override
     public Element createDayTime(DayName dayName, String override) {
+        LOGGER.debug("createDayTime");
         Element element = createDayTime(dayName);
         builder.setAttr("override", override);
-        ;
         return element;
     }
 
     @Override
     public Element createLessonTime(String number, String start1, String end1, String start2, String end2) {
+        LOGGER.debug("createLessonTime");
         builder.createElement(ElementName.LESSON_TIME);
         builder.setAttr("number", number);
         builder.setAttr("start1", start1);
@@ -48,6 +51,7 @@ public class ElementJsoupFactory implements ElementFactory {
 
     @Override
     public Element createDayLesson(String dayName) {
+        LOGGER.debug("createDayLesson");
         builder.createElement(ElementName.DAY_LESSON);
         builder.setAttr("dayName", dayName);
         return builder.getThisElement();
@@ -55,6 +59,7 @@ public class ElementJsoupFactory implements ElementFactory {
 
     @Override
     public Element createLesson(String number, String nameLesson, String descriptionLesson, String teacher) {
+        LOGGER.debug("createLesson");
         builder.createElement(ElementName.LESSON);
         builder.setAttr("number", number);
         builder.setAttr("lessonName", nameLesson);
@@ -65,6 +70,7 @@ public class ElementJsoupFactory implements ElementFactory {
 
     @Override
     public Element createLesson(String number, String nameLesson, String descriptionLesson, String teacher, String numerator) {
+        LOGGER.debug("createLesson");
         createLesson(number, nameLesson, descriptionLesson, teacher);
         builder.setAttr("numerator", numerator);
         return builder.getThisElement();
@@ -72,18 +78,21 @@ public class ElementJsoupFactory implements ElementFactory {
 
     @Override
     public Element createGroupLesson() {
+        LOGGER.debug("createGroupLesson");
         builder.createElement(ElementName.GROUP_LESSON);
         return builder.getThisElement();
     }
 
     @Override
     public Element createSchedule() {
+        LOGGER.debug("createSchedule");
         builder.createElement(ElementName.SCHEDULE);
         return builder.getThisElement();
     }
 
     @Override
     public Element createParsingTime() {
+        LOGGER.debug("createParsingTime");
         builder.createElement(ElementName.UPDATE_TIME);
         builder.setText(new Date().toString());
         return builder.getThisElement();
@@ -91,6 +100,7 @@ public class ElementJsoupFactory implements ElementFactory {
 
     @Override
     public Element createUniversity() {
+        LOGGER.debug("createUniversity");
         builder.createElement(ElementName.UNIVERSITY);
         builder.setAttr("universityName", "БУКЭП");
         return builder.getThisElement();

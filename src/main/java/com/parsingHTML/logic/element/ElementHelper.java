@@ -8,7 +8,7 @@ import org.jsoup.select.Elements;
 import java.util.Objects;
 
 /**
- * Сюда вынесины часто повторяймые операции с Element.
+ * Сюда вынесены часто повторяемые операции с Element.
  */
 public class ElementHelper {
     private static final Logger LOGGER = LogManager.getLogger(ElementHelper.class);
