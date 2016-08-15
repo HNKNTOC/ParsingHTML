@@ -16,5 +16,10 @@ public enum DayName {
         return nameRu;
     }
 
+    @Override
+    public String toString() {
+        return nameRu;
+    }
+
 }
 
