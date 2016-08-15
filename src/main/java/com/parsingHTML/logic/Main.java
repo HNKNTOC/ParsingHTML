@@ -1,7 +1,10 @@
 package com.parsingHTML.logic;
 
+import com.parsingHTML.logic.element.DayName;
 import com.parsingHTML.logic.element.ElementFactory;
 import com.parsingHTML.logic.element.ElementJsoupFactory;
+import com.parsingHTML.logic.lessone.Lesson;
+import com.parsingHTML.logic.lessone.Schedule;
 import com.parsingHTML.logic.selector.SelectorLink;
 import org.jsoup.nodes.Element;
 import org.w3c.dom.Document;
@@ -14,6 +17,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Main
@@ -25,7 +29,15 @@ public class Main {
     private static String charsetName = "UTF-8";
 
     public static void main(String[] args) throws TransformerException, ParserConfigurationException, IOException {
-        start();
+        testSchedule();
+    }
+
+    private static void testSchedule() throws IOException, TransformerException {
+        Schedule schedule = new Schedule(start());
+        List<Lesson> lessons = schedule.extractLesson(DayName.MONDAY);
+        for (Lesson lesson : lessons) {
+            System.out.println(lesson);
+        }
     }
 
     public static void testingGoLink() throws IOException {
@@ -50,7 +62,7 @@ public class Main {
 
     }
 
-    private static void start() throws IOException, TransformerException {
+    private static Document start() throws IOException, TransformerException {
 
         File timeContent = getFile("rasp.bukep.ru.html");
         File scheduleContent = getFile("rasp.bukep.ru2.html");
@@ -61,6 +73,8 @@ public class Main {
         Document document = ParsingHTML.transformation(schedule);
 
         saveOut(document);
+
+        return document;
 
     }
 

@@ -16,8 +16,6 @@ public interface ElementFactory {
 
     Element createDayLesson(String dayName);
 
-    Element createLesson(String number, String nameLesson, String descriptionLesson, String teacher);
-
     Element createLesson(String number, String nameLesson, String descriptionLesson, String teacher, String numerator);
 
     Element createGroupLesson();

@@ -1,6 +1,7 @@
 package com.parsingHTML.logic.parser.grouplesson;
 
 import com.parsingHTML.logic.element.ElementHelper;
+import com.parsingHTML.logic.element.NumeratorName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -14,8 +15,6 @@ import java.util.Arrays;
 public class ParserLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserLesson.class);
     private static final String separator = "/-";
-    private static final String numeratorTrue = "Числ.";
-    private static final String numeratorFalse = "Знам.";
 
 
     @Override
@@ -30,12 +29,7 @@ public class ParserLesson extends ParserHTMLAbstract {
         String nameLesson = split[0];
         String descriptionLesson = split[1];
 
-        Element dayLesson;
-        if (numerator == null) {
-            dayLesson = ElementFactory.createLesson(number, nameLesson, descriptionLesson, "Name Teacher");
-        } else {
-            dayLesson = ElementFactory.createLesson(number, nameLesson, descriptionLesson, "Name Teacher", numerator);
-        }
+        Element dayLesson = ElementFactory.createLesson(number, nameLesson, descriptionLesson, "Name Teacher", numerator);
         LOGGER.debug("====== return " + dayLesson);
         return dayLesson;
     }
@@ -53,32 +47,36 @@ public class ParserLesson extends ParserHTMLAbstract {
         element.html(replace);
         String[] split = element.text().split(separator);
         if (split.length != 2) {
-            LOGGER.warn("divideString failed to divide string!! split.length = "+split.length);
+            LOGGER.warn("divideString failed to divide string!! split.length = " + split.length);
             return new String[]{"", ""};
         }
-        LOGGER.debug("divideString return "+ Arrays.toString(split));
+        LOGGER.debug("divideString return " + Arrays.toString(split));
         return split;
     }
 
     /**
-     * Получение Numerator.
+     * Получение NumeratorName.
      * Ищет строку из переменной numeratorTrue и numeratorFalse если находит то возвращает её.
-     * @param element элемент у которого нужно получить Numerator.
+     *
+     * @param element элемент у которого нужно получить NumeratorName.
      * @return null если получить не удалось.
      */
     private String parsingNumerator(Element element) {
         String text = element.text();
+        final String numerator = NumeratorName.NUMERATOR.getName();
+        final String denominator = NumeratorName.DENOMINATOR.getName();
         LOGGER.debug("parsingNumerator text = " + text);
-        if (text.contains(numeratorTrue)) {
-            LOGGER.debug("parsingNumerator return "+numeratorTrue);
-            return numeratorTrue;
+        if (text.contains(numerator)) {
+            LOGGER.debug("parsingNumerator return " + numerator);
+            return numerator;
         }
-        if (text.contains(numeratorFalse)) {
-            LOGGER.debug("parsingNumerator return "+numeratorFalse);
-            return numeratorFalse;
+
+        if (text.contains(denominator)) {
+            LOGGER.debug("parsingNumerator return " + denominator);
+            return denominator;
         }
         LOGGER.debug("parsingNumerator return null");
-        return null;
+        return NumeratorName.EMPTY.getName();
     }
 
     /**

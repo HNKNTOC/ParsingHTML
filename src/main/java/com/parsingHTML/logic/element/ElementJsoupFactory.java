@@ -58,20 +58,13 @@ public class ElementJsoupFactory implements ElementFactory {
     }
 
     @Override
-    public Element createLesson(String number, String nameLesson, String descriptionLesson, String teacher) {
+    public Element createLesson(String number, String nameLesson, String descriptionLesson, String teacher, String numerator) {
         LOGGER.debug("createLesson");
         builder.createElement(ElementName.LESSON);
         builder.setAttr(AttributeName.NUMBER, number);
         builder.setAttr(AttributeName.NAME, nameLesson);
         builder.setAttr(AttributeName.DESCRIPTION, descriptionLesson);
         builder.setAttr(AttributeName.TEACHER, teacher);
-        return builder.getThisElement();
-    }
-
-    @Override
-    public Element createLesson(String number, String nameLesson, String descriptionLesson, String teacher, String numerator) {
-        LOGGER.debug("createLesson");
-        createLesson(number, nameLesson, descriptionLesson, teacher);
         builder.setAttr(AttributeName.NUMERATOR, numerator);
         return builder.getThisElement();
     }
