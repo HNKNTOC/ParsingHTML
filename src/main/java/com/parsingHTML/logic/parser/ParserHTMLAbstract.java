@@ -61,7 +61,6 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * @return false если парсер не может парсить данный элемент.
      */
     @Override
-    //TODO DELETE
     public boolean isParsing(Element element) {
         return false;
     }
