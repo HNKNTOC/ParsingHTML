@@ -1,4 +1,4 @@
-package com.parsingHTML.logic.lessone;
+package com.parsingHTML.logic.extractor.xml;
 
 import com.parsingHTML.logic.element.AttributeName;
 import com.parsingHTML.logic.element.NumeratorName;

@@ -1,4 +1,4 @@
-package com.parsingHTML.logic.lessone;
+package com.parsingHTML.logic.extractor.xml;
 
 /**
  * Класс для удобной работы с временем урока.
