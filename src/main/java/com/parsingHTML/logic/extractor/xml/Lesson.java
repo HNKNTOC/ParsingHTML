@@ -99,6 +99,35 @@ public class Lesson {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Lesson lesson = (Lesson) o;
+
+        if (number != lesson.number) return false;
+        if (name != null ? !name.equals(lesson.name) : lesson.name != null) return false;
+        if (description != null ? !description.equals(lesson.description) : lesson.description != null) return false;
+        if (numeratorName != lesson.numeratorName) return false;
+        if (teacher != null ? !teacher.equals(lesson.teacher) : lesson.teacher != null) return false;
+        if (time1 != null ? !time1.equals(lesson.time1) : lesson.time1 != null) return false;
+        return time2 != null ? time2.equals(lesson.time2) : lesson.time2 == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + number;
+        result = 31 * result + (numeratorName != null ? numeratorName.hashCode() : 0);
+        result = 31 * result + (teacher != null ? teacher.hashCode() : 0);
+        result = 31 * result + (time1 != null ? time1.hashCode() : 0);
+        result = 31 * result + (time2 != null ? time2.hashCode() : 0);
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "Lesson{" +
                 "name='" + name + '\'' +

@@ -2,6 +2,7 @@ package com.parsingHTML.logic.extractor.xml;
 
 
 import com.parsingHTML.logic.element.DayName;
+import com.parsingHTML.logic.element.NumeratorName;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
@@ -48,6 +49,34 @@ public class ExtractorScheduleTest {
     public void extractLesson() throws Exception {
         ArrayList<Lesson> lessons = extractorSchedule.extractLesson(DayName.TUESDAY);
         assertTrue(lessons.size() == 6);
+        Lesson lesson0 = new Lesson("Русский язык и литература", "Практическое занятие 310н", 2, NumeratorName.NUMERATOR, "Name Teacher");
+        Lesson lesson1 = new Lesson("Русский язык и литература", "Практическое занятие 305н", 2, NumeratorName.DENOMINATOR, "Name Teacher");
+        Lesson lesson2 = new Lesson("Естествознание", "Лекционное занятие 303н", 3, NumeratorName.NUMERATOR, "Name Teacher");
+        Lesson lesson3 = new Lesson("История 9", "Лекционное занятие 411н", 3, NumeratorName.DENOMINATOR, "Name Teacher");
+        Lesson lesson4 = new Lesson("Физика", "Лабораторное занятие 503ан", 4, NumeratorName.NUMERATOR, "Name Teacher");
+        Lesson lesson5 = new Lesson("Математика: алгебра, начала математического анализа, геометрия", "Практическое занятие 514н", 4, NumeratorName.DENOMINATOR, "Name Teacher");
+        assertEquals(lessons.get(0), lesson0);
+        assertEquals(lessons.get(1), lesson1);
+        assertEquals(lessons.get(2), lesson2);
+        assertEquals(lessons.get(3), lesson3);
+        assertEquals(lessons.get(4), lesson4);
+        assertEquals(lessons.get(5), lesson5);
+
+    }
+
+    @Test
+    public void extractLessonWhitTime() throws Exception {
+        ArrayList<Lesson> lessons = extractorSchedule.extractLessonWhitTime(DayName.THURSDAY);
+        assertTrue(lessons.size() == 5);
+        Lesson lesson = lessons.get(3);
+        assertTrue(lesson.getNumber() == 5);
+        assertEquals(lesson.getName(), "Введение в специальность");
+        assertEquals(lesson.getDescription(), "Лекционное занятие 115");
+        assertEquals(lesson.getNumeratorName(), NumeratorName.NUMERATOR);
+        assertEquals(lesson.getTeacher(), "Name Teacher");
+
+        assertEquals(lesson.getTime1(), "16:20-17:05");
+        assertEquals(lesson.getTime2(), "17:10-17:55");
     }
 
     @Test

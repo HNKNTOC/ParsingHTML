@@ -48,7 +48,7 @@ public class ExtractorSchedule {
      * @param dayName Имя дня.
      * @return все уроки на этот день.
      */
-    public ArrayList<Lesson> extractLesson(DayName dayName) {
+    public ArrayList<Lesson> extractLesson(final DayName dayName) {
         NodeList select = select(XPathExpression.selectLesson(dayName));
         ArrayList<Lesson> lessons = new ArrayList<>();
         for (int i = 0; i < select.getLength(); i++) {
@@ -58,7 +58,7 @@ public class ExtractorSchedule {
     }
 
 
-    public DayTime extractDayTime(DayName dayName, int number) {
+    public DayTime extractDayTime(final DayName dayName, final int number) {
         LOGGER.debug("extractDayTime dayName " + dayName.getNameRu() + " number = " + number);
         NodeList select = select(XPathExpression.selectLessonTime(dayName, number));
         Node item = null;
@@ -69,4 +69,15 @@ public class ExtractorSchedule {
         }
         return ConverterSchedule.convertDayTime(item);
     }
+
+    public ArrayList<Lesson> extractLessonWhitTime(final DayName dayName) {
+        ArrayList<Lesson> lessons = extractLesson(dayName);
+        for (Lesson lesson : lessons) {
+            DayTime dayTime = extractDayTime(dayName, lesson.getNumber());
+            lesson.setTime1(dayTime.getTimeFirstLesson());
+            lesson.setTime2(dayTime.getTimeSecondLesson());
+        }
+        return lessons;
+    }
+
 }
