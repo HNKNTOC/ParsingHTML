@@ -3,8 +3,8 @@ package com.parsingHTML.logic;
 import com.parsingHTML.logic.element.DayName;
 import com.parsingHTML.logic.element.ElementFactory;
 import com.parsingHTML.logic.element.ElementJsoupFactory;
-import com.parsingHTML.logic.lessone.Lesson;
-import com.parsingHTML.logic.lessone.Schedule;
+import com.parsingHTML.logic.lessone.DayTime;
+import com.parsingHTML.logic.lessone.ExtractorSchedule;
 import com.parsingHTML.logic.selector.SelectorLink;
 import org.jsoup.nodes.Element;
 import org.w3c.dom.Document;
@@ -17,7 +17,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Main
@@ -33,11 +32,9 @@ public class Main {
     }
 
     private static void testSchedule() throws IOException, TransformerException {
-        Schedule schedule = new Schedule(start());
-        List<Lesson> lessons = schedule.extractLesson(DayName.MONDAY);
-        for (Lesson lesson : lessons) {
-            System.out.println(lesson);
-        }
+        ExtractorSchedule extractorSchedule = new ExtractorSchedule(start());
+        DayTime dayTime1 = extractorSchedule.extractDayTime(DayName.THURSDAY, 7);
+        System.out.println(dayTime1);
     }
 
     public static void testingGoLink() throws IOException {

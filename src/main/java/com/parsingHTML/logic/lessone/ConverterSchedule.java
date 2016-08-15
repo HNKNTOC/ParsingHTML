@@ -13,8 +13,8 @@ import org.w3c.dom.Node;
 public class ConverterSchedule {
     private static final Logger LOGGER = LogManager.getLogger(ConverterSchedule.class);
 
-    public static Lesson convert(Node node) {
-        LOGGER.debug("convert = " + node);
+    public static Lesson convertLesson(Node node) {
+        LOGGER.debug("convertLesson = " + node);
         NamedNodeMap attributes = node.getAttributes();
 
         final String name, teacher, description;
@@ -37,4 +37,17 @@ public class ConverterSchedule {
         return namedItem.getTextContent();
     }
 
+    public static DayTime convertDayTime(Node item) {
+        NamedNodeMap attributes = item.getAttributes();
+        final String start1, start2, end1, end2;
+        final int number;
+
+        start1 = toAttributeValue(attributes, AttributeName.START1);
+        start2 = toAttributeValue(attributes, AttributeName.START2);
+        end1 = toAttributeValue(attributes, AttributeName.END1);
+        end2 = toAttributeValue(attributes, AttributeName.END2);
+        number = Integer.parseInt(toAttributeValue(attributes, AttributeName.NUMBER));
+
+        return new DayTime(number, start1, start2, end1, end2);
+    }
 }
