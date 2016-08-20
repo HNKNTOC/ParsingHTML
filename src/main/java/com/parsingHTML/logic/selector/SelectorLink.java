@@ -13,7 +13,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 /**
  * Селектор нужен для выбора расписания.
@@ -86,9 +85,12 @@ public class SelectorLink {
     public ArrayList<String> parsingButtonNames() throws IOException {
         Document parse = Jsoup.parse(thisURL, timeoutMillis);
         buttonSelect = parse.select(elementSelectorCSS);
-        ArrayList<String> collect = buttonSelect.stream().map(Element::text).collect(Collectors.toCollection(ArrayList::new));
-        LOGGER.debug("parsingButtonNames return " + collect.toString());
-        return collect;
+        ArrayList<String> buttonNames = new ArrayList<>();
+        for (Element element : buttonSelect) {
+            buttonNames.add(element.text());
+        }
+        LOGGER.debug("parsingButtonNames return " + buttonNames.toString());
+        return buttonNames;
     }
 
     /**
