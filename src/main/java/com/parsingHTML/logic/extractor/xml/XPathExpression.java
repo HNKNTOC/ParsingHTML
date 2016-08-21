@@ -18,7 +18,7 @@ public final class XPathExpression {
     public static String selectLesson(final DayName dayName) {
         return String.format("%s/%s/%s/%s[@%s='%s']/%s",
                 ElementName.SCHEDULE, ElementName.UNIVERSITY, ElementName.GROUP_LESSON,
-                ElementName.DAY_LESSON, AttributeName.NAME, dayName.getNameRu(), ElementName.LESSON);
+                ElementName.DAY_LESSON, AttributeName.NAME, dayName.getName(), ElementName.LESSON);
     }
 
     /**

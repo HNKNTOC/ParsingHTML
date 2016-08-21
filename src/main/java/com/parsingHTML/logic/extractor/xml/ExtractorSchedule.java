@@ -37,7 +37,7 @@ public class ExtractorSchedule {
             LOGGER.debug("select return " + evaluate);
             return evaluate;
         } catch (XPathExpressionException e) {
-            LOGGER.warn("Failed select " + expression, e);
+            LOGGER.error("Failed select " + expression, e);
             return null;
         }
     }
@@ -59,7 +59,7 @@ public class ExtractorSchedule {
 
 
     public DayTime extractDayTime(final DayName dayName, final int number) {
-        LOGGER.debug("extractDayTime dayName " + dayName.getNameRu() + " number = " + number);
+        LOGGER.debug("extractDayTime dayName " + dayName.getName() + " number = " + number);
         NodeList select = select(XPathExpression.selectLessonTime(dayName, number));
         Node item = null;
         if (select.getLength() == 1) {

@@ -1,5 +1,11 @@
 package com.parsingHTML.logic.element;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Дни недели.
  */
@@ -9,22 +15,48 @@ public enum DayName {
     WEDNESDAY("Среда", "Ср"),
     THURSDAY("Четверг", "Чт"),
     FRIDAY("Пятница", "Пт"),
-    SATURDAY("Суббота", "Сб");
+    SATURDAY("Суббота", "Сб"),
+    SUNDAY("Воскресенье", "Вс");
 
+    private static final Logger LOGGER = LogManager.getLogger(DayName.class);
+    /**
+     * Нужен для получения DayName по соответствующему nameShort.
+     */
+    private static final Map<String, DayName> MAP_VALUE = new HashMap<>();
     private String nameRu;
     private String nameShort;
+
+    static {
+        for (DayName dayName : DayName.values()) {
+            MAP_VALUE.put(dayName.getNameShort(), dayName);
+        }
+    }
 
     DayName(String nameRu, String nameShort) {
         this.nameRu = nameRu;
         this.nameShort = nameShort;
     }
 
-    public String getNameRu() {
+    public String getName() {
         return nameRu;
     }
 
     public String getNameShort() {
         return nameShort;
+    }
+
+    /**
+     * Получить DayName из сокращенного имени.
+     *
+     * @param nameShort сокращенное имя.
+     * @return DayName который соответствует сокращенному имени.
+     */
+    public static DayName valueOfNameShort(String nameShort) {
+        DayName dayName = MAP_VALUE.get(nameShort);
+        if (dayName == null) {
+            LOGGER.warn("valueOfNameShort return null!");
+        }
+        return dayName;
     }
 
     @Override

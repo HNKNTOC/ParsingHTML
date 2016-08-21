@@ -25,7 +25,7 @@ public class ElementJsoupFactory implements ElementFactory {
     public Element createDayTime(DayName dayName) {
         LOGGER.debug("createDayTime");
         builder.createElement(ElementName.DAY_TIME);
-        builder.setAttr(AttributeName.NAME, dayName.getNameRu());
+        builder.setAttr(AttributeName.NAME, dayName.getName());
         return builder.getThisElement();
     }
 
