@@ -23,7 +23,7 @@ public enum DayName {
      * Нужен для получения DayName по соответствующему nameShort.
      */
     private static final Map<String, DayName> MAP_VALUE = new HashMap<>();
-    private String nameRu;
+    private String name;
     private String nameShort;
 
     static {
@@ -32,13 +32,13 @@ public enum DayName {
         }
     }
 
-    DayName(String nameRu, String nameShort) {
-        this.nameRu = nameRu;
+    DayName(String name, String nameShort) {
+        this.name = name;
         this.nameShort = nameShort;
     }
 
     public String getName() {
-        return nameRu;
+        return name;
     }
 
     public String getNameShort() {
@@ -61,10 +61,7 @@ public enum DayName {
 
     @Override
     public String toString() {
-        return "DayName{" +
-                "nameRu='" + nameRu + '\'' +
-                ", nameShort='" + nameShort + '\'' +
-                '}';
+        return name;
     }
 }
 
