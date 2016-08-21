@@ -10,13 +10,13 @@ import java.util.Map;
  * Дни недели.
  */
 public enum DayName {
+    SUNDAY("Воскресенье", "Вс"),
     MONDAY("Понедельник", "Пн"),
     TUESDAY("Вторник", "Вт"),
     WEDNESDAY("Среда", "Ср"),
     THURSDAY("Четверг", "Чт"),
     FRIDAY("Пятница", "Пт"),
-    SATURDAY("Суббота", "Сб"),
-    SUNDAY("Воскресенье", "Вс");
+    SATURDAY("Суббота", "Сб");
 
     private static final Logger LOGGER = LogManager.getLogger(DayName.class);
     /**
@@ -28,7 +28,7 @@ public enum DayName {
 
     static {
         for (DayName dayName : DayName.values()) {
-            MAP_VALUE.put(dayName.getNameShort(), dayName);
+            MAP_VALUE.put(dayName.getNameShort().toLowerCase(), dayName);
         }
     }
 
@@ -52,7 +52,7 @@ public enum DayName {
      * @return DayName который соответствует сокращенному имени.
      */
     public static DayName valueOfNameShort(String nameShort) {
-        DayName dayName = MAP_VALUE.get(nameShort);
+        DayName dayName = MAP_VALUE.get(nameShort.toLowerCase());
         if (dayName == null) {
             LOGGER.warn("valueOfNameShort return null!");
         }
