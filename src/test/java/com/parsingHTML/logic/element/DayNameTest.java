@@ -19,6 +19,7 @@ public class DayNameTest {
                     , "Воскресенье"};
 
     private static final String DAY_NAME_SHORT[] = {"Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"};
+    private static final String DAY_NAME_SHORT_LOWER_CASE[] = {"пн", "вт", "ср", "чт", "пт", "сб", "вс"};
 
     @Test
     public void getNameRu() throws Exception {
@@ -43,14 +44,23 @@ public class DayNameTest {
     }
 
     @Test
-    public void valueOfNameShort() throws Exception {
-        assertEquals(DayName.MONDAY, DayName.valueOfNameShort(DAY_NAME_SHORT[0]));
-        assertEquals(DayName.TUESDAY, DayName.valueOfNameShort(DAY_NAME_SHORT[1]));
-        assertEquals(DayName.WEDNESDAY, DayName.valueOfNameShort(DAY_NAME_SHORT[2]));
-        assertEquals(DayName.THURSDAY, DayName.valueOfNameShort(DAY_NAME_SHORT[3]));
-        assertEquals(DayName.FRIDAY, DayName.valueOfNameShort(DAY_NAME_SHORT[4]));
-        assertEquals(DayName.SATURDAY, DayName.valueOfNameShort(DAY_NAME_SHORT[5]));
-        assertEquals(DayName.SUNDAY, DayName.valueOfNameShort(DAY_NAME_SHORT[6]));
+    public void valueOfNameShortTest() throws Exception {
+        valueSubstitution(DAY_NAME_SHORT);
+    }
+
+    @Test
+    public void valueOfNameShortLowerCase() throws Exception {
+        valueSubstitution(DAY_NAME_SHORT_LOWER_CASE);
+    }
+
+    private void valueSubstitution(final String[] value) {
+        assertEquals(DayName.MONDAY, DayName.valueOfNameShort(value[0]));
+        assertEquals(DayName.TUESDAY, DayName.valueOfNameShort(value[1]));
+        assertEquals(DayName.WEDNESDAY, DayName.valueOfNameShort(value[2]));
+        assertEquals(DayName.THURSDAY, DayName.valueOfNameShort(value[3]));
+        assertEquals(DayName.FRIDAY, DayName.valueOfNameShort(value[4]));
+        assertEquals(DayName.SATURDAY, DayName.valueOfNameShort(value[5]));
+        assertEquals(DayName.SUNDAY, DayName.valueOfNameShort(value[6]));
     }
 
 }

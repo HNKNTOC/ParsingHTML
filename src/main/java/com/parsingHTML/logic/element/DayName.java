@@ -10,13 +10,13 @@ import java.util.Map;
  * Дни недели.
  */
 public enum DayName {
-    SUNDAY("Воскресенье", "Вс"),
     MONDAY("Понедельник", "Пн"),
     TUESDAY("Вторник", "Вт"),
     WEDNESDAY("Среда", "Ср"),
     THURSDAY("Четверг", "Чт"),
     FRIDAY("Пятница", "Пт"),
-    SATURDAY("Суббота", "Сб");
+    SATURDAY("Суббота", "Сб"),
+    SUNDAY("Воскресенье", "Вс");
 
     private static final Logger LOGGER = LogManager.getLogger(DayName.class);
     /**
