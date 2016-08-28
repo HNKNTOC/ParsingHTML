@@ -7095,3 +7095,1132 @@
 22.08.2016 13:32:27.047 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 20:15 
 22.08.2016 13:32:27.048 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 21:00 
 22.08.2016 13:32:27.048 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time> 
+28.08.2016 16:13:40.392 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:40.527 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:40.528 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Value test 
+28.08.2016 16:13:40.575 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time description="Value test"></day_time> 
+28.08.2016 16:13:40.576 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:40.576 [DEBUG][main  ][ElementJsoupBuilder ] - setText = Text test 
+28.08.2016 16:13:40.578 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time>
+ Text test
+</day_time> 
+28.08.2016 16:13:40.580 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:40.581 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time></day_time> 
+28.08.2016 16:13:41.098 [DEBUG][main  ][ElementJsoupFactory ] - createWeekTime 
+28.08.2016 16:13:41.098 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = week_time 
+28.08.2016 16:13:41.098 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = false 
+28.08.2016 16:13:41.098 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <week_time numerator="false"></week_time> 
+28.08.2016 16:13:41.098 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.098 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:41.098 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Понедельник 
+28.08.2016 16:13:41.098 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Понедельник"></day_time> 
+28.08.2016 16:13:41.108 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.108 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.108 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.108 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 1 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 08:30 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 09:15 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 09:20 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 10:05 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time> 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 2 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 10:15 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 11:00 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 11:05 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 11:50 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time> 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 12:25 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 13:10 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 13:15 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 14:00 
+28.08.2016 16:13:41.129 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="3" start1="12:25" end1="13:10" start2="13:15" end2="14:00"></lesson_time> 
+28.08.2016 16:13:41.131 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.132 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.133 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.133 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:41.133 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 14:35 
+28.08.2016 16:13:41.134 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 15:20 
+28.08.2016 16:13:41.134 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 15:25 
+28.08.2016 16:13:41.134 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 16:10 
+28.08.2016 16:13:41.135 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="4" start1="14:35" end1="15:20" start2="15:25" end2="16:10"></lesson_time> 
+28.08.2016 16:13:41.136 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.138 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.142 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.143 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 5 
+28.08.2016 16:13:41.143 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 16:20 
+28.08.2016 16:13:41.143 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 17:05 
+28.08.2016 16:13:41.143 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 17:10 
+28.08.2016 16:13:41.144 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 17:55 
+28.08.2016 16:13:41.160 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="5" start1="16:20" end1="17:05" start2="17:10" end2="17:55"></lesson_time> 
+28.08.2016 16:13:41.162 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.176 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.176 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.176 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 6 
+28.08.2016 16:13:41.177 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 18:05 
+28.08.2016 16:13:41.177 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 18:50 
+28.08.2016 16:13:41.177 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 18:55 
+28.08.2016 16:13:41.177 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 19:40 
+28.08.2016 16:13:41.178 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="6" start1="18:05" end1="18:50" start2="18:55" end2="19:40"></lesson_time> 
+28.08.2016 16:13:41.179 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.183 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.183 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.183 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 7 
+28.08.2016 16:13:41.183 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 19:50 
+28.08.2016 16:13:41.184 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 20:35 
+28.08.2016 16:13:41.184 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 20:40 
+28.08.2016 16:13:41.184 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 21:25 
+28.08.2016 16:13:41.189 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="7" start1="19:50" end1="20:35" start2="20:40" end2="21:25"></lesson_time> 
+28.08.2016 16:13:41.192 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.192 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.194 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:41.194 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Вторник 
+28.08.2016 16:13:41.194 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Вторник"></day_time> 
+28.08.2016 16:13:41.194 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = override value = 1 
+28.08.2016 16:13:41.195 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.195 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.195 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:41.195 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Среда 
+28.08.2016 16:13:41.195 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Среда"></day_time> 
+28.08.2016 16:13:41.196 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = override value = 1 
+28.08.2016 16:13:41.196 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.203 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.204 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:41.206 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Четверг 
+28.08.2016 16:13:41.210 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Четверг"></day_time> 
+28.08.2016 16:13:41.210 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = override value = 1 
+28.08.2016 16:13:41.210 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.211 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.211 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:41.211 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Пятница 
+28.08.2016 16:13:41.211 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Пятница"></day_time> 
+28.08.2016 16:13:41.211 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = override value = 1 
+28.08.2016 16:13:41.212 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.212 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:41.212 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Суббота 
+28.08.2016 16:13:41.212 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Суббота"></day_time> 
+28.08.2016 16:13:41.216 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.217 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.217 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.217 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 1 
+28.08.2016 16:13:41.217 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 08:30 
+28.08.2016 16:13:41.217 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 09:15 
+28.08.2016 16:13:41.218 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 09:20 
+28.08.2016 16:13:41.218 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 10:05 
+28.08.2016 16:13:41.218 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time> 
+28.08.2016 16:13:41.219 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.220 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.221 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.221 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 2 
+28.08.2016 16:13:41.221 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 10:15 
+28.08.2016 16:13:41.221 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 11:00 
+28.08.2016 16:13:41.221 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 11:05 
+28.08.2016 16:13:41.221 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 11:50 
+28.08.2016 16:13:41.240 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time> 
+28.08.2016 16:13:41.242 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.245 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.245 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.245 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.246 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 12:00 
+28.08.2016 16:13:41.246 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 12:45 
+28.08.2016 16:13:41.246 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 12:50 
+28.08.2016 16:13:41.246 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 13:35 
+28.08.2016 16:13:41.246 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="3" start1="12:00" end1="12:45" start2="12:50" end2="13:35"></lesson_time> 
+28.08.2016 16:13:41.247 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.248 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.248 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.248 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:41.254 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 14:10 
+28.08.2016 16:13:41.254 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 14:55 
+28.08.2016 16:13:41.254 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 15:00 
+28.08.2016 16:13:41.255 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 15:45 
+28.08.2016 16:13:41.255 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="4" start1="14:10" end1="14:55" start2="15:00" end2="15:45"></lesson_time> 
+28.08.2016 16:13:41.256 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.260 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.261 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.261 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 5 
+28.08.2016 16:13:41.261 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 15:55 
+28.08.2016 16:13:41.261 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 16:40 
+28.08.2016 16:13:41.261 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 16:45 
+28.08.2016 16:13:41.261 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 17:30 
+28.08.2016 16:13:41.262 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="5" start1="15:55" end1="16:40" start2="16:45" end2="17:30"></lesson_time> 
+28.08.2016 16:13:41.263 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.265 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.265 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.265 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 6 
+28.08.2016 16:13:41.265 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 17:40 
+28.08.2016 16:13:41.268 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 18:25 
+28.08.2016 16:13:41.268 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 18:30 
+28.08.2016 16:13:41.268 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 19:15 
+28.08.2016 16:13:41.269 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="6" start1="17:40" end1="18:25" start2="18:30" end2="19:15"></lesson_time> 
+28.08.2016 16:13:41.270 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.271 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.280 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.280 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 7 
+28.08.2016 16:13:41.280 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 19:25 
+28.08.2016 16:13:41.281 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 20:10 
+28.08.2016 16:13:41.282 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 20:15 
+28.08.2016 16:13:41.283 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 21:00 
+28.08.2016 16:13:41.283 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time> 
+28.08.2016 16:13:41.285 [WARN ][main  ][ElementHelper       ] - Tag Name not equal week_time . Tag Name = week_time 
+28.08.2016 16:13:41.289 [DEBUG][main  ][ElementHelper       ] - selectElements element=#document cssQuery = td.n_para 
+28.08.2016 16:13:41.301 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.302 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.302 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.302 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 08:30 
+28.08.2016 16:13:41.302 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 09:15 
+28.08.2016 16:13:41.302 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 09:20 
+28.08.2016 16:13:41.302 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 10:05 
+28.08.2016 16:13:41.302 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="3" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time> 
+28.08.2016 16:13:41.303 [WARN ][main  ][ElementHelper       ] - Tag Name not equal lesson_time . Tag Name = lesson_time 
+28.08.2016 16:13:41.323 [DEBUG][main  ][ElementHelper       ] - selectElement return <table class="knock" border="0"> 
+ <tbody>
+  <tr> 
+   <th class="knock_1" colspan="3">Расписание звонков</th> 
+  </tr> 
+  <tr> 
+   <td class="knock_1" colspan="2">понедельник–пятница</td> 
+   <td class="knock_1">суббота</td> 
+  </tr> 
+  <tr> 
+   <td class="n_para">1 пара</td> 
+   <td class="time">08:30–09:15<br>09:20–10:05</td> 
+   <td class="time">08:30–09:15<br>09:20–10:05</td> 
+  </tr> 
+  <tr> 
+   <td colspan="3" class="dot"></td> 
+  </tr> 
+  <tr> 
+   <td class="n_para">2 пара</td> 
+   <td class="time">10:15–11:00<br>11:05–11:50</td> 
+   <td class="time">10:15–11:00<br>11:05–11:50</td> 
+  </tr> 
+  <tr> 
+   <td colspan="3" class="dot"></td> 
+  </tr> 
+  <tr> 
+   <td colspan="2">перерыв для питания (35 мин.)<br>11:50 - 12:25</td> 
+  </tr> 
+  <tr> 
+   <td colspan="3" class="dot"></td> 
+  </tr> 
+  <tr> 
+   <td class="n_para">3 пара</td> 
+   <td class="time">12:25–13:10<br>13:15–14:00</td> 
+   <td class="time">12:00–12:45<br>12:50–13:35</td> 
+  </tr> 
+  <tr> 
+   <td colspan="3" class="dot"></td> 
+  </tr> 
+  <tr> 
+   <td colspan="3">перерыв для питания (35 мин.)</td> 
+  </tr> 
+  <tr> 
+   <td colspan="2">14:00 - 14:35</td> 
+   <td>13:35 - 14:10</td> 
+  </tr> 
+  <tr> 
+   <td colspan="3" class="dot"></td> 
+  </tr> 
+  <tr> 
+   <td class="n_para">4 пара</td> 
+   <td class="time">14:35–15:20<br>15:25–16:10</td> 
+   <td class="time">14:10–14:55<br>15:00–15:45</td> 
+  </tr> 
+  <tr> 
+   <td colspan="3" class="dot"></td> 
+  </tr> 
+  <tr> 
+   <td class="n_para">5 пара</td> 
+   <td class="time">16:20–17:05<br>17:10–17:55</td> 
+   <td class="time">15:55–16:40<br>16:45–17:30</td> 
+  </tr> 
+  <tr> 
+   <td colspan="3" class="dot"></td> 
+  </tr> 
+  <tr> 
+   <td class="n_para">6 пара</td> 
+   <td class="time">18:05–18:50<br>18:55–19:40</td> 
+   <td class="time">17:40–18:25<br>18:30–19:15</td> 
+  </tr> 
+  <tr> 
+   <td colspan="3" class="dot"></td> 
+  </tr> 
+  <tr> 
+   <td class="n_para">7 пара</td> 
+   <td class="time">19:50–20:35<br>20:40–21:25</td> 
+   <td class="time">19:25–20:10<br>20:15–21:00</td> 
+  </tr> 
+  <tr> 
+   <td colspan="3" class="dot"></td> 
+  </tr> 
+ </tbody>
+</table> 
+28.08.2016 16:13:41.324 [DEBUG][main  ][ElementJsoupFactory ] - createWeekTime 
+28.08.2016 16:13:41.324 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = week_time 
+28.08.2016 16:13:41.325 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = false 
+28.08.2016 16:13:41.325 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <week_time numerator="false"></week_time> 
+28.08.2016 16:13:41.325 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.325 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:41.325 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Понедельник 
+28.08.2016 16:13:41.325 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Понедельник"></day_time> 
+28.08.2016 16:13:41.327 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.328 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.328 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.328 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 1 
+28.08.2016 16:13:41.328 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 08:30 
+28.08.2016 16:13:41.328 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 09:15 
+28.08.2016 16:13:41.328 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 09:20 
+28.08.2016 16:13:41.329 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 10:05 
+28.08.2016 16:13:41.329 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time> 
+28.08.2016 16:13:41.329 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.330 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.330 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.331 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 2 
+28.08.2016 16:13:41.331 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 10:15 
+28.08.2016 16:13:41.331 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 11:00 
+28.08.2016 16:13:41.332 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 11:05 
+28.08.2016 16:13:41.332 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 11:50 
+28.08.2016 16:13:41.332 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time> 
+28.08.2016 16:13:41.333 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.334 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.334 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.334 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.334 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 12:25 
+28.08.2016 16:13:41.334 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 13:10 
+28.08.2016 16:13:41.334 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 13:15 
+28.08.2016 16:13:41.334 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 14:00 
+28.08.2016 16:13:41.335 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="3" start1="12:25" end1="13:10" start2="13:15" end2="14:00"></lesson_time> 
+28.08.2016 16:13:41.336 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.337 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.337 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.337 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:41.337 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 14:35 
+28.08.2016 16:13:41.337 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 15:20 
+28.08.2016 16:13:41.337 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 15:25 
+28.08.2016 16:13:41.337 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 16:10 
+28.08.2016 16:13:41.338 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="4" start1="14:35" end1="15:20" start2="15:25" end2="16:10"></lesson_time> 
+28.08.2016 16:13:41.338 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.339 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.343 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.344 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 5 
+28.08.2016 16:13:41.344 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 16:20 
+28.08.2016 16:13:41.344 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 17:05 
+28.08.2016 16:13:41.344 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 17:10 
+28.08.2016 16:13:41.344 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 17:55 
+28.08.2016 16:13:41.344 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="5" start1="16:20" end1="17:05" start2="17:10" end2="17:55"></lesson_time> 
+28.08.2016 16:13:41.345 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.348 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.348 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.348 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 6 
+28.08.2016 16:13:41.348 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 18:05 
+28.08.2016 16:13:41.348 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 18:50 
+28.08.2016 16:13:41.349 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 18:55 
+28.08.2016 16:13:41.349 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 19:40 
+28.08.2016 16:13:41.349 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="6" start1="18:05" end1="18:50" start2="18:55" end2="19:40"></lesson_time> 
+28.08.2016 16:13:41.349 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.352 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.352 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.352 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 7 
+28.08.2016 16:13:41.352 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 19:50 
+28.08.2016 16:13:41.352 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 20:35 
+28.08.2016 16:13:41.353 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 20:40 
+28.08.2016 16:13:41.353 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 21:25 
+28.08.2016 16:13:41.353 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="7" start1="19:50" end1="20:35" start2="20:40" end2="21:25"></lesson_time> 
+28.08.2016 16:13:41.396 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.396 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.396 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:41.396 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Вторник 
+28.08.2016 16:13:41.396 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Вторник"></day_time> 
+28.08.2016 16:13:41.396 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = override value = 1 
+28.08.2016 16:13:41.396 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.396 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.397 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:41.397 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Среда 
+28.08.2016 16:13:41.397 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Среда"></day_time> 
+28.08.2016 16:13:41.397 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = override value = 1 
+28.08.2016 16:13:41.397 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.397 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.397 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:41.398 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Четверг 
+28.08.2016 16:13:41.398 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Четверг"></day_time> 
+28.08.2016 16:13:41.398 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = override value = 1 
+28.08.2016 16:13:41.398 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.398 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.398 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:41.399 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Пятница 
+28.08.2016 16:13:41.399 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Пятница"></day_time> 
+28.08.2016 16:13:41.399 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = override value = 1 
+28.08.2016 16:13:41.399 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:41.399 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:41.399 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Суббота 
+28.08.2016 16:13:41.399 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Суббота"></day_time> 
+28.08.2016 16:13:41.401 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.401 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.402 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.402 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 1 
+28.08.2016 16:13:41.402 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 08:30 
+28.08.2016 16:13:41.402 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 09:15 
+28.08.2016 16:13:41.402 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 09:20 
+28.08.2016 16:13:41.402 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 10:05 
+28.08.2016 16:13:41.439 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time> 
+28.08.2016 16:13:41.449 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.450 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.450 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.450 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 2 
+28.08.2016 16:13:41.450 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 10:15 
+28.08.2016 16:13:41.450 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 11:00 
+28.08.2016 16:13:41.450 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 11:05 
+28.08.2016 16:13:41.451 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 11:50 
+28.08.2016 16:13:41.451 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time> 
+28.08.2016 16:13:41.451 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.452 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.452 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.452 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.452 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 12:00 
+28.08.2016 16:13:41.452 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 12:45 
+28.08.2016 16:13:41.452 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 12:50 
+28.08.2016 16:13:41.452 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 13:35 
+28.08.2016 16:13:41.453 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="3" start1="12:00" end1="12:45" start2="12:50" end2="13:35"></lesson_time> 
+28.08.2016 16:13:41.474 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.480 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.481 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.481 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:41.481 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 14:10 
+28.08.2016 16:13:41.490 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 14:55 
+28.08.2016 16:13:41.490 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 15:00 
+28.08.2016 16:13:41.491 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 15:45 
+28.08.2016 16:13:41.491 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="4" start1="14:10" end1="14:55" start2="15:00" end2="15:45"></lesson_time> 
+28.08.2016 16:13:41.491 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.492 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.492 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.492 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 5 
+28.08.2016 16:13:41.493 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 15:55 
+28.08.2016 16:13:41.493 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 16:40 
+28.08.2016 16:13:41.493 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 16:45 
+28.08.2016 16:13:41.493 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 17:30 
+28.08.2016 16:13:41.493 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="5" start1="15:55" end1="16:40" start2="16:45" end2="17:30"></lesson_time> 
+28.08.2016 16:13:41.494 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.494 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.494 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.494 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 6 
+28.08.2016 16:13:41.494 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 17:40 
+28.08.2016 16:13:41.495 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 18:25 
+28.08.2016 16:13:41.495 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 18:30 
+28.08.2016 16:13:41.495 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 19:15 
+28.08.2016 16:13:41.495 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="6" start1="17:40" end1="18:25" start2="18:30" end2="19:15"></lesson_time> 
+28.08.2016 16:13:41.498 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:41.498 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:41.498 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:41.499 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 7 
+28.08.2016 16:13:41.499 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 19:25 
+28.08.2016 16:13:41.499 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 20:10 
+28.08.2016 16:13:41.499 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 20:15 
+28.08.2016 16:13:41.499 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 21:00 
+28.08.2016 16:13:41.499 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time> 
+28.08.2016 16:13:41.504 [WARN ][main  ][ElementHelper       ] - Tag Name not equal week_time . Tag Name = week_time 
+28.08.2016 16:13:41.531 [DEBUG][main  ][ElementJsoupFactory ] - createDayLesson 
+28.08.2016 16:13:41.535 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_lesson 
+28.08.2016 16:13:41.535 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Понедельник 
+28.08.2016 16:13:41.537 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_lesson name="Понедельник"></day_lesson> 
+28.08.2016 16:13:41.537 [DEBUG][main  ][ElementHelper       ] - selectElements element=#document cssQuery = .num_para 
+28.08.2016 16:13:41.559 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Естествознание<br>Практическое занятие 405н<br></span><input type="submit" name="ctl00$head$ctl03" value="ст. преп. Абраменко Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl03&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=4497&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.562 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.563 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.563 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.563 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Естествознание 
+28.08.2016 16:13:41.563 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие 405н 
+28.08.2016 16:13:41.563 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.563 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Числ. 
+28.08.2016 16:13:41.563 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="3" name="Естествознание" description="Практическое занятие 405н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.566 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"><span>Физика<br>Лабораторное занятие 505н<br></span><input type="submit" name="ctl00$head$ctl05" value="асс. Омельченко Е.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl05&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18579&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.567 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.568 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.568 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.568 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Физика 
+28.08.2016 16:13:41.568 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лабораторное занятие 505н 
+28.08.2016 16:13:41.568 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.568 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Знам. 
+28.08.2016 16:13:41.569 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="3" name="Физика" description="Лабораторное занятие 505н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.575 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Математика: алгебра, начала математического анализа, геометрия<br>Практическое занятие 513н<br></span><input type="submit" name="ctl00$head$ctl07" value="ст. преп. Колосова И.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl07&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1018&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.576 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.576 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.576 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:41.576 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Математика: алгебра, начала математического анализа, геометрия 
+28.08.2016 16:13:41.577 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие 513н 
+28.08.2016 16:13:41.577 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.577 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = empty 
+28.08.2016 16:13:41.577 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="4" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.580 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/green.jpg');"><span>Обществознание (вкл. экономику и право)<br>Лекционное занятие 403н<br></span><input type="submit" name="ctl00$head$ctl09" value="доц. Зайцева Т.Г." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl09&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=977&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.585 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.585 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.585 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 5 
+28.08.2016 16:13:41.585 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Обществознание (вкл. экономику и право) 
+28.08.2016 16:13:41.585 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лекционное занятие 403н 
+28.08.2016 16:13:41.585 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.585 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Числ. 
+28.08.2016 16:13:41.586 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="5" name="Обществознание (вкл. экономику и право)" description="Лекционное занятие 403н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.590 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/green.jpg');"><span>Обществознание (вкл. экономику и право)<br>Лекционное занятие 504н<br></span><input type="submit" name="ctl00$head$ctl11" value="доц. Зайцева Т.Г." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl11&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=977&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.592 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.592 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.592 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 5 
+28.08.2016 16:13:41.592 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Обществознание (вкл. экономику и право) 
+28.08.2016 16:13:41.592 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лекционное занятие 504н 
+28.08.2016 16:13:41.592 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.592 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Знам. 
+28.08.2016 16:13:41.592 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="5" name="Обществознание (вкл. экономику и право)" description="Лекционное занятие 504н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.593 [WARN ][main  ][ElementHelper       ] - Value attribute dayName does not equal Понедельник.Value dayName =  
+28.08.2016 16:13:41.706 [DEBUG][main  ][ElementJsoupFactory ] - createGroupLesson 
+28.08.2016 16:13:41.706 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = group_lesson 
+28.08.2016 16:13:41.706 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <group_lesson></group_lesson> 
+28.08.2016 16:13:41.707 [DEBUG][main  ][ElementHelper       ] - selectElements element=#document cssQuery = .tbl_day 
+28.08.2016 16:13:41.708 [DEBUG][main  ][ElementJsoupFactory ] - createDayLesson 
+28.08.2016 16:13:41.708 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_lesson 
+28.08.2016 16:13:41.708 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Понедельник 
+28.08.2016 16:13:41.709 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_lesson name="Понедельник"></day_lesson> 
+28.08.2016 16:13:41.709 [DEBUG][main  ][ElementHelper       ] - selectElements element=table cssQuery = .num_para 
+28.08.2016 16:13:41.748 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>Естествознание<br>Практическое занятие 405н<br></span><input type="submit" name="ctl00$head$ctl03" value="ст. преп. Абраменко Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl03&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=4497&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.754 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.754 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.755 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.755 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Естествознание 
+28.08.2016 16:13:41.755 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие 405н 
+28.08.2016 16:13:41.755 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.755 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Числ. 
+28.08.2016 16:13:41.756 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="3" name="Естествознание" description="Практическое занятие 405н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.757 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"> <span>Физика<br>Лабораторное занятие 505н<br></span><input type="submit" name="ctl00$head$ctl05" value="асс. Омельченко Е.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl05&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18579&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.763 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.763 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.763 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.763 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Физика 
+28.08.2016 16:13:41.764 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лабораторное занятие 505н 
+28.08.2016 16:13:41.764 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.764 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Знам. 
+28.08.2016 16:13:41.764 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="3" name="Физика" description="Лабораторное занятие 505н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.765 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>Математика: алгебра, начала математического анализа, геометрия<br>Практическое занятие 513н<br></span><input type="submit" name="ctl00$head$ctl07" value="ст. преп. Колосова И.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl07&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1018&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.766 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.766 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.766 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:41.766 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Математика: алгебра, начала математического анализа, геометрия 
+28.08.2016 16:13:41.768 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие 513н 
+28.08.2016 16:13:41.768 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.768 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = empty 
+28.08.2016 16:13:41.768 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="4" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.770 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/green.jpg');"> <span>Обществознание (вкл. экономику и право)<br>Лекционное занятие 403н<br></span><input type="submit" name="ctl00$head$ctl09" value="доц. Зайцева Т.Г." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl09&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=977&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.776 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.776 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.776 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 5 
+28.08.2016 16:13:41.776 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Обществознание (вкл. экономику и право) 
+28.08.2016 16:13:41.776 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лекционное занятие 403н 
+28.08.2016 16:13:41.776 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.777 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Числ. 
+28.08.2016 16:13:41.777 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="5" name="Обществознание (вкл. экономику и право)" description="Лекционное занятие 403н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.779 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/green.jpg');"> <span>Обществознание (вкл. экономику и право)<br>Лекционное занятие 504н<br></span><input type="submit" name="ctl00$head$ctl11" value="доц. Зайцева Т.Г." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl11&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=977&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.780 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.780 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.780 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 5 
+28.08.2016 16:13:41.780 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Обществознание (вкл. экономику и право) 
+28.08.2016 16:13:41.780 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лекционное занятие 504н 
+28.08.2016 16:13:41.780 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.780 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Знам. 
+28.08.2016 16:13:41.780 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="5" name="Обществознание (вкл. экономику и право)" description="Лекционное занятие 504н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.783 [DEBUG][main  ][ElementJsoupFactory ] - createDayLesson 
+28.08.2016 16:13:41.786 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_lesson 
+28.08.2016 16:13:41.789 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Вторник 
+28.08.2016 16:13:41.790 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_lesson name="Вторник"></day_lesson> 
+28.08.2016 16:13:41.790 [DEBUG][main  ][ElementHelper       ] - selectElements element=table cssQuery = .num_para 
+28.08.2016 16:13:41.791 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>Русский язык и литература<br>Практическое занятие 310н<br></span><input type="submit" name="ctl00$head$ctl14" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl14&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.792 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.792 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.792 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 2 
+28.08.2016 16:13:41.792 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Русский язык и литература 
+28.08.2016 16:13:41.792 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие 310н 
+28.08.2016 16:13:41.792 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.792 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Числ. 
+28.08.2016 16:13:41.792 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="2" name="Русский язык и литература" description="Практическое занятие 310н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.795 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>Русский язык и литература<br>Практическое занятие 305н<br></span><input type="submit" name="ctl00$head$ctl16" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl16&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.798 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.798 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.798 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 2 
+28.08.2016 16:13:41.798 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Русский язык и литература 
+28.08.2016 16:13:41.798 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие 305н 
+28.08.2016 16:13:41.798 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.798 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Знам. 
+28.08.2016 16:13:41.799 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="2" name="Русский язык и литература" description="Практическое занятие 305н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.800 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/green.jpg');"> <span>Естествознание<br>Лекционное занятие 303н<br></span><input type="submit" name="ctl00$head$ctl18" value="ст. преп. Абраменко Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl18&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=4497&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.800 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.801 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.801 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.801 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Естествознание 
+28.08.2016 16:13:41.801 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лекционное занятие 303н 
+28.08.2016 16:13:41.801 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.801 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Числ. 
+28.08.2016 16:13:41.802 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="3" name="Естествознание" description="Лекционное занятие 303н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.803 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/green.jpg');"> <span>История 9<br>Лекционное занятие 411н<br></span><input type="submit" name="ctl00$head$ctl20" value="ст. преп. Нестерова Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl20&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1090&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.805 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.805 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.805 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.805 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = История 9 
+28.08.2016 16:13:41.805 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лекционное занятие 411н 
+28.08.2016 16:13:41.805 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.806 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Знам. 
+28.08.2016 16:13:41.806 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="3" name="История 9" description="Лекционное занятие 411н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.808 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"> <span>Физика<br>Лабораторное занятие 503ан<br></span><input type="submit" name="ctl00$head$ctl22" value="асс. Омельченко Е.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl22&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18579&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.812 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.812 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.812 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:41.813 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Физика 
+28.08.2016 16:13:41.813 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лабораторное занятие 503ан 
+28.08.2016 16:13:41.813 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.813 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Числ. 
+28.08.2016 16:13:41.813 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="4" name="Физика" description="Лабораторное занятие 503ан" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.817 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>Математика: алгебра, начала математического анализа, геометрия<br>Практическое занятие 514н<br></span><input type="submit" name="ctl00$head$ctl24" value="ст. преп. Колосова И.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl24&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1018&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.818 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.818 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.818 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:41.818 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Математика: алгебра, начала математического анализа, геометрия 
+28.08.2016 16:13:41.818 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие 514н 
+28.08.2016 16:13:41.818 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.818 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Знам. 
+28.08.2016 16:13:41.818 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="4" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 514н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.825 [DEBUG][main  ][ElementJsoupFactory ] - createDayLesson 
+28.08.2016 16:13:41.825 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_lesson 
+28.08.2016 16:13:41.826 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Среда 
+28.08.2016 16:13:41.826 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_lesson name="Среда"></day_lesson> 
+28.08.2016 16:13:41.826 [DEBUG][main  ][ElementHelper       ] - selectElements element=table cssQuery = .num_para 
+28.08.2016 16:13:41.827 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"> <span>Информатика 9<br>Лабораторное занятие 431, 432<br></span><input type="submit" name="ctl00$head$ctl27" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl27&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl28" value="преп. Чепелева Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl28&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46438&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.837 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.837 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.837 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 2 
+28.08.2016 16:13:41.837 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Информатика 9 
+28.08.2016 16:13:41.837 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лабораторное занятие 431, 432 
+28.08.2016 16:13:41.837 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.840 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Числ. 
+28.08.2016 16:13:41.840 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="2" name="Информатика 9" description="Лабораторное занятие 431, 432" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.844 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"> <span>Информатика 9<br>Лабораторное занятие 432, 432<br></span><input type="submit" name="ctl00$head$ctl30" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl30&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl31" value="преп. Чепелева Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl31&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46438&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.847 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.847 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.848 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 2 
+28.08.2016 16:13:41.848 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Информатика 9 
+28.08.2016 16:13:41.848 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лабораторное занятие 432, 432 
+28.08.2016 16:13:41.848 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.848 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Знам. 
+28.08.2016 16:13:41.848 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="2" name="Информатика 9" description="Лабораторное занятие 432, 432" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.859 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>Иностранный язык 9<br>Практическое занятие 013<br></span><input type="submit" name="ctl00$head$ctl33" value="ст. преп. Петряева Н.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl33&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1106&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.868 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.868 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.868 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.868 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Иностранный язык 9 
+28.08.2016 16:13:41.868 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие 013 
+28.08.2016 16:13:41.868 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.868 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = empty 
+28.08.2016 16:13:41.868 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="3" name="Иностранный язык 9" description="Практическое занятие 013" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.871 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/yellow.jpg');"> <span>Физическая культура<br>Физическая культура -, -, -<br></span><input type="submit" name="ctl00$head$ctl35" value="ст. преп. Гончаров В.М." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl35&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19066&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl36" value="асс. Павлова И.А." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl36&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19069&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl37" value="асс. Павлова И.А." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl37&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19069&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.875 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.875 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.875 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:41.875 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Физическая культура 
+28.08.2016 16:13:41.875 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Физическая культура -, -, - 
+28.08.2016 16:13:41.875 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.875 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = empty 
+28.08.2016 16:13:41.875 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="4" name="Физическая культура" description="Физическая культура -, -, -" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.876 [DEBUG][main  ][ElementJsoupFactory ] - createDayLesson 
+28.08.2016 16:13:41.876 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_lesson 
+28.08.2016 16:13:41.876 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Четверг 
+28.08.2016 16:13:41.876 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_lesson name="Четверг"></day_lesson> 
+28.08.2016 16:13:41.876 [DEBUG][main  ][ElementHelper       ] - selectElements element=table cssQuery = .num_para 
+28.08.2016 16:13:41.937 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>Математика: алгебра, начала математического анализа, геометрия<br>Практическое занятие 513н<br></span><input type="submit" name="ctl00$head$ctl41" value="ст. преп. Колосова И.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl41&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1018&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.947 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.947 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.947 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.947 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Математика: алгебра, начала математического анализа, геометрия 
+28.08.2016 16:13:41.947 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие 513н 
+28.08.2016 16:13:41.948 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.948 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = empty 
+28.08.2016 16:13:41.949 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="3" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.950 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>Русский язык и литература<br>Практическое занятие 110н<br></span><input type="submit" name="ctl00$head$ctl43" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl43&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.951 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.951 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.951 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:41.951 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Русский язык и литература 
+28.08.2016 16:13:41.951 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие 110н 
+28.08.2016 16:13:41.951 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.951 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Числ. 
+28.08.2016 16:13:41.951 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="4" name="Русский язык и литература" description="Практическое занятие 110н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.952 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>Русский язык и литература<br>Практическое занятие 312н<br></span><input type="submit" name="ctl00$head$ctl45" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl45&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.953 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.953 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.953 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:41.953 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Русский язык и литература 
+28.08.2016 16:13:41.954 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие 312н 
+28.08.2016 16:13:41.954 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.954 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Знам. 
+28.08.2016 16:13:41.954 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="4" name="Русский язык и литература" description="Практическое занятие 312н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.955 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/green.jpg');"> <span>Введение в специальность<br>Лекционное занятие 115<br></span><input type="submit" name="ctl00$head$ctl47" value="асс. Коптелова Л.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl47&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1022&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.956 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.956 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.956 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 5 
+28.08.2016 16:13:41.957 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Введение в специальность 
+28.08.2016 16:13:41.957 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лекционное занятие 115 
+28.08.2016 16:13:41.957 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.957 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Числ. 
+28.08.2016 16:13:41.957 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="5" name="Введение в специальность" description="Лекционное занятие 115" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.958 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"> <span>Введение в специальность<br>Лабораторное занятие 113, 115<br></span><input type="submit" name="ctl00$head$ctl49" value="ст. преп. Костяник Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl49&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46398&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl50" value="асс. Коптелова Л.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl50&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1022&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.959 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.959 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.959 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 5 
+28.08.2016 16:13:41.959 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Введение в специальность 
+28.08.2016 16:13:41.959 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лабораторное занятие 113, 115 
+28.08.2016 16:13:41.959 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.960 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Знам. 
+28.08.2016 16:13:41.960 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="5" name="Введение в специальность" description="Лабораторное занятие 113, 115" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.962 [DEBUG][main  ][ElementJsoupFactory ] - createDayLesson 
+28.08.2016 16:13:41.962 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_lesson 
+28.08.2016 16:13:41.962 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Пятница 
+28.08.2016 16:13:41.962 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_lesson name="Пятница"></day_lesson> 
+28.08.2016 16:13:41.962 [DEBUG][main  ][ElementHelper       ] - selectElements element=table cssQuery = .num_para 
+28.08.2016 16:13:41.963 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"> <span>Информатика 9<br>Лабораторное занятие 106, 108, 108<br></span><input type="submit" name="ctl00$head$ctl53" value="преп. Чепелева Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl53&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46438&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl54" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl54&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl55" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl55&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.968 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.968 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.968 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 2 
+28.08.2016 16:13:41.968 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Информатика 9 
+28.08.2016 16:13:41.968 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лабораторное занятие 106, 108, 108 
+28.08.2016 16:13:41.968 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.968 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = empty 
+28.08.2016 16:13:41.969 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="2" name="Информатика 9" description="Лабораторное занятие 106, 108, 108" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.970 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>История 9<br>Практическое занятие 104н<br></span><input type="submit" name="ctl00$head$ctl57" value="ст. преп. Нестерова Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl57&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1090&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.971 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.971 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.971 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.971 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = История 9 
+28.08.2016 16:13:41.971 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие 104н 
+28.08.2016 16:13:41.971 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.971 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = empty 
+28.08.2016 16:13:41.971 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="3" name="История 9" description="Практическое занятие 104н" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.977 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>Обществознание (вкл. экономику и право)<br>Практическое занятие 513н<br></span><input type="submit" name="ctl00$head$ctl59" value="асс. Скоков А.Л." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl59&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1157&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.979 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.979 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.980 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:41.980 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Обществознание (вкл. экономику и право) 
+28.08.2016 16:13:41.980 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие 513н 
+28.08.2016 16:13:41.980 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.980 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = empty 
+28.08.2016 16:13:41.980 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="4" name="Обществознание (вкл. экономику и право)" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.981 [DEBUG][main  ][ElementJsoupFactory ] - createDayLesson 
+28.08.2016 16:13:41.981 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_lesson 
+28.08.2016 16:13:41.981 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Суббота 
+28.08.2016 16:13:41.981 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_lesson name="Суббота"></day_lesson> 
+28.08.2016 16:13:41.982 [DEBUG][main  ][ElementHelper       ] - selectElements element=table cssQuery = .num_para 
+28.08.2016 16:13:41.982 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>Иностранный язык 9<br>Практическое занятие -<br></span><input type="submit" name="ctl00$head$ctl62" value="ст. преп. Петряева Н.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl62&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1106&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.985 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.985 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.985 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 2 
+28.08.2016 16:13:41.985 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Иностранный язык 9 
+28.08.2016 16:13:41.985 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие - 
+28.08.2016 16:13:41.985 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.985 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Числ. 
+28.08.2016 16:13:41.986 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="2" name="Иностранный язык 9" description="Практическое занятие -" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.989 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>Математика: алгебра, начала математического анализа, геометрия<br>Практическое занятие -<br></span><input type="submit" name="ctl00$head$ctl64" value="ст. преп. Колосова И.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl64&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1018&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.991 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.991 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.991 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 2 
+28.08.2016 16:13:41.991 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Математика: алгебра, начала математического анализа, геометрия 
+28.08.2016 16:13:41.991 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие - 
+28.08.2016 16:13:41.991 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.991 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Знам. 
+28.08.2016 16:13:41.992 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="2" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие -" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.993 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/yellow.jpg');"> <span>Физическая культура<br>Физическая культура -, -<br></span><input type="submit" name="ctl00$head$ctl66" value="ст. преп. Гончаров В.М." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl66&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19066&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl67" value="асс. Павлова И.А." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl67&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19069&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:41.998 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:41.998 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:41.998 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:41.998 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Физическая культура 
+28.08.2016 16:13:41.998 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Физическая культура -, - 
+28.08.2016 16:13:41.998 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:41.998 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Числ. 
+28.08.2016 16:13:42.002 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="3" name="Физическая культура" description="Физическая культура -, -" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:42.003 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>Русский язык и литература<br>Практическое занятие -<br></span><input type="submit" name="ctl00$head$ctl69" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl69&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:42.009 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:42.009 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:42.009 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:42.009 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Русский язык и литература 
+28.08.2016 16:13:42.009 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие - 
+28.08.2016 16:13:42.009 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:42.009 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Знам. 
+28.08.2016 16:13:42.009 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="3" name="Русский язык и литература" description="Практическое занятие -" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:42.010 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"> <span>Физика<br>Лабораторное занятие -<br></span><input type="submit" name="ctl00$head$ctl71" value="асс. Омельченко Е.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl71&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18579&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:42.011 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:42.011 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:42.011 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:42.011 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Физика 
+28.08.2016 16:13:42.011 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лабораторное занятие - 
+28.08.2016 16:13:42.011 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:42.011 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Числ. 
+28.08.2016 16:13:42.011 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="4" name="Физика" description="Лабораторное занятие -" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:42.012 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"> <span>Информатика 9<br>Лабораторное занятие -, -<br></span><input type="submit" name="ctl00$head$ctl73" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl73&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl74" value="преп. Чепелева Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl74&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46438&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:42.014 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:42.014 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:42.014 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:42.014 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Информатика 9 
+28.08.2016 16:13:42.015 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Лабораторное занятие -, - 
+28.08.2016 16:13:42.015 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:42.015 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Знам. 
+28.08.2016 16:13:42.015 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="4" name="Информатика 9" description="Лабораторное занятие -, -" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:42.074 [DEBUG][main  ][ElementHelper       ] - selectElement return <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"> <span>Естествознание<br>Практическое занятие 405н<br></span> <input type="submit" name="ctl00$head$ctl03" value="ст. преп. Абраменко Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl03&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=4497&quot;, false, false))" class="fioprep"></td> 
+28.08.2016 16:13:42.075 [DEBUG][main  ][ElementJsoupFactory ] - createLesson 
+28.08.2016 16:13:42.075 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:42.075 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:42.075 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Естествознание 
+28.08.2016 16:13:42.075 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = description value = Практическое занятие 405н 
+28.08.2016 16:13:42.075 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = teacher value = Name Teacher 
+28.08.2016 16:13:42.075 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = Числ. 
+28.08.2016 16:13:42.075 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson number="3" name="Естествознание" description="Практическое занятие 405н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:42.076 [WARN ][main  ][ElementHelper       ] - Value attribute lessonName does not equal Естествознание.Value lessonName =  
+28.08.2016 16:13:42.076 [WARN ][main  ][ElementHelper       ] - Value attribute audience does not equal Практическое занятие 405н.Value audience =  
+28.08.2016 16:13:42.079 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:42.079 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson></lesson> 
+28.08.2016 16:13:42.079 [WARN ][main  ][ElementHelper       ] - Tag Name not equal lesson . Tag Name = lesson 
+28.08.2016 16:13:42.081 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:42.081 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson></lesson> 
+28.08.2016 16:13:42.081 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.081 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.081 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.082 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.082 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.082 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.082 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.082 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.082 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.082 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.082 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.082 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.082 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.082 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.082 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.083 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.083 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.083 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.083 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.083 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.083 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.083 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.083 [DEBUG][main  ][ElementHelper       ] - selectElement return <lesson_time id="12G"></lesson_time> 
+28.08.2016 16:13:42.084 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:42.084 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson></lesson> 
+28.08.2016 16:13:42.085 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.085 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.085 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.085 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.086 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.086 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.086 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.086 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.087 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:42.087 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson></lesson> 
+28.08.2016 16:13:42.088 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.088 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.088 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.088 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.088 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.089 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.089 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.089 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.089 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.089 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.089 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.090 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.090 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.090 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.090 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.090 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.090 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.090 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.090 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.091 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.091 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.091 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.091 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.091 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.091 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.091 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.091 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = week_time 
+28.08.2016 16:13:42.091 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <week_time></week_time> 
+28.08.2016 16:13:42.091 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = week_time 
+28.08.2016 16:13:42.091 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <week_time></week_time> 
+28.08.2016 16:13:42.091 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = week_time 
+28.08.2016 16:13:42.091 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <week_time></week_time> 
+28.08.2016 16:13:42.092 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = week_time 
+28.08.2016 16:13:42.092 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <week_time></week_time> 
+28.08.2016 16:13:42.092 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = week_time 
+28.08.2016 16:13:42.092 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <week_time></week_time> 
+28.08.2016 16:13:42.092 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = week_time 
+28.08.2016 16:13:42.092 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <week_time></week_time> 
+28.08.2016 16:13:42.092 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = week_time 
+28.08.2016 16:13:42.092 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <week_time></week_time> 
+28.08.2016 16:13:42.092 [DEBUG][main  ][ElementHelper       ] - selectElements element=lesson cssQuery = lesson_time 
+28.08.2016 16:13:42.094 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:42.095 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson></lesson> 
+28.08.2016 16:13:42.095 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.095 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.095 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.095 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.095 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.095 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.095 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.095 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.095 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.096 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.096 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.096 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.096 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.096 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.096 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.096 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.096 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.096 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.096 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.096 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.098 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:42.098 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson></lesson> 
+28.08.2016 16:13:42.100 [WARN ][main  ][ElementHelper       ] - checkNotElementSize Element size not equals 0. Elements size = 0 
+28.08.2016 16:13:42.100 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.100 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.102 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.102 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.102 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.102 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.102 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.102 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.102 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.103 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.103 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.103 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.103 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.103 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.103 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.103 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.103 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.103 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.103 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.104 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time></lesson_time> 
+28.08.2016 16:13:42.105 [WARN ][main  ][ElementHelper       ] - checkNotElementSize Element size not equals 10. Elements size = 10 
+28.08.2016 16:13:42.106 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson 
+28.08.2016 16:13:42.106 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson></lesson> 
+28.08.2016 16:13:42.107 [WARN ][main  ][ElementHelper       ] - Value attribute Size does not equal 10.Value Size =  
+28.08.2016 16:13:42.113 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.113 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.113 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.114 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.114 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.114 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.115 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.115 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.115 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.115 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.116 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.116 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.116 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.116 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_lesson 
+28.08.2016 16:13:42.116 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_lesson></day_lesson> 
+28.08.2016 16:13:42.116 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:42.116 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = name1 
+28.08.2016 16:13:42.117 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="name1"></day_time> 
+28.08.2016 16:13:42.117 [DEBUG][main  ][ElementHelper       ] - selectElement return <day_time name="name1"></day_time> 
+28.08.2016 16:13:42.117 [WARN ][main  ][ElementHelper       ] - Tag Name not equal day_time . Tag Name = day_time 
+28.08.2016 16:13:42.118 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.118 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.118 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.118 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.118 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.118 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.119 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.119 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.119 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_lesson 
+28.08.2016 16:13:42.119 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_lesson></day_lesson> 
+28.08.2016 16:13:42.120 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:42.120 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = name1 
+28.08.2016 16:13:42.120 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="name1"></day_time> 
+28.08.2016 16:13:42.120 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = group_lesson 
+28.08.2016 16:13:42.120 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = name1 
+28.08.2016 16:13:42.121 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <group_lesson name="name1"></group_lesson> 
+28.08.2016 16:13:42.122 [DEBUG][main  ][ElementHelper       ] - selectElements element=day_lesson cssQuery = [name=name1] 
+28.08.2016 16:13:42.125 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.125 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.125 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.125 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.125 [WARN ][main  ][ElementHelper       ] - checkNotElementSize Element size not equals 0. Elements size = 0 
+28.08.2016 16:13:42.126 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.126 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.126 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.126 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.126 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.126 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.126 [WARN ][main  ][ElementJsoupBuilder ] - createElementEmpty!! 
+28.08.2016 16:13:42.126 [WARN ][main  ][ElementHelper       ] - checkElementsSize Element size not equals 2. Element size = 0 
+28.08.2016 16:13:42.150 [DEBUG][main  ][ElementJsoupFactory ] - createWeekTime 
+28.08.2016 16:13:42.150 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = week_time 
+28.08.2016 16:13:42.150 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = numerator value = false 
+28.08.2016 16:13:42.150 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <week_time numerator="false"></week_time> 
+28.08.2016 16:13:42.150 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:42.150 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:42.150 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Понедельник 
+28.08.2016 16:13:42.150 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Понедельник"></day_time> 
+28.08.2016 16:13:42.151 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:42.152 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:42.152 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.152 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 1 
+28.08.2016 16:13:42.152 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 08:30 
+28.08.2016 16:13:42.152 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 09:15 
+28.08.2016 16:13:42.152 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 09:20 
+28.08.2016 16:13:42.152 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 10:05 
+28.08.2016 16:13:42.153 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time> 
+28.08.2016 16:13:42.153 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:42.154 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:42.154 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.154 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 2 
+28.08.2016 16:13:42.154 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 10:15 
+28.08.2016 16:13:42.154 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 11:00 
+28.08.2016 16:13:42.154 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 11:05 
+28.08.2016 16:13:42.154 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 11:50 
+28.08.2016 16:13:42.154 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time> 
+28.08.2016 16:13:42.155 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:42.156 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:42.156 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.156 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:42.156 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 12:25 
+28.08.2016 16:13:42.156 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 13:10 
+28.08.2016 16:13:42.156 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 13:15 
+28.08.2016 16:13:42.156 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 14:00 
+28.08.2016 16:13:42.157 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="3" start1="12:25" end1="13:10" start2="13:15" end2="14:00"></lesson_time> 
+28.08.2016 16:13:42.159 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:42.159 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:42.159 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.159 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:42.159 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 14:35 
+28.08.2016 16:13:42.159 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 15:20 
+28.08.2016 16:13:42.159 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 15:25 
+28.08.2016 16:13:42.160 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 16:10 
+28.08.2016 16:13:42.160 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="4" start1="14:35" end1="15:20" start2="15:25" end2="16:10"></lesson_time> 
+28.08.2016 16:13:42.160 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:42.161 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:42.161 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.161 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 5 
+28.08.2016 16:13:42.161 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 16:20 
+28.08.2016 16:13:42.161 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 17:05 
+28.08.2016 16:13:42.161 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 17:10 
+28.08.2016 16:13:42.161 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 17:55 
+28.08.2016 16:13:42.161 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="5" start1="16:20" end1="17:05" start2="17:10" end2="17:55"></lesson_time> 
+28.08.2016 16:13:42.167 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:42.185 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:42.185 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.185 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 6 
+28.08.2016 16:13:42.185 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 18:05 
+28.08.2016 16:13:42.185 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 18:50 
+28.08.2016 16:13:42.185 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 18:55 
+28.08.2016 16:13:42.185 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 19:40 
+28.08.2016 16:13:42.185 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="6" start1="18:05" end1="18:50" start2="18:55" end2="19:40"></lesson_time> 
+28.08.2016 16:13:42.185 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:42.187 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:42.187 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.187 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 7 
+28.08.2016 16:13:42.187 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 19:50 
+28.08.2016 16:13:42.187 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 20:35 
+28.08.2016 16:13:42.187 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 20:40 
+28.08.2016 16:13:42.188 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 21:25 
+28.08.2016 16:13:42.188 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="7" start1="19:50" end1="20:35" start2="20:40" end2="21:25"></lesson_time> 
+28.08.2016 16:13:42.188 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:42.188 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:42.188 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:42.188 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Вторник 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Вторник"></day_time> 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = override value = 1 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Среда 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Среда"></day_time> 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = override value = 1 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Четверг 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Четверг"></day_time> 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = override value = 1 
+28.08.2016 16:13:42.189 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:42.190 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:42.190 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:42.190 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Пятница 
+28.08.2016 16:13:42.190 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Пятница"></day_time> 
+28.08.2016 16:13:42.190 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = override value = 1 
+28.08.2016 16:13:42.190 [DEBUG][main  ][ElementJsoupFactory ] - createDayTime 
+28.08.2016 16:13:42.190 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = day_time 
+28.08.2016 16:13:42.190 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = name value = Суббота 
+28.08.2016 16:13:42.190 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <day_time name="Суббота"></day_time> 
+28.08.2016 16:13:42.191 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:42.192 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:42.192 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.192 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 1 
+28.08.2016 16:13:42.192 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 08:30 
+28.08.2016 16:13:42.192 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 09:15 
+28.08.2016 16:13:42.192 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 09:20 
+28.08.2016 16:13:42.192 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 10:05 
+28.08.2016 16:13:42.192 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time> 
+28.08.2016 16:13:42.192 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:42.193 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:42.193 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.193 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 2 
+28.08.2016 16:13:42.193 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 10:15 
+28.08.2016 16:13:42.193 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 11:00 
+28.08.2016 16:13:42.193 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 11:05 
+28.08.2016 16:13:42.193 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 11:50 
+28.08.2016 16:13:42.193 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time> 
+28.08.2016 16:13:42.193 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:42.194 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:42.194 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.194 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 3 
+28.08.2016 16:13:42.194 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 12:00 
+28.08.2016 16:13:42.194 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 12:45 
+28.08.2016 16:13:42.194 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 12:50 
+28.08.2016 16:13:42.194 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 13:35 
+28.08.2016 16:13:42.194 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="3" start1="12:00" end1="12:45" start2="12:50" end2="13:35"></lesson_time> 
+28.08.2016 16:13:42.196 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:42.196 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:42.196 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.196 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 4 
+28.08.2016 16:13:42.196 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 14:10 
+28.08.2016 16:13:42.196 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 14:55 
+28.08.2016 16:13:42.196 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 15:00 
+28.08.2016 16:13:42.196 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 15:45 
+28.08.2016 16:13:42.197 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="4" start1="14:10" end1="14:55" start2="15:00" end2="15:45"></lesson_time> 
+28.08.2016 16:13:42.197 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:42.197 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:42.197 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.197 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 5 
+28.08.2016 16:13:42.198 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 15:55 
+28.08.2016 16:13:42.198 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 16:40 
+28.08.2016 16:13:42.198 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 16:45 
+28.08.2016 16:13:42.198 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 17:30 
+28.08.2016 16:13:42.198 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="5" start1="15:55" end1="16:40" start2="16:45" end2="17:30"></lesson_time> 
+28.08.2016 16:13:42.198 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:42.199 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:42.199 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.199 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 6 
+28.08.2016 16:13:42.199 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 17:40 
+28.08.2016 16:13:42.199 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 18:25 
+28.08.2016 16:13:42.199 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 18:30 
+28.08.2016 16:13:42.199 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 19:15 
+28.08.2016 16:13:42.199 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="6" start1="17:40" end1="18:25" start2="18:30" end2="19:15"></lesson_time> 
+28.08.2016 16:13:42.199 [DEBUG][main  ][ElementHelper       ] - selectElements element=td cssQuery = td.n_para 
+28.08.2016 16:13:42.200 [DEBUG][main  ][ElementJsoupFactory ] - createLessonTime 
+28.08.2016 16:13:42.200 [DEBUG][main  ][ElementJsoupBuilder ] - createElement name = lesson_time 
+28.08.2016 16:13:42.200 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = number value = 7 
+28.08.2016 16:13:42.200 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start1 value = 19:25 
+28.08.2016 16:13:42.200 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end1 value = 20:10 
+28.08.2016 16:13:42.200 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = start2 value = 20:15 
+28.08.2016 16:13:42.200 [DEBUG][main  ][ElementJsoupBuilder ] - setAttr key = end2 value = 21:00 
+28.08.2016 16:13:42.200 [DEBUG][main  ][ElementJsoupBuilder ] - getThisElement <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time> 

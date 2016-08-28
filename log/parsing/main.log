@@ -5098,3 +5098,827 @@
   <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time>
  </day_time>
 </week_time> 
+28.08.2016 16:13:41.098 [INFO ][main  ][ParserDayTime       ] - ==== Parsing Element = #document ==== 
+28.08.2016 16:13:41.098 [DEBUG][main  ][ParserDayTime       ] - addLessonTime dayTime =  cssQuery =  td.n_para + td.time 
+28.08.2016 16:13:41.108 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.108 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">08:30–09:15<br>09:20–10:05<td class="n_para">1 пара</td></td> 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time> 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@f5f2bb7 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">10:15–11:00<br>11:05–11:50<td class="n_para">2 пара</td></td> 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time> 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@f5f2bb7 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.118 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">12:25–13:10<br>13:15–14:00<td class="n_para">3 пара</td></td> 
+28.08.2016 16:13:41.129 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="3" start1="12:25" end1="13:10" start2="13:15" end2="14:00"></lesson_time> 
+28.08.2016 16:13:41.130 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="3" start1="12:25" end1="13:10" start2="13:15" end2="14:00"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@f5f2bb7 
+28.08.2016 16:13:41.130 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.132 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">14:35–15:20<br>15:25–16:10<td class="n_para">4 пара</td></td> 
+28.08.2016 16:13:41.135 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="4" start1="14:35" end1="15:20" start2="15:25" end2="16:10"></lesson_time> 
+28.08.2016 16:13:41.136 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="4" start1="14:35" end1="15:20" start2="15:25" end2="16:10"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@f5f2bb7 
+28.08.2016 16:13:41.136 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.137 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">16:20–17:05<br>17:10–17:55<td class="n_para">5 пара</td></td> 
+28.08.2016 16:13:41.161 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="5" start1="16:20" end1="17:05" start2="17:10" end2="17:55"></lesson_time> 
+28.08.2016 16:13:41.161 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="5" start1="16:20" end1="17:05" start2="17:10" end2="17:55"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@f5f2bb7 
+28.08.2016 16:13:41.162 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.162 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">18:05–18:50<br>18:55–19:40<td class="n_para">6 пара</td></td> 
+28.08.2016 16:13:41.178 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="6" start1="18:05" end1="18:50" start2="18:55" end2="19:40"></lesson_time> 
+28.08.2016 16:13:41.178 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="6" start1="18:05" end1="18:50" start2="18:55" end2="19:40"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@f5f2bb7 
+28.08.2016 16:13:41.179 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.182 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">19:50–20:35<br>20:40–21:25<td class="n_para">7 пара</td></td> 
+28.08.2016 16:13:41.190 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="7" start1="19:50" end1="20:35" start2="20:40" end2="21:25"></lesson_time> 
+28.08.2016 16:13:41.191 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="7" start1="19:50" end1="20:35" start2="20:40" end2="21:25"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@f5f2bb7 
+28.08.2016 16:13:41.213 [DEBUG][main  ][ParserDayTime       ] - addLessonTime dayTime =  cssQuery =  td.time ~ td 
+28.08.2016 16:13:41.215 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.216 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">08:30–09:15<br>09:20–10:05<td class="n_para">1 пара</td></td> 
+28.08.2016 16:13:41.218 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time> 
+28.08.2016 16:13:41.219 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@f5f2bb7 
+28.08.2016 16:13:41.219 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.220 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">10:15–11:00<br>11:05–11:50<td class="n_para">2 пара</td></td> 
+28.08.2016 16:13:41.240 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time> 
+28.08.2016 16:13:41.240 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@f5f2bb7 
+28.08.2016 16:13:41.242 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.244 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">12:00–12:45<br>12:50–13:35<td class="n_para">3 пара</td></td> 
+28.08.2016 16:13:41.246 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="3" start1="12:00" end1="12:45" start2="12:50" end2="13:35"></lesson_time> 
+28.08.2016 16:13:41.247 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="3" start1="12:00" end1="12:45" start2="12:50" end2="13:35"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@f5f2bb7 
+28.08.2016 16:13:41.247 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.247 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">14:10–14:55<br>15:00–15:45<td class="n_para">4 пара</td></td> 
+28.08.2016 16:13:41.255 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="4" start1="14:10" end1="14:55" start2="15:00" end2="15:45"></lesson_time> 
+28.08.2016 16:13:41.256 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="4" start1="14:10" end1="14:55" start2="15:00" end2="15:45"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@f5f2bb7 
+28.08.2016 16:13:41.256 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.256 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">15:55–16:40<br>16:45–17:30<td class="n_para">5 пара</td></td> 
+28.08.2016 16:13:41.262 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="5" start1="15:55" end1="16:40" start2="16:45" end2="17:30"></lesson_time> 
+28.08.2016 16:13:41.263 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="5" start1="15:55" end1="16:40" start2="16:45" end2="17:30"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@f5f2bb7 
+28.08.2016 16:13:41.263 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.264 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">17:40–18:25<br>18:30–19:15<td class="n_para">6 пара</td></td> 
+28.08.2016 16:13:41.269 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="6" start1="17:40" end1="18:25" start2="18:30" end2="19:15"></lesson_time> 
+28.08.2016 16:13:41.269 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="6" start1="17:40" end1="18:25" start2="18:30" end2="19:15"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@f5f2bb7 
+28.08.2016 16:13:41.269 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.270 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">19:25–20:10<br>20:15–21:00<td class="n_para">7 пара</td></td> 
+28.08.2016 16:13:41.283 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time> 
+28.08.2016 16:13:41.283 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@f5f2bb7 
+28.08.2016 16:13:41.284 [DEBUG][main  ][ParserDayTime       ] - ====== return <week_time numerator="false">
+ <day_time name="Понедельник">
+  <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time>
+  <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time>
+  <lesson_time number="3" start1="12:25" end1="13:10" start2="13:15" end2="14:00"></lesson_time>
+  <lesson_time number="4" start1="14:35" end1="15:20" start2="15:25" end2="16:10"></lesson_time>
+  <lesson_time number="5" start1="16:20" end1="17:05" start2="17:10" end2="17:55"></lesson_time>
+  <lesson_time number="6" start1="18:05" end1="18:50" start2="18:55" end2="19:40"></lesson_time>
+  <lesson_time number="7" start1="19:50" end1="20:35" start2="20:40" end2="21:25"></lesson_time>
+ </day_time>
+ <day_time name="Вторник" override="1"></day_time>
+ <day_time name="Среда" override="1"></day_time>
+ <day_time name="Четверг" override="1"></day_time>
+ <day_time name="Пятница" override="1"></day_time>
+ <day_time name="Суббота">
+  <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time>
+  <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time>
+  <lesson_time number="3" start1="12:00" end1="12:45" start2="12:50" end2="13:35"></lesson_time>
+  <lesson_time number="4" start1="14:10" end1="14:55" start2="15:00" end2="15:45"></lesson_time>
+  <lesson_time number="5" start1="15:55" end1="16:40" start2="16:45" end2="17:30"></lesson_time>
+  <lesson_time number="6" start1="17:40" end1="18:25" start2="18:30" end2="19:15"></lesson_time>
+  <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time>
+ </day_time>
+</week_time> 
+28.08.2016 16:13:41.289 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = #document ==== 
+28.08.2016 16:13:41.290 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">08:30–09:15<br>09:20–10:05</td>
+<td class="time">08:30–09:15<br>09:20–10:05</td> 
+28.08.2016 16:13:41.303 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="3" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time> 
+28.08.2016 16:13:41.321 [DEBUG][main  ][ParserWeekTime      ] - ==== Parsing Element = #document ==== 
+28.08.2016 16:13:41.324 [DEBUG][main  ][ParserWeekTime      ] - parseDayTime 
+28.08.2016 16:13:41.324 [INFO ][main  ][ParserDayTime       ] - ==== Parsing Element = table ==== 
+28.08.2016 16:13:41.325 [DEBUG][main  ][ParserDayTime       ] - addLessonTime dayTime =  cssQuery =  td.n_para + td.time 
+28.08.2016 16:13:41.327 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.327 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">08:30–09:15<br>09:20–10:05<td class="n_para">1 пара</td></td> 
+28.08.2016 16:13:41.329 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time> 
+28.08.2016 16:13:41.329 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5ae9a829 
+28.08.2016 16:13:41.329 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.330 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">10:15–11:00<br>11:05–11:50<td class="n_para">2 пара</td></td> 
+28.08.2016 16:13:41.332 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time> 
+28.08.2016 16:13:41.332 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5ae9a829 
+28.08.2016 16:13:41.332 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.333 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">12:25–13:10<br>13:15–14:00<td class="n_para">3 пара</td></td> 
+28.08.2016 16:13:41.335 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="3" start1="12:25" end1="13:10" start2="13:15" end2="14:00"></lesson_time> 
+28.08.2016 16:13:41.335 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="3" start1="12:25" end1="13:10" start2="13:15" end2="14:00"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5ae9a829 
+28.08.2016 16:13:41.335 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.336 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">14:35–15:20<br>15:25–16:10<td class="n_para">4 пара</td></td> 
+28.08.2016 16:13:41.338 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="4" start1="14:35" end1="15:20" start2="15:25" end2="16:10"></lesson_time> 
+28.08.2016 16:13:41.338 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="4" start1="14:35" end1="15:20" start2="15:25" end2="16:10"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5ae9a829 
+28.08.2016 16:13:41.338 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.339 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">16:20–17:05<br>17:10–17:55<td class="n_para">5 пара</td></td> 
+28.08.2016 16:13:41.344 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="5" start1="16:20" end1="17:05" start2="17:10" end2="17:55"></lesson_time> 
+28.08.2016 16:13:41.345 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="5" start1="16:20" end1="17:05" start2="17:10" end2="17:55"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5ae9a829 
+28.08.2016 16:13:41.345 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.348 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">18:05–18:50<br>18:55–19:40<td class="n_para">6 пара</td></td> 
+28.08.2016 16:13:41.349 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="6" start1="18:05" end1="18:50" start2="18:55" end2="19:40"></lesson_time> 
+28.08.2016 16:13:41.349 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="6" start1="18:05" end1="18:50" start2="18:55" end2="19:40"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5ae9a829 
+28.08.2016 16:13:41.349 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.352 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">19:50–20:35<br>20:40–21:25<td class="n_para">7 пара</td></td> 
+28.08.2016 16:13:41.353 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="7" start1="19:50" end1="20:35" start2="20:40" end2="21:25"></lesson_time> 
+28.08.2016 16:13:41.395 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="7" start1="19:50" end1="20:35" start2="20:40" end2="21:25"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5ae9a829 
+28.08.2016 16:13:41.400 [DEBUG][main  ][ParserDayTime       ] - addLessonTime dayTime =  cssQuery =  td.time ~ td 
+28.08.2016 16:13:41.401 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.401 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">08:30–09:15<br>09:20–10:05<td class="n_para">1 пара</td></td> 
+28.08.2016 16:13:41.440 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time> 
+28.08.2016 16:13:41.449 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5ae9a829 
+28.08.2016 16:13:41.449 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.450 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">10:15–11:00<br>11:05–11:50<td class="n_para">2 пара</td></td> 
+28.08.2016 16:13:41.451 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time> 
+28.08.2016 16:13:41.451 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5ae9a829 
+28.08.2016 16:13:41.451 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.452 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">12:00–12:45<br>12:50–13:35<td class="n_para">3 пара</td></td> 
+28.08.2016 16:13:41.453 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="3" start1="12:00" end1="12:45" start2="12:50" end2="13:35"></lesson_time> 
+28.08.2016 16:13:41.453 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="3" start1="12:00" end1="12:45" start2="12:50" end2="13:35"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5ae9a829 
+28.08.2016 16:13:41.473 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.474 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">14:10–14:55<br>15:00–15:45<td class="n_para">4 пара</td></td> 
+28.08.2016 16:13:41.491 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="4" start1="14:10" end1="14:55" start2="15:00" end2="15:45"></lesson_time> 
+28.08.2016 16:13:41.491 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="4" start1="14:10" end1="14:55" start2="15:00" end2="15:45"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5ae9a829 
+28.08.2016 16:13:41.491 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.492 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">15:55–16:40<br>16:45–17:30<td class="n_para">5 пара</td></td> 
+28.08.2016 16:13:41.493 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="5" start1="15:55" end1="16:40" start2="16:45" end2="17:30"></lesson_time> 
+28.08.2016 16:13:41.493 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="5" start1="15:55" end1="16:40" start2="16:45" end2="17:30"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5ae9a829 
+28.08.2016 16:13:41.494 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.494 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">17:40–18:25<br>18:30–19:15<td class="n_para">6 пара</td></td> 
+28.08.2016 16:13:41.497 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="6" start1="17:40" end1="18:25" start2="18:30" end2="19:15"></lesson_time> 
+28.08.2016 16:13:41.498 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="6" start1="17:40" end1="18:25" start2="18:30" end2="19:15"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5ae9a829 
+28.08.2016 16:13:41.498 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:41.498 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">19:25–20:10<br>20:15–21:00<td class="n_para">7 пара</td></td> 
+28.08.2016 16:13:41.499 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time> 
+28.08.2016 16:13:41.499 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5ae9a829 
+28.08.2016 16:13:41.500 [DEBUG][main  ][ParserDayTime       ] - ====== return <week_time numerator="false">
+ <day_time name="Понедельник">
+  <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time>
+  <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time>
+  <lesson_time number="3" start1="12:25" end1="13:10" start2="13:15" end2="14:00"></lesson_time>
+  <lesson_time number="4" start1="14:35" end1="15:20" start2="15:25" end2="16:10"></lesson_time>
+  <lesson_time number="5" start1="16:20" end1="17:05" start2="17:10" end2="17:55"></lesson_time>
+  <lesson_time number="6" start1="18:05" end1="18:50" start2="18:55" end2="19:40"></lesson_time>
+  <lesson_time number="7" start1="19:50" end1="20:35" start2="20:40" end2="21:25"></lesson_time>
+ </day_time>
+ <day_time name="Вторник" override="1"></day_time>
+ <day_time name="Среда" override="1"></day_time>
+ <day_time name="Четверг" override="1"></day_time>
+ <day_time name="Пятница" override="1"></day_time>
+ <day_time name="Суббота">
+  <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time>
+  <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time>
+  <lesson_time number="3" start1="12:00" end1="12:45" start2="12:50" end2="13:35"></lesson_time>
+  <lesson_time number="4" start1="14:10" end1="14:55" start2="15:00" end2="15:45"></lesson_time>
+  <lesson_time number="5" start1="15:55" end1="16:40" start2="16:45" end2="17:30"></lesson_time>
+  <lesson_time number="6" start1="17:40" end1="18:25" start2="18:30" end2="19:15"></lesson_time>
+  <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time>
+ </day_time>
+</week_time> 
+28.08.2016 16:13:41.500 [DEBUG][main  ][ParserWeekTime      ] - ====== return <week_time numerator="false">
+ <day_time name="Понедельник">
+  <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time>
+  <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time>
+  <lesson_time number="3" start1="12:25" end1="13:10" start2="13:15" end2="14:00"></lesson_time>
+  <lesson_time number="4" start1="14:35" end1="15:20" start2="15:25" end2="16:10"></lesson_time>
+  <lesson_time number="5" start1="16:20" end1="17:05" start2="17:10" end2="17:55"></lesson_time>
+  <lesson_time number="6" start1="18:05" end1="18:50" start2="18:55" end2="19:40"></lesson_time>
+  <lesson_time number="7" start1="19:50" end1="20:35" start2="20:40" end2="21:25"></lesson_time>
+ </day_time>
+ <day_time name="Вторник" override="1"></day_time>
+ <day_time name="Среда" override="1"></day_time>
+ <day_time name="Четверг" override="1"></day_time>
+ <day_time name="Пятница" override="1"></day_time>
+ <day_time name="Суббота">
+  <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time>
+  <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time>
+  <lesson_time number="3" start1="12:00" end1="12:45" start2="12:50" end2="13:35"></lesson_time>
+  <lesson_time number="4" start1="14:10" end1="14:55" start2="15:00" end2="15:45"></lesson_time>
+  <lesson_time number="5" start1="15:55" end1="16:40" start2="16:45" end2="17:30"></lesson_time>
+  <lesson_time number="6" start1="17:40" end1="18:25" start2="18:30" end2="19:15"></lesson_time>
+  <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time>
+ </day_time>
+</week_time> 
+28.08.2016 16:13:41.530 [DEBUG][main  ][ParserDayLesson     ] - ==== Parsing Element = #document ==== 
+28.08.2016 16:13:41.531 [DEBUG][main  ][ParserDayLesson     ] - parsingDay return Понедельник 
+28.08.2016 16:13:41.540 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.547 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 3 Числ. Естествознание Практическое занятие 405н 
+28.08.2016 16:13:41.547 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 3 
+28.08.2016 16:13:41.547 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 3 Числ. Естествознание Практическое занятие 405н 
+28.08.2016 16:13:41.548 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Числ. 
+28.08.2016 16:13:41.560 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Естествознание<br>Практическое занятие 405н<br></span><input type="submit" name="ctl00$head$ctl03" value="ст. преп. Абраменко Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl03&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=4497&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.562 [DEBUG][main  ][ParserLesson        ] - divideString return [Естествознание, Практическое занятие 405н] 
+28.08.2016 16:13:41.563 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="3" name="Естествознание" description="Практическое занятие 405н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.565 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.565 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 3 Знам. Физика Лабораторное занятие 505н 
+28.08.2016 16:13:41.565 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 3 
+28.08.2016 16:13:41.565 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 3 Знам. Физика Лабораторное занятие 505н 
+28.08.2016 16:13:41.565 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Знам. 
+28.08.2016 16:13:41.566 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Физика<br>Лабораторное занятие 505н<br></span><input type="submit" name="ctl00$head$ctl05" value="асс. Омельченко Е.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl05&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18579&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.567 [DEBUG][main  ][ParserLesson        ] - divideString return [Физика, Лабораторное занятие 505н] 
+28.08.2016 16:13:41.569 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="3" name="Физика" description="Лабораторное занятие 505н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.569 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.569 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 4 Математика: алгебра, начала математического анализа, геометрия Практическое занятие 513н 
+28.08.2016 16:13:41.569 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 4 
+28.08.2016 16:13:41.574 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 4 Математика: алгебра, начала математического анализа, геометрия Практическое занятие 513н 
+28.08.2016 16:13:41.575 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return null 
+28.08.2016 16:13:41.575 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Математика: алгебра, начала математического анализа, геометрия<br>Практическое занятие 513н<br></span><input type="submit" name="ctl00$head$ctl07" value="ст. преп. Колосова И.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl07&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1018&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.576 [DEBUG][main  ][ParserLesson        ] - divideString return [Математика: алгебра, начала математического анализа, геометрия, Практическое занятие 513н] 
+28.08.2016 16:13:41.577 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="4" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.577 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.579 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 5 Числ. Обществознание (вкл. экономику и право) Лекционное занятие 403н 
+28.08.2016 16:13:41.579 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 5 
+28.08.2016 16:13:41.579 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 5 Числ. Обществознание (вкл. экономику и право) Лекционное занятие 403н 
+28.08.2016 16:13:41.579 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Числ. 
+28.08.2016 16:13:41.580 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Обществознание (вкл. экономику и право)<br>Лекционное занятие 403н<br></span><input type="submit" name="ctl00$head$ctl09" value="доц. Зайцева Т.Г." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl09&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=977&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.584 [DEBUG][main  ][ParserLesson        ] - divideString return [Обществознание (вкл. экономику и право), Лекционное занятие 403н] 
+28.08.2016 16:13:41.586 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="5" name="Обществознание (вкл. экономику и право)" description="Лекционное занятие 403н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.586 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.586 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 5 Знам. Обществознание (вкл. экономику и право) Лекционное занятие 504н 
+28.08.2016 16:13:41.590 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 5 
+28.08.2016 16:13:41.590 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 5 Знам. Обществознание (вкл. экономику и право) Лекционное занятие 504н 
+28.08.2016 16:13:41.590 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Знам. 
+28.08.2016 16:13:41.591 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Обществознание (вкл. экономику и право)<br>Лекционное занятие 504н<br></span><input type="submit" name="ctl00$head$ctl11" value="доц. Зайцева Т.Г." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl11&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=977&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.591 [DEBUG][main  ][ParserLesson        ] - divideString return [Обществознание (вкл. экономику и право), Лекционное занятие 504н] 
+28.08.2016 16:13:41.593 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="5" name="Обществознание (вкл. экономику и право)" description="Лекционное занятие 504н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.593 [DEBUG][main  ][ParserDayLesson     ] - ====== return <day_lesson name="Понедельник">
+ <lesson number="3" name="Естествознание" description="Практическое занятие 405н" teacher="Name Teacher" numerator="Числ."></lesson>
+ <lesson number="3" name="Физика" description="Лабораторное занятие 505н" teacher="Name Teacher" numerator="Знам."></lesson>
+ <lesson number="4" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson>
+ <lesson number="5" name="Обществознание (вкл. экономику и право)" description="Лекционное занятие 403н" teacher="Name Teacher" numerator="Числ."></lesson>
+ <lesson number="5" name="Обществознание (вкл. экономику и право)" description="Лекционное занятие 504н" teacher="Name Teacher" numerator="Знам."></lesson>
+</day_lesson> 
+28.08.2016 16:13:41.706 [DEBUG][main  ][ParserGroupLesson   ] - ==== Parsing Element = #document ==== 
+28.08.2016 16:13:41.707 [DEBUG][main  ][ParserDayLesson     ] - ==== Parsing Element = table ==== 
+28.08.2016 16:13:41.708 [DEBUG][main  ][ParserDayLesson     ] - parsingDay return Понедельник 
+28.08.2016 16:13:41.709 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.709 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 3 Числ. Естествознание Практическое занятие 405н 
+28.08.2016 16:13:41.709 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 3 
+28.08.2016 16:13:41.709 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 3 Числ. Естествознание Практическое занятие 405н 
+28.08.2016 16:13:41.748 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Числ. 
+28.08.2016 16:13:41.749 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Естествознание<br>Практическое занятие 405н<br></span><input type="submit" name="ctl00$head$ctl03" value="ст. преп. Абраменко Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl03&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=4497&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.754 [DEBUG][main  ][ParserLesson        ] - divideString return [Естествознание, Практическое занятие 405н] 
+28.08.2016 16:13:41.756 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="3" name="Естествознание" description="Практическое занятие 405н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.756 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.756 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 3 Знам. Физика Лабораторное занятие 505н 
+28.08.2016 16:13:41.756 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 3 
+28.08.2016 16:13:41.756 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 3 Знам. Физика Лабораторное занятие 505н 
+28.08.2016 16:13:41.756 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Знам. 
+28.08.2016 16:13:41.757 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Физика<br>Лабораторное занятие 505н<br></span><input type="submit" name="ctl00$head$ctl05" value="асс. Омельченко Е.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl05&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18579&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.763 [DEBUG][main  ][ParserLesson        ] - divideString return [Физика, Лабораторное занятие 505н] 
+28.08.2016 16:13:41.764 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="3" name="Физика" description="Лабораторное занятие 505н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.764 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.764 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 4 Математика: алгебра, начала математического анализа, геометрия Практическое занятие 513н 
+28.08.2016 16:13:41.764 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 4 
+28.08.2016 16:13:41.764 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 4 Математика: алгебра, начала математического анализа, геометрия Практическое занятие 513н 
+28.08.2016 16:13:41.764 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return null 
+28.08.2016 16:13:41.765 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Математика: алгебра, начала математического анализа, геометрия<br>Практическое занятие 513н<br></span><input type="submit" name="ctl00$head$ctl07" value="ст. преп. Колосова И.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl07&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1018&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.766 [DEBUG][main  ][ParserLesson        ] - divideString return [Математика: алгебра, начала математического анализа, геометрия, Практическое занятие 513н] 
+28.08.2016 16:13:41.769 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="4" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.769 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.769 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 5 Числ. Обществознание (вкл. экономику и право) Лекционное занятие 403н 
+28.08.2016 16:13:41.770 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 5 
+28.08.2016 16:13:41.770 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 5 Числ. Обществознание (вкл. экономику и право) Лекционное занятие 403н 
+28.08.2016 16:13:41.770 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Числ. 
+28.08.2016 16:13:41.773 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Обществознание (вкл. экономику и право)<br>Лекционное занятие 403н<br></span><input type="submit" name="ctl00$head$ctl09" value="доц. Зайцева Т.Г." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl09&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=977&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.776 [DEBUG][main  ][ParserLesson        ] - divideString return [Обществознание (вкл. экономику и право), Лекционное занятие 403н] 
+28.08.2016 16:13:41.777 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="5" name="Обществознание (вкл. экономику и право)" description="Лекционное занятие 403н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.777 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.778 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 5 Знам. Обществознание (вкл. экономику и право) Лекционное занятие 504н 
+28.08.2016 16:13:41.778 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 5 
+28.08.2016 16:13:41.778 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 5 Знам. Обществознание (вкл. экономику и право) Лекционное занятие 504н 
+28.08.2016 16:13:41.779 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Знам. 
+28.08.2016 16:13:41.779 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Обществознание (вкл. экономику и право)<br>Лекционное занятие 504н<br></span><input type="submit" name="ctl00$head$ctl11" value="доц. Зайцева Т.Г." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl11&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=977&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.780 [DEBUG][main  ][ParserLesson        ] - divideString return [Обществознание (вкл. экономику и право), Лекционное занятие 504н] 
+28.08.2016 16:13:41.781 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="5" name="Обществознание (вкл. экономику и право)" description="Лекционное занятие 504н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.781 [DEBUG][main  ][ParserDayLesson     ] - ====== return <day_lesson name="Понедельник">
+ <lesson number="3" name="Естествознание" description="Практическое занятие 405н" teacher="Name Teacher" numerator="Числ."></lesson>
+ <lesson number="3" name="Физика" description="Лабораторное занятие 505н" teacher="Name Teacher" numerator="Знам."></lesson>
+ <lesson number="4" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson>
+ <lesson number="5" name="Обществознание (вкл. экономику и право)" description="Лекционное занятие 403н" teacher="Name Teacher" numerator="Числ."></lesson>
+ <lesson number="5" name="Обществознание (вкл. экономику и право)" description="Лекционное занятие 504н" teacher="Name Teacher" numerator="Знам."></lesson>
+</day_lesson> 
+28.08.2016 16:13:41.781 [DEBUG][main  ][ParserDayLesson     ] - ==== Parsing Element = table ==== 
+28.08.2016 16:13:41.782 [DEBUG][main  ][ParserDayLesson     ] - parsingDay return Вторник 
+28.08.2016 16:13:41.790 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.790 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 2 Числ. Русский язык и литература Практическое занятие 310н 
+28.08.2016 16:13:41.790 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 2 
+28.08.2016 16:13:41.790 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 2 Числ. Русский язык и литература Практическое занятие 310н 
+28.08.2016 16:13:41.790 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Числ. 
+28.08.2016 16:13:41.791 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Русский язык и литература<br>Практическое занятие 310н<br></span><input type="submit" name="ctl00$head$ctl14" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl14&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.791 [DEBUG][main  ][ParserLesson        ] - divideString return [Русский язык и литература, Практическое занятие 310н] 
+28.08.2016 16:13:41.792 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="2" name="Русский язык и литература" description="Практическое занятие 310н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.792 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.793 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 2 Знам. Русский язык и литература Практическое занятие 305н 
+28.08.2016 16:13:41.793 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 2 
+28.08.2016 16:13:41.793 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 2 Знам. Русский язык и литература Практическое занятие 305н 
+28.08.2016 16:13:41.793 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Знам. 
+28.08.2016 16:13:41.795 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Русский язык и литература<br>Практическое занятие 305н<br></span><input type="submit" name="ctl00$head$ctl16" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl16&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.798 [DEBUG][main  ][ParserLesson        ] - divideString return [Русский язык и литература, Практическое занятие 305н] 
+28.08.2016 16:13:41.799 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="2" name="Русский язык и литература" description="Практическое занятие 305н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.799 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.799 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 3 Числ. Естествознание Лекционное занятие 303н 
+28.08.2016 16:13:41.799 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 3 
+28.08.2016 16:13:41.799 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 3 Числ. Естествознание Лекционное занятие 303н 
+28.08.2016 16:13:41.799 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Числ. 
+28.08.2016 16:13:41.800 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Естествознание<br>Лекционное занятие 303н<br></span><input type="submit" name="ctl00$head$ctl18" value="ст. преп. Абраменко Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl18&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=4497&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.800 [DEBUG][main  ][ParserLesson        ] - divideString return [Естествознание, Лекционное занятие 303н] 
+28.08.2016 16:13:41.802 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="3" name="Естествознание" description="Лекционное занятие 303н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.802 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.802 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 3 Знам. История 9 Лекционное занятие 411н 
+28.08.2016 16:13:41.803 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 3 
+28.08.2016 16:13:41.803 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 3 Знам. История 9 Лекционное занятие 411н 
+28.08.2016 16:13:41.803 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Знам. 
+28.08.2016 16:13:41.803 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>История 9<br>Лекционное занятие 411н<br></span><input type="submit" name="ctl00$head$ctl20" value="ст. преп. Нестерова Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl20&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1090&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.804 [DEBUG][main  ][ParserLesson        ] - divideString return [История 9, Лекционное занятие 411н] 
+28.08.2016 16:13:41.806 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="3" name="История 9" description="Лекционное занятие 411н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.806 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.806 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 4 Числ. Физика Лабораторное занятие 503ан 
+28.08.2016 16:13:41.806 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 4 
+28.08.2016 16:13:41.806 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 4 Числ. Физика Лабораторное занятие 503ан 
+28.08.2016 16:13:41.806 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Числ. 
+28.08.2016 16:13:41.808 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Физика<br>Лабораторное занятие 503ан<br></span><input type="submit" name="ctl00$head$ctl22" value="асс. Омельченко Е.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl22&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18579&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.812 [DEBUG][main  ][ParserLesson        ] - divideString return [Физика, Лабораторное занятие 503ан] 
+28.08.2016 16:13:41.813 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="4" name="Физика" description="Лабораторное занятие 503ан" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.814 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.815 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 4 Знам. Математика: алгебра, начала математического анализа, геометрия Практическое занятие 514н 
+28.08.2016 16:13:41.816 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 4 
+28.08.2016 16:13:41.816 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 4 Знам. Математика: алгебра, начала математического анализа, геометрия Практическое занятие 514н 
+28.08.2016 16:13:41.816 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Знам. 
+28.08.2016 16:13:41.817 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Математика: алгебра, начала математического анализа, геометрия<br>Практическое занятие 514н<br></span><input type="submit" name="ctl00$head$ctl24" value="ст. преп. Колосова И.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl24&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1018&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.817 [DEBUG][main  ][ParserLesson        ] - divideString return [Математика: алгебра, начала математического анализа, геометрия, Практическое занятие 514н] 
+28.08.2016 16:13:41.818 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="4" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 514н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.818 [DEBUG][main  ][ParserDayLesson     ] - ====== return <day_lesson name="Вторник">
+ <lesson number="2" name="Русский язык и литература" description="Практическое занятие 310н" teacher="Name Teacher" numerator="Числ."></lesson>
+ <lesson number="2" name="Русский язык и литература" description="Практическое занятие 305н" teacher="Name Teacher" numerator="Знам."></lesson>
+ <lesson number="3" name="Естествознание" description="Лекционное занятие 303н" teacher="Name Teacher" numerator="Числ."></lesson>
+ <lesson number="3" name="История 9" description="Лекционное занятие 411н" teacher="Name Teacher" numerator="Знам."></lesson>
+ <lesson number="4" name="Физика" description="Лабораторное занятие 503ан" teacher="Name Teacher" numerator="Числ."></lesson>
+ <lesson number="4" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 514н" teacher="Name Teacher" numerator="Знам."></lesson>
+</day_lesson> 
+28.08.2016 16:13:41.819 [DEBUG][main  ][ParserDayLesson     ] - ==== Parsing Element = table ==== 
+28.08.2016 16:13:41.825 [DEBUG][main  ][ParserDayLesson     ] - parsingDay return Среда 
+28.08.2016 16:13:41.826 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.826 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 2 Числ. Информатика 9 Лабораторное занятие 431, 432 
+28.08.2016 16:13:41.826 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 2 
+28.08.2016 16:13:41.826 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 2 Числ. Информатика 9 Лабораторное занятие 431, 432 
+28.08.2016 16:13:41.826 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Числ. 
+28.08.2016 16:13:41.828 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Информатика 9<br>Лабораторное занятие 431, 432<br></span><input type="submit" name="ctl00$head$ctl27" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl27&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl28" value="преп. Чепелева Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl28&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46438&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.837 [DEBUG][main  ][ParserLesson        ] - divideString return [Информатика 9, Лабораторное занятие 431, 432] 
+28.08.2016 16:13:41.841 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="2" name="Информатика 9" description="Лабораторное занятие 431, 432" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.843 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.843 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 2 Знам. Информатика 9 Лабораторное занятие 432, 432 
+28.08.2016 16:13:41.843 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 2 
+28.08.2016 16:13:41.843 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 2 Знам. Информатика 9 Лабораторное занятие 432, 432 
+28.08.2016 16:13:41.843 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Знам. 
+28.08.2016 16:13:41.844 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Информатика 9<br>Лабораторное занятие 432, 432<br></span><input type="submit" name="ctl00$head$ctl30" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl30&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl31" value="преп. Чепелева Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl31&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46438&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.847 [DEBUG][main  ][ParserLesson        ] - divideString return [Информатика 9, Лабораторное занятие 432, 432] 
+28.08.2016 16:13:41.848 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="2" name="Информатика 9" description="Лабораторное занятие 432, 432" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.848 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.859 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 3 Иностранный язык 9 Практическое занятие 013 
+28.08.2016 16:13:41.859 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 3 
+28.08.2016 16:13:41.859 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 3 Иностранный язык 9 Практическое занятие 013 
+28.08.2016 16:13:41.859 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return null 
+28.08.2016 16:13:41.859 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Иностранный язык 9<br>Практическое занятие 013<br></span><input type="submit" name="ctl00$head$ctl33" value="ст. преп. Петряева Н.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl33&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1106&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.867 [DEBUG][main  ][ParserLesson        ] - divideString return [Иностранный язык 9, Практическое занятие 013] 
+28.08.2016 16:13:41.870 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="3" name="Иностранный язык 9" description="Практическое занятие 013" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.870 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.870 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 4 Физическая культура Физическая культура -, -, - 
+28.08.2016 16:13:41.870 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 4 
+28.08.2016 16:13:41.870 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 4 Физическая культура Физическая культура -, -, - 
+28.08.2016 16:13:41.870 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return null 
+28.08.2016 16:13:41.872 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Физическая культура<br>Физическая культура -, -, -<br></span><input type="submit" name="ctl00$head$ctl35" value="ст. преп. Гончаров В.М." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl35&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19066&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl36" value="асс. Павлова И.А." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl36&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19069&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl37" value="асс. Павлова И.А." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl37&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19069&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.874 [DEBUG][main  ][ParserLesson        ] - divideString return [Физическая культура, Физическая культура -, -, -] 
+28.08.2016 16:13:41.875 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="4" name="Физическая культура" description="Физическая культура -, -, -" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.875 [DEBUG][main  ][ParserDayLesson     ] - ====== return <day_lesson name="Среда">
+ <lesson number="2" name="Информатика 9" description="Лабораторное занятие 431, 432" teacher="Name Teacher" numerator="Числ."></lesson>
+ <lesson number="2" name="Информатика 9" description="Лабораторное занятие 432, 432" teacher="Name Teacher" numerator="Знам."></lesson>
+ <lesson number="3" name="Иностранный язык 9" description="Практическое занятие 013" teacher="Name Teacher" numerator="empty"></lesson>
+ <lesson number="4" name="Физическая культура" description="Физическая культура -, -, -" teacher="Name Teacher" numerator="empty"></lesson>
+</day_lesson> 
+28.08.2016 16:13:41.876 [DEBUG][main  ][ParserDayLesson     ] - ==== Parsing Element = table ==== 
+28.08.2016 16:13:41.876 [DEBUG][main  ][ParserDayLesson     ] - parsingDay return Четверг 
+28.08.2016 16:13:41.877 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.877 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 3 Математика: алгебра, начала математического анализа, геометрия Практическое занятие 513н 
+28.08.2016 16:13:41.937 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 3 
+28.08.2016 16:13:41.937 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 3 Математика: алгебра, начала математического анализа, геометрия Практическое занятие 513н 
+28.08.2016 16:13:41.937 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return null 
+28.08.2016 16:13:41.946 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Математика: алгебра, начала математического анализа, геометрия<br>Практическое занятие 513н<br></span><input type="submit" name="ctl00$head$ctl41" value="ст. преп. Колосова И.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl41&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1018&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.947 [DEBUG][main  ][ParserLesson        ] - divideString return [Математика: алгебра, начала математического анализа, геометрия, Практическое занятие 513н] 
+28.08.2016 16:13:41.949 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="3" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.949 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.949 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 4 Числ. Русский язык и литература Практическое занятие 110н 
+28.08.2016 16:13:41.949 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 4 
+28.08.2016 16:13:41.949 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 4 Числ. Русский язык и литература Практическое занятие 110н 
+28.08.2016 16:13:41.949 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Числ. 
+28.08.2016 16:13:41.950 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Русский язык и литература<br>Практическое занятие 110н<br></span><input type="submit" name="ctl00$head$ctl43" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl43&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.951 [DEBUG][main  ][ParserLesson        ] - divideString return [Русский язык и литература, Практическое занятие 110н] 
+28.08.2016 16:13:41.951 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="4" name="Русский язык и литература" description="Практическое занятие 110н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.952 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.952 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 4 Знам. Русский язык и литература Практическое занятие 312н 
+28.08.2016 16:13:41.952 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 4 
+28.08.2016 16:13:41.952 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 4 Знам. Русский язык и литература Практическое занятие 312н 
+28.08.2016 16:13:41.952 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Знам. 
+28.08.2016 16:13:41.952 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Русский язык и литература<br>Практическое занятие 312н<br></span><input type="submit" name="ctl00$head$ctl45" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl45&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.953 [DEBUG][main  ][ParserLesson        ] - divideString return [Русский язык и литература, Практическое занятие 312н] 
+28.08.2016 16:13:41.954 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="4" name="Русский язык и литература" description="Практическое занятие 312н" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.954 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.954 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 5 Числ. Введение в специальность Лекционное занятие 115 
+28.08.2016 16:13:41.954 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 5 
+28.08.2016 16:13:41.954 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 5 Числ. Введение в специальность Лекционное занятие 115 
+28.08.2016 16:13:41.955 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Числ. 
+28.08.2016 16:13:41.955 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Введение в специальность<br>Лекционное занятие 115<br></span><input type="submit" name="ctl00$head$ctl47" value="асс. Коптелова Л.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl47&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1022&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.956 [DEBUG][main  ][ParserLesson        ] - divideString return [Введение в специальность, Лекционное занятие 115] 
+28.08.2016 16:13:41.958 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="5" name="Введение в специальность" description="Лекционное занятие 115" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.958 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.958 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 5 Знам. Введение в специальность Лабораторное занятие 113, 115 
+28.08.2016 16:13:41.958 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 5 
+28.08.2016 16:13:41.958 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 5 Знам. Введение в специальность Лабораторное занятие 113, 115 
+28.08.2016 16:13:41.958 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Знам. 
+28.08.2016 16:13:41.958 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Введение в специальность<br>Лабораторное занятие 113, 115<br></span><input type="submit" name="ctl00$head$ctl49" value="ст. преп. Костяник Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl49&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46398&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl50" value="асс. Коптелова Л.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl50&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1022&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.959 [DEBUG][main  ][ParserLesson        ] - divideString return [Введение в специальность, Лабораторное занятие 113, 115] 
+28.08.2016 16:13:41.960 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="5" name="Введение в специальность" description="Лабораторное занятие 113, 115" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.960 [DEBUG][main  ][ParserDayLesson     ] - ====== return <day_lesson name="Четверг">
+ <lesson number="3" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson>
+ <lesson number="4" name="Русский язык и литература" description="Практическое занятие 110н" teacher="Name Teacher" numerator="Числ."></lesson>
+ <lesson number="4" name="Русский язык и литература" description="Практическое занятие 312н" teacher="Name Teacher" numerator="Знам."></lesson>
+ <lesson number="5" name="Введение в специальность" description="Лекционное занятие 115" teacher="Name Teacher" numerator="Числ."></lesson>
+ <lesson number="5" name="Введение в специальность" description="Лабораторное занятие 113, 115" teacher="Name Teacher" numerator="Знам."></lesson>
+</day_lesson> 
+28.08.2016 16:13:41.960 [DEBUG][main  ][ParserDayLesson     ] - ==== Parsing Element = table ==== 
+28.08.2016 16:13:41.961 [DEBUG][main  ][ParserDayLesson     ] - parsingDay return Пятница 
+28.08.2016 16:13:41.962 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.962 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 2 Информатика 9 Лабораторное занятие 106, 108, 108 
+28.08.2016 16:13:41.963 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 2 
+28.08.2016 16:13:41.963 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 2 Информатика 9 Лабораторное занятие 106, 108, 108 
+28.08.2016 16:13:41.963 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return null 
+28.08.2016 16:13:41.963 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Информатика 9<br>Лабораторное занятие 106, 108, 108<br></span><input type="submit" name="ctl00$head$ctl53" value="преп. Чепелева Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl53&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46438&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl54" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl54&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl55" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl55&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.968 [DEBUG][main  ][ParserLesson        ] - divideString return [Информатика 9, Лабораторное занятие 106, 108, 108] 
+28.08.2016 16:13:41.969 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="2" name="Информатика 9" description="Лабораторное занятие 106, 108, 108" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.969 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.969 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 3 История 9 Практическое занятие 104н 
+28.08.2016 16:13:41.969 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 3 
+28.08.2016 16:13:41.969 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 3 История 9 Практическое занятие 104н 
+28.08.2016 16:13:41.970 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return null 
+28.08.2016 16:13:41.970 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>История 9<br>Практическое занятие 104н<br></span><input type="submit" name="ctl00$head$ctl57" value="ст. преп. Нестерова Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl57&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1090&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.971 [DEBUG][main  ][ParserLesson        ] - divideString return [История 9, Практическое занятие 104н] 
+28.08.2016 16:13:41.976 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="3" name="История 9" description="Практическое занятие 104н" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.976 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.976 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 4 Обществознание (вкл. экономику и право) Практическое занятие 513н 
+28.08.2016 16:13:41.977 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 4 
+28.08.2016 16:13:41.977 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 4 Обществознание (вкл. экономику и право) Практическое занятие 513н 
+28.08.2016 16:13:41.977 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return null 
+28.08.2016 16:13:41.977 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Обществознание (вкл. экономику и право)<br>Практическое занятие 513н<br></span><input type="submit" name="ctl00$head$ctl59" value="асс. Скоков А.Л." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl59&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1157&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.979 [DEBUG][main  ][ParserLesson        ] - divideString return [Обществознание (вкл. экономику и право), Практическое занятие 513н] 
+28.08.2016 16:13:41.980 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="4" name="Обществознание (вкл. экономику и право)" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson> 
+28.08.2016 16:13:41.980 [DEBUG][main  ][ParserDayLesson     ] - ====== return <day_lesson name="Пятница">
+ <lesson number="2" name="Информатика 9" description="Лабораторное занятие 106, 108, 108" teacher="Name Teacher" numerator="empty"></lesson>
+ <lesson number="3" name="История 9" description="Практическое занятие 104н" teacher="Name Teacher" numerator="empty"></lesson>
+ <lesson number="4" name="Обществознание (вкл. экономику и право)" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson>
+</day_lesson> 
+28.08.2016 16:13:41.981 [DEBUG][main  ][ParserDayLesson     ] - ==== Parsing Element = table ==== 
+28.08.2016 16:13:41.981 [DEBUG][main  ][ParserDayLesson     ] - parsingDay return Суббота 
+28.08.2016 16:13:41.982 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.982 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 2 Числ. Иностранный язык 9 Практическое занятие - 
+28.08.2016 16:13:41.982 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 2 
+28.08.2016 16:13:41.982 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 2 Числ. Иностранный язык 9 Практическое занятие - 
+28.08.2016 16:13:41.982 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Числ. 
+28.08.2016 16:13:41.983 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Иностранный язык 9<br>Практическое занятие -<br></span><input type="submit" name="ctl00$head$ctl62" value="ст. преп. Петряева Н.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl62&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1106&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.984 [DEBUG][main  ][ParserLesson        ] - divideString return [Иностранный язык 9, Практическое занятие -] 
+28.08.2016 16:13:41.988 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="2" name="Иностранный язык 9" description="Практическое занятие -" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:41.988 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.989 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 2 Знам. Математика: алгебра, начала математического анализа, геометрия Практическое занятие - 
+28.08.2016 16:13:41.989 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 2 
+28.08.2016 16:13:41.989 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 2 Знам. Математика: алгебра, начала математического анализа, геометрия Практическое занятие - 
+28.08.2016 16:13:41.989 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Знам. 
+28.08.2016 16:13:41.989 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Математика: алгебра, начала математического анализа, геометрия<br>Практическое занятие -<br></span><input type="submit" name="ctl00$head$ctl64" value="ст. преп. Колосова И.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl64&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1018&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.991 [DEBUG][main  ][ParserLesson        ] - divideString return [Математика: алгебра, начала математического анализа, геометрия, Практическое занятие -] 
+28.08.2016 16:13:41.992 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="2" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие -" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:41.992 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:41.992 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 3 Числ. Физическая культура Физическая культура -, - 
+28.08.2016 16:13:41.993 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 3 
+28.08.2016 16:13:41.993 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 3 Числ. Физическая культура Физическая культура -, - 
+28.08.2016 16:13:41.993 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Числ. 
+28.08.2016 16:13:41.993 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Физическая культура<br>Физическая культура -, -<br></span><input type="submit" name="ctl00$head$ctl66" value="ст. преп. Гончаров В.М." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl66&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19066&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl67" value="асс. Павлова И.А." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl67&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19069&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:41.998 [DEBUG][main  ][ParserLesson        ] - divideString return [Физическая культура, Физическая культура -, -] 
+28.08.2016 16:13:42.002 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="3" name="Физическая культура" description="Физическая культура -, -" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:42.002 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:42.003 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 3 Знам. Русский язык и литература Практическое занятие - 
+28.08.2016 16:13:42.003 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 3 
+28.08.2016 16:13:42.003 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 3 Знам. Русский язык и литература Практическое занятие - 
+28.08.2016 16:13:42.003 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Знам. 
+28.08.2016 16:13:42.003 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Русский язык и литература<br>Практическое занятие -<br></span><input type="submit" name="ctl00$head$ctl69" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl69&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:42.008 [DEBUG][main  ][ParserLesson        ] - divideString return [Русский язык и литература, Практическое занятие -] 
+28.08.2016 16:13:42.009 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="3" name="Русский язык и литература" description="Практическое занятие -" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:42.009 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:42.009 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 4 Числ. Физика Лабораторное занятие - 
+28.08.2016 16:13:42.009 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 4 
+28.08.2016 16:13:42.010 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 4 Числ. Физика Лабораторное занятие - 
+28.08.2016 16:13:42.010 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Числ. 
+28.08.2016 16:13:42.010 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Физика<br>Лабораторное занятие -<br></span><input type="submit" name="ctl00$head$ctl71" value="асс. Омельченко Е.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl71&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18579&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:42.011 [DEBUG][main  ][ParserLesson        ] - divideString return [Физика, Лабораторное занятие -] 
+28.08.2016 16:13:42.011 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="4" name="Физика" description="Лабораторное занятие -" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:42.011 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = tr ==== 
+28.08.2016 16:13:42.011 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 4 Знам. Информатика 9 Лабораторное занятие -, - 
+28.08.2016 16:13:42.012 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 4 
+28.08.2016 16:13:42.012 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 4 Знам. Информатика 9 Лабораторное занятие -, - 
+28.08.2016 16:13:42.012 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Знам. 
+28.08.2016 16:13:42.012 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Информатика 9<br>Лабораторное занятие -, -<br></span><input type="submit" name="ctl00$head$ctl73" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl73&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl74" value="преп. Чепелева Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl74&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46438&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:42.014 [DEBUG][main  ][ParserLesson        ] - divideString return [Информатика 9, Лабораторное занятие -, -] 
+28.08.2016 16:13:42.015 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="4" name="Информатика 9" description="Лабораторное занятие -, -" teacher="Name Teacher" numerator="Знам."></lesson> 
+28.08.2016 16:13:42.015 [DEBUG][main  ][ParserDayLesson     ] - ====== return <day_lesson name="Суббота">
+ <lesson number="2" name="Иностранный язык 9" description="Практическое занятие -" teacher="Name Teacher" numerator="Числ."></lesson>
+ <lesson number="2" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие -" teacher="Name Teacher" numerator="Знам."></lesson>
+ <lesson number="3" name="Физическая культура" description="Физическая культура -, -" teacher="Name Teacher" numerator="Числ."></lesson>
+ <lesson number="3" name="Русский язык и литература" description="Практическое занятие -" teacher="Name Teacher" numerator="Знам."></lesson>
+ <lesson number="4" name="Физика" description="Лабораторное занятие -" teacher="Name Teacher" numerator="Числ."></lesson>
+ <lesson number="4" name="Информатика 9" description="Лабораторное занятие -, -" teacher="Name Teacher" numerator="Знам."></lesson>
+</day_lesson> 
+28.08.2016 16:13:42.044 [DEBUG][main  ][ParserHTMLAbstract  ] - parsingElements return <table class="tbl_day" border="0"> 
+ <tbody>
+  <tr class="day"> 
+   <td colspan="2">Понедельник</td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/pink.jpg');"> 3<br>Числ. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Естествознание/-Практическое занятие 405н/-</span><input type="submit" name="ctl00$head$ctl03" value="ст. преп. Абраменко Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl03&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=4497&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/blue.jpg');"> 3<br>Знам. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"><span>Физика/-Лабораторное занятие 505н/-</span><input type="submit" name="ctl00$head$ctl05" value="асс. Омельченко Е.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl05&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18579&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/pink.jpg');"> 4 </td> 
+   <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Математика: алгебра, начала математического анализа, геометрия/-Практическое занятие 513н/-</span><input type="submit" name="ctl00$head$ctl07" value="ст. преп. Колосова И.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl07&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1018&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/green.jpg');"> 5<br>Числ. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/green.jpg');"><span>Обществознание (вкл. экономику и право)/-Лекционное занятие 403н/-</span><input type="submit" name="ctl00$head$ctl09" value="доц. Зайцева Т.Г." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl09&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=977&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/green.jpg');"> 5<br>Знам. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/green.jpg');"><span>Обществознание (вкл. экономику и право)/-Лекционное занятие 504н/-</span><input type="submit" name="ctl00$head$ctl11" value="доц. Зайцева Т.Г." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl11&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=977&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+ </tbody>
+</table>
+<table class="tbl_day" border="0"> 
+ <tbody>
+  <tr class="day"> 
+   <td colspan="2">Вторник</td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/pink.jpg');"> 2<br>Числ. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Русский язык и литература/-Практическое занятие 310н/-</span><input type="submit" name="ctl00$head$ctl14" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl14&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/pink.jpg');"> 2<br>Знам. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Русский язык и литература/-Практическое занятие 305н/-</span><input type="submit" name="ctl00$head$ctl16" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl16&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/green.jpg');"> 3<br>Числ. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/green.jpg');"><span>Естествознание/-Лекционное занятие 303н/-</span><input type="submit" name="ctl00$head$ctl18" value="ст. преп. Абраменко Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl18&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=4497&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/green.jpg');"> 3<br>Знам. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/green.jpg');"><span>История 9/-Лекционное занятие 411н/-</span><input type="submit" name="ctl00$head$ctl20" value="ст. преп. Нестерова Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl20&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1090&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/blue.jpg');"> 4<br>Числ. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"><span>Физика/-Лабораторное занятие 503ан/-</span><input type="submit" name="ctl00$head$ctl22" value="асс. Омельченко Е.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl22&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18579&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/pink.jpg');"> 4<br>Знам. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Математика: алгебра, начала математического анализа, геометрия/-Практическое занятие 514н/-</span><input type="submit" name="ctl00$head$ctl24" value="ст. преп. Колосова И.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl24&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1018&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+ </tbody>
+</table>
+<table class="tbl_day" border="0"> 
+ <tbody>
+  <tr class="day"> 
+   <td colspan="2">Среда</td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/blue.jpg');"> 2<br>Числ. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"><span>Информатика 9/-Лабораторное занятие 431, 432/-</span><input type="submit" name="ctl00$head$ctl27" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl27&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl28" value="преп. Чепелева Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl28&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46438&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/blue.jpg');"> 2<br>Знам. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"><span>Информатика 9/-Лабораторное занятие 432, 432/-</span><input type="submit" name="ctl00$head$ctl30" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl30&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl31" value="преп. Чепелева Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl31&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46438&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/pink.jpg');"> 3 </td> 
+   <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Иностранный язык 9/-Практическое занятие 013/-</span><input type="submit" name="ctl00$head$ctl33" value="ст. преп. Петряева Н.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl33&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1106&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/yellow.jpg');"> 4 </td> 
+   <td class="para" style="width:350px;background-image:url('./images/yellow.jpg');"><span>Физическая культура/-Физическая культура -, -, -/-</span><input type="submit" name="ctl00$head$ctl35" value="ст. преп. Гончаров В.М." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl35&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19066&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl36" value="асс. Павлова И.А." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl36&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19069&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl37" value="асс. Павлова И.А." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl37&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19069&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+ </tbody>
+</table>
+<table class="tbl_day" border="0"> 
+ <tbody>
+  <tr class="day"> 
+   <td colspan="2">Четверг</td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/pink.jpg');"> 3 </td> 
+   <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Математика: алгебра, начала математического анализа, геометрия/-Практическое занятие 513н/-</span><input type="submit" name="ctl00$head$ctl41" value="ст. преп. Колосова И.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl41&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1018&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/pink.jpg');"> 4<br>Числ. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Русский язык и литература/-Практическое занятие 110н/-</span><input type="submit" name="ctl00$head$ctl43" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl43&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/pink.jpg');"> 4<br>Знам. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Русский язык и литература/-Практическое занятие 312н/-</span><input type="submit" name="ctl00$head$ctl45" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl45&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/green.jpg');"> 5<br>Числ. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/green.jpg');"><span>Введение в специальность/-Лекционное занятие 115/-</span><input type="submit" name="ctl00$head$ctl47" value="асс. Коптелова Л.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl47&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1022&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/blue.jpg');"> 5<br>Знам. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"><span>Введение в специальность/-Лабораторное занятие 113, 115/-</span><input type="submit" name="ctl00$head$ctl49" value="ст. преп. Костяник Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl49&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46398&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl50" value="асс. Коптелова Л.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl50&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1022&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+ </tbody>
+</table>
+<table class="tbl_day" border="0"> 
+ <tbody>
+  <tr class="day"> 
+   <td colspan="2">Пятница</td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/blue.jpg');"> 2 </td> 
+   <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"><span>Информатика 9/-Лабораторное занятие 106, 108, 108/-</span><input type="submit" name="ctl00$head$ctl53" value="преп. Чепелева Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl53&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46438&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl54" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl54&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl55" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl55&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/pink.jpg');"> 3 </td> 
+   <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>История 9/-Практическое занятие 104н/-</span><input type="submit" name="ctl00$head$ctl57" value="ст. преп. Нестерова Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl57&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1090&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/pink.jpg');"> 4 </td> 
+   <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Обществознание (вкл. экономику и право)/-Практическое занятие 513н/-</span><input type="submit" name="ctl00$head$ctl59" value="асс. Скоков А.Л." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl59&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1157&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+ </tbody>
+</table>
+<table class="tbl_day" border="0"> 
+ <tbody>
+  <tr class="day"> 
+   <td colspan="2">Суббота</td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/pink.jpg');"> 2<br>Числ. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Иностранный язык 9/-Практическое занятие -/-</span><input type="submit" name="ctl00$head$ctl62" value="ст. преп. Петряева Н.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl62&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1106&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/pink.jpg');"> 2<br>Знам. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Математика: алгебра, начала математического анализа, геометрия/-Практическое занятие -/-</span><input type="submit" name="ctl00$head$ctl64" value="ст. преп. Колосова И.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl64&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=1018&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/yellow.jpg');"> 3<br>Числ. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/yellow.jpg');"><span>Физическая культура/-Физическая культура -, -/-</span><input type="submit" name="ctl00$head$ctl66" value="ст. преп. Гончаров В.М." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl66&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19066&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl67" value="асс. Павлова И.А." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl67&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=19069&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/pink.jpg');"> 3<br>Знам. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/pink.jpg');"><span>Русский язык и литература/-Практическое занятие -/-</span><input type="submit" name="ctl00$head$ctl69" value="преп. Дмитрийчук А.Ю." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl69&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=955&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/blue.jpg');"> 4<br>Числ. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"><span>Физика/-Лабораторное занятие -/-</span><input type="submit" name="ctl00$head$ctl71" value="асс. Омельченко Е.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl71&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18579&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+  <tr> 
+   <td class="num_para" style="width:45px;background-image:url('./images/blue.jpg');"> 4<br>Знам. </td> 
+   <td class="para" style="width:350px;background-image:url('./images/blue.jpg');"><span>Информатика 9/-Лабораторное занятие -, -/-</span><input type="submit" name="ctl00$head$ctl73" value="ст. преп. Гостищева Т.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl73&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=18550&quot;, false, false))" class="fioprep"><input type="submit" name="ctl00$head$ctl74" value="преп. Чепелева Н.В." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl74&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=46438&quot;, false, false))" class="fioprep"></td> 
+  </tr> 
+ </tbody>
+</table> 
+28.08.2016 16:13:42.068 [DEBUG][main  ][ParserGroupLesson   ] - ====== return <group_lesson>
+ <day_lesson name="Понедельник">
+  <lesson number="3" name="Естествознание" description="Практическое занятие 405н" teacher="Name Teacher" numerator="Числ."></lesson>
+  <lesson number="3" name="Физика" description="Лабораторное занятие 505н" teacher="Name Teacher" numerator="Знам."></lesson>
+  <lesson number="4" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson>
+  <lesson number="5" name="Обществознание (вкл. экономику и право)" description="Лекционное занятие 403н" teacher="Name Teacher" numerator="Числ."></lesson>
+  <lesson number="5" name="Обществознание (вкл. экономику и право)" description="Лекционное занятие 504н" teacher="Name Teacher" numerator="Знам."></lesson>
+ </day_lesson>
+ <day_lesson name="Вторник">
+  <lesson number="2" name="Русский язык и литература" description="Практическое занятие 310н" teacher="Name Teacher" numerator="Числ."></lesson>
+  <lesson number="2" name="Русский язык и литература" description="Практическое занятие 305н" teacher="Name Teacher" numerator="Знам."></lesson>
+  <lesson number="3" name="Естествознание" description="Лекционное занятие 303н" teacher="Name Teacher" numerator="Числ."></lesson>
+  <lesson number="3" name="История 9" description="Лекционное занятие 411н" teacher="Name Teacher" numerator="Знам."></lesson>
+  <lesson number="4" name="Физика" description="Лабораторное занятие 503ан" teacher="Name Teacher" numerator="Числ."></lesson>
+  <lesson number="4" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 514н" teacher="Name Teacher" numerator="Знам."></lesson>
+ </day_lesson>
+ <day_lesson name="Среда">
+  <lesson number="2" name="Информатика 9" description="Лабораторное занятие 431, 432" teacher="Name Teacher" numerator="Числ."></lesson>
+  <lesson number="2" name="Информатика 9" description="Лабораторное занятие 432, 432" teacher="Name Teacher" numerator="Знам."></lesson>
+  <lesson number="3" name="Иностранный язык 9" description="Практическое занятие 013" teacher="Name Teacher" numerator="empty"></lesson>
+  <lesson number="4" name="Физическая культура" description="Физическая культура -, -, -" teacher="Name Teacher" numerator="empty"></lesson>
+ </day_lesson>
+ <day_lesson name="Четверг">
+  <lesson number="3" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson>
+  <lesson number="4" name="Русский язык и литература" description="Практическое занятие 110н" teacher="Name Teacher" numerator="Числ."></lesson>
+  <lesson number="4" name="Русский язык и литература" description="Практическое занятие 312н" teacher="Name Teacher" numerator="Знам."></lesson>
+  <lesson number="5" name="Введение в специальность" description="Лекционное занятие 115" teacher="Name Teacher" numerator="Числ."></lesson>
+  <lesson number="5" name="Введение в специальность" description="Лабораторное занятие 113, 115" teacher="Name Teacher" numerator="Знам."></lesson>
+ </day_lesson>
+ <day_lesson name="Пятница">
+  <lesson number="2" name="Информатика 9" description="Лабораторное занятие 106, 108, 108" teacher="Name Teacher" numerator="empty"></lesson>
+  <lesson number="3" name="История 9" description="Практическое занятие 104н" teacher="Name Teacher" numerator="empty"></lesson>
+  <lesson number="4" name="Обществознание (вкл. экономику и право)" description="Практическое занятие 513н" teacher="Name Teacher" numerator="empty"></lesson>
+ </day_lesson>
+ <day_lesson name="Суббота">
+  <lesson number="2" name="Иностранный язык 9" description="Практическое занятие -" teacher="Name Teacher" numerator="Числ."></lesson>
+  <lesson number="2" name="Математика: алгебра, начала математического анализа, геометрия" description="Практическое занятие -" teacher="Name Teacher" numerator="Знам."></lesson>
+  <lesson number="3" name="Физическая культура" description="Физическая культура -, -" teacher="Name Teacher" numerator="Числ."></lesson>
+  <lesson number="3" name="Русский язык и литература" description="Практическое занятие -" teacher="Name Teacher" numerator="Знам."></lesson>
+  <lesson number="4" name="Физика" description="Лабораторное занятие -" teacher="Name Teacher" numerator="Числ."></lesson>
+  <lesson number="4" name="Информатика 9" description="Лабораторное занятие -, -" teacher="Name Teacher" numerator="Знам."></lesson>
+ </day_lesson>
+</group_lesson> 
+28.08.2016 16:13:42.073 [INFO ][main  ][ParserLesson        ] - ==== Parsing Element = #document ==== 
+28.08.2016 16:13:42.073 [DEBUG][main  ][ParserLesson        ] - parsingNumber txt = 3 Числ. Естествознание Практическое занятие 405н 
+28.08.2016 16:13:42.073 [DEBUG][main  ][ParserLesson        ] - parsingNumber return 3 
+28.08.2016 16:13:42.074 [DEBUG][main  ][ParserLesson        ] - parsingNumerator text = 3 Числ. Естествознание Практическое занятие 405н 
+28.08.2016 16:13:42.074 [DEBUG][main  ][ParserLesson        ] - parsingNumerator return Числ. 
+28.08.2016 16:13:42.074 [DEBUG][main  ][ParserLesson        ] - divideString .html = <span>Естествознание<br>Практическое занятие 405н<br></span> <input type="submit" name="ctl00$head$ctl03" value="ст. преп. Абраменко Л.И." onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$head$ctl03&quot;, &quot;&quot;, false, &quot;&quot;, &quot;default.aspx?tr=pweek&amp;k=1&amp;p=4497&quot;, false, false))" class="fioprep"> 
+28.08.2016 16:13:42.075 [DEBUG][main  ][ParserLesson        ] - divideString return [Естествознание, Практическое занятие 405н] 
+28.08.2016 16:13:42.075 [DEBUG][main  ][ParserLesson        ] - ====== return <lesson number="3" name="Естествознание" description="Практическое занятие 405н" teacher="Name Teacher" numerator="Числ."></lesson> 
+28.08.2016 16:13:42.123 [DEBUG][main  ][ParserHTMLAbstract  ] - parsingElements return  
+28.08.2016 16:13:42.150 [INFO ][main  ][ParserDayTime       ] - ==== Parsing Element = #document ==== 
+28.08.2016 16:13:42.151 [DEBUG][main  ][ParserDayTime       ] - addLessonTime dayTime =  cssQuery =  td.n_para + td.time 
+28.08.2016 16:13:42.151 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:42.152 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">08:30–09:15<br>09:20–10:05<td class="n_para">1 пара</td></td> 
+28.08.2016 16:13:42.153 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time> 
+28.08.2016 16:13:42.153 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5419f379 
+28.08.2016 16:13:42.153 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:42.154 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">10:15–11:00<br>11:05–11:50<td class="n_para">2 пара</td></td> 
+28.08.2016 16:13:42.154 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time> 
+28.08.2016 16:13:42.155 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5419f379 
+28.08.2016 16:13:42.155 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:42.156 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">12:25–13:10<br>13:15–14:00<td class="n_para">3 пара</td></td> 
+28.08.2016 16:13:42.157 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="3" start1="12:25" end1="13:10" start2="13:15" end2="14:00"></lesson_time> 
+28.08.2016 16:13:42.157 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="3" start1="12:25" end1="13:10" start2="13:15" end2="14:00"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5419f379 
+28.08.2016 16:13:42.158 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:42.159 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">14:35–15:20<br>15:25–16:10<td class="n_para">4 пара</td></td> 
+28.08.2016 16:13:42.160 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="4" start1="14:35" end1="15:20" start2="15:25" end2="16:10"></lesson_time> 
+28.08.2016 16:13:42.160 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="4" start1="14:35" end1="15:20" start2="15:25" end2="16:10"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5419f379 
+28.08.2016 16:13:42.160 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:42.161 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">16:20–17:05<br>17:10–17:55<td class="n_para">5 пара</td></td> 
+28.08.2016 16:13:42.161 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="5" start1="16:20" end1="17:05" start2="17:10" end2="17:55"></lesson_time> 
+28.08.2016 16:13:42.167 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="5" start1="16:20" end1="17:05" start2="17:10" end2="17:55"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5419f379 
+28.08.2016 16:13:42.167 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:42.184 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">18:05–18:50<br>18:55–19:40<td class="n_para">6 пара</td></td> 
+28.08.2016 16:13:42.185 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="6" start1="18:05" end1="18:50" start2="18:55" end2="19:40"></lesson_time> 
+28.08.2016 16:13:42.185 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="6" start1="18:05" end1="18:50" start2="18:55" end2="19:40"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5419f379 
+28.08.2016 16:13:42.185 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:42.186 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">19:50–20:35<br>20:40–21:25<td class="n_para">7 пара</td></td> 
+28.08.2016 16:13:42.188 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="7" start1="19:50" end1="20:35" start2="20:40" end2="21:25"></lesson_time> 
+28.08.2016 16:13:42.188 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="7" start1="19:50" end1="20:35" start2="20:40" end2="21:25"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5419f379 
+28.08.2016 16:13:42.190 [DEBUG][main  ][ParserDayTime       ] - addLessonTime dayTime =  cssQuery =  td.time ~ td 
+28.08.2016 16:13:42.191 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:42.191 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">08:30–09:15<br>09:20–10:05<td class="n_para">1 пара</td></td> 
+28.08.2016 16:13:42.192 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time> 
+28.08.2016 16:13:42.192 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5419f379 
+28.08.2016 16:13:42.192 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:42.193 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">10:15–11:00<br>11:05–11:50<td class="n_para">2 пара</td></td> 
+28.08.2016 16:13:42.193 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time> 
+28.08.2016 16:13:42.193 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5419f379 
+28.08.2016 16:13:42.193 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:42.194 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">12:00–12:45<br>12:50–13:35<td class="n_para">3 пара</td></td> 
+28.08.2016 16:13:42.195 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="3" start1="12:00" end1="12:45" start2="12:50" end2="13:35"></lesson_time> 
+28.08.2016 16:13:42.195 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="3" start1="12:00" end1="12:45" start2="12:50" end2="13:35"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5419f379 
+28.08.2016 16:13:42.195 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:42.196 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">14:10–14:55<br>15:00–15:45<td class="n_para">4 пара</td></td> 
+28.08.2016 16:13:42.197 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="4" start1="14:10" end1="14:55" start2="15:00" end2="15:45"></lesson_time> 
+28.08.2016 16:13:42.197 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="4" start1="14:10" end1="14:55" start2="15:00" end2="15:45"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5419f379 
+28.08.2016 16:13:42.197 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:42.197 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">15:55–16:40<br>16:45–17:30<td class="n_para">5 пара</td></td> 
+28.08.2016 16:13:42.198 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="5" start1="15:55" end1="16:40" start2="16:45" end2="17:30"></lesson_time> 
+28.08.2016 16:13:42.198 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="5" start1="15:55" end1="16:40" start2="16:45" end2="17:30"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5419f379 
+28.08.2016 16:13:42.198 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:42.198 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">17:40–18:25<br>18:30–19:15<td class="n_para">6 пара</td></td> 
+28.08.2016 16:13:42.199 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="6" start1="17:40" end1="18:25" start2="18:30" end2="19:15"></lesson_time> 
+28.08.2016 16:13:42.199 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="6" start1="17:40" end1="18:25" start2="18:30" end2="19:15"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5419f379 
+28.08.2016 16:13:42.199 [DEBUG][main  ][ParserLessonTime    ] - ==== Parsing Element = td ==== 
+28.08.2016 16:13:42.199 [DEBUG][main  ][ParserLessonTime    ] - executeSelect elementsTime return <td class="time">19:25–20:10<br>20:15–21:00<td class="n_para">7 пара</td></td> 
+28.08.2016 16:13:42.200 [DEBUG][main  ][ParserLessonTime    ] - ====== return <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time> 
+28.08.2016 16:13:42.200 [DEBUG][main  ][ParserDayTime       ] - add <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time>com.parsingHTML.logic.parser.daytime.ParserDayTime@5419f379 
+28.08.2016 16:13:42.201 [DEBUG][main  ][ParserDayTime       ] - ====== return <week_time numerator="false">
+ <day_time name="Понедельник">
+  <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time>
+  <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time>
+  <lesson_time number="3" start1="12:25" end1="13:10" start2="13:15" end2="14:00"></lesson_time>
+  <lesson_time number="4" start1="14:35" end1="15:20" start2="15:25" end2="16:10"></lesson_time>
+  <lesson_time number="5" start1="16:20" end1="17:05" start2="17:10" end2="17:55"></lesson_time>
+  <lesson_time number="6" start1="18:05" end1="18:50" start2="18:55" end2="19:40"></lesson_time>
+  <lesson_time number="7" start1="19:50" end1="20:35" start2="20:40" end2="21:25"></lesson_time>
+ </day_time>
+ <day_time name="Вторник" override="1"></day_time>
+ <day_time name="Среда" override="1"></day_time>
+ <day_time name="Четверг" override="1"></day_time>
+ <day_time name="Пятница" override="1"></day_time>
+ <day_time name="Суббота">
+  <lesson_time number="1" start1="08:30" end1="09:15" start2="09:20" end2="10:05"></lesson_time>
+  <lesson_time number="2" start1="10:15" end1="11:00" start2="11:05" end2="11:50"></lesson_time>
+  <lesson_time number="3" start1="12:00" end1="12:45" start2="12:50" end2="13:35"></lesson_time>
+  <lesson_time number="4" start1="14:10" end1="14:55" start2="15:00" end2="15:45"></lesson_time>
+  <lesson_time number="5" start1="15:55" end1="16:40" start2="16:45" end2="17:30"></lesson_time>
+  <lesson_time number="6" start1="17:40" end1="18:25" start2="18:30" end2="19:15"></lesson_time>
+  <lesson_time number="7" start1="19:25" end1="20:10" start2="20:15" end2="21:00"></lesson_time>
+ </day_time>
+</week_time> 
