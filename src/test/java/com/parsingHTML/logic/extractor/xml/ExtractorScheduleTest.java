@@ -23,7 +23,6 @@ import static org.junit.Assert.assertTrue;
  */
 public class ExtractorScheduleTest {
 
-    private ExtractorSchedule extractorSchedule;
     private Document doc;
 
     public ExtractorScheduleTest() {
@@ -33,7 +32,6 @@ public class ExtractorScheduleTest {
                     = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             doc = dBuilder.parse(file);
-            extractorSchedule = new ExtractorSchedule(doc);
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
@@ -41,13 +39,13 @@ public class ExtractorScheduleTest {
 
     @Test
     public void select() throws Exception {
-        NodeList select = extractorSchedule.select(XPathExpression.selectLesson(DayName.WEDNESDAY));
+        NodeList select = ExtractorSchedule.executeSelect(XPathExpression.selectLesson(DayName.WEDNESDAY), doc);
         assertTrue(select.getLength() == 4);
     }
 
     @Test
     public void extractLesson() throws Exception {
-        ArrayList<Lesson> lessons = extractorSchedule.extractLesson(DayName.TUESDAY);
+        ArrayList<Lesson> lessons = ExtractorSchedule.extractLesson(DayName.TUESDAY, doc);
         assertTrue(lessons.size() == 6);
         Lesson lesson0 = new Lesson("Русский язык и литература", "Практическое занятие 310н", 2, NumeratorName.NUMERATOR, "Name Teacher");
         Lesson lesson1 = new Lesson("Русский язык и литература", "Практическое занятие 305н", 2, NumeratorName.DENOMINATOR, "Name Teacher");
@@ -66,7 +64,7 @@ public class ExtractorScheduleTest {
 
     @Test
     public void extractLessonWhitTime() throws Exception {
-        ArrayList<Lesson> lessons = extractorSchedule.extractLessonWhitTime(DayName.THURSDAY);
+        ArrayList<Lesson> lessons = ExtractorSchedule.extractLessonWhitTime(DayName.THURSDAY, doc);
         assertTrue(lessons.size() == 5);
         Lesson lesson = lessons.get(3);
         assertTrue(lesson.getNumber() == 5);
@@ -81,7 +79,7 @@ public class ExtractorScheduleTest {
 
     @Test
     public void extractDayTime() throws Exception {
-        DayTime dayTime = extractorSchedule.extractDayTime(DayName.FRIDAY, 2);
+        DayTime dayTime = ExtractorSchedule.extractDayTime(DayName.FRIDAY, 2, doc);
         final String start1 = "10:15";
         final String start2 = "11:05";
         final String end1 = "11:00";

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="177.0" y="168.0">com.parsingHTML.logic.parsing.tag.grouplesson.ParserLesson</node>
+    <node x="0.0" y="168.0">com.parsingHTML.logic.parsing.tag.daytime.ParserLessonTime</node>
+    <node x="300.8333333333333" y="326.0">com.parsingHTML.logic.parsing.tag.grouplesson.ParserGroupLesson</node>
+    <node x="298.0" y="168.0">com.parsingHTML.logic.parsing.tag.ParserHTMLAbstractTest.ParserHTMLAbstractDummy</node>
+    <node x="197.25" y="247.0">com.parsingHTML.logic.parsing.tag.grouplesson.ParserDayLesson</node>
+    <node x="156.5" y="79.0">com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract</node>
+    <node x="73.5" y="326.0">com.parsingHTML.logic.parsing.tag.daytime.ParserWeekTime</node>
+    <node x="544.0" y="152.0">org.jsoup.nodes.Element</node>
+    <node x="45.0" y="247.0">com.parsingHTML.logic.parsing.tag.daytime.ParserDayTime</node>
+    <node x="195.0" y="0.0">com.parsingHTML.logic.parsing.Parser</node>
+    <node x="-132.0" y="72.0">com.parsingHTML.logic.parsing.tag.ParserHTMLFactory</node>
+    <node x="421.0" y="68.0">com.parsingHTML.logic.xml.factory.ElementJsoupFactory</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.parsingHTML.logic.xml.factory.ElementJsoupFactory" target="org.jsoup.nodes.Element">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.grouplesson.ParserGroupLesson" target="com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract">
+      <point x="33.25" y="-14.5" />
+      <point x="400.5833333333333" y="301.0" />
+      <point x="492.5" y="301.0" />
+      <point x="492.5" y="128.0" />
+      <point x="287.42857142857144" y="128.0" />
+      <point x="60.428571428571445" y="14.5" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.daytime.ParserDayTime" target="com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract">
+      <point x="27.75" y="-14.5" />
+      <point x="128.25" y="222.0" />
+      <point x="137.5" y="222.0" />
+      <point x="137.5" y="138.0" />
+      <point x="186.71428571428572" y="138.0" />
+      <point x="-40.28571428571428" y="14.5" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.grouplesson.ParserDayLesson" target="com.parsingHTML.logic.parsing.tag.grouplesson.ParserLesson">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract" target="com.parsingHTML.logic.parsing.tag.ParserHTMLFactory">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.ParserHTMLFactory" target="com.parsingHTML.logic.parsing.tag.grouplesson.ParserGroupLesson">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.ParserHTMLFactory" target="com.parsingHTML.logic.parsing.tag.daytime.ParserDayTime">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract" target="com.parsingHTML.logic.xml.factory.ElementJsoupFactory">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.ParserHTMLAbstractTest.ParserHTMLAbstractDummy" target="com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract">
+      <point x="0.0" y="-14.5" />
+      <point x="390.0" y="138.0" />
+      <point x="267.2857142857142" y="138.0" />
+      <point x="40.28571428571422" y="14.5" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract" target="com.parsingHTML.logic.parsing.Parser">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.ParserHTMLFactory" target="com.parsingHTML.logic.parsing.tag.daytime.ParserLessonTime">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.ParserHTMLFactory" target="com.parsingHTML.logic.parsing.tag.grouplesson.ParserDayLesson">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.ParserHTMLFactory" target="com.parsingHTML.logic.parsing.tag.daytime.ParserWeekTime">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.ParserHTMLFactory" target="com.parsingHTML.logic.parsing.tag.grouplesson.ParserLesson">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.grouplesson.ParserLesson" target="com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.daytime.ParserLessonTime" target="com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract">
+      <point x="0.0" y="-14.5" />
+      <point x="63.5" y="128.0" />
+      <point x="166.57142857142856" y="128.0" />
+      <point x="-60.428571428571445" y="14.5" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.grouplesson.ParserDayLesson" target="com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract">
+      <point x="30.0" y="-14.5" />
+      <point x="287.5" y="148.0" />
+      <point x="247.1428571428571" y="148.0" />
+      <point x="20.14285714285711" y="14.5" />
+    </edge>
+    <edge source="org.jsoup.nodes.Element" target="org.jsoup.nodes.Element">
+      <point x="0.0" y="0.0" />
+      <point x="581.5" y="127.5" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.grouplesson.ParserGroupLesson" target="com.parsingHTML.logic.parsing.tag.grouplesson.ParserDayLesson">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.parsingHTML.logic.parsing.tag.daytime.ParserWeekTime" target="com.parsingHTML.logic.parsing.tag.ParserHTMLAbstract">
+      <point x="30.0" y="-14.5" />
+      <point x="163.5" y="301.0" />
+      <point x="166.5" y="301.0" />
+      <point x="166.5" y="148.0" />
+      <point x="206.8571428571429" y="148.0" />
+      <point x="-20.14285714285711" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="247.5" y="118.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

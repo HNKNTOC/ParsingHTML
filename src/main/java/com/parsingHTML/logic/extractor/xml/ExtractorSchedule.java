@@ -18,27 +18,23 @@ import java.util.ArrayList;
  */
 public class ExtractorSchedule {
     private static final Logger LOGGER = LogManager.getLogger(ExtractorSchedule.class);
-    private Document document;
-    XPath xPath = XPathFactory.newInstance().newXPath();
-
-    public ExtractorSchedule(Document document) {
-        this.document = document;
-    }
+    private static XPath xPath = XPathFactory.newInstance().newXPath();
+    
 
     /**
-     * Применение expression на {@link ExtractorSchedule#document}.
+     * Применение expression на Document.
      *
      * @param expression выражение для получения NodeList.
      * @return результат.
      */
-    public NodeList select(String expression) {
+    public static NodeList executeSelect(final String expression, final Document document) {
         try {
             NodeList evaluate = (NodeList) xPath.compile(expression).evaluate(document, XPathConstants.NODESET);
-            LOGGER.debug("select return " + evaluate);
+            LOGGER.debug("executeSelect return " + evaluate);
             return evaluate;
         } catch (XPathExpressionException e) {
-            LOGGER.error("Failed select " + expression, e);
-            return null;
+            LOGGER.error("Failed executeSelect " + expression, e);
+            return new MockNodeList();
         }
     }
 
@@ -48,8 +44,8 @@ public class ExtractorSchedule {
      * @param dayName Имя дня.
      * @return все уроки на этот день.
      */
-    public ArrayList<Lesson> extractLesson(final DayName dayName) {
-        NodeList select = select(XPathExpression.selectLesson(dayName));
+    public static ArrayList<Lesson> extractLesson(final DayName dayName, final Document document) {
+        NodeList select = executeSelect(XPathExpression.selectLesson(dayName), document);
         ArrayList<Lesson> lessons = new ArrayList<>();
         for (int i = 0; i < select.getLength(); i++) {
             lessons.add(ConverterSchedule.convertLesson(select.item(i)));
@@ -58,26 +54,44 @@ public class ExtractorSchedule {
     }
 
 
-    public DayTime extractDayTime(final DayName dayName, final int number) {
+    public static DayTime extractDayTime(final DayName dayName, final int number, final Document document) {
         LOGGER.debug("extractDayTime dayName " + dayName.getName() + " number = " + number);
-        NodeList select = select(XPathExpression.selectLessonTime(dayName, number));
+        NodeList select = executeSelect(XPathExpression.selectLessonTime(dayName, number), document);
         Node item = null;
         if (select.getLength() == 1) {
             item = select.item(0);
         } else {
-            LOGGER.warn("Failed extractDayTime select.getLength() = " + select.getLength());
+            LOGGER.warn("Failed extractDayTime executeSelect.getLength() = " + select.getLength());
         }
         return ConverterSchedule.convertDayTime(item);
     }
 
-    public ArrayList<Lesson> extractLessonWhitTime(final DayName dayName) {
-        ArrayList<Lesson> lessons = extractLesson(dayName);
+    public static ArrayList<Lesson> extractLessonWhitTime(final DayName dayName, final Document document) {
+        ArrayList<Lesson> lessons = extractLesson(dayName, document);
         for (Lesson lesson : lessons) {
-            DayTime dayTime = extractDayTime(dayName, lesson.getNumber());
+            DayTime dayTime = extractDayTime(dayName, lesson.getNumber(), document);
             lesson.setTime1(dayTime.getTimeFirstLesson());
             lesson.setTime2(dayTime.getTimeSecondLesson());
         }
         return lessons;
     }
 
+    /**
+     * Используется для возвращения пустого NodeList дабы не возвращать Null.
+     */
+    private static class MockNodeList implements NodeList {
+        private static final Logger LOGGER = LogManager.getLogger(MockNodeList.class);
+
+        @Override
+        public Node item(int index) {
+            LOGGER.warn("Use item() MockNodeList!!");
+            return null;
+        }
+
+        @Override
+        public int getLength() {
+            LOGGER.warn("Use getLength() MockNodeList!!");
+            return 0;
+        }
+    }
 }
