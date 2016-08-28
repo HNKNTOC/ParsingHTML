@@ -5,11 +5,13 @@ import com.parsingHTML.logic.element.NumeratorName;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import java.io.Serializable;
+
 /**
  * Класс для удобной работы с уроком.
  */
-public class Lesson {
-    private static final Logger LOGGER = LogManager.getLogger(Lesson.class);
+public class Lesson implements Serializable {
+    transient private static final Logger LOGGER = LogManager.getLogger(Lesson.class);
     private String name;
     private String description;
     private int number;
