@@ -28,15 +28,6 @@ public class ConverterSchedule {
         return new Lesson(name, description, number, numeratorName, teacher);
     }
 
-    public static String toAttributeValue(NamedNodeMap namedNodeMap, AttributeName attributeName) {
-        Node namedItem = namedNodeMap.getNamedItem(attributeName.getName());
-        if (namedItem == null) {
-            LOGGER.warn("Filed toAttributeValue " + attributeName);
-            return null;
-        }
-        return namedItem.getTextContent();
-    }
-
     public static DayTime convertDayTime(Node item) {
         NamedNodeMap attributes = item.getAttributes();
         final String start1, start2, end1, end2;
@@ -49,5 +40,21 @@ public class ConverterSchedule {
         number = Integer.parseInt(toAttributeValue(attributes, AttributeName.NUMBER));
 
         return new DayTime(number, start1, start2, end1, end2);
+    }
+
+    /**
+     * Получить значение атрибута.
+     *
+     * @param namedNodeMap  Атрибуты.
+     * @param attributeName Имя атрибута.
+     * @return значение атрибута.
+     */
+    public static String toAttributeValue(NamedNodeMap namedNodeMap, AttributeName attributeName) {
+        Node namedItem = namedNodeMap.getNamedItem(attributeName.getName());
+        if (namedItem == null) {
+            LOGGER.warn("Filed toAttributeValue " + attributeName);
+            return null;
+        }
+        return namedItem.getTextContent();
     }
 }
