@@ -25,7 +25,7 @@ public class ParserLessonTime extends ParserHTMLAbstract {
         if (!checkNumber(n_para)) return null;
 
         Elements elementsTime = element.select(cssQueryTimeLesson);
-        LOGGER.debug("select elementsTime return "+elementsTime);
+        LOGGER.debug("executeSelect elementsTime return " + elementsTime);
         if (!checkElementsTime(elementsTime)) return null;
 
 

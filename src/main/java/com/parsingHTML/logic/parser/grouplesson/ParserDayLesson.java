@@ -35,7 +35,7 @@ public class ParserDayLesson extends ParserHTMLAbstract {
     }
 
     /**
-     * Парсит из select Lesson с помощью ParserLesson и добавляет в dayLesson.
+     * Парсит из executeSelect Lesson с помощью ParserLesson и добавляет в dayLesson.
      * @param select Elements из которых нужно спарсить Lesson.
      * @param dayLesson Element в который нужно добавить Lesson.
      */
