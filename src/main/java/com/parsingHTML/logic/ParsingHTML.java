@@ -3,6 +3,7 @@ package com.parsingHTML.logic;
 import com.parsingHTML.logic.element.ElementJsoupFactory;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import com.parsingHTML.logic.parser.ParserHTMLFactory;
+import com.parsingHTML.logic.parser.grouplesson.ParserGroupLesson;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
@@ -23,20 +24,20 @@ public class ParsingHTML {
     private static ParserHTMLFactory parserHTMLFactory = new ParserHTMLFactory();
     private static ElementJsoupFactory elementFactory = new ElementJsoupFactory();
 
-    public static void setParserHTMLFactory(ParserHTMLFactory parserHTMLFactory) {
-        ParsingHTML.parserHTMLFactory = parserHTMLFactory;
-    }
-
-    public static void setElementFactory(ElementJsoupFactory elementFactory) {
-        ParsingHTML.elementFactory = elementFactory;
-    }
-
     public static ParserHTMLFactory getParserHTMLFactory() {
         return parserHTMLFactory;
     }
 
+    public static void setParserHTMLFactory(ParserHTMLFactory parserHTMLFactory) {
+        ParsingHTML.parserHTMLFactory = parserHTMLFactory;
+    }
+
     public static ElementJsoupFactory getElementFactory() {
         return elementFactory;
+    }
+
+    public static void setElementFactory(ElementJsoupFactory elementFactory) {
+        ParsingHTML.elementFactory = elementFactory;
     }
 
     /**
@@ -82,7 +83,7 @@ public class ParsingHTML {
     /**
      * Спарсить содержание с помощью ParserWeekTime File.
      *
-     * @param inputStream        Файл с HTML.
+     * @param inputStream Файл с HTML.
      * @param charsetName установить характер содержимого файла.
      * @return получившийся при парсинге элемент.
      * @throws IOException если файл не может быть найден, или прочитан, или если charsetName является недопустимым.
@@ -107,7 +108,7 @@ public class ParsingHTML {
     /**
      * Спарсить содержание с помощью ParserGroupLesson File.
      *
-     * @param inputStream        Файл с HTML.
+     * @param inputStream Файл с HTML.
      * @param charsetName установить характер содержимого файла.
      * @return получившийся при парсинге элемент.
      * @throws IOException если файл не может быть найден, или прочитан, или если charsetName является недопустимым.
@@ -183,5 +184,17 @@ public class ParsingHTML {
         }
         return null;
     }
+
+    /**
+     * Проверка является содержит ли строка описание.
+     *
+     * @param schedules строка которую нужно проверить.
+     * @return true если содержит.
+     */
+    public static boolean checkSchedules(String schedules) {
+        int size = Jsoup.parse(schedules).select(ParserGroupLesson.cssQueryTableDay).size();
+        return size > 0;
+    }
+
 
 }

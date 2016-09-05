@@ -12,7 +12,7 @@ import org.jsoup.select.Elements;
  */
 public class ParserGroupLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserGroupLesson.class);
-    private final static String cssQuery = ".tbl_day";
+    public final static String cssQueryTableDay = ".tbl_day";
 
 
     /**
@@ -25,7 +25,7 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
     public Element parsing(Element element) {
         LOGGER.debug("==== Parsing Element = " + element.nodeName() + " ====");
         Element groupLesson = ElementFactory.createGroupLesson();
-        Elements days = ElementHelper.selectElements(element, cssQuery);
+        Elements days = ElementHelper.selectElements(element, cssQueryTableDay);
 
         parsingDayLesson(groupLesson, days);
         LOGGER.debug("====== return " + groupLesson);
