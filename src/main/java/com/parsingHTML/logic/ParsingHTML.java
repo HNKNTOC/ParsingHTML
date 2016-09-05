@@ -39,12 +39,40 @@ public class ParsingHTML {
         return elementFactory;
     }
 
-    public static Element parsingSchedule(InputStream inputStream, InputStream scheduleContent, String charsetName) throws IOException {
+    /**
+     * Парсинг расписания из InputStream.
+     *
+     * @param timeContent     Element с временем.
+     * @param scheduleContent Element с расписание.
+     * @param charsetName     установить характер содержимого файла.
+     * @return XML расписание.
+     */
+    public static Element parsingSchedule(InputStream timeContent, InputStream scheduleContent, String charsetName) throws IOException {
         Element schedule = elementFactory.createSchedule();
         schedule.appendChild(elementFactory.createParsingTime());
 
         Element university = elementFactory.createUniversity();
-        university.appendChild(parsingWeekTime(inputStream, charsetName));
+        university.appendChild(parsingWeekTime(timeContent, charsetName));
+        university.appendChild(parsingGroupLesson(scheduleContent, charsetName));
+
+        schedule.appendChild(university);
+        return schedule;
+    }
+
+    /**
+     * Парсинг расписания из Element.
+     *
+     * @param timeContent     Element с временем.
+     * @param scheduleContent Element с расписание.
+     * @param charsetName     установить характер содержимого файла.
+     * @return XML расписание.
+     */
+    public static Element parsingSchedule(Element timeContent, Element scheduleContent, String charsetName) {
+        Element schedule = elementFactory.createSchedule();
+        schedule.appendChild(elementFactory.createParsingTime());
+
+        Element university = elementFactory.createUniversity();
+        university.appendChild(parsingWeekTime(timeContent, charsetName));
         university.appendChild(parsingGroupLesson(scheduleContent, charsetName));
 
         schedule.appendChild(university);
@@ -65,6 +93,18 @@ public class ParsingHTML {
     }
 
     /**
+     * Спарсить содержание с помощью ParserWeekTime File.
+     *
+     * @param element     Element с HTML.
+     * @param charsetName установить характер содержимого файла.
+     * @return получившийся при парсинге элемент.
+     */
+    public static Element parsingGroupLesson(Element element, String charsetName) {
+        LOGGER.info("parsingGroupLesson inputStream: " + element + " charsetName: " + charsetName);
+        return parsing(element, charsetName, parserHTMLFactory.createParserGroupLesson());
+    }
+
+    /**
      * Спарсить содержание с помощью ParserGroupLesson File.
      *
      * @param inputStream        Файл с HTML.
@@ -75,6 +115,18 @@ public class ParsingHTML {
     public static Element parsingWeekTime(InputStream inputStream, String charsetName) throws IOException {
         LOGGER.info("parsingWeekTime inputStream: " + inputStream + " charsetName: " + charsetName);
         return parsing(inputStream, charsetName, parserHTMLFactory.createParserWeekTime());
+    }
+
+    /**
+     * Спарсить содержание с помощью ParserGroupLesson File.
+     *
+     * @param element     Element с HTML.
+     * @param charsetName установить характер содержимого файла.
+     * @return получившийся при парсинге элемент.
+     */
+    public static Element parsingWeekTime(Element element, String charsetName) {
+        LOGGER.info("parsingWeekTime inputStream: " + element + " charsetName: " + charsetName);
+        return parsing(element, charsetName, parserHTMLFactory.createParserWeekTime());
     }
 
     /**
@@ -90,6 +142,19 @@ public class ParsingHTML {
         LOGGER.info("parsing file: " + file + " charsetName: " + charsetName + " parser: = " + parser);
         Document document = Jsoup.parse(file, charsetName, "");
         return parser.parsing(document);
+    }
+
+    /**
+     * Спарсить содержание File.
+     *
+     * @param element     Файл с HTML.
+     * @param charsetName установить характер содержимого файла.
+     * @param parser      ParserHTMLAbstract который будет парсить.
+     * @return получившийся при парсинге элемент.
+     */
+    public static Element parsing(Element element, String charsetName, ParserHTMLAbstract parser) {
+        LOGGER.info("parsing file: " + element + " charsetName: " + charsetName + " parser: = " + parser);
+        return parser.parsing(element);
     }
 
     /**
