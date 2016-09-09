@@ -5,7 +5,6 @@ package com.parsingHTML.logic.element;
  */
 public enum AttributeName {
     NUMERATOR("numerator"),
-    NAME("name"),
     NUMBER("number"),
     START1("start1"),
     START2("start2"),
@@ -16,7 +15,11 @@ public enum AttributeName {
     COURSE("course"),
     DESCRIPTION("description"),
     TEACHER("teacher"),
-    OVERRIDE("override");
+    OVERRIDE("override"),
+    DAY_NUMBER("day-number"),
+    DAY_TIME_NUMBER("day-time-number"),
+    LESSON_NAME("lesson-name"),
+    NAME_UNIVERSITY("name-university");
 
 
     private String name;

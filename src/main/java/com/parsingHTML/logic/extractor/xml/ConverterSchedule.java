@@ -19,7 +19,7 @@ public class ConverterSchedule {
 
         final String name, teacher, description;
 
-        name = toAttributeValue(attributes, AttributeName.NAME);
+        name = toAttributeValue(attributes, AttributeName.LESSON_NAME);
         teacher = toAttributeValue(attributes, AttributeName.TEACHER);
         description = toAttributeValue(attributes, AttributeName.DESCRIPTION);
         final int number = Integer.parseInt(toAttributeValue(attributes, AttributeName.NUMBER));

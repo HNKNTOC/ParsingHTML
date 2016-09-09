@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <schedule>
-    <parsing_time>Mon Aug 15 18:06:54 GMT+03:00 2016</parsing_time>
-    <university name="БУКЭП">
+    <parsing_time>Sat Sep 10 00:20:56 GMT+03:00 2016</parsing_time>
+    <university name-university="БУКЭП">
         <week_time numerator="false">
-            <day_time name="Понедельник">
+            <day_time day-time-number="2">
                 <lesson_time end1="09:15" end2="10:05" number="1" start1="08:30" start2="09:20"/>
                 <lesson_time end1="11:00" end2="11:50" number="2" start1="10:15" start2="11:05"/>
                 <lesson_time end1="13:10" end2="14:00" number="3" start1="12:25" start2="13:15"/>
@@ -12,11 +12,11 @@
                 <lesson_time end1="18:50" end2="19:40" number="6" start1="18:05" start2="18:55"/>
                 <lesson_time end1="20:35" end2="21:25" number="7" start1="19:50" start2="20:40"/>
             </day_time>
-            <day_time name="Вторник" override="1"/>
-            <day_time name="Среда" override="1"/>
-            <day_time name="Четверг" override="1"/>
-            <day_time name="Пятница" override="1"/>
-            <day_time name="Суббота">
+            <day_time day-time-number="3" override="1"/>
+            <day_time day-time-number="4" override="1"/>
+            <day_time day-time-number="5" override="1"/>
+            <day_time day-time-number="6" override="1"/>
+            <day_time day-time-number="7">
                 <lesson_time end1="09:15" end2="10:05" number="1" start1="08:30" start2="09:20"/>
                 <lesson_time end1="11:00" end2="11:50" number="2" start1="10:15" start2="11:05"/>
                 <lesson_time end1="12:45" end2="13:35" number="3" start1="12:00" start2="12:50"/>
@@ -27,78 +27,78 @@
             </day_time>
         </week_time>
         <group_lesson>
-            <day_lesson name="Понедельник">
-                <lesson description="Практическое занятие 405н" name="Естествознание" number="3" numerator="Числ."
-                        teacher="Name Teacher"/>
-                <lesson description="Лабораторное занятие 505н" name="Физика" number="3" numerator="Знам."
+            <day_lesson day-number="2">
+                <lesson description="Практическое занятие 405н" lesson-name="Естествознание" number="3"
+                        numerator="Числ." teacher="Name Teacher"/>
+                <lesson description="Лабораторное занятие 505н" lesson-name="Физика" number="3" numerator="Знам."
                         teacher="Name Teacher"/>
                 <lesson description="Практическое занятие 513н"
-                        name="Математика: алгебра, начала математического анализа, геометрия" number="4"
+                        lesson-name="Математика: алгебра, начала математического анализа, геометрия" number="4"
                         numerator="empty" teacher="Name Teacher"/>
-                <lesson description="Лекционное занятие 403н" name="Обществознание (вкл. экономику и право)" number="5"
-                        numerator="Числ." teacher="Name Teacher"/>
-                <lesson description="Лекционное занятие 504н" name="Обществознание (вкл. экономику и право)" number="5"
-                        numerator="Знам." teacher="Name Teacher"/>
+                <lesson description="Лекционное занятие 403н" lesson-name="Обществознание (вкл. экономику и право)"
+                        number="5" numerator="Числ." teacher="Name Teacher"/>
+                <lesson description="Лекционное занятие 504н" lesson-name="Обществознание (вкл. экономику и право)"
+                        number="5" numerator="Знам." teacher="Name Teacher"/>
             </day_lesson>
-            <day_lesson name="Вторник">
-                <lesson description="Практическое занятие 310н" name="Русский язык и литература" number="2"
+            <day_lesson day-number="3">
+                <lesson description="Практическое занятие 310н" lesson-name="Русский язык и литература" number="2"
                         numerator="Числ." teacher="Name Teacher"/>
-                <lesson description="Практическое занятие 305н" name="Русский язык и литература" number="2"
+                <lesson description="Практическое занятие 305н" lesson-name="Русский язык и литература" number="2"
                         numerator="Знам." teacher="Name Teacher"/>
-                <lesson description="Лекционное занятие 303н" name="Естествознание" number="3" numerator="Числ."
+                <lesson description="Лекционное занятие 303н" lesson-name="Естествознание" number="3" numerator="Числ."
                         teacher="Name Teacher"/>
-                <lesson description="Лекционное занятие 411н" name="История 9" number="3" numerator="Знам."
+                <lesson description="Лекционное занятие 411н" lesson-name="История 9" number="3" numerator="Знам."
                         teacher="Name Teacher"/>
-                <lesson description="Лабораторное занятие 503ан" name="Физика" number="4" numerator="Числ."
+                <lesson description="Лабораторное занятие 503ан" lesson-name="Физика" number="4" numerator="Числ."
                         teacher="Name Teacher"/>
                 <lesson description="Практическое занятие 514н"
-                        name="Математика: алгебра, начала математического анализа, геометрия" number="4"
+                        lesson-name="Математика: алгебра, начала математического анализа, геометрия" number="4"
                         numerator="Знам." teacher="Name Teacher"/>
             </day_lesson>
-            <day_lesson name="Среда">
-                <lesson description="Лабораторное занятие 431, 432" name="Информатика 9" number="2" numerator="Числ."
-                        teacher="Name Teacher"/>
-                <lesson description="Лабораторное занятие 432, 432" name="Информатика 9" number="2" numerator="Знам."
-                        teacher="Name Teacher"/>
-                <lesson description="Практическое занятие 013" name="Иностранный язык 9" number="3" numerator="empty"
-                        teacher="Name Teacher"/>
-                <lesson description="Физическая культура -, -, -" name="Физическая культура" number="4"
+            <day_lesson day-number="4">
+                <lesson description="Лабораторное занятие 431, 432" lesson-name="Информатика 9" number="2"
+                        numerator="Числ." teacher="Name Teacher"/>
+                <lesson description="Лабораторное занятие 432, 432" lesson-name="Информатика 9" number="2"
+                        numerator="Знам." teacher="Name Teacher"/>
+                <lesson description="Практическое занятие 013" lesson-name="Иностранный язык 9" number="3"
+                        numerator="empty" teacher="Name Teacher"/>
+                <lesson description="Физическая культура -, -, -" lesson-name="Физическая культура" number="4"
                         numerator="empty" teacher="Name Teacher"/>
             </day_lesson>
-            <day_lesson name="Четверг">
+            <day_lesson day-number="5">
                 <lesson description="Практическое занятие 513н"
-                        name="Математика: алгебра, начала математического анализа, геометрия" number="3"
+                        lesson-name="Математика: алгебра, начала математического анализа, геометрия" number="3"
                         numerator="empty" teacher="Name Teacher"/>
-                <lesson description="Практическое занятие 110н" name="Русский язык и литература" number="4"
+                <lesson description="Практическое занятие 110н" lesson-name="Русский язык и литература" number="4"
                         numerator="Числ." teacher="Name Teacher"/>
-                <lesson description="Практическое занятие 312н" name="Русский язык и литература" number="4"
+                <lesson description="Практическое занятие 312н" lesson-name="Русский язык и литература" number="4"
                         numerator="Знам." teacher="Name Teacher"/>
-                <lesson description="Лекционное занятие 115" name="Введение в специальность" number="5"
+                <lesson description="Лекционное занятие 115" lesson-name="Введение в специальность" number="5"
                         numerator="Числ." teacher="Name Teacher"/>
-                <lesson description="Лабораторное занятие 113, 115" name="Введение в специальность" number="5"
+                <lesson description="Лабораторное занятие 113, 115" lesson-name="Введение в специальность" number="5"
                         numerator="Знам." teacher="Name Teacher"/>
             </day_lesson>
-            <day_lesson name="Пятница">
-                <lesson description="Лабораторное занятие 106, 108, 108" name="Информатика 9" number="2"
+            <day_lesson day-number="6">
+                <lesson description="Лабораторное занятие 106, 108, 108" lesson-name="Информатика 9" number="2"
                         numerator="empty" teacher="Name Teacher"/>
-                <lesson description="Практическое занятие 104н" name="История 9" number="3" numerator="empty"
+                <lesson description="Практическое занятие 104н" lesson-name="История 9" number="3" numerator="empty"
                         teacher="Name Teacher"/>
-                <lesson description="Практическое занятие 513н" name="Обществознание (вкл. экономику и право)"
+                <lesson description="Практическое занятие 513н" lesson-name="Обществознание (вкл. экономику и право)"
                         number="4" numerator="empty" teacher="Name Teacher"/>
             </day_lesson>
-            <day_lesson name="Суббота">
-                <lesson description="Практическое занятие -" name="Иностранный язык 9" number="2" numerator="Числ."
-                        teacher="Name Teacher"/>
+            <day_lesson day-number="7">
+                <lesson description="Практическое занятие -" lesson-name="Иностранный язык 9" number="2"
+                        numerator="Числ." teacher="Name Teacher"/>
                 <lesson description="Практическое занятие -"
-                        name="Математика: алгебра, начала математического анализа, геометрия" number="2"
+                        lesson-name="Математика: алгебра, начала математического анализа, геометрия" number="2"
                         numerator="Знам." teacher="Name Teacher"/>
-                <lesson description="Физическая культура -, -" name="Физическая культура" number="3" numerator="Числ."
-                        teacher="Name Teacher"/>
-                <lesson description="Практическое занятие -" name="Русский язык и литература" number="3"
+                <lesson description="Физическая культура -, -" lesson-name="Физическая культура" number="3"
+                        numerator="Числ." teacher="Name Teacher"/>
+                <lesson description="Практическое занятие -" lesson-name="Русский язык и литература" number="3"
                         numerator="Знам." teacher="Name Teacher"/>
-                <lesson description="Лабораторное занятие -" name="Физика" number="4" numerator="Числ."
+                <lesson description="Лабораторное занятие -" lesson-name="Физика" number="4" numerator="Числ."
                         teacher="Name Teacher"/>
-                <lesson description="Лабораторное занятие -, -" name="Информатика 9" number="4" numerator="Знам."
+                <lesson description="Лабораторное занятие -, -" lesson-name="Информатика 9" number="4" numerator="Знам."
                         teacher="Name Teacher"/>
             </day_lesson>
         </group_lesson>

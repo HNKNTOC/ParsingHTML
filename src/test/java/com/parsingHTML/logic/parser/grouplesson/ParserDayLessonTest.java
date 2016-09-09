@@ -14,7 +14,7 @@ public class ParserDayLessonTest {
     public void parsing() throws Exception {
         Element elementResults = ParserXMLCheck.parsingElement(new ParserDayLesson(), "DayLesson.html");
         ElementHelper.checkElementsSize(elementResults.children(), ElementName.LESSON, 5);
-        ElementHelper.checkElementAttribute(elementResults, "dayName", "Понедельник");
+        ElementHelper.checkElementAttribute(elementResults, "dayName", "2");
     }
 
 }

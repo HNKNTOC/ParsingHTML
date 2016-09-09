@@ -3,11 +3,14 @@ package com.parsingHTML.logic.extractor.xml;
 import com.parsingHTML.logic.element.AttributeName;
 import com.parsingHTML.logic.element.DayName;
 import com.parsingHTML.logic.element.ElementName;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 /**
  * Заранее подготовленный выражение для XPath.
  */
 public final class XPathExpression {
+    private static final Logger LOGGER = LogManager.getLogger(XPathExpression.class);
 
     /**
      * Выражение для выбора уроков в конкретный день.
@@ -16,9 +19,10 @@ public final class XPathExpression {
      * @return выражение.
      */
     public static String selectLesson(final DayName dayName) {
+        LOGGER.debug("selectLesson() dayName = " + dayName);
         return String.format("%s/%s/%s/%s[@%s='%s']/%s",
                 ElementName.SCHEDULE, ElementName.UNIVERSITY, ElementName.GROUP_LESSON,
-                ElementName.DAY_LESSON, AttributeName.NAME, dayName.getName(), ElementName.LESSON);
+                ElementName.DAY_LESSON, AttributeName.DAY_NUMBER, dayName, ElementName.LESSON);
     }
 
     /**
@@ -29,6 +33,7 @@ public final class XPathExpression {
      * @return выражение.
      */
     public static String selectLessonTime(final DayName dayName, int number) {
+        LOGGER.debug("selectLessonTime() dayName = " + dayName);
         // Для FRIDAY,THURSDAY,TUESDAY,WEDNESDAY выполняется тот же запрос что и для MONDAY.
         // Так как расписание времени у них одно и тоже.
         DayName selectDayName;
@@ -38,7 +43,8 @@ public final class XPathExpression {
             selectDayName = DayName.MONDAY;
         }
         return String.format("%s/%s/%s/%s[@%s='%s']/%s[@%s='%d']",
-                ElementName.SCHEDULE, ElementName.UNIVERSITY, ElementName.WEEK_TIME, ElementName.DAY_TIME, AttributeName.NAME, selectDayName, ElementName.LESSON_TIME, AttributeName.NUMBER, number);
+                ElementName.SCHEDULE, ElementName.UNIVERSITY, ElementName.WEEK_TIME, ElementName.DAY_TIME,
+                AttributeName.DAY_TIME_NUMBER, selectDayName, ElementName.LESSON_TIME, AttributeName.NUMBER, number);
     }
 
 }

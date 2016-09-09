@@ -28,9 +28,10 @@ public class ExtractorSchedule {
      * @return результат.
      */
     public static NodeList executeSelect(final String expression, final Document document) {
+        LOGGER.info("executeSelect() expression = " + expression);
         try {
             NodeList evaluate = (NodeList) xPath.compile(expression).evaluate(document, XPathConstants.NODESET);
-            LOGGER.debug("executeSelect return " + evaluate);
+            LOGGER.debug("executeSelect return NodeList = " + evaluate.getLength());
             return evaluate;
         } catch (XPathExpressionException e) {
             LOGGER.error("Failed executeSelect " + expression, e);
@@ -55,7 +56,7 @@ public class ExtractorSchedule {
 
 
     public static LessonTime extractDayTime(final DayName dayName, final int number, final Document document) {
-        LOGGER.debug("extractDayTime dayName " + dayName.getName() + " number = " + number);
+        LOGGER.debug("extractDayTime dayName " + dayName + " number = " + number);
         NodeList select = executeSelect(XPathExpression.selectLessonTime(dayName, number), document);
         Node item = null;
         if (select.getLength() == 1) {

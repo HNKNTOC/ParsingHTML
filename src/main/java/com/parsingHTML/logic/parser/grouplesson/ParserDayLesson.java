@@ -1,5 +1,6 @@
 package com.parsingHTML.logic.parser.grouplesson;
 
+import com.parsingHTML.logic.element.DayName;
 import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
@@ -7,20 +8,25 @@ import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.util.HashMap;
+
 /**
  * Парсит элемент DayLesson из .html.
  */
 public class ParserDayLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayLesson.class);
+    /**
+     * cssQuery - выбор номер пары.
+     */
     private final static String cssQueryNumPara = ".num_para";
+    /**
+     * cssQuery - выбор дня.
+     */
     private final static String cssQueryDay = ".day";
 
 
     /**
      * Из element выбирает элемент через cssQuery в cssQueryNumPara.
-     *
-     * @param element
-     * @return
      */
     @Override
     public Element parsing(Element element) {
@@ -50,18 +56,33 @@ public class ParserDayLesson extends ParserHTMLAbstract {
     }
 
     /**
-     * Из element выбирает элемент через cssQuery в cssQueryDay.
-     * Получает из выбранного элемента text.
+     * Получение дня из элемента.
      * @param element элемент из которого нужно спарсить день.
      * @return Имя дня.
      */
-    private String parsingDay(Element element) {
+    private DayName parsingDay(Element element) {
         Elements select = element.select(cssQueryDay);
-        String dayName = "null";
+        String dayName = null;
         if (ElementHelper.checkElementsSize(select, 1)) {
             dayName = select.text();
         }
         LOGGER.debug("parsingDay return "+dayName);
-        return dayName;
+        return toDayOfString(dayName);
+    }
+
+    private final static HashMap<String, DayName> DAY_NAME_OF_SCHEDULES = new HashMap<>();
+
+    static {
+        DAY_NAME_OF_SCHEDULES.put("Понедельник", DayName.MONDAY);
+        DAY_NAME_OF_SCHEDULES.put("Вторник", DayName.TUESDAY);
+        DAY_NAME_OF_SCHEDULES.put("Среда", DayName.WEDNESDAY);
+        DAY_NAME_OF_SCHEDULES.put("Четверг", DayName.THURSDAY);
+        DAY_NAME_OF_SCHEDULES.put("Пятница", DayName.FRIDAY);
+        DAY_NAME_OF_SCHEDULES.put("Суббота", DayName.SATURDAY);
+        DAY_NAME_OF_SCHEDULES.put("Воскресение", DayName.SUNDAY);
+    }
+
+    private static DayName toDayOfString(String dayName) {
+        return DAY_NAME_OF_SCHEDULES.get(dayName);
     }
 }

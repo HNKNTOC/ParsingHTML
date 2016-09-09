@@ -25,7 +25,7 @@ public class ElementJsoupFactory implements ElementFactory {
     public Element createDayTime(DayName dayName) {
         LOGGER.debug("createDayTime");
         builder.createElement(ElementName.DAY_TIME);
-        builder.setAttr(AttributeName.NAME, dayName.getName());
+        builder.setAttr(AttributeName.DAY_TIME_NUMBER, dayName.toString());
         return builder.getThisElement();
     }
 
@@ -50,10 +50,10 @@ public class ElementJsoupFactory implements ElementFactory {
     }
 
     @Override
-    public Element createDayLesson(String dayName) {
+    public Element createDayLesson(DayName dayName) {
         LOGGER.debug("createDayLesson");
         builder.createElement(ElementName.DAY_LESSON);
-        builder.setAttr(AttributeName.NAME, dayName);
+        builder.setAttr(AttributeName.DAY_NUMBER, dayName.toString());
         return builder.getThisElement();
     }
 
@@ -62,7 +62,7 @@ public class ElementJsoupFactory implements ElementFactory {
         LOGGER.debug("createLesson");
         builder.createElement(ElementName.LESSON);
         builder.setAttr(AttributeName.NUMBER, number);
-        builder.setAttr(AttributeName.NAME, nameLesson);
+        builder.setAttr(AttributeName.LESSON_NAME, nameLesson);
         builder.setAttr(AttributeName.DESCRIPTION, descriptionLesson);
         builder.setAttr(AttributeName.TEACHER, teacher);
         builder.setAttr(AttributeName.NUMERATOR, numerator);
@@ -95,7 +95,7 @@ public class ElementJsoupFactory implements ElementFactory {
     public Element createUniversity() {
         LOGGER.debug("createUniversity");
         builder.createElement(ElementName.UNIVERSITY);
-        builder.setAttr(AttributeName.NAME, "БУКЭП");
+        builder.setAttr(AttributeName.NAME_UNIVERSITY, "БУКЭП");
         return builder.getThisElement();
     }
 }

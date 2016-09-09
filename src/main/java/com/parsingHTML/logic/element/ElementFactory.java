@@ -14,7 +14,7 @@ public interface ElementFactory {
 
     Element createLessonTime(String number, String start1, String end1, String start2, String end2);
 
-    Element createDayLesson(String dayName);
+    Element createDayLesson(DayName dayName);
 
     Element createLesson(String number, String nameLesson, String descriptionLesson, String teacher, String numerator);
 

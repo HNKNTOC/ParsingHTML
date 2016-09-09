@@ -76,28 +76,28 @@ public class ParserHTMLAbstractTest {
 
         Element test1 = builder.createElement(nameTest1).getThisElement();
         Element test2 = builder.createElement(nameTest2)
-                .setAttr(AttributeName.NAME, "name1")
+                .setAttr(AttributeName.DAY_TIME_NUMBER, "name1")
                 .getThisElement();
 
         test1.appendChild(test2);
 
-        Element element = ElementHelper.selectElement(test1, "[" + AttributeName.NAME + "=name1]", 0);
+        Element element = ElementHelper.selectElement(test1, "[" + AttributeName.LESSON_NAME + "=name1]", 0);
         ElementHelper.checkTagName(element, nameTest2);
     }
 
     @Test
     public void selectElements() throws Exception {
-        ElementName nameTest1 = ElementName.DAY_LESSON;
-        ElementName nameTest2 = ElementName.DAY_TIME;
-        ElementName nameTest3 = ElementName.GROUP_LESSON;
+        ElementName nameTest1 = ElementName.SCHEDULE;
+        ElementName nameTest2 = ElementName.LESSON_TIME;
+        ElementName nameTest3 = ElementName.LESSON_TIME;
 
         Element test1 = builder.createElement(nameTest1).getThisElement();
-        Element test2 = builder.createElement(nameTest2).setAttr(AttributeName.NAME, "name1").getThisElement();
-        Element test3 = builder.createElement(nameTest3).setAttr(AttributeName.NAME, "name1").getThisElement();
+        Element test2 = builder.createElement(nameTest2).setAttr(AttributeName.DAY_TIME_NUMBER, "name1").getThisElement();
+        Element test3 = builder.createElement(nameTest3).setAttr(AttributeName.DAY_TIME_NUMBER, "name1").getThisElement();
 
         test1.appendChild(test2);
         test1.appendChild(test3);
-        Elements element = ElementHelper.selectElements(test1, "[" + AttributeName.NAME + "=name1]");
+        Elements element = ElementHelper.selectElements(test1, "[" + AttributeName.DAY_TIME_NUMBER + "=name1]");
         assertTrue(element.size() == 2);
     }
 

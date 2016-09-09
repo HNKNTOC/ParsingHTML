@@ -15,6 +15,10 @@ import java.util.Arrays;
 public class ParserLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserLesson.class);
     private static final String separator = "/-";
+    /**
+     * cssQuery - выбор дня.
+     */
+    private String cssQueryPara = ".para";
 
 
     @Override
@@ -24,7 +28,7 @@ public class ParserLesson extends ParserHTMLAbstract {
         String number = parsingNumber(element);
         String numerator = parsingNumerator(element);
 
-        String[] split = divideString(ElementHelper.selectElement(element, ".para", 0));
+        String[] split = divideString(ElementHelper.selectElement(element, cssQueryPara, 0));
 
         String nameLesson = split[0];
         String descriptionLesson = split[1];
