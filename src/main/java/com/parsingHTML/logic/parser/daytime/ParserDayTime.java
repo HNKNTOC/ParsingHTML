@@ -14,11 +14,17 @@ public class ParserDayTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayTime.class);
 
     /**
-     * Разделитель для time.
+     * cssQuery - для получения номера пары.
      */
-    private final static String cssQueryNumberLesson = "td.n_para";
-    private static final String cssQueryTimeMonday = " td.n_para + td.time";
-    private static final String cssQueryTimeSaturday = " td.time ~ td";
+    public final static String cssQueryNumberLesson = "td.n_para";
+    /**
+     * cssQuery - для получения времени Понедельние-Пятница.
+     */
+    public static final String cssQueryTimeMonday = "td.n_para + td.time";
+    /**
+     * cssQuery - для получения времени Суббота.
+     */
+    public static final String cssQueryTimeSaturday = "td.time ~ td";
 
 
     @Override

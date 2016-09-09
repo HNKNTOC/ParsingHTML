@@ -3,6 +3,7 @@ package com.parsingHTML.logic;
 import com.parsingHTML.logic.element.ElementJsoupFactory;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import com.parsingHTML.logic.parser.ParserHTMLFactory;
+import com.parsingHTML.logic.parser.daytime.ParserDayTime;
 import com.parsingHTML.logic.parser.grouplesson.ParserGroupLesson;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -186,13 +187,24 @@ public class ParsingHTML {
     }
 
     /**
-     * Проверка является содержит ли строка описание.
+     * Проверка содержит ли Element описание.
      *
-     * @param schedules строка которую нужно проверить.
+     * @param schedules Element которую нужно проверить.
      * @return true если содержит.
      */
-    public static boolean checkSchedules(String schedules) {
-        int size = Jsoup.parse(schedules).select(ParserGroupLesson.cssQueryTableDay).size();
+    public static boolean checkSchedules(Element schedules) {
+        int size = schedules.select(ParserGroupLesson.cssQueryTableDay).size();
+        return size > 0;
+    }
+
+    /**
+     * Проверка содержит ли Element время занятий.
+     *
+     * @param schedulesTime Element которую нужно проверить.
+     * @return true если содержит.
+     */
+    public static boolean checkSchedulesTime(Element schedulesTime) {
+        int size = schedulesTime.select(ParserDayTime.cssQueryNumberLesson).size();
         return size > 0;
     }
 
