@@ -3,8 +3,8 @@ package com.parsingHTML.logic;
 import com.parsingHTML.logic.element.DayName;
 import com.parsingHTML.logic.element.ElementFactory;
 import com.parsingHTML.logic.element.ElementJsoupFactory;
-import com.parsingHTML.logic.extractor.xml.DayTime;
 import com.parsingHTML.logic.extractor.xml.ExtractorSchedule;
+import com.parsingHTML.logic.extractor.xml.LessonTime;
 import com.parsingHTML.logic.selector.SelectorLink;
 import org.jsoup.nodes.Element;
 import org.w3c.dom.Document;
@@ -32,8 +32,8 @@ public class Main {
     }
 
     private static void testSchedule() throws IOException, TransformerException {
-        DayTime dayTime1 = ExtractorSchedule.extractDayTime(DayName.THURSDAY, 7, start());
-        System.out.println(dayTime1);
+        LessonTime lessonTime1 = ExtractorSchedule.extractDayTime(DayName.THURSDAY, 7, start());
+        System.out.println(lessonTime1);
     }
 
     public static void testingGoLink() throws IOException {

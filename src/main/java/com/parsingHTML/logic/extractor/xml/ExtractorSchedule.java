@@ -54,7 +54,7 @@ public class ExtractorSchedule {
     }
 
 
-    public static DayTime extractDayTime(final DayName dayName, final int number, final Document document) {
+    public static LessonTime extractDayTime(final DayName dayName, final int number, final Document document) {
         LOGGER.debug("extractDayTime dayName " + dayName.getName() + " number = " + number);
         NodeList select = executeSelect(XPathExpression.selectLessonTime(dayName, number), document);
         Node item = null;
@@ -69,9 +69,9 @@ public class ExtractorSchedule {
     public static ArrayList<Lesson> extractLessonWhitTime(final DayName dayName, final Document document) {
         ArrayList<Lesson> lessons = extractLesson(dayName, document);
         for (Lesson lesson : lessons) {
-            DayTime dayTime = extractDayTime(dayName, lesson.getNumber(), document);
-            lesson.setTime1(dayTime.getTimeFirstLesson());
-            lesson.setTime2(dayTime.getTimeSecondLesson());
+            LessonTime lessonTime = extractDayTime(dayName, lesson.getNumber(), document);
+            lesson.setTime1(lessonTime.getTimeFirstLesson());
+            lesson.setTime2(lessonTime.getTimeSecondLesson());
         }
         return lessons;
     }

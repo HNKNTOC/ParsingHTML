@@ -79,24 +79,24 @@ public class ExtractorScheduleTest {
 
     @Test
     public void extractDayTime() throws Exception {
-        DayTime dayTime = ExtractorSchedule.extractDayTime(DayName.FRIDAY, 2, doc);
+        LessonTime lessonTime = ExtractorSchedule.extractDayTime(DayName.FRIDAY, 2, doc);
         final String start1 = "10:15";
         final String start2 = "11:05";
         final String end1 = "11:00";
         final String end2 = "11:50";
 
-        assertEquals(dayTime.getStart1(), start1);
-        assertEquals(dayTime.getStart2(), start2);
-        assertEquals(dayTime.getEnd1(), end1);
-        assertEquals(dayTime.getEnd2(), end2);
+        assertEquals(lessonTime.getStart1(), start1);
+        assertEquals(lessonTime.getStart2(), start2);
+        assertEquals(lessonTime.getEnd1(), end1);
+        assertEquals(lessonTime.getEnd2(), end2);
 
-        assertEquals(dayTime.getTimeFirstLesson(), start1 + "-" + end1);
-        assertEquals(dayTime.getTimeSecondLesson(), start2 + "-" + end2);
+        assertEquals(lessonTime.getTimeFirstLesson(), start1 + "-" + end1);
+        assertEquals(lessonTime.getTimeSecondLesson(), start2 + "-" + end2);
 
         final String separator = "_";
 
-        assertEquals(dayTime.getTimeFirstLesson(separator), start1 + separator + end1);
-        assertEquals(dayTime.getTimeSecondLesson(separator), start2 + separator + end2);
+        assertEquals(lessonTime.getTimeFirstLesson(separator), start1 + separator + end1);
+        assertEquals(lessonTime.getTimeSecondLesson(separator), start2 + separator + end2);
 
     }
 

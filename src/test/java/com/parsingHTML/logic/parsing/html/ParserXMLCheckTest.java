@@ -13,7 +13,7 @@ public class ParserXMLCheckTest {
 
     @Test
     public void parsingElement() throws Exception {
-        Element element = ParserXMLCheck.parsingElement(new ParserDayTime(), "DayTime.html");
+        Element element = ParserXMLCheck.parsingElement(new ParserDayTime(), "LessonTime.html");
         assertNotNull(element);
     }
 

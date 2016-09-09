@@ -28,7 +28,7 @@ public class ConverterSchedule {
         return new Lesson(name, description, number, numeratorName, teacher);
     }
 
-    public static DayTime convertDayTime(Node item) {
+    public static LessonTime convertDayTime(Node item) {
         NamedNodeMap attributes = item.getAttributes();
         final String start1, start2, end1, end2;
         final int number;
@@ -39,7 +39,7 @@ public class ConverterSchedule {
         end2 = toAttributeValue(attributes, AttributeName.END2);
         number = Integer.parseInt(toAttributeValue(attributes, AttributeName.NUMBER));
 
-        return new DayTime(number, start1, start2, end1, end2);
+        return new LessonTime(number, start1, start2, end1, end2);
     }
 
     /**

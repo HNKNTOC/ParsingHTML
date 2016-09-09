@@ -3,15 +3,15 @@ package com.parsingHTML.logic.extractor.xml;
 /**
  * Класс для удобной работы с временем урока.
  */
-public class DayTime {
+public class LessonTime {
     private int number;
     private String start1;
     private String start2;
     private String end1;
     private String end2;
-    private static final String SEPARATOR = "-";
+    public static final String SEPARATOR = "-";
 
-    public DayTime(int number, String start1, String start2, String end1, String end2) {
+    public LessonTime(int number, String start1, String start2, String end1, String end2) {
         this.number = number;
         this.start1 = start1;
         this.start2 = start2;
@@ -57,7 +57,7 @@ public class DayTime {
 
     @Override
     public String toString() {
-        return "DayTime{" +
+        return "LessonTime{" +
                 "number=" + number +
                 ", start1='" + start1 + '\'' +
                 ", start2='" + start2 + '\'' +
