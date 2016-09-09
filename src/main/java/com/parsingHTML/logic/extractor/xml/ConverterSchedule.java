@@ -12,6 +12,7 @@ import org.w3c.dom.Node;
  */
 public class ConverterSchedule {
     private static final Logger LOGGER = LogManager.getLogger(ConverterSchedule.class);
+    private static final String defaultValueForNumber = "-1";
 
     public static Lesson convertLesson(Node node) {
         LOGGER.debug("convertLesson = " + node);
@@ -22,8 +23,10 @@ public class ConverterSchedule {
         name = toAttributeValue(attributes, AttributeName.LESSON_NAME);
         teacher = toAttributeValue(attributes, AttributeName.TEACHER);
         description = toAttributeValue(attributes, AttributeName.DESCRIPTION);
-        final int number = Integer.parseInt(toAttributeValue(attributes, AttributeName.NUMBER));
-        final NumeratorName numeratorName = NumeratorName.fromString(toAttributeValue(attributes, AttributeName.NUMERATOR));
+
+        final int number = Integer.parseInt(toAttributeValue(attributes, AttributeName.NUMBER, defaultValueForNumber));
+        final NumeratorName numeratorName = NumeratorName.fromString(
+                toAttributeValue(attributes, AttributeName.NUMERATOR));
 
         return new Lesson(name, description, number, numeratorName, teacher);
     }
@@ -37,7 +40,7 @@ public class ConverterSchedule {
         start2 = toAttributeValue(attributes, AttributeName.START2);
         end1 = toAttributeValue(attributes, AttributeName.END1);
         end2 = toAttributeValue(attributes, AttributeName.END2);
-        number = Integer.parseInt(toAttributeValue(attributes, AttributeName.NUMBER));
+        number = Integer.parseInt(toAttributeValue(attributes, AttributeName.NUMBER, defaultValueForNumber));
 
         return new LessonTime(number, start1, start2, end1, end2);
     }
@@ -56,5 +59,19 @@ public class ConverterSchedule {
             return null;
         }
         return namedItem.getTextContent();
+    }
+
+    /**
+     * Получить значение атрибута.
+     *
+     * @param namedNodeMap  Атрибуты.
+     * @param attributeName Имя атрибута.
+     * @param defaultValue  Значение по умолчанию. Будет возвращено в заместо null.
+     * @return значение атрибута.
+     */
+    public static String toAttributeValue(NamedNodeMap namedNodeMap, AttributeName attributeName, String defaultValue) {
+        String resulted = toAttributeValue(namedNodeMap, attributeName);
+        if (resulted == null) return defaultValue;
+        return resulted;
     }
 }
