@@ -6,11 +6,40 @@ import com.parsingHTML.logic.element.ElementName;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import java.text.MessageFormat;
+
 /**
  * Заранее подготовленный выражение для XPath.
  */
 public final class XPathExpression {
     private static final Logger LOGGER = LogManager.getLogger(XPathExpression.class);
+    private static XPathExpressionBuilder builder = new XPathExpressionBuilder();
+
+    private static MessageFormat expressionLesson;
+    private static MessageFormat expressionLessonTime;
+
+    static {
+        builder.addNodeName(ElementName.SCHEDULE)
+                .addNodeName(ElementName.UNIVERSITY)
+                .addNodeName(ElementName.GROUP_LESSON)
+                .addNodeName(ElementName.DAY_LESSON)
+                .addAttributes(AttributeName.DAY_NUMBER, "'{0}'")
+                .addNodeName(ElementName.LESSON);
+        expressionLesson = new MessageFormat(builder.getExpression());
+        builder.clear();
+        LOGGER.debug("expressionLesson = " + expressionLesson);
+
+        builder.addNodeName(ElementName.SCHEDULE)
+                .addNodeName(ElementName.UNIVERSITY)
+                .addNodeName(ElementName.WEEK_TIME)
+                .addNodeName(ElementName.DAY_TIME)
+                .addAttributes(AttributeName.DAY_TIME_NUMBER, "'{0}'")
+                .addNodeName(ElementName.LESSON_TIME)
+                .addAttributes(AttributeName.NUMBER, "'{1}'");
+        expressionLessonTime = new MessageFormat(builder.getExpression());
+        LOGGER.debug("expressionLessonTime = " + expressionLessonTime);
+        builder.clear();
+    }
 
     /**
      * Выражение для выбора уроков в конкретный день.
@@ -20,9 +49,8 @@ public final class XPathExpression {
      */
     public static String selectLesson(final DayName dayName) {
         LOGGER.debug("selectLesson() dayName = " + dayName);
-        return String.format("%s/%s/%s/%s[@%s='%s']/%s",
-                ElementName.SCHEDULE, ElementName.UNIVERSITY, ElementName.GROUP_LESSON,
-                ElementName.DAY_LESSON, AttributeName.DAY_NUMBER, dayName, ElementName.LESSON);
+
+        return expressionLesson.format(new Object[]{dayName});
     }
 
     /**
@@ -42,9 +70,7 @@ public final class XPathExpression {
         } else {
             selectDayName = DayName.MONDAY;
         }
-        return String.format("%s/%s/%s/%s[@%s='%s']/%s[@%s='%d']",
-                ElementName.SCHEDULE, ElementName.UNIVERSITY, ElementName.WEEK_TIME, ElementName.DAY_TIME,
-                AttributeName.DAY_TIME_NUMBER, selectDayName, ElementName.LESSON_TIME, AttributeName.NUMBER, number);
+        return expressionLessonTime.format(new Object[]{selectDayName, number});
     }
 
 }
