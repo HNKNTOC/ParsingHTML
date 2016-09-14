@@ -8,7 +8,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- * Парсить элемент LessonTime из .html.
+ * Получаеть элемент LessonTime из .html.
  */
 public class ParserLessonTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserLessonTime.class);

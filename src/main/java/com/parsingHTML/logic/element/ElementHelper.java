@@ -130,8 +130,8 @@ public class ElementHelper {
      * @param value          Значение атрибута.
      * @return false если значения атрибута не совпало.
      */
-    public static boolean checkElementAttribute(final Element elementResults, final String name, final String value) {
-        final String valueResult = elementResults.attr(name);
+    public static boolean checkElementAttribute(final Element elementResults, final AttributeName name, final String value) {
+        final String valueResult = elementResults.attr(name.getName());
         if (!Objects.equals(value, valueResult)) {
             final String message = String.format("Value attribute %s does not equal %s.Value %s = %s",
                     name, value, name, valueResult);

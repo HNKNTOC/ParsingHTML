@@ -10,7 +10,7 @@ import org.jsoup.nodes.Element;
 import java.util.Arrays;
 
 /**
- * Парсить элемент Lesson из .html.
+ * Получаеть элемент Lesson из .html.
  */
 public class ParserLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserLesson.class);

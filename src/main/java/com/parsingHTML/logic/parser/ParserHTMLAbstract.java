@@ -36,7 +36,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
     }
 
     /**
-     * Парсит каждый элемент из Elements и возвращает полученные элементы.
+     * Получает каждый элемент из Elements и возвращает полученные элементы.
      *
      * @param elements Elements который нужно спарсить.
      * @return Elements полученные при парсинге.

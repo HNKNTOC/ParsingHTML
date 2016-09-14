@@ -11,7 +11,7 @@ import org.jsoup.select.Elements;
 import java.util.HashMap;
 
 /**
- * Парсит элемент DayLesson из .html.
+ * Получает элемент DayLesson из .html.
  */
 public class ParserDayLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayLesson.class);
@@ -41,7 +41,7 @@ public class ParserDayLesson extends ParserHTMLAbstract {
     }
 
     /**
-     * Парсит из executeSelect Lesson с помощью ParserLesson и добавляет в dayLesson.
+     * Получает из executeSelect Lesson с помощью ParserLesson и добавляет в dayLesson.
      * @param select Elements из которых нужно спарсить Lesson.
      * @param dayLesson Element в который нужно добавить Lesson.
      */

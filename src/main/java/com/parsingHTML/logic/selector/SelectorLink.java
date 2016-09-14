@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 /**
  * Селектор нужен для выбора расписания.
- * 1) Парсит Button из {@link SelectorLink#startURL}.
+ * 1) Получает Button из {@link SelectorLink#startURL}.
  * 2) Передаёт список Button {@link SelectorLink#parsingButtonNames()}
  * 3) Переход по кнопке {@link SelectorLink#goButton(int)}
  * 4) Получение текущего URL.
