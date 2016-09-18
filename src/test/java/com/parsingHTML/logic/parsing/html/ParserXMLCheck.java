@@ -29,6 +29,17 @@ public class ParserXMLCheck {
         return parserHTMLAbstract.parsing(createElementHTML(fileName));
     }
 
+    /**
+     * Получает элемент из переданного файла.
+     *
+     * @param fileName Имя тестового файла который будем парсить.
+     * @return полученный элемент.
+     */
+    public static Element parsingElement(String fileName) {
+        LOGGER.debug("parsingElement fileName = " + fileName);
+        return createElementHTML(fileName);
+    }
+
     private static Element createElementHTML(String fileName) {
         try {
             return Jsoup.parse(new File("src\\test\\resources\\test\\" + fileName), null);

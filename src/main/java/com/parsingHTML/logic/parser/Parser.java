@@ -1,6 +1,8 @@
 package com.parsingHTML.logic.parser;
 
 
+import com.parsingHTML.logic.parser.exception.ExceptionParser;
+
 import java.util.List;
 
 /**

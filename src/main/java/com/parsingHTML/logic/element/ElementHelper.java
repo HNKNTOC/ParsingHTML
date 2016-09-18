@@ -13,6 +13,17 @@ import java.util.Objects;
 public class ElementHelper {
     private static final Logger LOGGER = LogManager.getLogger(ElementHelper.class);
 
+    private ElementHelper() {
+    }
+
+    /**
+     * Сообшить об ошибке слусившийся во время проверки Element.
+     * @param message текст ошибки.
+     */
+    public static void fail(String message) {
+        LOGGER.warn(message);
+    }
+
     /**
      * Проверка имени у элемента.
      * Проверяет равны ли element.tagName() и tagName.
@@ -26,7 +37,7 @@ public class ElementHelper {
         if (elementName.getName().equals(tagNameResults)) {
             return true;
         }
-        LOGGER.warn(String.format("Tag Name not equal %s . Tag Name = %s", elementName, tagNameResults));
+        fail(String.format("Tag Name not equal %s . Tag Name = %s", elementName, tagNameResults));
         return false;
     }
 
@@ -41,9 +52,8 @@ public class ElementHelper {
     public static boolean checkElementsSize(Elements element, final ElementName elementName, final int elementSize) {
         Elements elements = element.select(elementName.getName());
         if (elements.size() != elementSize) {
-            String message = String.format("checkElementTagNameSize does not contain %d %s. %s size =  %d."
-                    , elementSize, elementName, elementName, elements.size());
-            LOGGER.warn(message);
+            fail(String.format("checkElementTagNameSize does not contain %d %s. %s size =  %d."
+                    , elementSize, elementName, elementName, elements.size()));
             return false;
         }
         return true;
@@ -59,8 +69,9 @@ public class ElementHelper {
      */
     public static boolean checkElementsSize(Elements elements, int size) {
         if (elements.size() != size) {
-            String message = String.format("checkElementsSize Element size not equals %d. Element size = %d", size, elements.size());
-            LOGGER.warn(message);
+
+            fail(String.format(
+                    "checkElementsSize Element size not equals %d. Element size = %d", size, elements.size()));
             return false;
         }
         return true;
@@ -78,7 +89,7 @@ public class ElementHelper {
         Elements select = element.select(cssQuery);
         if (!checkNotElementSize(select, 0)) {
             String message = String.format("selectElements cssQuery = \"%s\" return 0 element!", cssQuery);
-            LOGGER.warn(message);
+            fail(message);
         }
         return select;
     }
@@ -93,9 +104,8 @@ public class ElementHelper {
      */
     public static boolean checkNotElementSize(Elements elements, int checkSize) {
         if (elements.size() == checkSize) {
-            String message = String.format("checkNotElementSize Element size not equals %d. Elements size = %d",
-                    checkSize, elements.size());
-            LOGGER.warn(message);
+            fail(String.format("checkNotElementSize Element size not equals %d. Elements size = %d",
+                    checkSize, elements.size()));
             return false;
         }
         return true;
@@ -116,9 +126,9 @@ public class ElementHelper {
             LOGGER.debug("selectElement return " + returnElement);
             return returnElement;
         }
-        String message = String.format("selectElement failed get Element. Element = %s , cssQuery = \"%s\" , index = %s",
-                element, cssQuery, index);
-        LOGGER.warn(message);
+        fail(String.format(
+                "selectElement failed get Element. Element = %s , cssQuery = \"%s\" , index = %s",
+                element, cssQuery, index));
         return ElementJsoupBuilder.createElementEmpty();
     }
 
@@ -133,9 +143,8 @@ public class ElementHelper {
     public static boolean checkElementAttribute(final Element elementResults, String name, final String value) {
         final String valueResult = elementResults.attr(name);
         if (!Objects.equals(value, valueResult)) {
-            final String message = String.format("Value attribute %s does not equal %s.Value %s = %s",
-                    name, value, name, valueResult);
-            LOGGER.warn(message);
+            fail(String.format("Value attribute %s does not equal %s.Value %s = %s",
+                    name, value, name, valueResult));
             return false;
         }
         return true;

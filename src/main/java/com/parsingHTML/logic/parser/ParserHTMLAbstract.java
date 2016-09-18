@@ -5,7 +5,8 @@ import com.parsingHTML.logic.element.ElementFactory;
 import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import com.parsingHTML.logic.element.ElementJsoupFactory;
-import com.parsingHTML.logic.exception.ExceptionList;
+import com.parsingHTML.logic.parser.exception.ExceptionList;
+import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -19,12 +20,12 @@ import java.util.List;
  */
 public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
 
-    private static final Logger LOGGER = LogManager.getLogger(ParserHTMLAbstract.class);
     /**
      * CSS Select для выбора Element
      * из которого будет получена информация.
      */
     protected static final String cssSelectMainDefault = "*";
+    private static final Logger LOGGER = LogManager.getLogger(ParserHTMLAbstract.class);
     /**
      * Фабрика создает Element для записи в них полученной информации.
      */
@@ -115,7 +116,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
 
         Element returnElement = processingElement(elementsSelect);
 
-        if (nextParser != null) {
+        if (nextParser != null && elementsSelect != null) {
             returnElement.appendChild(getResultNextParser(element));
             checkExceptionNextParser();
         } else {
@@ -183,7 +184,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
     }
 
     protected void reportException(String message) {
-        ExceptionParser exception = new ExceptionParser(this, message);
+        ExceptionParser exception = new ExceptionParser(message);
         LOGGER.warn("reportException() ", exception);
         exceptionList.add(exception);
     }

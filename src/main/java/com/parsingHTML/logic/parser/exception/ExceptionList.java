@@ -1,6 +1,5 @@
-package com.parsingHTML.logic.exception;
+package com.parsingHTML.logic.parser.exception;
 
-import com.parsingHTML.logic.parser.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
