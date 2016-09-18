@@ -1,5 +1,8 @@
 package com.parsingHTML.logic.parser;
 
+
+import java.util.List;
+
 /**
  * Интерфейс для парсеров.
  * @param <T> объект из которого будем парсить
@@ -8,6 +11,22 @@ package com.parsingHTML.logic.parser;
  *           полученную информацию во время парсинга.
  */
 public interface Parser<T,S> {
+
+    /**
+     * Возвращает ошибки которые произошли вовремя получения данных.
+     *
+     * @return Iterator с ExceptionParser которые произошли вовремя получения данных.
+     */
+    List<ExceptionParser> getException();
+
+    /**
+     * Было ли получение информации успешно.
+     *
+     * @return false если вовремя выполнения произошла ошибка.
+     * true если получение данных было успешным.
+     */
+    boolean isSuccessful();
+
     /**
      * Может ли данный Parser обработать t.
      * @param t объект который мы хотим проверить.

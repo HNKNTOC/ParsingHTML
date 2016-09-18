@@ -31,7 +31,7 @@ public class ParserLessonTime extends ParserHTMLAbstract {
 
         String[] time = getTime(elementsTime.get(0));
 
-        Element lessonTime = ElementFactory.createLessonTime(n_para.text().substring(0, 1)
+        Element lessonTime = elementFactory.createLessonTime(n_para.text().substring(0, 1)
                 ,time[0],time[1],time[2],time[3]);
         LOGGER.debug("====== return " + lessonTime);
         return lessonTime;

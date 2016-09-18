@@ -24,10 +24,10 @@ public class ElementHelper {
     public static boolean checkTagName(Element element, final ElementName elementName) {
         final String tagNameResults = element.tagName();
         if (elementName.getName().equals(tagNameResults)) {
-            LOGGER.warn(String.format("Tag Name not equal %s . Tag Name = %s", elementName, tagNameResults));
-            return false;
+            return true;
         }
-        return true;
+        LOGGER.warn(String.format("Tag Name not equal %s . Tag Name = %s", elementName, tagNameResults));
+        return false;
     }
 
     /**
@@ -130,8 +130,8 @@ public class ElementHelper {
      * @param value          Значение атрибута.
      * @return false если значения атрибута не совпало.
      */
-    public static boolean checkElementAttribute(final Element elementResults, final AttributeName name, final String value) {
-        final String valueResult = elementResults.attr(name.getName());
+    public static boolean checkElementAttribute(final Element elementResults, String name, final String value) {
+        final String valueResult = elementResults.attr(name);
         if (!Objects.equals(value, valueResult)) {
             final String message = String.format("Value attribute %s does not equal %s.Value %s = %s",
                     name, value, name, valueResult);

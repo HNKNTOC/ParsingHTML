@@ -2,6 +2,7 @@ package com.parsingHTML.logic.parser.daytime;
 
 import com.parsingHTML.logic.element.DayName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
+import com.parsingHTML.logic.parser.ParserHTMLFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -30,17 +31,17 @@ public class ParserDayTime extends ParserHTMLAbstract {
     @Override
     public Element parsing(Element element) {
         LOGGER.info("==== Parsing Element = " + element.nodeName() + " ====");
-        Element weekTime = ElementFactory.createWeekTime();
+        Element weekTime = elementFactory.createWeekTime(null);
 
-        Element monday = ElementFactory.createDayTime(DayName.MONDAY);
+        Element monday = elementFactory.createDayTime(DayName.MONDAY);
         weekTime.appendChild(monday);
         addLessonTime(element, monday, cssQueryTimeMonday);
 
-        weekTime.appendChild(ElementFactory.createDayTime(DayName.TUESDAY, "1"));
-        weekTime.appendChild(ElementFactory.createDayTime(DayName.WEDNESDAY, "1"));
-        weekTime.appendChild(ElementFactory.createDayTime(DayName.THURSDAY, "1"));
-        weekTime.appendChild(ElementFactory.createDayTime(DayName.FRIDAY, "1"));
-        Element saturday = ElementFactory.createDayTime(DayName.SATURDAY);
+        weekTime.appendChild(elementFactory.createDayTime(DayName.TUESDAY, "1"));
+        weekTime.appendChild(elementFactory.createDayTime(DayName.WEDNESDAY, "1"));
+        weekTime.appendChild(elementFactory.createDayTime(DayName.THURSDAY, "1"));
+        weekTime.appendChild(elementFactory.createDayTime(DayName.FRIDAY, "1"));
+        Element saturday = elementFactory.createDayTime(DayName.SATURDAY);
         weekTime.appendChild(saturday);
         addLessonTime(element, saturday, cssQueryTimeSaturday);
         LOGGER.debug("====== return " + weekTime);
@@ -67,7 +68,7 @@ public class ParserDayTime extends ParserHTMLAbstract {
             return;
         }
 
-        ParserHTMLAbstract parserLessonTime = parserFactory.createParserLessonTime();
+        ParserHTMLAbstract parserLessonTime = ParserHTMLFactory.createParserLessonTime();
         for (Element tr : selectTimeLesson) {
             Element lessonTime = parserLessonTime.parsing(tr);
             if (lessonTime != null) {

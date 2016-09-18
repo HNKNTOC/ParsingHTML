@@ -2,6 +2,7 @@ package com.parsingHTML.logic.parser.grouplesson;
 
 import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
+import com.parsingHTML.logic.parser.ParserHTMLFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -24,7 +25,7 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
     @Override
     public Element parsing(Element element) {
         LOGGER.debug("==== Parsing Element = " + element.nodeName() + " ====");
-        Element groupLesson = ElementFactory.createGroupLesson();
+        Element groupLesson = elementFactory.createGroupLesson();
         Elements days = ElementHelper.selectElements(element, cssQueryTableDay);
 
         parsingDayLesson(groupLesson, days);
@@ -39,7 +40,7 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
      * @param days дни который нужно спарсить.
      */
     private void parsingDayLesson(Element groupLesson, Elements days) {
-        ParserHTMLAbstract parserDayLesson = parserFactory.createParserDayLesson();
+        ParserHTMLAbstract parserDayLesson = ParserHTMLFactory.createParserDayLesson();
         Elements elements = parserDayLesson.parsingElements(days);
         for (Element element : elements) {
             groupLesson.appendChild(element);

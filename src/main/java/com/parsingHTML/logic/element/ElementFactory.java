@@ -6,7 +6,7 @@ import org.jsoup.nodes.Element;
  * Интерфейс для фабрики создаюшей XML елемент.
  */
 public interface ElementFactory {
-    Element createWeekTime();
+    Element createWeekTime(NumeratorName numeratorName);
 
     Element createDayTime(DayName dayName);
 

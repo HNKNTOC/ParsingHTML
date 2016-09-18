@@ -1,112 +1,74 @@
 package com.parsingHTML.logic.parsing.html;
 
-import com.parsingHTML.logic.element.AttributeName;
-import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import com.parsingHTML.logic.element.ElementName;
-import com.parsingHTML.logic.parser.ParserHTMLAbstract;
+import com.parsingHTML.logic.parser.ParserMock;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
-import org.jsoup.parser.Tag;
-import org.jsoup.select.Elements;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Random;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static junit.framework.TestCase.*;
 
 /**
- * Тест для ParserHTMLAbstractTest.
+ * ParserHTMLAbstract тестится как ParserMock !!!
  */
 public class ParserHTMLAbstractTest {
     private static final Logger LOGGER = LogManager.getLogger(ParserHTMLAbstractTest.class);
-    private ParserHTMLAbstract parserHTMLAbstract;
-    private Elements elements = new Elements();
-    private final int size = new Random().nextInt(20);
-    private ElementJsoupBuilder builder = new ElementJsoupBuilder();
+    private static final String CSS_SELECT = ElementName.EMPTY.getName();
+    private static final String CSS_SELECT_ALL_ELEMENT = "*";
+
+    private static final String parsingElementName = "elementName";
+    private static final Element elementEmpty = ElementJsoupBuilder.createElementEmpty();
+    private static ParserMock nextParser = new ParserMock(CSS_SELECT, parsingElementName, null);
+    private static ParserMock mainParser = new ParserMock(CSS_SELECT, parsingElementName, nextParser);
 
     @Before
     public void setUp() throws Exception {
-        parserHTMLAbstract = new ParserHTMLAbstractDummy();
-        LOGGER.debug("size = " + size);
-        for (int i = 0; i < size; i++) {
-            elements.add(ElementJsoupBuilder.createElementEmpty());
-        }
-
+        nextParser = new ParserMock(CSS_SELECT, parsingElementName, null);
+        mainParser = new ParserMock(CSS_SELECT, parsingElementName, nextParser);
     }
 
     @Test
-    public void isParsing() throws Exception {
-        assertFalse(parserHTMLAbstract.isParsing(new Element(Tag.valueOf("nameElement"), "")));
+    public void exceptionParserInNextParser() throws Exception {
+        nextParser.addExceptionParser("This test!");
+        mainParser.parsing(elementEmpty);
+        assertFalse("exceptionParserInNextParser", mainParser.isSuccessful());
+        assertEquals(mainParser.getException().size(), 1);
     }
 
     @Test
-    public void checkElementSize() throws Exception {
-        assertTrue(ElementHelper.checkElementsSize(elements, size));
+    public void exceptionParserInMainParser() throws Exception {
+        mainParser.addExceptionParser("This test!");
+        mainParser.parsing(elementEmpty);
+        assertFalse("exceptionParserInMainParser", mainParser.isSuccessful());
+        assertEquals(mainParser.getException().size(), 1);
     }
 
     @Test
-    public void checkElementSizeFalse() throws Exception {
-        assertFalse(ElementHelper.checkElementsSize(new Elements(), 2));
+    public void notExceptionParserInMainParser() throws Exception {
+        mainParser.parsing(elementEmpty);
+        assertTrue("notExceptionParserInMainParser", mainParser.isSuccessful());
+        assertEquals(mainParser.getException().size(), 0);
     }
 
     @Test
-    public void checkNotElementSize() throws Exception {
-        assertTrue(ElementHelper.checkNotElementSize(new Elements(), 2));
+    public void nextParserEqualsNull() throws Exception {
+        mainParser = new ParserMock(CSS_SELECT, parsingElementName, null);
+        Element parsing = mainParser.parsing(elementEmpty);
+        assertTrue("nextParserEqualsNull", mainParser.isSuccessful());
+        assertEquals(mainParser.getException().size(), 0);
+        assertEquals(parsing.select(CSS_SELECT_ALL_ELEMENT).size(), 1);
     }
 
     @Test
-    public void checkNotElementSizeFalse() throws Exception {
-        assertFalse(ElementHelper.checkNotElementSize(new Elements(), 0));
-    }
-
-    @Test
-    public void parsingElements() throws Exception {
-        Elements results = parserHTMLAbstract.parsingElements(elements);
-        assertTrue(results.size() == size);
-    }
-
-    @Test
-    public void selectElement() throws Exception {
-        ElementName nameTest1 = ElementName.DAY_LESSON;
-        ElementName nameTest2 = ElementName.DAY_TIME;
-
-        Element test1 = builder.createElement(nameTest1).getThisElement();
-        Element test2 = builder.createElement(nameTest2)
-                .setAttr(AttributeName.DAY_TIME_NUMBER, "name1")
-                .getThisElement();
-
-        test1.appendChild(test2);
-
-        Element element = ElementHelper.selectElement(test1, "[" + AttributeName.LESSON_NAME + "=name1]", 0);
-        ElementHelper.checkTagName(element, nameTest2);
-    }
-
-    @Test
-    public void selectElements() throws Exception {
-        ElementName nameTest1 = ElementName.SCHEDULE;
-        ElementName nameTest2 = ElementName.LESSON_TIME;
-        ElementName nameTest3 = ElementName.LESSON_TIME;
-
-        Element test1 = builder.createElement(nameTest1).getThisElement();
-        Element test2 = builder.createElement(nameTest2).setAttr(AttributeName.DAY_TIME_NUMBER, "name1").getThisElement();
-        Element test3 = builder.createElement(nameTest3).setAttr(AttributeName.DAY_TIME_NUMBER, "name1").getThisElement();
-
-        test1.appendChild(test2);
-        test1.appendChild(test3);
-        Elements element = ElementHelper.selectElements(test1, "[" + AttributeName.DAY_TIME_NUMBER + "=name1]");
-        assertTrue(element.size() == 2);
-    }
-
-
-    private class ParserHTMLAbstractDummy extends ParserHTMLAbstract {
-        @Override
-        public Element parsing(Element element) {
-            return ElementJsoupBuilder.createElementEmpty();
-        }
+    public void nextParserEqualsNotNull() throws Exception {
+        mainParser = new ParserMock(CSS_SELECT, parsingElementName, nextParser);
+        Element parsing = mainParser.parsing(elementEmpty);
+        assertTrue("nextParserEqualsNotNull", mainParser.isSuccessful());
+        assertEquals(mainParser.getException().size(), 0);
+        assertEquals(parsing.select(CSS_SELECT_ALL_ELEMENT).size(), 2);
     }
 
 }
