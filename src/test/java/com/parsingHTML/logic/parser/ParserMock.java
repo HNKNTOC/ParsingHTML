@@ -9,12 +9,11 @@ public class ParserMock extends ParserHTMLAbstract {
         super(cssSelect, parsingElementName, nextParserHTMLAbstract);
     }
 
-    public ParserMock() {
+    public void addException(String message) {
+        reportException(message);
     }
 
-
-    public void addExceptionParser(String message) {
-        reportException(message);
+    public ParserMock() {
     }
 
 }

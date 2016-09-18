@@ -19,7 +19,12 @@ public interface Parser<T,S> {
      *
      * @return Iterator с ExceptionParser которые произошли вовремя получения данных.
      */
-    List<ExceptionParser> getException();
+    List<ExceptionParser> getExceptions();
+
+    /**
+     * Удоляет все ошибки.
+     */
+    void clearExceptions();
 
     /**
      * Было ли получение информации успешно.

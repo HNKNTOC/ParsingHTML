@@ -9,7 +9,7 @@ import org.jsoup.nodes.Element;
 import org.junit.Before;
 import org.junit.Test;
 
-import static junit.framework.TestCase.*;
+import static junit.framework.TestCase.assertEquals;
 
 /**
  * ParserHTMLAbstract тестится как ParserMock !!!
@@ -21,8 +21,8 @@ public class ParserHTMLAbstractTest {
 
     private static final String parsingElementName = "elementName";
     private static final Element elementEmpty = ElementJsoupBuilder.createElementEmpty();
-    private static ParserMock nextParser = new ParserMock(CSS_SELECT, parsingElementName, null);
-    private static ParserMock mainParser = new ParserMock(CSS_SELECT, parsingElementName, nextParser);
+    private static ParserMock nextParser = null;
+    private static ParserMock mainParser = null;
 
     @Before
     public void setUp() throws Exception {
@@ -30,44 +30,42 @@ public class ParserHTMLAbstractTest {
         mainParser = new ParserMock(CSS_SELECT, parsingElementName, nextParser);
     }
 
+    private void checkResult(String testName, int countException) {
+        assertEquals(testName, mainParser.getExceptions().size(), countException);
+    }
+
     @Test
     public void exceptionParserInNextParser() throws Exception {
-        nextParser.addExceptionParser("This test!");
+        nextParser.addException("This test!");
         mainParser.parsing(elementEmpty);
-        assertFalse("exceptionParserInNextParser", mainParser.isSuccessful());
-        assertEquals(mainParser.getException().size(), 1);
+        checkResult("exceptionParserInNextParser", 1);
     }
 
     @Test
     public void exceptionParserInMainParser() throws Exception {
-        mainParser.addExceptionParser("This test!");
+        mainParser.addException("This test!");
         mainParser.parsing(elementEmpty);
-        assertFalse("exceptionParserInMainParser", mainParser.isSuccessful());
-        assertEquals(mainParser.getException().size(), 1);
+        checkResult("exceptionParserInMainParser", 1);
     }
 
     @Test
     public void notExceptionParserInMainParser() throws Exception {
         mainParser.parsing(elementEmpty);
-        assertTrue("notExceptionParserInMainParser", mainParser.isSuccessful());
-        assertEquals(mainParser.getException().size(), 0);
+        checkResult("notExceptionParserInMainParser", 0);
     }
 
     @Test
     public void nextParserEqualsNull() throws Exception {
         mainParser = new ParserMock(CSS_SELECT, parsingElementName, null);
         Element parsing = mainParser.parsing(elementEmpty);
-        assertTrue("nextParserEqualsNull", mainParser.isSuccessful());
-        assertEquals(mainParser.getException().size(), 0);
+        checkResult("nextParserEqualsNull", 0);
         assertEquals(parsing.select(CSS_SELECT_ALL_ELEMENT).size(), 1);
     }
 
     @Test
     public void nextParserEqualsNotNull() throws Exception {
-        mainParser = new ParserMock(CSS_SELECT, parsingElementName, nextParser);
         Element parsing = mainParser.parsing(elementEmpty);
-        assertTrue("nextParserEqualsNotNull", mainParser.isSuccessful());
-        assertEquals(mainParser.getException().size(), 0);
+        checkResult("nextParserEqualsNotNull", 0);
         assertEquals(parsing.select(CSS_SELECT_ALL_ELEMENT).size(), 2);
     }
 

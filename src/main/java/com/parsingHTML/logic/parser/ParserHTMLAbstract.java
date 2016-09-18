@@ -131,8 +131,14 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
     }
 
     @Override
-    public List<ExceptionParser> getException() {
+    public List<ExceptionParser> getExceptions() {
         return exceptionList.getAll();
+    }
+
+    @Override
+    public void clearExceptions() {
+        LOGGER.debug("clearExceptions()");
+        exceptionList.clear();
     }
 
     @Override
