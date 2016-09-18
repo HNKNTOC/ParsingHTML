@@ -31,7 +31,7 @@ public class ParserHTMLAbstractTest {
     }
 
     private void checkResult(String testName, int countException) {
-        assertEquals(testName, mainParser.getExceptions().size(), countException);
+        assertEquals(testName, mainParser.getExceptionList().count(), countException);
     }
 
     @Test

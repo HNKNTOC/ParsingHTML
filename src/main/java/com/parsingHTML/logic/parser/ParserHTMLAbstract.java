@@ -12,8 +12,6 @@ import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.util.List;
-
 /**
  * Абстрактный класс для всех парсеров HTML.
  * Получает {@link Element} c XML данные из {@link Element} с HTML.
@@ -131,19 +129,8 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
     }
 
     @Override
-    public List<ExceptionParser> getExceptions() {
-        return exceptionList.getAll();
-    }
-
-    @Override
-    public void clearExceptions() {
-        LOGGER.debug("clearExceptions()");
-        exceptionList.clear();
-    }
-
-    @Override
-    public boolean isSuccessful() {
-        return exceptionList.isEmpty();
+    public ExceptionList getExceptionList() {
+        return exceptionList;
     }
 
     /**
@@ -165,7 +152,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * Проверка есть ли ошибки у {@link ParserHTMLAbstract#nextParser}.
      */
     private void checkExceptionNextParser() {
-        if (!nextParser.isSuccessful()) {
+        if (!nextParser.getExceptionList().isEmpty()) {
             reportException("NextParser end not Successful!!");
         }
     }

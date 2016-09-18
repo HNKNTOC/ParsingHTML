@@ -8,13 +8,13 @@ import static org.junit.Assert.assertFalse;
 public class ValidatorElementTest {
 
     @Test
-    public void ifAttachedInterpreterElementEqualNull() throws Exception {
+    public void nextInterpreterElementEqualNull() throws Exception {
         ValidatorElement validatorElement = new ValidatorElement();
         assertFalse(validatorElement.valid(null));
     }
 
     @Test
-    public void ifAttachedInterpreterElementNotNull() throws Exception {
+    public void nextInterpreterElementNotNull() throws Exception {
         ValidatorElement validatorElement = new ValidatorElement(new ValidatorElement());
         assertFalse(validatorElement.valid(null));
     }
