@@ -19,11 +19,11 @@ public class ParserDayTime extends ParserHTMLAbstract {
      */
     public final static String cssQueryNumberLesson = "td.n_para";
     /**
-     * cssQuery - для получения времени Понедельние-Пятница.
+     * cssQuery - для получения времени Понедельник-Пятница.
      */
     public static final String cssQueryTimeMonday = "td.n_para + td.time";
     /**
-     * cssQuery - для получения времени Суббота.
+     * cssQuery - для получения времени Субботы.
      */
     public static final String cssQueryTimeSaturday = "td.time ~ td";
 
