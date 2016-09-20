@@ -17,7 +17,7 @@ public class ParserWeekTimeTest extends ParserXMLCheck {
         Element elementResults = ParserXMLCheck.parsingElement(
                 new ParserWeekTime(null), "WeekTime.html");
 
-        assertTrue(ElementHelper.checkTagName(elementResults, ElementName.WEEK_TIME));
+        assertTrue(ElementHelper.checkTagName(elementResults, ElementName.WEEK_TIME.getName()));
 
         assertTrue(ElementHelper.checkElementAttribute(elementResults,
                 AttributeName.NUMERATOR.getName(), NumeratorName.NUMERATOR.getName()));

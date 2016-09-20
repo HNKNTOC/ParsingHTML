@@ -45,14 +45,14 @@ public class ElementHelperTest {
 
     @Test
     public void checkTagName() throws Exception {
-        ElementHelper.checkTagName(mainElement, elementName);
+        ElementHelper.checkTagName(mainElement, elementName.getName());
     }
 
     @Test
     public void checkElementSize() throws Exception {
-        assertTrue(ElementHelper.checkElementsSize(mainElement.children(), childrenName, 0));
+        assertTrue(ElementHelper.checkElementsSize(mainElement.children(), childrenName.getName(), 0));
         addElement(childrenName, 4);
-        assertTrue(ElementHelper.checkElementsSize(mainElement.children(), childrenName, 4));
+        assertTrue(ElementHelper.checkElementsSize(mainElement.children(), childrenName.getName(), 4));
     }
 
     @Test

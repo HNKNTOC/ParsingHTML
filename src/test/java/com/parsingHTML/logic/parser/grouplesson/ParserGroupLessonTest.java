@@ -13,7 +13,7 @@ public class ParserGroupLessonTest {
     @Test
     public void parsing() throws Exception {
         Element elementResults = ParserXMLCheck.parsingElement(new ParserGroupLesson(), "GroupLesson.html");
-        ElementHelper.checkElementsSize(elementResults.children(), ElementName.DAY_LESSON, 6);
+        ElementHelper.checkElementsSize(elementResults.children(), ElementName.DAY_LESSON.getName(), 6);
     }
 
 }

@@ -32,9 +32,9 @@ public class ElementHelper {
      * @param elementName Имя которое должно быть у элемента.
      * @return false если имя не совпадает.
      */
-    public static boolean checkTagName(Element element, final ElementName elementName) {
+    public static boolean checkTagName(Element element, final String elementName) {
         final String tagNameResults = element.tagName();
-        if (elementName.getName().equals(tagNameResults)) {
+        if (elementName.equals(tagNameResults)) {
             return true;
         }
         fail(String.format("Tag Name not equal %s . Tag Name = %s", elementName, tagNameResults));
@@ -49,8 +49,8 @@ public class ElementHelper {
      * @param elementSize Количество элементов должно быть в element.
      * @return false если в element не совпадает количество element с tagName.
      */
-    public static boolean checkElementsSize(Elements element, final ElementName elementName, final int elementSize) {
-        Elements elements = element.select(elementName.getName());
+    public static boolean checkElementsSize(Elements element, final String elementName, final int elementSize) {
+        Elements elements = element.select(elementName);
         if (elements.size() != elementSize) {
             fail(String.format("checkElementTagNameSize does not contain %d %s. %s size =  %d."
                     , elementSize, elementName, elementName, elements.size()));

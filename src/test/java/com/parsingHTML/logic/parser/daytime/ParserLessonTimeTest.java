@@ -13,7 +13,7 @@ public class ParserLessonTimeTest extends ParserXMLCheck {
     @Test
     public void parsing() throws Exception {
         Element elementResults = ParserXMLCheck.parsingElement(new ParserLessonTime(), "LessonTime.html");
-        ElementHelper.checkTagName(elementResults, ElementName.LESSON_TIME);
+        ElementHelper.checkTagName(elementResults, ElementName.LESSON_TIME.getName());
         ElementHelper.checkElementAttribute(elementResults, "number", "3");
         ElementHelper.checkElementAttribute(elementResults, "start1", "08:30");
         ElementHelper.checkElementAttribute(elementResults, "end1", "09:15");
