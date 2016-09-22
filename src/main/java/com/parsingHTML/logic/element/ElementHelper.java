@@ -85,8 +85,19 @@ public class ElementHelper {
      * @return Elements полученные от cssQuery.
      */
     public static Elements selectElements(Element element, String cssQuery) {
-        LOGGER.debug("selectElements element=" + element.nodeName() + " cssQuery = " + cssQuery);
-        Elements select = element.select(cssQuery);
+        return selectElements(element.getAllElements(), cssQuery);
+    }
+
+    /**
+     * Выбрать Elements из Elements с помощью cssQuery и вернуть.
+     *
+     * @param elements Element из которому получим Elements.
+     * @param cssQuery Для получения Elements.
+     * @return Elements полученные от cssQuery.
+     */
+    public static Elements selectElements(Elements elements, String cssQuery) {
+        LOGGER.debug("selectElements of Elements  cssQuery = " + cssQuery);
+        Elements select = elements.select(cssQuery);
         if (!checkNotElementSize(select, 0)) {
             String message = String.format("selectElements cssQuery = \"%s\" return 0 element!", cssQuery);
             fail(message);

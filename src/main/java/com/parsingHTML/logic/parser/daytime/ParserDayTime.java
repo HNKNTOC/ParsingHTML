@@ -13,11 +13,10 @@ import org.jsoup.select.Elements;
  */
 public class ParserDayTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayTime.class);
-
     /**
      * cssQuery - для получения номера пары.
      */
-    public final static String cssQueryNumberLesson = "td.n_para";
+    public static final String cssQueryNumberLesson = "td.n_para";
     /**
      * cssQuery - для получения времени Понедельник-Пятница.
      */
@@ -26,7 +25,6 @@ public class ParserDayTime extends ParserHTMLAbstract {
      * cssQuery - для получения времени Субботы.
      */
     public static final String cssQueryTimeSaturday = "td.time ~ td";
-
 
     @Override
     public Element parsing(Element element) {
@@ -37,10 +35,10 @@ public class ParserDayTime extends ParserHTMLAbstract {
         weekTime.appendChild(monday);
         addLessonTime(element, monday, cssQueryTimeMonday);
 
-        weekTime.appendChild(elementFactory.createDayTime(DayName.TUESDAY, "1"));
-        weekTime.appendChild(elementFactory.createDayTime(DayName.WEDNESDAY, "1"));
-        weekTime.appendChild(elementFactory.createDayTime(DayName.THURSDAY, "1"));
-        weekTime.appendChild(elementFactory.createDayTime(DayName.FRIDAY, "1"));
+        weekTime.appendChild(elementFactory.createDayTime(DayName.TUESDAY, DayName.MONDAY));
+        weekTime.appendChild(elementFactory.createDayTime(DayName.WEDNESDAY, DayName.MONDAY));
+        weekTime.appendChild(elementFactory.createDayTime(DayName.THURSDAY, DayName.MONDAY));
+        weekTime.appendChild(elementFactory.createDayTime(DayName.FRIDAY, DayName.MONDAY));
         Element saturday = elementFactory.createDayTime(DayName.SATURDAY);
         weekTime.appendChild(saturday);
         addLessonTime(element, saturday, cssQueryTimeSaturday);
@@ -50,17 +48,18 @@ public class ParserDayTime extends ParserHTMLAbstract {
 
     /**
      * Создаёт LessonTime.
-     * @param element элемент из которого нужно спарсить.
-     * @param dayTime элемент в который нужно положить полученный LessonTime.
+     *
+     * @param element  элемент из которого нужно спарсить.
+     * @param dayTime  элемент в который нужно положить полученный LessonTime.
      * @param cssQuery запрос который получает элементы с временем.
      */
     private void addLessonTime(Element element, Element dayTime, String cssQuery) {
-        LOGGER.debug("addLessonTime dayTime = "+dayTime.attr("dayName")+" cssQuery = "+cssQuery);
+        LOGGER.debug("addLessonTime dayTime = " + dayTime.attr("dayName") + " cssQuery = " + cssQuery);
         Elements selectTimeLesson = element.select(cssQuery);
 
         Elements selectNumberLesson = element.select(cssQueryNumberLesson);
 
-        for (int i = 0; i <selectNumberLesson.size(); i++) {
+        for (int i = 0; i < selectNumberLesson.size(); i++) {
             selectTimeLesson.get(i).appendChild(selectNumberLesson.get(i));
         }
 
@@ -72,7 +71,7 @@ public class ParserDayTime extends ParserHTMLAbstract {
         for (Element tr : selectTimeLesson) {
             Element lessonTime = parserLessonTime.parsing(tr);
             if (lessonTime != null) {
-                LOGGER.debug("add "+lessonTime+toString());
+                LOGGER.debug("add " + lessonTime + toString());
                 dayTime.appendChild(lessonTime);
             }
         }

@@ -10,7 +10,7 @@ public interface ElementFactory {
 
     Element createDayTime(DayName dayName);
 
-    Element createDayTime(DayName dayName, String override);
+    Element createDayTime(DayName dayName, DayName override);
 
     Element createLessonTime(String number, String start1, String end1, String start2, String end2);
 

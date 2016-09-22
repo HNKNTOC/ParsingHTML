@@ -24,9 +24,10 @@ public class ElementJsoupBuilder {
      */
     public ElementJsoupBuilder createElement(ElementName elementName) {
         LOGGER.debug("createElement name = " + elementName);
-        thisElement = new Element(Tag.valueOf(elementName.getName()), "");
+        thisElement = createElementCustomer(elementName);
         return this;
     }
+
 
     public ElementJsoupBuilder setText(String text) {
         LOGGER.debug("setText = " + text);
@@ -42,8 +43,13 @@ public class ElementJsoupBuilder {
 
     public static Element createElementEmpty() {
         LOGGER.warn("createElementEmpty!!");
-        Element element = new Element(Tag.valueOf(ElementName.EMPTY.getName()), "");
+        Element element = createElementCustomer(ElementName.EMPTY);
         element.text("This element was created instead of null!");
         return element;
+    }
+
+    private static Element createElementCustomer(ElementName elementName) {
+        LOGGER.debug("createElementCustomer() ElementName = " + elementName);
+        return new Element(Tag.valueOf(elementName.getName()), "");
     }
 }

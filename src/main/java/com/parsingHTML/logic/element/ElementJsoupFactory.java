@@ -30,10 +30,10 @@ public class ElementJsoupFactory implements ElementFactory {
     }
 
     @Override
-    public Element createDayTime(DayName dayName, String override) {
+    public Element createDayTime(DayName dayName, DayName override) {
         LOGGER.debug("createDayTime");
         Element element = createDayTime(dayName);
-        builder.setAttr(AttributeName.OVERRIDE, override);
+        builder.setAttr(AttributeName.OVERRIDE, String.valueOf(override.getDayNumber()));
         return element;
     }
 
