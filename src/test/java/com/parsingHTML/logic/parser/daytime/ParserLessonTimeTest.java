@@ -6,18 +6,21 @@ import com.parsingHTML.logic.parsing.html.ParserXMLCheck;
 import org.jsoup.nodes.Element;
 import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
 /**
  * Тестирование ParserLessonTime.
  */
 public class ParserLessonTimeTest extends ParserXMLCheck {
     @Test
     public void parsing() throws Exception {
-        Element elementResults = ParserXMLCheck.parsingElement(new ParserLessonTime(), "LessonTime.html");
-        ElementHelper.checkTagName(elementResults, ElementName.LESSON_TIME.getName());
-        ElementHelper.checkElementAttribute(elementResults, "number", "3");
-        ElementHelper.checkElementAttribute(elementResults, "start1", "08:30");
-        ElementHelper.checkElementAttribute(elementResults, "end1", "09:15");
-        ElementHelper.checkElementAttribute(elementResults, "start2", "09:20");
-        ElementHelper.checkElementAttribute(elementResults, "end2", "10:05");
+        //TODO Передулать
+        Element elementResults = ParserXMLCheck.parsingElement(new ParserLessonTime(null), "LessonTime.html");
+        assertTrue(ElementHelper.checkTagName(elementResults, ElementName.LESSON_TIME.getName()));
+        assertTrue(ElementHelper.checkElementAttribute(elementResults, "number", "3"));
+        assertTrue(ElementHelper.checkElementAttribute(elementResults, "start1", "08:30"));
+        assertTrue(ElementHelper.checkElementAttribute(elementResults, "end1", "09:15"));
+        assertTrue(ElementHelper.checkElementAttribute(elementResults, "start2", "09:20"));
+        assertTrue(ElementHelper.checkElementAttribute(elementResults, "end2", "10:05"));
     }
 }

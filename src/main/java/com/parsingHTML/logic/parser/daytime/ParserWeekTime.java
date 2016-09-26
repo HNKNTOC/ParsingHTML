@@ -14,16 +14,12 @@ import org.jsoup.select.Elements;
 public class ParserWeekTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserWeekTime.class);
     /**
-     * cssSelect - для получения всех Element.
-     */
-    private static final String cssSelectAll = "*";
-    /**
      * cssSelect - для получения NumeratorName.
      */
     private static final String cssSelectNumerator = "html head script";
 
     public ParserWeekTime(ParserHTMLAbstract nextParserHTMLAbstract) {
-        super(cssSelectAll, "WeekTime", nextParserHTMLAbstract);
+        super("WeekTime", nextParserHTMLAbstract);
     }
 
     @Override

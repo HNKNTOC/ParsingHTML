@@ -1,6 +1,9 @@
 package com.parsingHTML.logic.parser.daytime;
 
 import com.parsingHTML.logic.element.DayName;
+import com.parsingHTML.logic.element.ElementHelper;
+import com.parsingHTML.logic.element.ElementJsoupBuilder;
+import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import com.parsingHTML.logic.parser.ParserHTMLFactory;
 import org.apache.log4j.LogManager;
@@ -14,74 +17,62 @@ import org.jsoup.select.Elements;
 public class ParserDayTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayTime.class);
     /**
+     * Для получение таблицы с временем.
+     */
+    public static final String cssSelectTableTime = "td[rowspan=\"2\"]";
+    /**
      * cssQuery - для получения номера пары.
      */
-    public static final String cssQueryNumberLesson = "td.n_para";
+    public static final String cssSelectNumberLesson = "td.n_para";
     /**
      * cssQuery - для получения времени Понедельник-Пятница.
      */
-    public static final String cssQueryTimeMonday = "td.n_para + td.time";
-    /**
-     * cssQuery - для получения времени Субботы.
-     */
-    public static final String cssQueryTimeSaturday = "td.time ~ td";
+    public static final String cssSelectTime = "td.time";
+
+    public ParserDayTime(ParserHTMLAbstract nextParser) {
+        super(ElementName.DAY_TIME.getName(), nextParser, true);
+    }
 
     @Override
-    public Element parsing(Element element) {
-        LOGGER.info("==== Parsing Element = " + element.nodeName() + " ====");
-        Element weekTime = elementFactory.createWeekTime(null);
+    protected Element processingElement(Elements elements) {
+        Elements returnElements = new Elements();
+
+        Elements numberLessons = ElementHelper.selectElements(elements, cssSelectNumberLesson);
 
         Element monday = elementFactory.createDayTime(DayName.MONDAY);
-        weekTime.appendChild(monday);
-        addLessonTime(element, monday, cssQueryTimeMonday);
+        monday.insertChildren(0, parseTime(numberLessons, 0));
+        returnElements.add(monday);
 
-        weekTime.appendChild(elementFactory.createDayTime(DayName.TUESDAY, DayName.MONDAY));
-        weekTime.appendChild(elementFactory.createDayTime(DayName.WEDNESDAY, DayName.MONDAY));
-        weekTime.appendChild(elementFactory.createDayTime(DayName.THURSDAY, DayName.MONDAY));
-        weekTime.appendChild(elementFactory.createDayTime(DayName.FRIDAY, DayName.MONDAY));
+        returnElements.add(elementFactory.createDayTime(DayName.TUESDAY, DayName.MONDAY));
+        returnElements.add(elementFactory.createDayTime(DayName.WEDNESDAY, DayName.MONDAY));
+        returnElements.add(elementFactory.createDayTime(DayName.THURSDAY, DayName.MONDAY));
+        returnElements.add(elementFactory.createDayTime(DayName.FRIDAY, DayName.MONDAY));
+
         Element saturday = elementFactory.createDayTime(DayName.SATURDAY);
-        weekTime.appendChild(saturday);
-        addLessonTime(element, saturday, cssQueryTimeSaturday);
-        LOGGER.debug("====== return " + weekTime);
-        return weekTime;
+        saturday.insertChildren(0, parseTime(numberLessons, 1));
+        returnElements.add(saturday);
+
+        return wrapperForElements(returnElements);
     }
 
-    /**
-     * Создаёт LessonTime.
-     *
-     * @param element  элемент из которого нужно спарсить.
-     * @param dayTime  элемент в который нужно положить полученный LessonTime.
-     * @param cssQuery запрос который получает элементы с временем.
-     */
-    private void addLessonTime(Element element, Element dayTime, String cssQuery) {
-        LOGGER.debug("addLessonTime dayTime = " + dayTime.attr("dayName") + " cssQuery = " + cssQuery);
-        Elements selectTimeLesson = element.select(cssQuery);
-
-        Elements selectNumberLesson = element.select(cssQueryNumberLesson);
-
-        for (int i = 0; i < selectNumberLesson.size(); i++) {
-            selectTimeLesson.get(i).appendChild(selectNumberLesson.get(i));
+    //TODO METHOD NO TEST.
+    //TODO TWO TIMES calculated the time of their XTML.
+    private Elements parseTime(Elements numberLessons, int index) {
+        ParserLessonTime parserHTML = ParserHTMLFactory.createParserLessonTime();
+        Elements select = new Elements();
+        for (Element numberLesson : numberLessons) {
+            Element wrapper = ElementJsoupBuilder.createWrapper();
+            Element parent = numberLesson.parent();
+            wrapper.appendChild(numberLesson);
+            wrapper.appendChild(ElementHelper.selectElement(parent, cssSelectTime, index));
+            LOGGER.debug("parseTime() wrapper = " + wrapper);
+            select.add(parserHTML.parsing(wrapper));
         }
-
-        if (checkTrs(selectTimeLesson)) {
-            return;
-        }
-
-        ParserHTMLAbstract parserLessonTime = ParserHTMLFactory.createParserLessonTime();
-        for (Element tr : selectTimeLesson) {
-            Element lessonTime = parserLessonTime.parsing(tr);
-            if (lessonTime != null) {
-                LOGGER.debug("add " + lessonTime + toString());
-                dayTime.appendChild(lessonTime);
-            }
-        }
+        return select;
     }
 
-    private boolean checkTrs(Elements selectTr) {
-        if (selectTr.size() == 0) {
-            LOGGER.warn("Wrong structure selectTr.size =" + selectTr.size());
-            return true;
-        }
-        return false;
+    @Override
+    public Elements selectElement(Element elementHTML) {
+        return elementHTML.select(cssSelectTableTime);
     }
 }

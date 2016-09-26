@@ -26,7 +26,9 @@ public class ParserXMLCheck {
      */
     public static Element parsingElement(ParserHTMLAbstract parserHTMLAbstract, String fileName) {
         LOGGER.debug("parsingElement " + parserHTMLAbstract + " fileName = " + fileName);
-        return parserHTMLAbstract.parsing(createElementHTML(fileName));
+        Element parsing = parserHTMLAbstract.parsing(createElementHTML(fileName));
+        LOGGER.debug("parsingElement() return " + parsing);
+        return parsing;
     }
 
     /**
@@ -37,7 +39,9 @@ public class ParserXMLCheck {
      */
     public static Element parsingElement(String fileName) {
         LOGGER.debug("parsingElement fileName = " + fileName);
-        return createElementHTML(fileName);
+        Element elementHTML = createElementHTML(fileName);
+        LOGGER.debug("parsingElement() return " + elementHTML);
+        return elementHTML;
     }
 
     private static Element createElementHTML(String fileName) {

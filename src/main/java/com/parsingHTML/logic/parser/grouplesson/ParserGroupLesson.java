@@ -19,20 +19,19 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
     /**
      * Из переданного element выбирает элементы по cssQuery который находится в переменной cssQuery.
      * Полученный элементы отправляет parsingDayLesson().
-     * @param element Элемент из которого будет парсит groupLesson.
+     * @param elementHTML Элемент из которого будет парсит groupLesson.
      * @return groupLesson.
      */
     @Override
-    public Element parsing(Element element) {
-        LOGGER.debug("==== Parsing Element = " + element.nodeName() + " ====");
+    public Element parsing(Element elementHTML) {
+        LOGGER.debug("==== Parsing Element = " + elementHTML.nodeName() + " ====");
         Element groupLesson = elementFactory.createGroupLesson();
-        Elements days = ElementHelper.selectElements(element, cssQueryTableDay);
+        Elements days = ElementHelper.selectElements(elementHTML, cssQueryTableDay);
 
         parsingDayLesson(groupLesson, days);
         LOGGER.debug("====== return " + groupLesson);
         return groupLesson;
     }
-
 
     /**
      * Полученный дни парсит через ParserDayLesson.

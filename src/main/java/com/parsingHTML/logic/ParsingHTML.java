@@ -22,16 +22,7 @@ import java.io.InputStream;
  */
 public class ParsingHTML {
     private static final Logger LOGGER = LogManager.getLogger(ParsingHTML.class);
-    private static ParserHTMLFactory parserHTMLFactory = new ParserHTMLFactory();
     private static ElementJsoupFactory elementFactory = new ElementJsoupFactory();
-
-    public static ParserHTMLFactory getParserHTMLFactory() {
-        return parserHTMLFactory;
-    }
-
-    public static void setParserHTMLFactory(ParserHTMLFactory parserHTMLFactory) {
-        ParsingHTML.parserHTMLFactory = parserHTMLFactory;
-    }
 
     public static ElementJsoupFactory getElementFactory() {
         return elementFactory;
@@ -91,7 +82,7 @@ public class ParsingHTML {
      */
     public static Element parsingGroupLesson(InputStream inputStream, String charsetName) throws IOException {
         LOGGER.info("parsingGroupLesson inputStream: " + inputStream + " charsetName: " + charsetName);
-        return parsing(inputStream, charsetName, parserHTMLFactory.createParserGroupLesson());
+        return parsing(inputStream, charsetName, ParserHTMLFactory.createParserGroupLesson());
     }
 
     /**
@@ -103,7 +94,7 @@ public class ParsingHTML {
      */
     public static Element parsingGroupLesson(Element element, String charsetName) {
         LOGGER.info("parsingGroupLesson inputStream: " + element + " charsetName: " + charsetName);
-        return parsing(element, charsetName, parserHTMLFactory.createParserGroupLesson());
+        return parsing(element, charsetName, ParserHTMLFactory.createParserGroupLesson());
     }
 
     /**
@@ -116,7 +107,7 @@ public class ParsingHTML {
      */
     public static Element parsingWeekTime(InputStream inputStream, String charsetName) throws IOException {
         LOGGER.info("parsingWeekTime inputStream: " + inputStream + " charsetName: " + charsetName);
-        return parsing(inputStream, charsetName, parserHTMLFactory.createParserWeekTime());
+        return parsing(inputStream, charsetName, ParserHTMLFactory.createParserWeekTime());
     }
 
     /**
@@ -128,7 +119,7 @@ public class ParsingHTML {
      */
     public static Element parsingWeekTime(Element element, String charsetName) {
         LOGGER.info("parsingWeekTime inputStream: " + element + " charsetName: " + charsetName);
-        return parsing(element, charsetName, parserHTMLFactory.createParserWeekTime());
+        return parsing(element, charsetName, ParserHTMLFactory.createParserWeekTime());
     }
 
     /**
@@ -204,7 +195,7 @@ public class ParsingHTML {
      * @return true если содержит.
      */
     public static boolean checkSchedulesTime(Element schedulesTime) {
-        int size = schedulesTime.select(ParserDayTime.cssQueryNumberLesson).size();
+        int size = schedulesTime.select(ParserDayTime.cssSelectNumberLesson).size();
         return size > 0;
     }
 

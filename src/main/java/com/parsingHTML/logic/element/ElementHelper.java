@@ -102,6 +102,7 @@ public class ElementHelper {
             String message = String.format("selectElements cssQuery = \"%s\" return 0 element!", cssQuery);
             fail(message);
         }
+        //TODO ADD LOG RETURN!
         return select;
     }
 

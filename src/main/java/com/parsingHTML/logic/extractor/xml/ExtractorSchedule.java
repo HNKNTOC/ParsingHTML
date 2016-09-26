@@ -31,10 +31,10 @@ public class ExtractorSchedule {
         LOGGER.info("executeSelect() expression = " + expression);
         try {
             NodeList evaluate = (NodeList) xPath.compile(expression).evaluate(document, XPathConstants.NODESET);
-            LOGGER.debug("executeSelect return NodeList = " + evaluate.getLength());
+            LOGGER.debug("executeSelect() return NodeList = " + evaluate.getLength());
             return evaluate;
         } catch (XPathExpressionException e) {
-            LOGGER.error("Failed executeSelect " + expression, e);
+            LOGGER.error("Failed executeSelect() " + expression, e);
             return new MockNodeList();
         }
     }
@@ -63,6 +63,7 @@ public class ExtractorSchedule {
             item = select.item(0);
         } else {
             LOGGER.warn("Failed extractDayTime executeSelect.getLength() = " + select.getLength());
+            //TODO ADD ExtractorException();
         }
         return ConverterSchedule.convertDayTime(item);
     }

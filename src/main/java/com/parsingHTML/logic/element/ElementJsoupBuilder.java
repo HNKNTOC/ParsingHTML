@@ -41,6 +41,16 @@ public class ElementJsoupBuilder {
         return this;
     }
 
+    private static Element createElementCustomer(ElementName elementName) {
+        LOGGER.debug("createElementCustomer() ElementName = " + elementName);
+        return new Element(Tag.valueOf(elementName.getName()), "");
+    }
+
+    public static Element createWrapper() {
+        LOGGER.info("createWrapper()");
+        return createElementCustomer(ElementName.WRAPPER);
+    }
+
     public static Element createElementEmpty() {
         LOGGER.warn("createElementEmpty!!");
         Element element = createElementCustomer(ElementName.EMPTY);
@@ -48,8 +58,4 @@ public class ElementJsoupBuilder {
         return element;
     }
 
-    private static Element createElementCustomer(ElementName elementName) {
-        LOGGER.debug("createElementCustomer() ElementName = " + elementName);
-        return new Element(Tag.valueOf(elementName.getName()), "");
-    }
 }

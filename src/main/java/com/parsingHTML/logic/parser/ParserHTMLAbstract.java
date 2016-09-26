@@ -2,7 +2,6 @@ package com.parsingHTML.logic.parser;
 
 
 import com.parsingHTML.logic.element.ElementFactory;
-import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import com.parsingHTML.logic.element.ElementJsoupFactory;
 import com.parsingHTML.logic.parser.exception.ExceptionList;
@@ -18,11 +17,6 @@ import org.jsoup.select.Elements;
  */
 public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
 
-    /**
-     * CSS Select для выбора Element
-     * из которого будет получена информация.
-     */
-    protected static final String cssSelectMainDefault = "*";
     private static final Logger LOGGER = LogManager.getLogger(ParserHTMLAbstract.class);
     /**
      * Фабрика создает Element для записи в них полученной информации.
@@ -33,11 +27,6 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      */
     protected final ParserHTMLAbstract nextParser;
     /**
-     * CSS Select для выбора Element
-     * из которого будет получена информация.
-     */
-    protected final String cssSelectMain;
-    /**
      * Имя элемента который получит данный ParserHTMLAbstract.
      */
     private final String parsingElementName;
@@ -45,22 +34,34 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * Класс в котором хранятся ошибки произошедшие во время получения работы {@link ParserHTMLAbstract}.
      */
     private ExceptionList<ExceptionParser> exceptionList = new ExceptionList<>();
+    /**
+     * Возвращает ли данный парсер множество елементов.
+     */
+    private boolean isParseElements = false;
+
 
     /**
      * Создание ParserHTMLAbstract.
      *
-     * @param cssSelectMain      CSS Select для выбора Element.
      * @param parsingElementName Имя получаемого элемента.
      */
-    public ParserHTMLAbstract(String cssSelectMain, String parsingElementName, ParserHTMLAbstract nextParser) {
-        this(new ElementJsoupFactory(), nextParser, cssSelectMain, parsingElementName);
+    public ParserHTMLAbstract(String parsingElementName, ParserHTMLAbstract nextParser) {
+        this(new ElementJsoupFactory(), nextParser, parsingElementName, false);
+    }
+
+    /**
+     * Создание ParserHTMLAbstract.
+     *
+     * @param parsingElementName Имя получаемого элемента.
+     */
+    public ParserHTMLAbstract(String parsingElementName, ParserHTMLAbstract nextParser, boolean isParseElements) {
+        this(new ElementJsoupFactory(), nextParser, parsingElementName, isParseElements);
     }
 
     public ParserHTMLAbstract() {
         //TODO DELETE THIS!!
         elementFactory = new ElementJsoupFactory();
         nextParser = null;
-        cssSelectMain = "";
         parsingElementName = "";
     }
 
@@ -69,64 +70,28 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      *
      * @param ElementFactory     Фабрика создающая XML элементы.
      * @param nextParser         Следующий парсер.
-     * @param cssSelectMain      CSS Select для выбора Element.
      * @param parsingElementName Имя получаемого элемента.
      */
-    public ParserHTMLAbstract(ElementFactory ElementFactory, ParserHTMLAbstract nextParser, String cssSelectMain, String parsingElementName) {
+    public ParserHTMLAbstract(ElementFactory ElementFactory, ParserHTMLAbstract nextParser, String parsingElementName, boolean isParseElements) {
         this.elementFactory = ElementFactory;
         this.nextParser = nextParser;
         this.parsingElementName = parsingElementName;
+        this.isParseElements = isParseElements;
 
-        if (cssSelectMain != null) {
-            this.cssSelectMain = cssSelectMain;
-        } else {
-            LOGGER.debug("CssSelectMain = null! CssSelectMain = " + cssSelectMainDefault);
-            this.cssSelectMain = cssSelectMainDefault;
-        }
     }
 
-    public static String getCssSelectMainDefault() {
-        return cssSelectMainDefault;
+    public boolean isParseElements() {
+        return isParseElements;
     }
 
     public ParserHTMLAbstract getNextParser() {
         return nextParser;
     }
 
-    public String getCssSelectMain() {
-        return cssSelectMain;
-    }
-
     public String getParsingElementName() {
         return parsingElementName;
     }
 
-
-    @Override
-    public Element parsing(Element element) {
-        LOGGER.info("=== Parsing " + parsingElementName + " ===");
-
-        if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("Element = " + element);
-        }
-
-        Elements elementsSelect = selectMainElement(element);
-
-        Element returnElement = processingElement(elementsSelect);
-
-        if (nextParser != null && elementsSelect != null) {
-            returnElement.appendChild(getResultNextParser(element));
-            checkExceptionNextParser();
-        } else {
-            LOGGER.debug("nextParser = null!!");
-        }
-
-        if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("returnElement = " + returnElement);
-        }
-        LOGGER.info("=== End parsing " + parsingElementName + " ===");
-        return returnElement;
-    }
 
     @Override
     public ExceptionList getExceptionList() {
@@ -144,10 +109,6 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
         return false;
     }
 
-    private Element getResultNextParser(Element element) {
-        return nextParser.parsing(element);
-    }
-
     /**
      * Проверка есть ли ошибки у {@link ParserHTMLAbstract#nextParser}.
      */
@@ -157,31 +118,11 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
         }
     }
 
-    /**
-     * Выбрать из {@link Element} элементы с помощью {@link ParserHTMLAbstract#cssSelectMain}
-     *
-     * @param element из которого будут выбираться {@link Element}.
-     * @return {@link Element}  полученные от {@link ParserHTMLAbstract#cssSelectMain}.
-     */
-    private Elements selectMainElement(Element element) {
-        Elements elementsSelect = ElementHelper.selectElements(element, cssSelectMain);
-
-        if (elementsSelect.size() == 0) {
-            reportException("Css Select Main return 0 element!!");
-        }
-
-        if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("selectMainElement() return " + elementsSelect);
-        }
-        return elementsSelect;
-    }
-
     protected void reportException(String message) {
         ExceptionParser exception = new ExceptionParser(message);
         LOGGER.warn("reportException() ", exception);
         exceptionList.add(exception);
     }
-
 
     /**
      * Получает каждый элемент из Elements и возвращает полученные элементы.
@@ -201,6 +142,51 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
         return returnElements;
     }
 
+    @Override
+    public Element parsing(Element elementHTML) {
+        LOGGER.info("=== Parsing " + parsingElementName + " ===");
+
+        if (LOGGER.isTraceEnabled()) {
+            LOGGER.trace("Element = " + elementHTML);
+        }
+
+        Elements elementsSelect = selectElement(elementHTML);
+
+        Element returnElement = processingElement(elementsSelect);
+
+        if (nextParser != null && elementsSelect != null) {
+            parsingNextParser(elementHTML, returnElement);
+            checkExceptionNextParser();
+        } else {
+            LOGGER.debug("nextParser = null!!");
+        }
+
+        if (LOGGER.isTraceEnabled()) {
+            LOGGER.trace("returnElement = " + returnElement);
+        }
+        LOGGER.info("=== End parsing " + parsingElementName + " ===");
+        return returnElement;
+    }
+
+
+    private void parsingNextParser(Element elementHTML, Element returnElement) {
+        Element parsing = nextParser.parsing(elementHTML);
+        if (nextParser.isParseElements) {
+            returnElement.insertChildren(0, parsing.children());
+        } else {
+            returnElement.appendChild(parsing);
+        }
+    }
+
+    /**
+     * Из elementHTML выберает те элементы которые может спарсить данный парсер.
+     * @param elementHTML откуда нужно получить элементы.
+     * @return элементы которые может обработать даный {@link ParserHTMLAbstract}.
+     */
+    public Elements selectElement(Element elementHTML) {
+        return elementHTML.getAllElements();
+    }
+
 
     /**
      * Получение информации из {@link Element} c HTML.
@@ -209,7 +195,17 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * @return Element c XML.
      */
     protected Element processingElement(Elements elements) {
-        //TODO DELETE THIS!
+        //TODO set Abstract.
         return ElementJsoupBuilder.createElementEmpty();
+    }
+
+    /**
+     * Оборачивает {@link Elements} в {@link Element}.
+     *
+     * @param elements {@link Elements} который нужно обернуть.
+     * @return {@link Element} обёртка.
+     */
+    public static Element wrapperForElements(Elements elements) {
+        return ElementJsoupBuilder.createWrapper().insertChildren(0, elements);
     }
 }

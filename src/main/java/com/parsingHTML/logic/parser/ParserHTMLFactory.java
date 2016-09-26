@@ -12,28 +12,28 @@ import com.parsingHTML.logic.parser.grouplesson.ParserLesson;
  */
 public class ParserHTMLFactory {
 
+    public static ParserWeekTime createParserWeekTime() {
+        return new ParserWeekTime(new ParserDayTime(null));
+    }
+
     public static ParserHTMLAbstract createParserDayTime() {
-        return new ParserDayTime();
+        return new ParserDayTime(null);
     }
 
-    public static ParserHTMLAbstract createParserLessonTime() {
-        return new ParserLessonTime();
-    }
-
-    public static ParserHTMLAbstract createParserWeekTime() {
-        return new ParserWeekTime(new ParserDayTime());
+    public static ParserLessonTime createParserLessonTime() {
+        return new ParserLessonTime(null);
     }
 
 
-    public static ParserHTMLAbstract createParserLesson() {
+    public static ParserLesson createParserLesson() {
         return new ParserLesson();
     }
 
-    public static ParserHTMLAbstract createParserGroupLesson() {
+    public static ParserGroupLesson createParserGroupLesson() {
         return new ParserGroupLesson();
     }
 
-    public static ParserHTMLAbstract createParserDayLesson() {
+    public static ParserDayLesson createParserDayLesson() {
         return new ParserDayLesson();
     }
 

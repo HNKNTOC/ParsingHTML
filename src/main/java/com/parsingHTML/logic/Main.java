@@ -1,11 +1,11 @@
 package com.parsingHTML.logic;
 
 import com.parsingHTML.logic.element.DayName;
-import com.parsingHTML.logic.element.ElementFactory;
-import com.parsingHTML.logic.element.ElementJsoupFactory;
 import com.parsingHTML.logic.extractor.xml.ExtractorSchedule;
 import com.parsingHTML.logic.extractor.xml.LessonTime;
 import com.parsingHTML.logic.selector.SelectorLink;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
 import org.w3c.dom.Document;
 
@@ -22,13 +22,12 @@ import java.util.ArrayList;
  * Main
  */
 public class Main {
-    private static ElementFactory ElementFactory = new ElementJsoupFactory();
-    private static final String path = "src\\test\\resources\\com.parsingHTML.logic.out";
+    private static final Logger LOGGER = LogManager.getLogger(Main.class);
     private static final String nameOUTFile = "output.xml";
     private static String charsetName = "UTF-8";
 
     public static void main(String[] args) throws TransformerException, ParserConfigurationException, IOException {
-        testSchedule();
+        start();
     }
 
     private static void testSchedule() throws IOException, TransformerException {
@@ -92,7 +91,7 @@ public class Main {
     private static File createFile(String name){
         File file = new File("src\\test\\resources\\html\\" + name);
         try {
-            file.createNewFile();
+            if (!file.createNewFile()) LOGGER.warn("Failed create file!! File = " + file.getAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
         }

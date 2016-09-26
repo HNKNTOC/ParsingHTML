@@ -22,13 +22,13 @@ public class ParserLesson extends ParserHTMLAbstract {
 
 
     @Override
-    public Element parsing(Element element) {
-        LOGGER.info("==== Parsing Element = " + element.nodeName() + " ====");
+    public Element parsing(Element elementHTML) {
+        LOGGER.info("==== Parsing Element = " + elementHTML.nodeName() + " ====");
 
-        String number = parsingNumber(element);
-        String numerator = parsingNumerator(element);
+        String number = parsingNumber(elementHTML);
+        String numerator = parsingNumerator(elementHTML);
 
-        String[] split = divideString(ElementHelper.selectElement(element, cssQueryPara, 0));
+        String[] split = divideString(ElementHelper.selectElement(elementHTML, cssQueryPara, 0));
 
         String nameLesson = split[0];
         String descriptionLesson = split[1];

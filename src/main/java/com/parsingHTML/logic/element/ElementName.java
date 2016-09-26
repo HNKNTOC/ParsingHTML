@@ -13,7 +13,8 @@ public enum ElementName {
     GROUP_LESSON("group_lesson"),
     DAY_LESSON("day_lesson"),
     LESSON("lesson"),
-    EMPTY("empty");
+    EMPTY("empty"),
+    WRAPPER("wrapper");
 
     private String name;
 

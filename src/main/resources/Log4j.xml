@@ -8,6 +8,7 @@
         </layout>
     </appender>
 
+
     <appender name="parser" class="org.apache.log4j.RollingFileAppender">
         <param name="File" value="log/parsing/main.log"/>
         <param name="MaxFileSize" value="100MB"/>
@@ -38,23 +39,24 @@
         </layout>
     </appender>
 
+
     <logger name="com.parsingHTML.logic.element">
-        <level value="DEBUG"/>
+        <level value="TRACE"/>
         <appender-ref ref="element"/>
     </logger>
 
     <logger name="com.parsingHTML.logic.parser">
-        <level value="DEBUG"/>
+        <level value="TRACE"/>
         <appender-ref ref="parser"/>
     </logger>
 
     <logger name="com.parsingHTML.logic.selector">
-        <level value="DEBUG"/>
+        <level value="TRACE"/>
         <appender-ref ref="selector"/>
     </logger>
 
     <root>
-        <priority value="debug"/>
+        <priority value="TRACE"/>
         <appender-ref ref="Console" />
     </root>
 
