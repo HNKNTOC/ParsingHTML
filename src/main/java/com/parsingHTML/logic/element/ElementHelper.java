@@ -32,7 +32,8 @@ public class ElementHelper {
      * @param elementName Имя которое должно быть у элемента.
      * @return false если имя не совпадает.
      */
-    public static boolean checkTagName(Element element, final String elementName) {
+    public static boolean checkTagName(final Element element, final String elementName) {
+        LOGGER.debug("checkTagName() element=" + element + " elementName = " + elementName);
         final String tagNameResults = element.tagName();
         if (elementName.equals(tagNameResults)) {
             return true;
@@ -49,7 +50,8 @@ public class ElementHelper {
      * @param elementSize Количество элементов должно быть в element.
      * @return false если в element не совпадает количество element с tagName.
      */
-    public static boolean checkElementsSize(Elements element, final String elementName, final int elementSize) {
+    public static boolean checkElementsSize(final Elements element, final String elementName, final int elementSize) {
+        LOGGER.debug("checkElementsSize() element=" + element + " elementName = " + elementName + " elementSize = " + elementSize);
         Elements elements = element.select(elementName);
         if (elements.size() != elementSize) {
             fail(String.format("checkElementTagNameSize does not contain %d %s. %s size =  %d."
@@ -102,7 +104,7 @@ public class ElementHelper {
             String message = String.format("selectElements cssQuery = \"%s\" return 0 element!", cssQuery);
             fail(message);
         }
-        //TODO ADD LOG RETURN!
+        LOGGER.debug("return " + select);
         return select;
     }
 
