@@ -8,16 +8,16 @@ import org.jsoup.select.Elements;
  */
 public class ParserMock extends ParserHTMLAbstract {
 
-    private String cssSelect;
+    private String cssQuery = "*";
 
-    public ParserMock(String cssSelect, String parsingElementName, ParserHTMLAbstract nextParserHTMLAbstract) {
+    public ParserMock(String cssQuery, String parsingElementName, ParserHTMLAbstract nextParserHTMLAbstract) {
         super(parsingElementName, nextParserHTMLAbstract);
-        this.cssSelect = cssSelect;
+        this.cssQuery = cssQuery;
     }
 
     @Override
     public Elements selectElement(Element elementHTML) {
-        return elementHTML.select(cssSelect);
+        return elementHTML.select(cssQuery);
     }
 
     public void addException(String message) {

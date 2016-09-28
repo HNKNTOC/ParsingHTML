@@ -30,14 +30,12 @@ public class ParserDayLesson extends ParserHTMLAbstract {
      * Из element выбирает элемент через cssQuery в cssQueryNumPara.
      */
     @Override
-    public Element parsing(Element elementHTML) {
-        LOGGER.debug("==== Parsing Element = " + elementHTML.nodeName() + " ====");
+    protected Element processingElement(Elements elements) {
 
-        Element dayLesson = elementFactory.createDayLesson(parsingDay(elementHTML));
+        Element dayLesson = elementFactory.createDayLesson(parsingDay(elements));
 
-        Elements select = ElementHelper.selectElements(elementHTML, cssQueryNumPara);
+        Elements select = ElementHelper.selectElements(elements, cssQueryNumPara);
         parsingLesson(select, dayLesson);
-        LOGGER.debug("====== return " + dayLesson);
         return dayLesson;
     }
 
@@ -61,7 +59,7 @@ public class ParserDayLesson extends ParserHTMLAbstract {
      * @param element элемент из которого нужно спарсить день.
      * @return Имя дня.
      */
-    private DayName parsingDay(Element element) {
+    private DayName parsingDay(Elements element) {
         Elements select = element.select(cssQueryDay);
         String dayName = null;
         if (ElementHelper.checkElementsSize(select, 1)) {

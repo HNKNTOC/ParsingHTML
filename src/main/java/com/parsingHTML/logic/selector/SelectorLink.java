@@ -40,7 +40,7 @@ public class SelectorLink {
      */
     private int move = 0;
     /**
-     * CssSelect для поиска Button.
+     * cssQuery для поиска Button.
      */
     private String elementSelectorCSS = "table.zv td a";
     /**

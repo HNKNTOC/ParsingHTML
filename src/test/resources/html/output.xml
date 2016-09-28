@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <schedule>
-    <parsing_time>Sun Sep 25 16:32:13 GMT+03:00 2016</parsing_time>
+    <parsing_time>Wed Sep 28 00:33:38 GMT+03:00 2016</parsing_time>
     <university name-university="БУКЭП">
         <week_time numerator="Знам.">
             <day_time day-time-number="2">
@@ -19,11 +19,11 @@
             <day_time day-time-number="7">
                 <lesson_time end1="09:15" end2="10:05" number="1" start1="08:30" start2="09:20"/>
                 <lesson_time end1="11:00" end2="11:50" number="2" start1="10:15" start2="11:05"/>
-                <lesson_time end1="13:10" end2="14:00" number="3" start1="12:25" start2="13:15"/>
-                <lesson_time end1="15:20" end2="16:10" number="4" start1="14:35" start2="15:25"/>
-                <lesson_time end1="17:05" end2="17:55" number="5" start1="16:20" start2="17:10"/>
-                <lesson_time end1="18:50" end2="19:40" number="6" start1="18:05" start2="18:55"/>
-                <lesson_time end1="20:35" end2="21:25" number="7" start1="19:50" start2="20:40"/>
+                <lesson_time end1="12:45" end2="13:35" number="3" start1="12:00" start2="12:50"/>
+                <lesson_time end1="14:55" end2="15:45" number="4" start1="14:10" start2="15:00"/>
+                <lesson_time end1="16:40" end2="17:30" number="5" start1="15:55" start2="16:45"/>
+                <lesson_time end1="18:25" end2="19:15" number="6" start1="17:40" start2="18:30"/>
+                <lesson_time end1="20:10" end2="21:00" number="7" start1="19:25" start2="20:15"/>
             </day_time>
         </week_time>
         <group_lesson>

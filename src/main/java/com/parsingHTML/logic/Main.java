@@ -24,7 +24,7 @@ import java.util.ArrayList;
 public class Main {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
     private static final String nameOUTFile = "output.xml";
-    private static String charsetName = "UTF-8";
+    private static final String charsetName = "UTF-8";
 
     public static void main(String[] args) throws TransformerException, ParserConfigurationException, IOException {
         start();
@@ -44,7 +44,6 @@ public class Main {
         show(selectorLink);
         selectorLink.goButton(1);
         show(selectorLink);
-
     }
 
     private static void show(SelectorLink selectorLink) throws IOException {

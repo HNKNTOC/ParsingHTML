@@ -2,6 +2,7 @@ package com.parsingHTML.logic.parser.grouplesson;
 
 import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementName;
+import com.parsingHTML.logic.parser.ParserHTMLFactory;
 import com.parsingHTML.logic.parsing.html.ParserXMLCheck;
 import org.jsoup.nodes.Element;
 import org.junit.Test;
@@ -12,7 +13,7 @@ import org.junit.Test;
 public class ParserGroupLessonTest {
     @Test
     public void parsing() throws Exception {
-        Element elementResults = ParserXMLCheck.parsingElement(new ParserGroupLesson(), "GroupLesson.html");
+        Element elementResults = ParserXMLCheck.parsingElement(ParserHTMLFactory.createParserGroupLesson(), "GroupLesson.html");
         ElementHelper.checkElementsSize(elementResults.children(), ElementName.DAY_LESSON.getName(), 6);
     }
 

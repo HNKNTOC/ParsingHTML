@@ -1,6 +1,7 @@
 package com.parsingHTML.logic.parser.grouplesson;
 
 import com.parsingHTML.logic.element.ElementHelper;
+import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import com.parsingHTML.logic.parser.ParserHTMLFactory;
 import org.apache.log4j.LogManager;
@@ -15,35 +16,37 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserGroupLesson.class);
     public final static String cssQueryTableDay = ".tbl_day";
 
+    public ParserGroupLesson(ParserHTMLAbstract nextParser) {
+        super(ElementName.GROUP_LESSON.getName(), nextParser);
+    }
 
     /**
      * Из переданного element выбирает элементы по cssQuery который находится в переменной cssQuery.
      * Полученный элементы отправляет parsingDayLesson().
-     * @param elementHTML Элемент из которого будет парсит groupLesson.
+     * @param elements Элементы из которого будет получен groupLesson.
      * @return groupLesson.
      */
     @Override
-    public Element parsing(Element elementHTML) {
-        LOGGER.debug("==== Parsing Element = " + elementHTML.nodeName() + " ====");
+    protected Element processingElement(Elements elements) {
         Element groupLesson = elementFactory.createGroupLesson();
-        Elements days = ElementHelper.selectElements(elementHTML, cssQueryTableDay);
-
-        parsingDayLesson(groupLesson, days);
-        LOGGER.debug("====== return " + groupLesson);
+        Elements days = ElementHelper.selectElements(elements, cssQueryTableDay);
+        groupLesson.insertChildren(0, parsingDayLesson(days));
         return groupLesson;
+
+    }
+
+    @Override
+    public Elements selectElement(Element elementHTML) {
+        return ElementHelper.selectElements(elementHTML, cssQueryTableDay);
     }
 
     /**
      * Полученный дни парсит через ParserDayLesson.
-     * @param groupLesson элемент в который будут добавляться DayLesson.
      * @param days дни который нужно спарсить.
      */
-    private void parsingDayLesson(Element groupLesson, Elements days) {
+    private Elements parsingDayLesson(Elements days) {
         ParserHTMLAbstract parserDayLesson = ParserHTMLFactory.createParserDayLesson();
-        Elements elements = parserDayLesson.parsingElements(days);
-        for (Element element : elements) {
-            groupLesson.appendChild(element);
-        }
+        return parserDayLesson.parsingElements(days);
     }
 
 }

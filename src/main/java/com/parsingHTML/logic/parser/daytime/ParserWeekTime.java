@@ -14,9 +14,9 @@ import org.jsoup.select.Elements;
 public class ParserWeekTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserWeekTime.class);
     /**
-     * cssSelect - для получения NumeratorName.
+     * cssQuery - для получения NumeratorName.
      */
-    private static final String cssSelectNumerator = "html head script";
+    private static final String cssQueryNumerator = "html head script";
 
     public ParserWeekTime(ParserHTMLAbstract nextParserHTMLAbstract) {
         super("WeekTime", nextParserHTMLAbstract);
@@ -28,7 +28,7 @@ public class ParserWeekTime extends ParserHTMLAbstract {
     }
 
     private NumeratorName parsingNumeratorName(Elements elements) {
-        String html = elements.select(cssSelectNumerator).html();
+        String html = elements.select(cssQueryNumerator).html();
         if (html.contains("Числитель")) {
             LOGGER.info("This week is NUMERATOR!");
             return NumeratorName.NUMERATOR;

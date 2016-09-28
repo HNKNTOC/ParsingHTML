@@ -123,6 +123,11 @@ public class ElementHelper {
         return true;
     }
 
+
+    public static Element selectElement(Element element, String cssQuery, int index) {
+        return selectElement(element.getAllElements(), cssQuery, index);
+    }
+
     /**
      * Выбрать Elements из Element с помощью cssQuery и вернуть один по index.
      *
@@ -131,7 +136,7 @@ public class ElementHelper {
      * @param index    Индекс Элемента который нужно вернуть.
      * @return Element полученные от cssQuery.
      */
-    public static Element selectElement(Element element, String cssQuery, int index) {
+    public static Element selectElement(Elements element, String cssQuery, int index) {
         Elements select = element.select(cssQuery);
         if (select.size() >= index + 1) {
             Element returnElement = select.get(index);

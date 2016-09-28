@@ -195,7 +195,7 @@ public class ParsingHTML {
      * @return true если содержит.
      */
     public static boolean checkSchedulesTime(Element schedulesTime) {
-        int size = schedulesTime.select(ParserDayTime.cssSelectNumberLesson).size();
+        int size = schedulesTime.select(ParserDayTime.cssQueryNumberLesson).size();
         return size > 0;
     }
 

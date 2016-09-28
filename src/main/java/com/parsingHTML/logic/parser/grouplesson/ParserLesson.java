@@ -6,6 +6,7 @@ import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.util.Arrays;
 
@@ -18,24 +19,20 @@ public class ParserLesson extends ParserHTMLAbstract {
     /**
      * cssQuery - выбор дня.
      */
-    private String cssQueryPara = ".para";
+    public static final String cssQueryPara = ".para";
 
 
     @Override
-    public Element parsing(Element elementHTML) {
-        LOGGER.info("==== Parsing Element = " + elementHTML.nodeName() + " ====");
+    protected Element processingElement(Elements elements) {
+        String number = parsingNumber(elements);
+        String numerator = parsingNumerator(elements);
 
-        String number = parsingNumber(elementHTML);
-        String numerator = parsingNumerator(elementHTML);
-
-        String[] split = divideString(ElementHelper.selectElement(elementHTML, cssQueryPara, 0));
+        String[] split = divideString(ElementHelper.selectElement(elements, cssQueryPara, 0));
 
         String nameLesson = split[0];
         String descriptionLesson = split[1];
 
-        Element dayLesson = elementFactory.createLesson(number, nameLesson, descriptionLesson, "Name Teacher", numerator);
-        LOGGER.debug("====== return " + dayLesson);
-        return dayLesson;
+        return elementFactory.createLesson(number, nameLesson, descriptionLesson, "Name Teacher", numerator);
     }
 
     /**
@@ -65,7 +62,7 @@ public class ParserLesson extends ParserHTMLAbstract {
      * @param element элемент у которого нужно получить NumeratorName.
      * @return null если получить не удалось.
      */
-    private String parsingNumerator(Element element) {
+    private String parsingNumerator(Elements element) {
         String text = element.text();
         final String numerator = NumeratorName.NUMERATOR.getName();
         final String denominator = NumeratorName.DENOMINATOR.getName();
@@ -89,7 +86,7 @@ public class ParserLesson extends ParserHTMLAbstract {
      * @param element элемент у которого нужно получить номер.
      * @return null если получить не удалось.
      */
-    private String parsingNumber(Element element) {
+    private String parsingNumber(Elements element) {
         String text = element.text();
         LOGGER.debug("parsingNumber txt = " + text);
         if (text.length() != 1) {

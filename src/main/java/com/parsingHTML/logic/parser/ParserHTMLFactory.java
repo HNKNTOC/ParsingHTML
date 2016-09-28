@@ -30,7 +30,7 @@ public class ParserHTMLFactory {
     }
 
     public static ParserGroupLesson createParserGroupLesson() {
-        return new ParserGroupLesson();
+        return new ParserGroupLesson(null);
     }
 
     public static ParserDayLesson createParserDayLesson() {
