@@ -35,7 +35,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      */
     private ExceptionList<ExceptionParser> exceptionList = new ExceptionList<>();
     /**
-     * Возвращает ли данный парсер множество елементов.
+     * Возвращает ли данный парсер множество элементов.
      */
     private boolean isParseElements = false;
 
@@ -146,44 +146,63 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
     public Element parsing(Element elementHTML) {
         LOGGER.info("=== Parsing " + parsingElementName + " ===");
 
-        if (LOGGER.isTraceEnabled()) {
-            LOGGER.trace("Element = " + elementHTML);
+        if (elementHTML == null) {
+            throw new IllegalArgumentException("Parsing Element not equals null!!");
         }
 
-        Elements elementsSelect = selectElement(elementHTML);
+        logElement("Element = " + elementHTML);
 
-        Element returnElement = processingElement(elementsSelect);
+        Element returnElement = processingElement(elementHTML);
 
-        if (nextParser != null && elementsSelect != null) {
-            parsingNextParser(elementHTML, returnElement);
+        if (nextParser != null) {
+            Elements children = parsingNextParser(elementHTML);
+            returnElement.insertChildren(0, children);
             checkExceptionNextParser();
         } else {
             LOGGER.debug("nextParser = null!!");
         }
 
-        if (LOGGER.isTraceEnabled()) {
-            LOGGER.trace("returnElement = " + returnElement);
-        }
+        logElement("returnElement = " + returnElement);
         LOGGER.info("=== End parsing " + parsingElementName + " ===");
         return returnElement;
     }
 
-
-    private void parsingNextParser(Element elementHTML, Element returnElement) {
-        Element parsing = nextParser.parsing(elementHTML);
-        if (nextParser.isParseElements) {
-            returnElement.insertChildren(0, parsing.children());
-        } else {
-            returnElement.appendChild(parsing);
+    //TODO CREATE LogHelper and add this method.
+    private static void logElement(String message) {
+        if (LOGGER.isTraceEnabled()) {
+            LOGGER.trace(message);
         }
     }
 
+
+    private Elements parsingNextParser(Element elementHTML) {
+        Elements elements = new Elements();
+        for (Element element : nextParser.selectElement(elementHTML)) {
+            elements.add(nextParser.parsing(element));
+        }
+        return elements;
+    }
+
     /**
-     * Из elementHTML выберает те элементы которые может спарсить данный парсер.
-     * @param elementHTML откуда нужно получить элементы.
-     * @return элементы которые может обработать даный {@link ParserHTMLAbstract}.
+     * Из element выбирает те элементы которые может спарсить данный парсер.
+     * Используется как обертка для selectElementProcessing(). Для логирования.
+     * @param element откуда нужно получить элементы.
+     * @return элементы которые может обработать данный {@link ParserHTMLAbstract}.
      */
-    public Elements selectElement(Element elementHTML) {
+    public Elements selectElement(Element element) {
+        logElement("selectElement() " + parsingElementName + " element = " + element);
+        Elements elements = selectElementProcessing(element);
+        logElement("selectElement() " + parsingElementName + " return element = " + elements);
+        return elements;
+    }
+
+    /**
+     * Тоже самое что и selectElement() только добавляет логирование.
+     * Переопределять желательно этот метод заместо selectElement().
+     *
+     * @return элементы которые может обработать данный {@link ParserHTMLAbstract}.
+     */
+    public Elements selectElementProcessing(Element elementHTML) {
         return elementHTML.getAllElements();
     }
 
@@ -194,6 +213,12 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * @param elements {@link Element} который нужно спарсить.
      * @return Element c XML.
      */
+    protected Element processingElement(Element elements) {
+        //TODO set Abstract.
+        return ElementJsoupBuilder.createElementEmpty();
+    }
+
+    //TODO DELETE METHOD!!
     protected Element processingElement(Elements elements) {
         //TODO set Abstract.
         return ElementJsoupBuilder.createElementEmpty();

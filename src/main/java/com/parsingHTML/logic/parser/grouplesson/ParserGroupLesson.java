@@ -36,8 +36,8 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
     }
 
     @Override
-    public Elements selectElement(Element elementHTML) {
-        return ElementHelper.selectElements(elementHTML, cssQueryTableDay);
+    public Elements selectElementProcessing(Element element) {
+        return ElementHelper.selectElements(element, cssQueryTableDay);
     }
 
     /**

@@ -1,15 +1,14 @@
 package com.parsingHTML.logic.parser.daytime;
 
+import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.element.NumeratorName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 /**
- * Получаеть элемент WeekTime из .html.
- * Создаёт WeekTime и парсит знаменатель недели.
+ * Получаеть элемент <week_time>.
  */
 public class ParserWeekTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserWeekTime.class);
@@ -19,16 +18,23 @@ public class ParserWeekTime extends ParserHTMLAbstract {
     private static final String cssQueryNumerator = "html head script";
 
     public ParserWeekTime(ParserHTMLAbstract nextParserHTMLAbstract) {
-        super("WeekTime", nextParserHTMLAbstract);
+        super(ElementName.WEEK_TIME.getName(), nextParserHTMLAbstract);
     }
 
+    /**
+     * Создаёт <week_time> и получает значение для параметров.
+     *
+     * @param element Element из коророго будет получен
+     * @return Element <week_time>.
+     */
     @Override
-    public Element processingElement(Elements elements) {
-        return elementFactory.createWeekTime(parsingNumeratorName(elements));
+    public Element processingElement(Element element) {
+        return elementFactory.createWeekTime(parsingNumeratorName(element));
     }
 
-    private NumeratorName parsingNumeratorName(Elements elements) {
-        String html = elements.select(cssQueryNumerator).html();
+    private NumeratorName parsingNumeratorName(Element element) {
+        //TODO Add ElementHelper
+        String html = element.select(cssQueryNumerator).html();
         if (html.contains("Числитель")) {
             LOGGER.info("This week is NUMERATOR!");
             return NumeratorName.NUMERATOR;

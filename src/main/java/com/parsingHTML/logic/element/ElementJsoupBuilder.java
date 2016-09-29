@@ -41,7 +41,7 @@ public class ElementJsoupBuilder {
         return this;
     }
 
-    private static Element createElementCustomer(ElementName elementName) {
+    public static Element createElementCustomer(ElementName elementName) {
         LOGGER.debug("createElementCustomer() ElementName = " + elementName);
         return new Element(Tag.valueOf(elementName.getName()), "");
     }

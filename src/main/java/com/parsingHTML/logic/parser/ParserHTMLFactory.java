@@ -13,11 +13,11 @@ import com.parsingHTML.logic.parser.grouplesson.ParserLesson;
 public class ParserHTMLFactory {
 
     public static ParserWeekTime createParserWeekTime() {
-        return new ParserWeekTime(new ParserDayTime(null));
+        return new ParserWeekTime(createParserDayTime());
     }
 
     public static ParserHTMLAbstract createParserDayTime() {
-        return new ParserDayTime(null);
+        return new ParserDayTime(createParserLessonTime());
     }
 
     public static ParserLessonTime createParserLessonTime() {

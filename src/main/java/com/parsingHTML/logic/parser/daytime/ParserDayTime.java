@@ -1,24 +1,21 @@
 package com.parsingHTML.logic.parser.daytime;
 
-import com.parsingHTML.logic.element.DayName;
-import com.parsingHTML.logic.element.ElementHelper;
-import com.parsingHTML.logic.element.ElementName;
+import com.parsingHTML.logic.element.*;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
-import com.parsingHTML.logic.parser.ParserHTMLFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- * Получает из элемент LessonTime из .html.
+ * Получает из элемент <day_time>.
  */
 public class ParserDayTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayTime.class);
     /**
      * Для получение таблицы с временем.
      */
-    public static final String cssQueryTableTime = "td[rowspan=\"2\"]";
+    public static final String cssQueryTableTime = ".knock";
     /**
      * cssQuery - для получения номера пары.
      */
@@ -26,49 +23,74 @@ public class ParserDayTime extends ParserHTMLAbstract {
     /**
      * cssQuery - для получения времени Понедельник-Пятница.
      */
-    public static final String cssQueryTime = "td.time";
+    public static final String cssQueryTime = ".knock > tbody > tr > td.time:nth-child(2)";
 
     public ParserDayTime(ParserHTMLAbstract nextParser) {
-        super(ElementName.DAY_TIME.getName(), nextParser, true);
+        super(ElementName.DAY_TIME.getName(), nextParser);
     }
 
+    /**
+     * Создаёт <day_time> и получает значение для параметров.
+     *
+     * @param element Element из коророго будет получен
+     * @return Element <day_time>.
+     */
     @Override
-    protected Element processingElement(Elements elements) {
-        Elements returnElements = new Elements();
-
-        Elements numberLessons = ElementHelper.selectElements(elements, cssQueryNumberLesson);
-
-        Element monday = elementFactory.createDayTime(DayName.MONDAY);
-        monday.insertChildren(0, parseTime(numberLessons, 0));
-        returnElements.add(monday);
-
-        returnElements.add(elementFactory.createDayTime(DayName.TUESDAY, DayName.MONDAY));
-        returnElements.add(elementFactory.createDayTime(DayName.WEDNESDAY, DayName.MONDAY));
-        returnElements.add(elementFactory.createDayTime(DayName.THURSDAY, DayName.MONDAY));
-        returnElements.add(elementFactory.createDayTime(DayName.FRIDAY, DayName.MONDAY));
-
-        Element saturday = elementFactory.createDayTime(DayName.SATURDAY);
-        saturday.insertChildren(0, parseTime(numberLessons, 1));
-        returnElements.add(saturday);
-
-        return wrapperForElements(returnElements);
-    }
-
-    //TODO METHOD NO TEST.
-    //TODO TWO TIMES calculated the time of their XTML.
-    //TODO DELETE METHOD.
-    private Elements parseTime(Elements numberLessons, int index) {
-        ParserLessonTime parserHTML = ParserHTMLFactory.createParserLessonTime();
-        parserHTML.setNumberColumnTime(index);
-        Elements select = new Elements();
-        for (Element numberLesson : numberLessons) {
-            select.add(parserHTML.parsing(numberLesson.parent()));
+    protected Element processingElement(Element element) {
+        int day = selectDayNumber(element);
+        DayName dayName = parseDayName(day);
+        if (0 < day && day < 5) {
+            return elementFactory.createDayTime(dayName, DayName.MONDAY);
         }
-        return select;
+        return elementFactory.createDayTime(dayName);
     }
 
-    @Override
-    public Elements selectElement(Element elementHTML) {
-        return elementHTML.select(cssQueryTableTime);
+    //TODO Add method in DayName;
+    //TODO Add method ElementHelper.getAttr(Element,nameAttr,Default);
+    private DayName parseDayName(int day) {
+        return DayName.values()[day];
     }
+
+    private int selectDayNumber(Element returnElements) {
+        LOGGER.debug("selectDayNumber = " + returnElements);
+        String attr = returnElements.attr(AttributeName.DAY_NUMBER.getName());
+        int i = Integer.parseInt(attr) - 2;
+        LOGGER.debug("selectDayNumber attr = " + attr + " return " + i);
+        return i;
+    }
+
+    /**
+     * Возвращает 6 элементов.
+     * Каждый элемент соответствует дню с Понеделника до Субботы.
+     *
+     * @param element откуда нужно получить элементы.
+     * @return Дни недели с Понеделника до Субботы.
+     */
+    @Override
+    public Elements selectElementProcessing(Element element) {
+        final Element tableTime = ElementHelper.selectElement(element, cssQueryTableTime, 0);
+        final Elements elements = new Elements();
+        final DayName[] values = DayName.values();
+        elements.add(createDay(tableTime, DayName.MONDAY));
+        for (int i = 1; i < 5; i++) {
+            int dayNumber = values[i].getDayNumber();
+            elements.add(createWrapperDay(dayNumber));
+        }
+        elements.add(createDay(tableTime, DayName.SATURDAY));
+
+        return elements;
+    }
+
+    private Element createWrapperDay(int dayNumber) {
+        final Element wrapper = ElementJsoupBuilder.createWrapper();
+        wrapper.attr(AttributeName.DAY_NUMBER.getName(), String.valueOf(dayNumber));
+        return wrapper;
+    }
+
+    private Element createDay(Element tableTime, DayName dayName) {
+        Element wrapperDay = createWrapperDay(dayName.getDayNumber());
+        wrapperDay.insertChildren(0, ElementHelper.selectElements(tableTime, cssQueryTime));
+        return wrapperDay;
+    }
+
 }

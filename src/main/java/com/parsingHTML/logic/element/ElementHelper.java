@@ -79,6 +79,10 @@ public class ElementHelper {
         return true;
     }
 
+    public static boolean checkElementsSize(Element element, int size) {
+        return checkElementsSize(element.getAllElements(), size);
+    }
+
     /**
      * Выбрать Elements из Element с помощью cssQuery и вернуть.
      *
