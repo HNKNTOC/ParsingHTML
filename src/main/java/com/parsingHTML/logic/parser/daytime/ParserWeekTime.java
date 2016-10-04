@@ -15,7 +15,7 @@ public class ParserWeekTime extends ParserHTMLAbstract {
     /**
      * cssQuery - для получения NumeratorName.
      */
-    private static final String cssQueryNumerator = "html head script";
+    private static final String CSS_QUERY_NUMERATOR = "html head script";
 
     public ParserWeekTime(ParserHTMLAbstract nextParserHTMLAbstract) {
         super(ElementName.WEEK_TIME.getName(), nextParserHTMLAbstract);
@@ -34,7 +34,7 @@ public class ParserWeekTime extends ParserHTMLAbstract {
 
     private NumeratorName parsingNumeratorName(Element element) {
         //TODO Add ElementHelper
-        String html = element.select(cssQueryNumerator).html();
+        String html = element.select(CSS_QUERY_NUMERATOR).html();
         if (html.contains("Числитель")) {
             LOGGER.info("This week is NUMERATOR!");
             return NumeratorName.NUMERATOR;

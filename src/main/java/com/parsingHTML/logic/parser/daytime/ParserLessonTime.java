@@ -14,6 +14,10 @@ import org.jsoup.select.Elements;
  */
 public class ParserLessonTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserLessonTime.class);
+    /**
+     * CSS Query для элемента с временем.
+     */
+    private static final String CSS_QUERY_TIME_LESSON = "td";
 
     public ParserLessonTime(ParserHTMLAbstract nextParser) {
         super(ElementName.LESSON_TIME.getName(), nextParser, true);
@@ -27,10 +31,11 @@ public class ParserLessonTime extends ParserHTMLAbstract {
      * @return Element <lesson_time>.
      */
     @Override
-    protected Element processingElement(Element element) {
-        String[] time = getTime(element);
+    protected Element processingElement(final Element element) {
+        Element tr = ElementHelper.selectElement(element, CSS_QUERY_TIME_LESSON, 0);
+        String[] time = getTime(tr);
         //TODO ADD ElementHELPER get Attr
-        String attr = element.attr(AttributeName.NUMBER.getName());
+        String attr = tr.attr(AttributeName.NUMBER.getName());
         return elementFactory.createLessonTime(attr, time[0], time[1], time[2], time[3]);
     }
 

@@ -21,9 +21,8 @@ public class ParserXMLCheckTest {
     }
 
     @Test
-    public void checkElementName() throws Exception {
-        Elements elements = ElementHelper.selectElements(element, "tr");
+    public void parsingElementTest() throws Exception {
+        Elements elements = ElementHelper.selectElements(element, "td");
         assertTrue(ElementHelper.checkElementsSize(elements, 1));
-        assertTrue(ElementHelper.checkElementsSize(elements, "td", 3));
     }
 }
