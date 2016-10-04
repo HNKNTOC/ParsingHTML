@@ -4,6 +4,7 @@ package com.parsingHTML.logic.parser;
 import com.parsingHTML.logic.element.ElementFactory;
 import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import com.parsingHTML.logic.element.ElementJsoupFactory;
+import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -103,7 +104,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * @param elements Elements который нужно спарсить.
      * @return Elements полученные при парсинге.
      */
-    public Elements parsingElements(Elements elements) {
+    public Elements parsingElements(Elements elements) throws ExceptionParser {
         Elements returnElements = new Elements();
         for (Element element : elements) {
             Element parsing = parsing(element);
@@ -116,7 +117,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
     }
 
     @Override
-    public Element parsing(Element elementHTML) {
+    public Element parsing(Element elementHTML) throws ExceptionParser {
         LOGGER.info("=== Parsing " + parsingElementName + " ===");
 
         if (elementHTML == null) {
@@ -147,7 +148,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
     }
 
 
-    private Elements parsingNextParser(Element elementHTML) {
+    private Elements parsingNextParser(Element elementHTML) throws ExceptionParser {
         Elements elements = new Elements();
         for (Element element : nextParser.selectElement(elementHTML)) {
             elements.add(nextParser.parsing(element));
@@ -161,7 +162,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * @param element откуда нужно получить элементы.
      * @return элементы которые может обработать данный {@link ParserHTMLAbstract}.
      */
-    public Elements selectElement(Element element) {
+    public Elements selectElement(Element element) throws ExceptionParser {
         logElement("selectElement() " + parsingElementName + " element = " + element);
         Elements elements = selectElementProcessing(element);
         logElement("selectElement() " + parsingElementName + " return element = " + elements);
@@ -174,7 +175,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      *
      * @return элементы которые может обработать данный {@link ParserHTMLAbstract}.
      */
-    public Elements selectElementProcessing(Element elementHTML) {
+    public Elements selectElementProcessing(Element elementHTML) throws ExceptionParser {
         return elementHTML.getAllElements();
     }
 
@@ -185,13 +186,13 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * @param elements {@link Element} который нужно спарсить.
      * @return Element c XML.
      */
-    protected Element processingElement(Element elements) {
+    protected Element processingElement(Element elements) throws ExceptionParser {
         //TODO set Abstract.
         return ElementJsoupBuilder.createElementEmpty();
     }
 
     //TODO DELETE METHOD!!
-    protected Element processingElement(Elements elements) {
+    protected Element processingElement(Elements elements) throws ExceptionParser {
         //TODO set Abstract.
         return ElementJsoupBuilder.createElementEmpty();
     }

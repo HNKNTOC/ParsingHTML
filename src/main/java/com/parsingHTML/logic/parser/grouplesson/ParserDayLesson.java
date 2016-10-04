@@ -4,6 +4,7 @@ import com.parsingHTML.logic.element.DayName;
 import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import com.parsingHTML.logic.parser.ParserHTMLFactory;
+import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -30,7 +31,7 @@ public class ParserDayLesson extends ParserHTMLAbstract {
      * Из element выбирает элемент через cssQuery в cssQueryNumPara.
      */
     @Override
-    protected Element processingElement(Elements elements) {
+    protected Element processingElement(Elements elements) throws ExceptionParser {
 
         Element dayLesson = elementFactory.createDayLesson(parsingDay(elements));
 
@@ -44,7 +45,7 @@ public class ParserDayLesson extends ParserHTMLAbstract {
      * @param select Elements из которых нужно спарсить Lesson.
      * @param dayLesson Element в который нужно добавить Lesson.
      */
-    private void parsingLesson(Elements select, Element dayLesson) {
+    private void parsingLesson(Elements select, Element dayLesson) throws ExceptionParser {
         ParserHTMLAbstract parserLesson = ParserHTMLFactory.createParserLesson();
         for (Element element : select) {
             Element lesson = parserLesson.parsing(element.parent());
@@ -59,7 +60,7 @@ public class ParserDayLesson extends ParserHTMLAbstract {
      * @param element элемент из которого нужно спарсить день.
      * @return Имя дня.
      */
-    private DayName parsingDay(Elements element) {
+    private DayName parsingDay(Elements element) throws ExceptionParser {
         Elements select = element.select(cssQueryDay);
         String dayName = null;
         if (ElementHelper.checkElementsSize(select, 1)) {

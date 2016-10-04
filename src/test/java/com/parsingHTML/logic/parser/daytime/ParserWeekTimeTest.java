@@ -8,8 +8,6 @@ import com.parsingHTML.logic.parsing.html.ParserXMLCheck;
 import org.jsoup.nodes.Element;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
-
 
 public class ParserWeekTimeTest extends ParserXMLCheck {
     @Test
@@ -17,9 +15,9 @@ public class ParserWeekTimeTest extends ParserXMLCheck {
         Element elementResults = ParserXMLCheck.parsingElement(
                 new ParserWeekTime(null), "WeekTime.html");
 
-        assertTrue(ElementHelper.checkTagName(elementResults, ElementName.WEEK_TIME.getName()));
+        ElementHelper.checkTagName(elementResults, ElementName.WEEK_TIME.getName());
 
-        assertTrue(ElementHelper.checkElementAttribute(elementResults,
-                AttributeName.NUMERATOR.getName(), NumeratorName.NUMERATOR.getName()));
+        ElementHelper.checkElementAttribute(elementResults,
+                AttributeName.NUMERATOR.getName(), NumeratorName.NUMERATOR.getName());
     }
 }

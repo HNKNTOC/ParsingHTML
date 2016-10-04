@@ -4,6 +4,7 @@ import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import com.parsingHTML.logic.parser.ParserHTMLFactory;
+import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -27,7 +28,7 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
      * @return groupLesson.
      */
     @Override
-    protected Element processingElement(Elements elements) {
+    protected Element processingElement(Elements elements) throws ExceptionParser {
         Element groupLesson = elementFactory.createGroupLesson();
         Elements days = ElementHelper.selectElements(elements, cssQueryTableDay);
         groupLesson.insertChildren(0, parsingDayLesson(days));
@@ -36,7 +37,7 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
     }
 
     @Override
-    public Elements selectElementProcessing(Element element) {
+    public Elements selectElementProcessing(Element element) throws ExceptionParser {
         return ElementHelper.selectElements(element, cssQueryTableDay);
     }
 
@@ -44,7 +45,7 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
      * Полученный дни парсит через ParserDayLesson.
      * @param days дни который нужно спарсить.
      */
-    private Elements parsingDayLesson(Elements days) {
+    private Elements parsingDayLesson(Elements days) throws ExceptionParser {
         ParserHTMLAbstract parserDayLesson = ParserHTMLFactory.createParserDayLesson();
         return parserDayLesson.parsingElements(days);
     }

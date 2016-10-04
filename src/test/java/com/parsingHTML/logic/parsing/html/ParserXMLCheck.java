@@ -2,6 +2,7 @@ package com.parsingHTML.logic.parsing.html;
 
 
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
+import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
@@ -25,7 +26,7 @@ public class ParserXMLCheck {
      * @param fileName           Имя тестового файла который будем парсить.
      * @return полученный элемент.
      */
-    public static Element parsingElement(ParserHTMLAbstract parserHTMLAbstract, String fileName) {
+    public static Element parsingElement(ParserHTMLAbstract parserHTMLAbstract, String fileName) throws ExceptionParser {
         LOGGER.debug("parsingElement " + parserHTMLAbstract + " fileName = " + fileName);
 
         Element parsing = parserHTMLAbstract.parsing(createElementHTML(fileName));

@@ -4,6 +4,7 @@ import com.parsingHTML.logic.element.AttributeName;
 import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
+import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -31,7 +32,7 @@ public class ParserLessonTime extends ParserHTMLAbstract {
      * @return Element <lesson_time>.
      */
     @Override
-    protected Element processingElement(final Element element) {
+    protected Element processingElement(final Element element) throws ExceptionParser {
         Element tr = ElementHelper.selectElement(element, CSS_QUERY_TIME_LESSON, 0);
         String[] time = getTime(tr);
         //TODO ADD ElementHELPER get Attr
@@ -40,7 +41,7 @@ public class ParserLessonTime extends ParserHTMLAbstract {
     }
 
     @Override
-    public Elements selectElementProcessing(Element elementHTML) {
+    public Elements selectElementProcessing(Element elementHTML) throws ExceptionParser {
         Elements elements = ElementHelper.selectElements(elementHTML, "td");
         for (int i = 0; i < elements.size(); i++) {
             elements.get(i).attr(AttributeName.NUMBER.getName(), String.valueOf(i + 1));

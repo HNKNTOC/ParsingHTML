@@ -3,6 +3,7 @@ package com.parsingHTML.logic.parser.grouplesson;
 import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.NumeratorName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
+import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -23,7 +24,7 @@ public class ParserLesson extends ParserHTMLAbstract {
 
 
     @Override
-    protected Element processingElement(Elements elements) {
+    protected Element processingElement(Elements elements) throws ExceptionParser {
         String number = parsingNumber(elements);
         String numerator = parsingNumerator(elements);
 

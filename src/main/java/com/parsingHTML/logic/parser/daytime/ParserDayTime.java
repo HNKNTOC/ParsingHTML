@@ -2,6 +2,7 @@ package com.parsingHTML.logic.parser.daytime;
 
 import com.parsingHTML.logic.element.*;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
+import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -67,7 +68,7 @@ public class ParserDayTime extends ParserHTMLAbstract {
      * @return Дни недели с Понеделника до Субботы.
      */
     @Override
-    public Elements selectElementProcessing(Element element) {
+    public Elements selectElementProcessing(Element element) throws ExceptionParser {
         final Element tableTime = ElementHelper.selectElement(element, cssQueryTableTime, 0);
         final Elements elements = new Elements();
         final DayName[] values = DayName.values();
@@ -87,7 +88,7 @@ public class ParserDayTime extends ParserHTMLAbstract {
         return wrapper;
     }
 
-    private Element createDay(Element tableTime, DayName dayName) {
+    private Element createDay(Element tableTime, DayName dayName) throws ExceptionParser {
         Element wrapperDay = createWrapperDay(dayName.getDayNumber());
         wrapperDay.insertChildren(0, ElementHelper.selectElements(tableTime, cssQueryTime));
         return wrapperDay;

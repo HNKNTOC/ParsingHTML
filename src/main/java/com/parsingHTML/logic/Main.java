@@ -3,6 +3,7 @@ package com.parsingHTML.logic;
 import com.parsingHTML.logic.element.DayName;
 import com.parsingHTML.logic.extractor.xml.ExtractorSchedule;
 import com.parsingHTML.logic.extractor.xml.LessonTime;
+import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import com.parsingHTML.logic.selector.SelectorLink;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -61,8 +62,13 @@ public class Main {
         File timeContent = getFile("rasp.bukep.ru.html");
         File scheduleContent = getFile("rasp.bukep.ru2.html");
 
-        Element schedule = ParsingHTML.parsingSchedule(
-                new FileInputStream(timeContent), new FileInputStream(scheduleContent), charsetName);
+        Element schedule = null;
+        try {
+            schedule = ParsingHTML.parsingSchedule(
+                    new FileInputStream(timeContent), new FileInputStream(scheduleContent), charsetName);
+        } catch (ExceptionParser exceptionParser) {
+            exceptionParser.printStackTrace();
+        }
 
         Document document = ParsingHTML.transformation(schedule);
 

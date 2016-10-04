@@ -1,6 +1,8 @@
 package com.parsingHTML.logic.parser;
 
 
+import com.parsingHTML.logic.parser.exception.ExceptionParser;
+
 /**
  * Интерфейс для парсеров.
  * @param <T> объект из которого будем парсить
@@ -23,5 +25,5 @@ public interface Parser<T, S> {
      * @param t объект который нужно парсить.
      * @return объект в который записывается полученная информация.
      */
-    S parsing(T t);
+    S parsing(T t) throws ExceptionParser;
 }

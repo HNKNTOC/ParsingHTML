@@ -4,6 +4,7 @@ import com.parsingHTML.logic.element.ElementJsoupFactory;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import com.parsingHTML.logic.parser.ParserHTMLFactory;
 import com.parsingHTML.logic.parser.daytime.ParserDayTime;
+import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import com.parsingHTML.logic.parser.grouplesson.ParserGroupLesson;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -40,7 +41,7 @@ public class ParsingHTML {
      * @param charsetName     установить характер содержимого файла.
      * @return XML расписание.
      */
-    public static Element parsingSchedule(InputStream timeContent, InputStream scheduleContent, String charsetName) throws IOException {
+    public static Element parsingSchedule(InputStream timeContent, InputStream scheduleContent, String charsetName) throws IOException, ExceptionParser {
         Element schedule = elementFactory.createSchedule();
         schedule.appendChild(elementFactory.createParsingTime());
 
@@ -60,7 +61,7 @@ public class ParsingHTML {
      * @param charsetName     установить характер содержимого файла.
      * @return XML расписание.
      */
-    public static Element parsingSchedule(Element timeContent, Element scheduleContent, String charsetName) {
+    public static Element parsingSchedule(Element timeContent, Element scheduleContent, String charsetName) throws ExceptionParser {
         Element schedule = elementFactory.createSchedule();
         schedule.appendChild(elementFactory.createParsingTime());
 
@@ -80,7 +81,7 @@ public class ParsingHTML {
      * @return получившийся при парсинге элемент.
      * @throws IOException если файл не может быть найден, или прочитан, или если charsetName является недопустимым.
      */
-    public static Element parsingGroupLesson(InputStream inputStream, String charsetName) throws IOException {
+    public static Element parsingGroupLesson(InputStream inputStream, String charsetName) throws IOException, ExceptionParser {
         LOGGER.info("parsingGroupLesson inputStream: " + inputStream + " charsetName: " + charsetName);
         return parsing(inputStream, charsetName, ParserHTMLFactory.createParserGroupLesson());
     }
@@ -92,7 +93,7 @@ public class ParsingHTML {
      * @param charsetName установить характер содержимого файла.
      * @return получившийся при парсинге элемент.
      */
-    public static Element parsingGroupLesson(Element element, String charsetName) {
+    public static Element parsingGroupLesson(Element element, String charsetName) throws ExceptionParser {
         LOGGER.info("parsingGroupLesson inputStream: " + element + " charsetName: " + charsetName);
         return parsing(element, charsetName, ParserHTMLFactory.createParserGroupLesson());
     }
@@ -105,7 +106,7 @@ public class ParsingHTML {
      * @return получившийся при парсинге элемент.
      * @throws IOException если файл не может быть найден, или прочитан, или если charsetName является недопустимым.
      */
-    public static Element parsingWeekTime(InputStream inputStream, String charsetName) throws IOException {
+    public static Element parsingWeekTime(InputStream inputStream, String charsetName) throws IOException, ExceptionParser {
         LOGGER.info("parsingWeekTime inputStream: " + inputStream + " charsetName: " + charsetName);
         return parsing(inputStream, charsetName, ParserHTMLFactory.createParserWeekTime());
     }
@@ -117,7 +118,7 @@ public class ParsingHTML {
      * @param charsetName установить характер содержимого файла.
      * @return получившийся при парсинге элемент.
      */
-    public static Element parsingWeekTime(Element element, String charsetName) {
+    public static Element parsingWeekTime(Element element, String charsetName) throws ExceptionParser {
         LOGGER.info("parsingWeekTime inputStream: " + element + " charsetName: " + charsetName);
         return parsing(element, charsetName, ParserHTMLFactory.createParserWeekTime());
     }
@@ -131,7 +132,7 @@ public class ParsingHTML {
      * @return получившийся при парсинге элемент.
      * @throws IOException если файл не может быть найден, или прочитан, или если charsetName является недопустимым.
      */
-    public static Element parsing(InputStream file, String charsetName, ParserHTMLAbstract parser) throws IOException {
+    public static Element parsing(InputStream file, String charsetName, ParserHTMLAbstract parser) throws IOException, ExceptionParser {
         LOGGER.info("parsing file: " + file + " charsetName: " + charsetName + " parser: = " + parser);
         Document document = Jsoup.parse(file, charsetName, "");
         return parser.parsing(document);
@@ -145,7 +146,7 @@ public class ParsingHTML {
      * @param parser      ParserHTMLAbstract который будет парсить.
      * @return получившийся при парсинге элемент.
      */
-    public static Element parsing(Element element, String charsetName, ParserHTMLAbstract parser) {
+    public static Element parsing(Element element, String charsetName, ParserHTMLAbstract parser) throws ExceptionParser {
         LOGGER.info("parsing file: " + element + " charsetName: " + charsetName + " parser: = " + parser);
         return parser.parsing(element);
     }
