@@ -15,6 +15,7 @@ import java.io.IOException;
  */
 public class ParserXMLCheck {
     private static final Logger LOGGER = LogManager.getLogger(ParserXMLCheck.class);
+    private static final String PATH_TEST_RES = "src\\test\\resources\\test\\";
 
 
     /**
@@ -26,6 +27,7 @@ public class ParserXMLCheck {
      */
     public static Element parsingElement(ParserHTMLAbstract parserHTMLAbstract, String fileName) {
         LOGGER.debug("parsingElement " + parserHTMLAbstract + " fileName = " + fileName);
+
         Element parsing = parserHTMLAbstract.parsing(createElementHTML(fileName));
         LOGGER.debug("parsingElement() return " + parsing);
         return parsing;
@@ -46,7 +48,7 @@ public class ParserXMLCheck {
 
     private static Element createElementHTML(String fileName) {
         try {
-            return Jsoup.parse(new File("src\\test\\resources\\test\\" + fileName), null);
+            return Jsoup.parse(new File(PATH_TEST_RES + fileName), null);
         } catch (IOException e) {
             e.printStackTrace();
             LOGGER.warn("Failed get file " + fileName, e);

@@ -17,7 +17,7 @@ public class ParserLessonTimeTest extends ParserXMLCheck {
         //TODO Передулать
         Element elementResults = ParserXMLCheck.parsingElement(new ParserLessonTime(null), "LessonTime.html");
         assertTrue(ElementHelper.checkTagName(elementResults, ElementName.LESSON_TIME.getName()));
-        assertTrue(ElementHelper.checkElementAttribute(elementResults, "number", "3"));
+        assertTrue(ElementHelper.checkElementAttribute(elementResults, "number", "1"));
         assertTrue(ElementHelper.checkElementAttribute(elementResults, "start1", "08:30"));
         assertTrue(ElementHelper.checkElementAttribute(elementResults, "end1", "09:15"));
         assertTrue(ElementHelper.checkElementAttribute(elementResults, "start2", "09:20"));

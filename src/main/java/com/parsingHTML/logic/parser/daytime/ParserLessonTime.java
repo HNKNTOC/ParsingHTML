@@ -14,8 +14,6 @@ import org.jsoup.select.Elements;
  */
 public class ParserLessonTime extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserLessonTime.class);
-    private final static String cssQueryNumberLesson = "td.n_para";
-    private final static String cssQueryTimeLesson = "td.time";
 
     public ParserLessonTime(ParserHTMLAbstract nextParser) {
         super(ElementName.LESSON_TIME.getName(), nextParser, true);
@@ -30,8 +28,8 @@ public class ParserLessonTime extends ParserHTMLAbstract {
      */
     @Override
     protected Element processingElement(Element element) {
-
         String[] time = getTime(element);
+        //TODO ADD ElementHELPER get Attr
         String attr = element.attr(AttributeName.NUMBER.getName());
         return elementFactory.createLessonTime(attr, time[0], time[1], time[2], time[3]);
     }
