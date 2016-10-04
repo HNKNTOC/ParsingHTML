@@ -44,7 +44,7 @@ public class ParserWeekTime extends ParserHTMLAbstract {
             return NumeratorName.DENOMINATOR;
         }
         LOGGER.warn("This week is EMPTY!");
-        reportException("Failed parsingNumeratorName()");
+        //TODO throw  Exception "Failed parsingNumeratorName()"
         return NumeratorName.EMPTY;
     }
 }

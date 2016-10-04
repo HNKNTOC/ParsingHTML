@@ -4,8 +4,6 @@ package com.parsingHTML.logic.parser;
 import com.parsingHTML.logic.element.ElementFactory;
 import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import com.parsingHTML.logic.element.ElementJsoupFactory;
-import com.parsingHTML.logic.parser.exception.ExceptionList;
-import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -30,10 +28,6 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * Имя элемента который получит данный ParserHTMLAbstract.
      */
     private final String parsingElementName;
-    /**
-     * Класс в котором хранятся ошибки произошедшие во время получения работы {@link ParserHTMLAbstract}.
-     */
-    private ExceptionList<ExceptionParser> exceptionList = new ExceptionList<>();
     /**
      * Возвращает ли данный парсер множество элементов.
      */
@@ -92,12 +86,6 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
         return parsingElementName;
     }
 
-
-    @Override
-    public ExceptionList getExceptionList() {
-        return exceptionList;
-    }
-
     /**
      * Проверка может ли данный парсер с парсить element.
      *
@@ -107,21 +95,6 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
     @Override
     public boolean isParsing(Element element) {
         return false;
-    }
-
-    /**
-     * Проверка есть ли ошибки у {@link ParserHTMLAbstract#nextParser}.
-     */
-    private void checkExceptionNextParser() {
-        if (!nextParser.getExceptionList().isEmpty()) {
-            reportException("NextParser end not Successful!!");
-        }
-    }
-
-    protected void reportException(String message) {
-        ExceptionParser exception = new ExceptionParser(message);
-        LOGGER.warn("reportException() ", exception);
-        exceptionList.add(exception);
     }
 
     /**
@@ -157,7 +130,6 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
         if (nextParser != null) {
             Elements children = parsingNextParser(elementHTML);
             returnElement.insertChildren(0, children);
-            checkExceptionNextParser();
         } else {
             LOGGER.debug("nextParser = null!!");
         }

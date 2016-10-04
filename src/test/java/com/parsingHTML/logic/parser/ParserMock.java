@@ -20,9 +20,6 @@ public class ParserMock extends ParserHTMLAbstract {
         return element.select(cssQuery);
     }
 
-    public void addException(String message) {
-        reportException(message);
-    }
 
     public ParserMock() {
     }

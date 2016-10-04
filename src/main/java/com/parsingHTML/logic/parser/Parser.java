@@ -1,8 +1,6 @@
 package com.parsingHTML.logic.parser;
 
 
-import com.parsingHTML.logic.parser.exception.ExceptionManager;
-
 /**
  * Интерфейс для парсеров.
  * @param <T> объект из которого будем парсить
@@ -10,7 +8,7 @@ import com.parsingHTML.logic.parser.exception.ExceptionManager;
  * @param <S> объект в который будем записывать
  *           полученную информацию во время парсинга.
  */
-public interface Parser<T, S> extends ExceptionManager {
+public interface Parser<T, S> {
 
     /**
      * Может ли данный Parser обработать t.

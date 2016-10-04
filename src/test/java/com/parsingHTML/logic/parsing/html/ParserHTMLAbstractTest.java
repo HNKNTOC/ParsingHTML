@@ -30,42 +30,32 @@ public class ParserHTMLAbstractTest {
         mainParser = new ParserMock(CSS_SELECT, parsingElementName, nextParser);
     }
 
-    private void checkResult(String testName, int countException) {
-        assertEquals(testName, mainParser.getExceptionList().count(), countException);
-    }
 
     @Test
     public void exceptionParserInNextParser() throws Exception {
-        nextParser.addException("This test!");
         mainParser.parsing(elementEmpty);
-        checkResult("exceptionParserInNextParser", 1);
     }
 
     @Test
     public void exceptionParserInMainParser() throws Exception {
-        mainParser.addException("This test!");
         mainParser.parsing(elementEmpty);
-        checkResult("exceptionParserInMainParser", 1);
     }
 
     @Test
     public void notExceptionParserInMainParser() throws Exception {
         mainParser.parsing(elementEmpty);
-        checkResult("notExceptionParserInMainParser", 0);
     }
 
     @Test
     public void nextParserEqualsNull() throws Exception {
         mainParser = new ParserMock(CSS_SELECT, parsingElementName, null);
         Element parsing = mainParser.parsing(elementEmpty);
-        checkResult("nextParserEqualsNull", 0);
         assertEquals(parsing.select(CSS_SELECT_ALL_ELEMENT).size(), 1);
     }
 
     @Test
     public void nextParserEqualsNotNull() throws Exception {
         Element parsing = mainParser.parsing(elementEmpty);
-        checkResult("nextParserEqualsNotNull", 0);
         assertEquals(parsing.select(CSS_SELECT_ALL_ELEMENT).size(), 2);
     }
 

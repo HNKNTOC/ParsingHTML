@@ -1,28 +1,30 @@
 package com.parsingHTML.logic.parser.exception;
 
 import com.parsingHTML.logic.parser.Parser;
+import org.jsoup.nodes.Element;
 
 /**
  * Исключение происходит при неудачном получении данных при помощи {@link Parser}.
  */
 public class ExceptionParser extends Exception {
 
-    public ExceptionParser() {
+    /**
+     * Имя Element который не удолось спарсить.
+     */
+    private final String elementName;
+    /**
+     * Element который не удолось спарсить.
+     */
+    private final Element element;
+
+    public ExceptionParser(String elementName, Element element) {
+        this.elementName = elementName;
+        this.element = element;
     }
 
-    public ExceptionParser(String message) {
+    public ExceptionParser(String message, String elementName, Element element) {
         super(message);
-    }
-
-    public ExceptionParser(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public ExceptionParser(Throwable cause) {
-        super(cause);
-    }
-
-    public ExceptionParser(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
+        this.elementName = elementName;
+        this.element = element;
     }
 }
