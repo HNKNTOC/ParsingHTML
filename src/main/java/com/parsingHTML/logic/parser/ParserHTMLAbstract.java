@@ -105,6 +105,8 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * @return Elements полученные при парсинге.
      */
     public Elements parsingElements(Elements elements) throws ExceptionParser {
+        LOGGER.debug("Parsing elements.");
+        logElement("Parsing elements = " + elements);
         Elements returnElements = new Elements();
         for (Element element : elements) {
             Element parsing = parsing(element);
@@ -112,10 +114,12 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
                 returnElements.add(parsing);
             }
         }
-        LOGGER.debug("parsingElements return " + elements);
+        LOGGER.debug("Parsing elements finished.");
+        logElement("Parsing elements return " + elements);
         return returnElements;
     }
 
+    //TODO Добавить selectElementForParsing() если вернул не один элемент обернуть!!
     @Override
     public Element parsing(Element elementHTML) throws ExceptionParser {
         LOGGER.info("=== Parsing " + parsingElementName + " ===");
@@ -135,8 +139,8 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
             LOGGER.debug("nextParser = null!!");
         }
 
-        logElement("returnElement = " + returnElement);
         LOGGER.info("=== End parsing " + parsingElementName + " ===");
+        logElement("returnElement = " + returnElement);
         return returnElement;
     }
 
@@ -150,7 +154,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
 
     private Elements parsingNextParser(Element elementHTML) throws ExceptionParser {
         Elements elements = new Elements();
-        for (Element element : nextParser.selectElement(elementHTML)) {
+        for (Element element : nextParser.selectElementForParsing(elementHTML)) {
             elements.add(nextParser.parsing(element));
         }
         return elements;
@@ -162,20 +166,23 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * @param element откуда нужно получить элементы.
      * @return элементы которые может обработать данный {@link ParserHTMLAbstract}.
      */
-    public Elements selectElement(Element element) throws ExceptionParser {
-        logElement("selectElement() " + parsingElementName + " element = " + element);
+    public Elements selectElementForParsing(Element element) throws ExceptionParser {
+        LOGGER.debug("Select element for parsing " + parsingElementName);
+        logElement("Select element = " + element);
         Elements elements = selectElementProcessing(element);
-        logElement("selectElement() " + parsingElementName + " return element = " + elements);
+        LOGGER.debug("Select element finished for parsing " + parsingElementName);
+        logElement("Select element return Element = " + elements);
         return elements;
     }
 
     /**
-     * Тоже самое что и selectElement() только добавляет логирование.
-     * Переопределять желательно этот метод заместо selectElement().
+     * Тоже самое что и selectElementForParsing() только добавляет логирование.
+     * Переопределять желательно этот метод заместо selectElementForParsing().
      *
+     * @param elementHTML Element из которого нужно выбрать Elements для {@link ParserHTMLAbstract#parsing(Element)}.
      * @return элементы которые может обработать данный {@link ParserHTMLAbstract}.
      */
-    public Elements selectElementProcessing(Element elementHTML) throws ExceptionParser {
+    protected Elements selectElementProcessing(Element elementHTML) throws ExceptionParser {
         return elementHTML.getAllElements();
     }
 

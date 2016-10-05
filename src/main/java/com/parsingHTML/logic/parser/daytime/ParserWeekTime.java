@@ -33,7 +33,7 @@ public class ParserWeekTime extends ParserHTMLAbstract {
     }
 
     private NumeratorName parsingNumeratorName(Element element) {
-        //TODO Add ElementHelper
+        //TODO Add ParsirHelper
         String html = element.select(CSS_QUERY_NUMERATOR).html();
         if (html.contains("Числитель")) {
             LOGGER.info("This week is NUMERATOR!");

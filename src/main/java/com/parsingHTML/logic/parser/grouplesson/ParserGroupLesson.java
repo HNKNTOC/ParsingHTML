@@ -1,9 +1,9 @@
 package com.parsingHTML.logic.parser.grouplesson;
 
-import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import com.parsingHTML.logic.parser.ParserHTMLFactory;
+import com.parsingHTML.logic.parser.ParsirHelper;
 import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -30,15 +30,15 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
     @Override
     protected Element processingElement(Elements elements) throws ExceptionParser {
         Element groupLesson = elementFactory.createGroupLesson();
-        Elements days = ElementHelper.selectElements(elements, cssQueryTableDay);
+        Elements days = ParsirHelper.selectElements(elements, cssQueryTableDay);
         groupLesson.insertChildren(0, parsingDayLesson(days));
         return groupLesson;
 
     }
 
     @Override
-    public Elements selectElementProcessing(Element element) throws ExceptionParser {
-        return ElementHelper.selectElements(element, cssQueryTableDay);
+    protected Elements selectElementProcessing(Element element) throws ExceptionParser {
+        return ParsirHelper.selectElements(element, cssQueryTableDay);
     }
 
     /**

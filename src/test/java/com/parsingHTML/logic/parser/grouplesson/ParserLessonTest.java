@@ -1,22 +1,20 @@
 package com.parsingHTML.logic.parser.grouplesson;
 
-import com.parsingHTML.logic.element.ElementHelper;
+import com.parsingHTML.logic.parser.ParsirHelper;
 import com.parsingHTML.logic.parsing.html.ParserXMLCheck;
 import org.jsoup.nodes.Element;
 import org.junit.Test;
 
-/**
- * Created by Nikita on 27.06.2016.
- */
+
 public class ParserLessonTest {
     @Test
     public void parsing() throws Exception {
         Element elementResults = ParserXMLCheck.parsingElement(new ParserLesson(), "Lesson.html");
-        ElementHelper.checkElementAttribute(elementResults, "number", "3");
-        ElementHelper.checkElementAttribute(elementResults, "lessonName", "Естествознание");
-        ElementHelper.checkElementAttribute(elementResults, "teacher", "Name Teacher");
-        ElementHelper.checkElementAttribute(elementResults, "numerator", "Числ.");
-        ElementHelper.checkElementAttribute(elementResults, "audience", "Практическое занятие 405н");
+        ParsirHelper.checkElementAttribute(elementResults, "number", "3");
+        ParsirHelper.checkElementAttribute(elementResults, "lessonName", "Естествознание");
+        ParsirHelper.checkElementAttribute(elementResults, "teacher", "Name Teacher");
+        ParsirHelper.checkElementAttribute(elementResults, "numerator", "Числ.");
+        ParsirHelper.checkElementAttribute(elementResults, "audience", "Практическое занятие 405н");
     }
 
 }

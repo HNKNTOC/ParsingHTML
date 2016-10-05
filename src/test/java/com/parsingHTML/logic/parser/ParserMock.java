@@ -16,7 +16,7 @@ public class ParserMock extends ParserHTMLAbstract {
     }
 
     @Override
-    public Elements selectElementProcessing(Element element) {
+    protected Elements selectElementProcessing(Element element) {
         return element.select(cssQuery);
     }
 

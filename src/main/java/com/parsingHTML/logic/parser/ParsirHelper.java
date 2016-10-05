@@ -1,5 +1,6 @@
-package com.parsingHTML.logic.element;
+package com.parsingHTML.logic.parser;
 
+import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -11,11 +12,12 @@ import java.util.Objects;
 /**
  * Сюда вынесины часто повторяймые операции с Element.
  */
-public class ElementHelper {
-    private static final Logger LOGGER = LogManager.getLogger(ElementHelper.class);
+public class ParsirHelper {
+    private static final Logger LOGGER = LogManager.getLogger(ParsirHelper.class);
 
-    private ElementHelper() {
+    private ParsirHelper() {
     }
+
 
     /**
      * Проверка имени у элемента.
@@ -42,8 +44,8 @@ public class ElementHelper {
      * @param elementSize Количество элементов должно быть в element.
      * @throws ExceptionParser если проверка не пройдена.
      */
-    public static void checkElementsSize(final Elements element, final String elementName, final int elementSize) throws ExceptionParser {
-        LOGGER.debug("checkElementsSize() element=" + element + " elementName = " + elementName + " elementSize = " + elementSize);
+    public static void checkElementSize(final Elements element, final String elementName, final int elementSize) throws ExceptionParser {
+        LOGGER.debug("checkElementSize() element=" + element + " elementName = " + elementName + " elementSize = " + elementSize);
         Elements elements = element.select(elementName);
         if (elements.size() != elementSize) {
             fail(String.format("Element does not contain \"%d\" \"%s\". \"%s\" size =  \"%d\"."
@@ -59,7 +61,7 @@ public class ElementHelper {
      * @param size     размер который должен быть у Elements.
      * @throws ExceptionParser если проверка не пройдена.
      */
-    public static boolean checkElementsSize(Elements elements, int size) throws ExceptionParser {
+    public static boolean checkElementSize(Elements elements, int size) throws ExceptionParser {
         if (elements.size() != size) {
             fail(String.format("Element size not equals \"%d\". Element size = \"%d\"",
                     size, elements.size()));
@@ -68,7 +70,7 @@ public class ElementHelper {
     }
 
     public static void checkElementSize(Element element, int size) throws ExceptionParser {
-        checkElementsSize(element.getAllElements(), size);
+        checkElementSize(element.getAllElements(), size);
     }
 
     /**
@@ -131,7 +133,7 @@ public class ElementHelper {
         Elements select = element.select(cssQuery);
         if (select.size() >= index + 1) {
             Element returnElement = select.get(index);
-            LOGGER.debug("selectElement return " + returnElement);
+            LOGGER.debug("selectElementForParsing return " + returnElement);
             return returnElement;
         }
         fail(String.format(
