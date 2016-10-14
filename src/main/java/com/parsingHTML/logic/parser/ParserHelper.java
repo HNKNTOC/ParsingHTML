@@ -12,10 +12,10 @@ import java.util.Objects;
 /**
  * Сюда вынесины часто повторяймые операции с Element.
  */
-public class ParsirHelper {
-    private static final Logger LOGGER = LogManager.getLogger(ParsirHelper.class);
+public class ParserHelper {
+    private static final Logger LOGGER = LogManager.getLogger(ParserHelper.class);
 
-    private ParsirHelper() {
+    private ParserHelper() {
     }
 
 

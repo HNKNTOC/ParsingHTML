@@ -1,6 +1,6 @@
 package com.parsingHTML.logic.parsing.html;
 
-import com.parsingHTML.logic.parser.ParsirHelper;
+import com.parsingHTML.logic.parser.ParserHelper;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.junit.Test;
@@ -22,7 +22,7 @@ public class ParserXMLCheckTest {
 
     @Test
     public void parsingElementTest() throws Exception {
-        Elements elements = ParsirHelper.selectElements(element, "td");
-        assertTrue(ParsirHelper.checkElementSize(elements, 1));
+        Elements elements = ParserHelper.selectElements(element, "td");
+        assertTrue(ParserHelper.checkElementSize(elements, 1));
     }
 }

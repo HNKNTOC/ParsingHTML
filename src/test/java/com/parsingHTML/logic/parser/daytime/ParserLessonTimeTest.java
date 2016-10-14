@@ -1,7 +1,7 @@
 package com.parsingHTML.logic.parser.daytime;
 
 import com.parsingHTML.logic.element.ElementName;
-import com.parsingHTML.logic.parser.ParsirHelper;
+import com.parsingHTML.logic.parser.ParserHelper;
 import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import com.parsingHTML.logic.parsing.html.ParserXMLCheck;
 import org.jsoup.nodes.Element;
@@ -23,7 +23,7 @@ public class ParserLessonTimeTest {
             resultsParsing.add(parser.parsing(element));
         }
 
-        ParsirHelper.checkElementSize(resultsParsing, 7);
+        ParserHelper.checkElementSize(resultsParsing, 7);
 
         check(resultsParsing.get(0), "1", "08:30", "09:15", "09:20", "10:05");
         check(resultsParsing.get(1), "2", "10:15", "11:00", "11:05", "11:50");
@@ -36,12 +36,12 @@ public class ParserLessonTimeTest {
     }
 
     private void check(Element elementResults, String number, String start1, String end1, String start2, String end2) throws ExceptionParser {
-        ParsirHelper.checkTagName(elementResults, ElementName.LESSON_TIME.getName());
-        ParsirHelper.checkElementAttribute(elementResults, "number", number);
-        ParsirHelper.checkElementAttribute(elementResults, "start1", start1);
-        ParsirHelper.checkElementAttribute(elementResults, "end1", end1);
-        ParsirHelper.checkElementAttribute(elementResults, "start2", start2);
-        ParsirHelper.checkElementAttribute(elementResults, "end2", end2);
+        ParserHelper.checkTagName(elementResults, ElementName.LESSON_TIME.getName());
+        ParserHelper.checkElementAttribute(elementResults, "number", number);
+        ParserHelper.checkElementAttribute(elementResults, "start1", start1);
+        ParserHelper.checkElementAttribute(elementResults, "end1", end1);
+        ParserHelper.checkElementAttribute(elementResults, "start2", start2);
+        ParserHelper.checkElementAttribute(elementResults, "end2", end2);
     }
 
 

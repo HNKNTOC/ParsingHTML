@@ -53,13 +53,6 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
         this(new ElementJsoupFactory(), nextParser, parsingElementName, isParseElements);
     }
 
-    public ParserHTMLAbstract() {
-        //TODO DELETE THIS!!
-        elementFactory = new ElementJsoupFactory();
-        nextParser = null;
-        parsingElementName = "";
-    }
-
     /**
      * Создание ParserHTMLAbstract.
      *
@@ -121,19 +114,19 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
 
     //TODO Добавить selectElementForParsing() если вернул не один элемент обернуть!!
     @Override
-    public Element parsing(Element elementHTML) throws ExceptionParser {
+    public Element parsing(Element element) throws ExceptionParser {
         LOGGER.info("=== Parsing " + parsingElementName + " ===");
 
-        if (elementHTML == null) {
+        if (element == null) {
             throw new IllegalArgumentException("Parsing Element not equals null!!");
         }
 
-        logElement("Element = " + elementHTML);
+        logElement("Element = " + element);
 
-        Element returnElement = processingElement(elementHTML);
+        Element returnElement = processingElement(element);
 
         if (nextParser != null) {
-            Elements children = parsingNextParser(elementHTML);
+            Elements children = parsingNextParser(element);
             returnElement.insertChildren(0, children);
         } else {
             LOGGER.debug("nextParser = null!!");
@@ -152,10 +145,10 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
     }
 
 
-    private Elements parsingNextParser(Element elementHTML) throws ExceptionParser {
+    private Elements parsingNextParser(Element element) throws ExceptionParser {
         Elements elements = new Elements();
-        for (Element element : nextParser.selectElementForParsing(elementHTML)) {
-            elements.add(nextParser.parsing(element));
+        for (Element nextElement : nextParser.selectElementForParsing(element)) {
+            elements.add(nextParser.parsing(nextElement));
         }
         return elements;
     }
@@ -179,27 +172,21 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * Тоже самое что и selectElementForParsing() только добавляет логирование.
      * Переопределять желательно этот метод заместо selectElementForParsing().
      *
-     * @param elementHTML Element из которого нужно выбрать Elements для {@link ParserHTMLAbstract#parsing(Element)}.
+     * @param element Element из которого нужно выбрать Elements для {@link ParserHTMLAbstract#parsing(Element)}.
      * @return элементы которые может обработать данный {@link ParserHTMLAbstract}.
      */
-    protected Elements selectElementProcessing(Element elementHTML) throws ExceptionParser {
-        return elementHTML.getAllElements();
+    protected Elements selectElementProcessing(Element element) throws ExceptionParser {
+        return element.getAllElements();
     }
 
 
     /**
-     * Получение информации из {@link Element} c HTML.
+     * Получение информации из {@link Element}.
      *
-     * @param elements {@link Element} который нужно спарсить.
+     * @param element {@link Element} который нужно спарсить.
      * @return Element c XML.
      */
-    protected Element processingElement(Element elements) throws ExceptionParser {
-        //TODO set Abstract.
-        return ElementJsoupBuilder.createElementEmpty();
-    }
-
-    //TODO DELETE METHOD!!
-    protected Element processingElement(Elements elements) throws ExceptionParser {
+    protected Element processingElement(Element element) throws ExceptionParser {
         //TODO set Abstract.
         return ElementJsoupBuilder.createElementEmpty();
     }

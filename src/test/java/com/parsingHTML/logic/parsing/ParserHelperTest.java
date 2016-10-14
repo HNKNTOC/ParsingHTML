@@ -2,7 +2,7 @@ package com.parsingHTML.logic.parsing;
 
 import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import com.parsingHTML.logic.element.ElementName;
-import com.parsingHTML.logic.parser.ParsirHelper;
+import com.parsingHTML.logic.parser.ParserHelper;
 import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -12,9 +12,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Тестирует ParsirHelper.
+ * Тестирует ParserHelper.
  */
-public class ParsirHelperTest {
+public class ParserHelperTest {
 
     private Element mainElement;
     private ElementName elementName = ElementName.LESSON;
@@ -42,57 +42,57 @@ public class ParsirHelperTest {
 
     @Test
     public void checkTagName() throws Exception {
-        ParsirHelper.checkTagName(mainElement, elementName.getName());
+        ParserHelper.checkTagName(mainElement, elementName.getName());
     }
 
     @Test
     public void checkElementSizeWhitName() throws Exception {
-        ParsirHelper.checkElementSize(mainElement.children(), childrenName.getName(), 0);
+        ParserHelper.checkElementSize(mainElement.children(), childrenName.getName(), 0);
         addElement(childrenName, SIZE_ELEMENT);
-        ParsirHelper.checkElementSize(mainElement.children(), childrenName.getName(), SIZE_ELEMENT);
+        ParserHelper.checkElementSize(mainElement.children(), childrenName.getName(), SIZE_ELEMENT);
     }
 
     @Test(expected = ExceptionParser.class)
     public void checkElementSizeWhitNameException() throws Exception {
-        ParsirHelper.checkElementSize(mainElement.children(), childrenName.getName(), SIZE_ELEMENT);
+        ParserHelper.checkElementSize(mainElement.children(), childrenName.getName(), SIZE_ELEMENT);
     }
 
     @Test
     public void checkElementSizeWithoutName() throws Exception {
-        ParsirHelper.checkElementSize(mainElement.children(), 0);
+        ParserHelper.checkElementSize(mainElement.children(), 0);
         addElement(childrenName, SIZE_ELEMENT);
-        ParsirHelper.checkElementSize(mainElement.children(), SIZE_ELEMENT);
+        ParserHelper.checkElementSize(mainElement.children(), SIZE_ELEMENT);
     }
 
     @Test(expected = ExceptionParser.class)
     public void checkElementSizeWithoutNameException() throws Exception {
-        ParsirHelper.checkElementSize(mainElement.children(), SIZE_ELEMENT);
+        ParserHelper.checkElementSize(mainElement.children(), SIZE_ELEMENT);
     }
 
     @Test
     public void checkElementSizeNotEqual() throws Exception {
-        ParsirHelper.checkElementSizeNotEqual(mainElement.children(), 1);
+        ParserHelper.checkElementSizeNotEqual(mainElement.children(), 1);
         addElement(childrenName, 10);
-        ParsirHelper.checkElementSizeNotEqual(mainElement.children(), 3);
+        ParserHelper.checkElementSizeNotEqual(mainElement.children(), 3);
     }
 
     @Test(expected = ExceptionParser.class)
     public void checkElementSizeNotEqualException() throws Exception {
         addElement(childrenName, SIZE_ELEMENT);
-        ParsirHelper.checkElementSizeNotEqual(mainElement.children(), SIZE_ELEMENT);
+        ParserHelper.checkElementSizeNotEqual(mainElement.children(), SIZE_ELEMENT);
     }
 
     @Test
     public void selectElement() throws Exception {
         addElement(childrenName, 5);
         mainElement.child(0).attr("id", "12G");
-        ParsirHelper.selectElement(mainElement, cssQueryForTestSelectElement, 0);
+        ParserHelper.selectElement(mainElement, cssQueryForTestSelectElement, 0);
     }
 
     @Test(expected = ExceptionParser.class)
     public void selectElementException() throws Exception {
         addElement(childrenName, 5);
-        ParsirHelper.selectElement(mainElement, cssQueryForTestSelectElement, 0);
+        ParserHelper.selectElement(mainElement, cssQueryForTestSelectElement, 0);
     }
 
     private final String cssQueryForSelectElements = childrenName.getName();
@@ -101,13 +101,13 @@ public class ParsirHelperTest {
     public void selectElements() throws Exception {
         addElement(childrenName, SIZE_ELEMENT);
         addElement(ElementName.WEEK_TIME, 7);
-        Elements result = ParsirHelper.selectElements(mainElement, cssQueryForSelectElements);
+        Elements result = ParserHelper.selectElements(mainElement, cssQueryForSelectElements);
         assertTrue(result.size() == SIZE_ELEMENT);
     }
 
     @Test(expected = ExceptionParser.class)
     public void selectElementsException() throws Exception {
-        ParsirHelper.selectElements(mainElement, cssQueryForSelectElements);
+        ParserHelper.selectElements(mainElement, cssQueryForSelectElements);
     }
 
     private final static String ATTR_KEY_ID = "id";
@@ -120,24 +120,24 @@ public class ParsirHelperTest {
 
         mainElement.attr(ATTR_KEY_ID, ATTR_VALUE_ID);
         mainElement.attr(ATTR_KEY_NAME, ATTR_VALUE_NAME);
-        ParsirHelper.checkElementAttribute(mainElement, ATTR_KEY_ID, ATTR_VALUE_ID);
-        ParsirHelper.checkElementAttribute(mainElement, ATTR_KEY_NAME, ATTR_VALUE_NAME);
+        ParserHelper.checkElementAttribute(mainElement, ATTR_KEY_ID, ATTR_VALUE_ID);
+        ParserHelper.checkElementAttribute(mainElement, ATTR_KEY_NAME, ATTR_VALUE_NAME);
     }
 
     @Test(expected = ExceptionParser.class)
     public void checkElementAttributeException() throws Exception {
-        ParsirHelper.checkElementAttribute(mainElement, ATTR_KEY_ID, ATTR_VALUE_ID);
-        ParsirHelper.checkElementAttribute(mainElement, ATTR_KEY_NAME, ATTR_VALUE_NAME);
+        ParserHelper.checkElementAttribute(mainElement, ATTR_KEY_ID, ATTR_VALUE_ID);
+        ParserHelper.checkElementAttribute(mainElement, ATTR_KEY_NAME, ATTR_VALUE_NAME);
     }
 
     @Test
     public void checkElementSize() throws Exception {
         addElement(elementName, SIZE_ELEMENT);
-        ParsirHelper.checkElementSize(mainElement, SIZE_ELEMENT + 1);
+        ParserHelper.checkElementSize(mainElement, SIZE_ELEMENT + 1);
     }
 
     @Test(expected = ExceptionParser.class)
     public void checkElementSizeException() throws Exception {
-        ParsirHelper.checkElementSize(mainElement, 5);
+        ParserHelper.checkElementSize(mainElement, 5);
     }
 }

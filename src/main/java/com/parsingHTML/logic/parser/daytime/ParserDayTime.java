@@ -5,7 +5,7 @@ import com.parsingHTML.logic.element.DayName;
 import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
-import com.parsingHTML.logic.parser.ParsirHelper;
+import com.parsingHTML.logic.parser.ParserHelper;
 import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -51,7 +51,7 @@ public class ParserDayTime extends ParserHTMLAbstract {
     }
 
     //TODO Add method in DayName;
-    //TODO Add method ParsirHelper.getAttr(Element,nameAttr,Default);
+    //TODO Add method ParserHelper.getAttr(Element,nameAttr,Default);
     private DayName parseDayName(int day) {
         return DayName.values()[day];
     }
@@ -73,7 +73,7 @@ public class ParserDayTime extends ParserHTMLAbstract {
      */
     @Override
     protected Elements selectElementProcessing(Element element) throws ExceptionParser {
-        final Element tableTime = ParsirHelper.selectElement(element, cssQueryTableTime, 0);
+        final Element tableTime = ParserHelper.selectElement(element, cssQueryTableTime, 0);
         final Elements elements = new Elements();
         final DayName[] values = DayName.values();
         elements.add(createDay(tableTime, DayName.MONDAY));
@@ -94,7 +94,7 @@ public class ParserDayTime extends ParserHTMLAbstract {
 
     private Element createDay(Element tableTime, DayName dayName) throws ExceptionParser {
         Element wrapperDay = createWrapperDay(dayName.getDayNumber());
-        wrapperDay.insertChildren(0, ParsirHelper.selectElements(tableTime, cssQueryTime));
+        wrapperDay.insertChildren(0, ParserHelper.selectElements(tableTime, cssQueryTime));
         return wrapperDay;
     }
 

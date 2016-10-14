@@ -5,7 +5,7 @@ import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import com.parsingHTML.logic.parser.ParserHTMLFactory;
-import com.parsingHTML.logic.parser.ParsirHelper;
+import com.parsingHTML.logic.parser.ParserHelper;
 import com.parsingHTML.logic.parsing.html.ParserXMLCheck;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -25,14 +25,14 @@ public class ParserDayTimeTest {
             wrapper.appendChild(parserHTMLAbstract.parsing(element));
         }
 
-        ParsirHelper.checkElementSize(wrapper.children(), ElementName.DAY_TIME.getName(), 6);
+        ParserHelper.checkElementSize(wrapper.children(), ElementName.DAY_TIME.getName(), 6);
         int dayTimeNumber = 2;
         for (Element element : wrapper.children()) {
-            ParsirHelper.checkTagName(element, ElementName.DAY_TIME.getName());
-            ParsirHelper.checkElementAttribute(
+            ParserHelper.checkTagName(element, ElementName.DAY_TIME.getName());
+            ParserHelper.checkElementAttribute(
                     element, AttributeName.DAY_TIME_NUMBER.getName(), String.valueOf(dayTimeNumber));
             if (dayTimeNumber == 3 || dayTimeNumber == 4 || dayTimeNumber == 5 || dayTimeNumber == 6) {
-                ParsirHelper.checkElementAttribute(
+                ParserHelper.checkElementAttribute(
                         element, AttributeName.OVERRIDE.getName(), "2");
             }
             dayTimeNumber++;
@@ -44,7 +44,7 @@ public class ParserDayTimeTest {
         Element elementResults = ParserXMLCheck.parsingElement("DayTime.html");
         ParserHTMLAbstract parser = ParserHTMLFactory.createParserDayTime();
         Elements elements = parser.selectElementForParsing(elementResults);
-        ParsirHelper.checkElementSize(elements, 6);
+        ParserHelper.checkElementSize(elements, 6);
     }
 
 }

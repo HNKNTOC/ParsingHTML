@@ -3,7 +3,7 @@ package com.parsingHTML.logic.parser.daytime;
 import com.parsingHTML.logic.element.AttributeName;
 import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
-import com.parsingHTML.logic.parser.ParsirHelper;
+import com.parsingHTML.logic.parser.ParserHelper;
 import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -53,7 +53,7 @@ public class ParserLessonTime extends ParserHTMLAbstract {
             return new Elements();
         }
 
-        Elements elements = ParsirHelper.selectElements(element, CSS_QUERY_TIME_LESSON);
+        Elements elements = ParserHelper.selectElements(element, CSS_QUERY_TIME_LESSON);
         for (int i = 0; i < elements.size(); i++) {
             elements.get(i).attr(AttributeName.NUMBER.getName(), String.valueOf(i + 1));
         }

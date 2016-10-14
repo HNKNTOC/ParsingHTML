@@ -25,16 +25,16 @@ public class ParserHTMLFactory {
     }
 
 
-    public static ParserLesson createParserLesson() {
-        return new ParserLesson();
-    }
-
     public static ParserGroupLesson createParserGroupLesson() {
-        return new ParserGroupLesson(null);
+        return new ParserGroupLesson(createParserDayLesson());
     }
 
     public static ParserDayLesson createParserDayLesson() {
-        return new ParserDayLesson();
+        return new ParserDayLesson(createParserLesson());
+    }
+
+    public static ParserLesson createParserLesson() {
+        return new ParserLesson(null);
     }
 
 }

@@ -20,8 +20,4 @@ public class ParserMock extends ParserHTMLAbstract {
         return element.select(cssQuery);
     }
 
-
-    public ParserMock() {
-    }
-
 }

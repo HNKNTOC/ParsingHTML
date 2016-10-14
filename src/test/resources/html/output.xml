@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <schedule>
-    <parsing_time>Wed Oct 05 23:53:11 GMT+03:00 2016</parsing_time>
+    <parsing_time>Fri Oct 14 18:29:30 GMT+03:00 2016</parsing_time>
     <university name-university="БУКЭП">
         <week_time numerator="Знам.">
             <day_time day-time-number="2">
@@ -26,6 +26,82 @@
                 <lesson_time end1="20:10" end2="21:00" number="7" start1="19:25" start2="20:15"/>
             </day_time>
         </week_time>
-        <empty>This element was created instead of null!</empty>
+        <group_lesson>
+            <day_lesson day-number="2">
+                <lesson description="Практическое занятие 405н" lesson-name="Естествознание" number="3"
+                        numerator="Числ." teacher="ст. преп. Абраменко Л.И."/>
+                <lesson description="Лабораторное занятие 505н" lesson-name="Физика" number="3" numerator="Знам."
+                        teacher="асс. Омельченко Е.И."/>
+                <lesson description="Практическое занятие 513н"
+                        lesson-name="Математика: алгебра, начала математического анализа, геометрия" number="null"
+                        numerator="empty" teacher="ст. преп. Колосова И.В."/>
+                <lesson description="Лекционное занятие 403н" lesson-name="Обществознание (вкл. экономику и право)"
+                        number="5" numerator="Числ." teacher="доц. Зайцева Т.Г."/>
+                <lesson description="Лекционное занятие 504н" lesson-name="Обществознание (вкл. экономику и право)"
+                        number="5" numerator="Знам." teacher="доц. Зайцева Т.Г."/>
+            </day_lesson>
+            <day_lesson day-number="3">
+                <lesson description="Практическое занятие 310н" lesson-name="Русский язык и литература" number="2"
+                        numerator="Числ." teacher="преп. Дмитрийчук А.Ю."/>
+                <lesson description="Практическое занятие 305н" lesson-name="Русский язык и литература" number="2"
+                        numerator="Знам." teacher="преп. Дмитрийчук А.Ю."/>
+                <lesson description="Лекционное занятие 303н" lesson-name="Естествознание" number="3" numerator="Числ."
+                        teacher="ст. преп. Абраменко Л.И."/>
+                <lesson description="Лекционное занятие 411н" lesson-name="История 9" number="3" numerator="Знам."
+                        teacher="ст. преп. Нестерова Л.И."/>
+                <lesson description="Лабораторное занятие 503ан" lesson-name="Физика" number="4" numerator="Числ."
+                        teacher="асс. Омельченко Е.И."/>
+                <lesson description="Практическое занятие 514н"
+                        lesson-name="Математика: алгебра, начала математического анализа, геометрия" number="4"
+                        numerator="Знам." teacher="ст. преп. Колосова И.В."/>
+            </day_lesson>
+            <day_lesson day-number="4">
+                <lesson description="Лабораторное занятие 431, 432" lesson-name="Информатика 9" number="2"
+                        numerator="Числ." teacher="ст. преп. Гостищева Т.В.,преп. Чепелева Н.В."/>
+                <lesson description="Лабораторное занятие 432, 432" lesson-name="Информатика 9" number="2"
+                        numerator="Знам." teacher="ст. преп. Гостищева Т.В.,преп. Чепелева Н.В."/>
+                <lesson description="Практическое занятие 013" lesson-name="Иностранный язык 9" number="null"
+                        numerator="empty" teacher="ст. преп. Петряева Н.И."/>
+                <lesson description="Физическая культура -, -, -" lesson-name="Физическая культура" number="null"
+                        numerator="empty" teacher="ст. преп. Гончаров В.М.,асс. Павлова И.А.,асс. Павлова И.А."/>
+            </day_lesson>
+            <day_lesson day-number="5">
+                <lesson description="Практическое занятие 513н"
+                        lesson-name="Математика: алгебра, начала математического анализа, геометрия" number="null"
+                        numerator="empty" teacher="ст. преп. Колосова И.В."/>
+                <lesson description="Практическое занятие 110н" lesson-name="Русский язык и литература" number="4"
+                        numerator="Числ." teacher="преп. Дмитрийчук А.Ю."/>
+                <lesson description="Практическое занятие 312н" lesson-name="Русский язык и литература" number="4"
+                        numerator="Знам." teacher="преп. Дмитрийчук А.Ю."/>
+                <lesson description="Лекционное занятие 115" lesson-name="Введение в специальность" number="5"
+                        numerator="Числ." teacher="асс. Коптелова Л.В."/>
+                <lesson description="Лабораторное занятие 113, 115" lesson-name="Введение в специальность" number="5"
+                        numerator="Знам." teacher="ст. преп. Костяник Н.В.,асс. Коптелова Л.В."/>
+            </day_lesson>
+            <day_lesson day-number="6">
+                <lesson description="Лабораторное занятие 106, 108, 108" lesson-name="Информатика 9" number="null"
+                        numerator="empty"
+                        teacher="преп. Чепелева Н.В.,ст. преп. Гостищева Т.В.,ст. преп. Гостищева Т.В."/>
+                <lesson description="Практическое занятие 104н" lesson-name="История 9" number="null" numerator="empty"
+                        teacher="ст. преп. Нестерова Л.И."/>
+                <lesson description="Практическое занятие 513н" lesson-name="Обществознание (вкл. экономику и право)"
+                        number="null" numerator="empty" teacher="асс. Скоков А.Л."/>
+            </day_lesson>
+            <day_lesson day-number="7">
+                <lesson description="Практическое занятие -" lesson-name="Иностранный язык 9" number="2"
+                        numerator="Числ." teacher="ст. преп. Петряева Н.И."/>
+                <lesson description="Практическое занятие -"
+                        lesson-name="Математика: алгебра, начала математического анализа, геометрия" number="2"
+                        numerator="Знам." teacher="ст. преп. Колосова И.В."/>
+                <lesson description="Физическая культура -, -" lesson-name="Физическая культура" number="3"
+                        numerator="Числ." teacher="ст. преп. Гончаров В.М.,асс. Павлова И.А."/>
+                <lesson description="Практическое занятие -" lesson-name="Русский язык и литература" number="3"
+                        numerator="Знам." teacher="преп. Дмитрийчук А.Ю."/>
+                <lesson description="Лабораторное занятие -" lesson-name="Физика" number="4" numerator="Числ."
+                        teacher="асс. Омельченко Е.И."/>
+                <lesson description="Лабораторное занятие -, -" lesson-name="Информатика 9" number="4" numerator="Знам."
+                        teacher="ст. преп. Гостищева Т.В.,преп. Чепелева Н.В."/>
+            </day_lesson>
+        </group_lesson>
     </university>
 </schedule>

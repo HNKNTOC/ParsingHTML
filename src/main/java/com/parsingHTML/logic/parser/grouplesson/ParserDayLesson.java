@@ -1,9 +1,9 @@
 package com.parsingHTML.logic.parser.grouplesson;
 
 import com.parsingHTML.logic.element.DayName;
+import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
-import com.parsingHTML.logic.parser.ParserHTMLFactory;
-import com.parsingHTML.logic.parser.ParsirHelper;
+import com.parsingHTML.logic.parser.ParserHelper;
 import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -18,58 +18,14 @@ import java.util.HashMap;
 public class ParserDayLesson extends ParserHTMLAbstract {
     private static final Logger LOGGER = LogManager.getLogger(ParserDayLesson.class);
     /**
-     * cssQuery - выбор номер пары.
+     * cssQuery - выбор дня.
      */
-    private final static String cssQueryNumPara = ".num_para";
+    private final static String CSS_QUERY_DAY_NAME = ".day > td";
+
     /**
      * cssQuery - выбор дня.
      */
-    private final static String cssQueryDay = ".day";
-
-
-    /**
-     * Из element выбирает элемент через cssQuery в cssQueryNumPara.
-     */
-    @Override
-    protected Element processingElement(Elements elements) throws ExceptionParser {
-
-        Element dayLesson = elementFactory.createDayLesson(parsingDay(elements));
-
-        Elements select = ParsirHelper.selectElements(elements, cssQueryNumPara);
-        parsingLesson(select, dayLesson);
-        return dayLesson;
-    }
-
-    /**
-     * Получает из executeSelect Lesson с помощью ParserLesson и добавляет в dayLesson.
-     * @param select Elements из которых нужно спарсить Lesson.
-     * @param dayLesson Element в который нужно добавить Lesson.
-     */
-    private void parsingLesson(Elements select, Element dayLesson) throws ExceptionParser {
-        ParserHTMLAbstract parserLesson = ParserHTMLFactory.createParserLesson();
-        for (Element element : select) {
-            Element lesson = parserLesson.parsing(element.parent());
-            if (lesson != null) {
-                dayLesson.appendChild(lesson);
-            }
-        }
-    }
-
-    /**
-     * Получение дня из элемента.
-     * @param element элемент из которого нужно спарсить день.
-     * @return Имя дня.
-     */
-    private DayName parsingDay(Elements element) throws ExceptionParser {
-        Elements select = element.select(cssQueryDay);
-        String dayName = null;
-        if (ParsirHelper.checkElementSize(select, 1)) {
-            dayName = select.text();
-        }
-        LOGGER.debug("parsingDay return "+dayName);
-        return toDayOfString(dayName);
-    }
-
+    private final static String CSS_QUERY_TABLE_DAY = ".tbl_day";
     private final static HashMap<String, DayName> DAY_NAME_OF_SCHEDULES = new HashMap<>();
 
     static {
@@ -82,7 +38,37 @@ public class ParserDayLesson extends ParserHTMLAbstract {
         DAY_NAME_OF_SCHEDULES.put("Воскресение", DayName.SUNDAY);
     }
 
+    public ParserDayLesson(ParserHTMLAbstract nextParser) {
+        super(ElementName.DAY_LESSON.getName(), nextParser);
+    }
+
     private static DayName toDayOfString(String dayName) {
         return DAY_NAME_OF_SCHEDULES.get(dayName);
+    }
+
+    /**
+     * Из element выбирает элемент через cssQuery в cssQueryNumPara.
+     */
+    @Override
+    protected Element processingElement(Element element) throws ExceptionParser {
+        return elementFactory.createDayLesson(parsingDay(element));
+    }
+
+    /**
+     * Получение дня из элемента.
+     *
+     * @param element элемент из которого нужно спарсить день.
+     * @return Имя дня.
+     */
+    private DayName parsingDay(Element element) throws ExceptionParser {
+        Element dayNameElement = ParserHelper.selectElement(element, CSS_QUERY_DAY_NAME, 0);
+        String dayName = dayNameElement.text();
+        LOGGER.debug("parsingDay return " + dayName);
+        return toDayOfString(dayName);
+    }
+
+    @Override
+    protected Elements selectElementProcessing(Element element) throws ExceptionParser {
+        return ParserHelper.selectElements(element, CSS_QUERY_TABLE_DAY);
     }
 }
