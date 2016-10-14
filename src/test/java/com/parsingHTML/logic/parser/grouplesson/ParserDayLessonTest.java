@@ -1,5 +1,6 @@
 package com.parsingHTML.logic.parser.grouplesson;
 
+import com.parsingHTML.logic.element.AttributeName;
 import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.parser.ParserHelper;
 import com.parsingHTML.logic.parsing.html.ParserXMLCheck;
@@ -13,8 +14,8 @@ public class ParserDayLessonTest {
     @Test
     public void parsing() throws Exception {
         Element elementResults = ParserXMLCheck.parsingElement(new ParserDayLesson(null), "DayLesson.html");
-        ParserHelper.checkElementSize(elementResults.children(), ElementName.LESSON.getName(), 5);
-        ParserHelper.checkElementAttribute(elementResults, "dayName", "2");
+        ParserHelper.checkTagName(elementResults, ElementName.DAY_LESSON.getName());
+        ParserHelper.checkElementAttribute(elementResults, AttributeName.DAY_NUMBER.getName(), "2");
     }
 
 }
