@@ -14,10 +14,9 @@ public class ElementJsoupFactory implements ElementFactory {
     private ElementJsoupBuilder builder = new ElementJsoupBuilder();
 
     @Override
-    public Element createWeekTime(NumeratorName numeratorName) {
+    public Element createWeekTime() {
         LOGGER.debug("createWeekTime");
         builder.createElement(ElementName.WEEK_TIME);
-        builder.setAttr(AttributeName.NUMERATOR, numeratorName.getName());
         return builder.getThisElement();
     }
 
