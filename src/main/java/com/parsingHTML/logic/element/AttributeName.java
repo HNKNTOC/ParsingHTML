@@ -14,8 +14,7 @@ public enum AttributeName {
     SPECIALTY("specialty"),
     COURSE("course"),
     DESCRIPTION("description"),
-    //TODO Change on TeachersName
-    TEACHER("teacher"),
+    TEACHER("teacher-names"),
     OVERRIDE("override"),
     DAY_NUMBER("day-number"),
     DAY_TIME_NUMBER("day-time-number"),
