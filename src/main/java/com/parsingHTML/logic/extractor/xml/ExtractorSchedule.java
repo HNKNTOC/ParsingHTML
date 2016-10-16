@@ -55,20 +55,22 @@ public class ExtractorSchedule {
     }
 
 
-    public static LessonTime extractDayTime(final DayName dayName, final int number, final Document document) {
+    //TODO Не передовать множиство параметров передать только 1 обьект в котором будут все параметры.
+    public static LessonTime extractDayTime(final DayName dayName, final int number, final Document document) throws Exception {
         LOGGER.debug("extractDayTime dayName " + dayName + " number = " + number);
         NodeList select = executeSelect(XPathExpression.selectLessonTime(dayName, number), document);
         Node item = null;
         if (select.getLength() == 1) {
             item = select.item(0);
         } else {
-            LOGGER.warn("Failed extractDayTime executeSelect.getLength() = " + select.getLength());
-            //TODO ADD ExtractorException();
+            Exception e = new Exception("Failed extractDayTime executeSelect.getLength() = " + select.getLength());
+            LOGGER.warn(e);
+            throw e;
         }
         return ConverterSchedule.convertDayTime(item);
     }
 
-    public static ArrayList<Lesson> extractLessonWhitTime(final DayName dayName, final Document document) {
+    public static ArrayList<Lesson> extractLessonWhitTime(final DayName dayName, final Document document) throws Exception {
         ArrayList<Lesson> lessons = extractLesson(dayName, document);
         for (Lesson lesson : lessons) {
             LessonTime lessonTime = extractDayTime(dayName, lesson.getNumber(), document);
