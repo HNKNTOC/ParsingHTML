@@ -43,18 +43,13 @@ public class ParserDayTime extends ParserHTMLAbstract {
     @Override
     protected Element processingElement(Element element) {
         int day = selectDayNumber(element);
-        DayName dayName = parseDayName(day);
+        DayName dayName = DayName.values()[day];
         if (0 < day && day < 5) {
             return elementFactory.createDayTime(dayName, DayName.MONDAY);
         }
         return elementFactory.createDayTime(dayName);
     }
 
-    //TODO Add method in DayName;
-    //TODO Add method ParserHelper.getAttr(Element,nameAttr,Default);
-    private DayName parseDayName(int day) {
-        return DayName.values()[day];
-    }
 
     private int selectDayNumber(Element returnElements) {
         LOGGER.debug("selectDayNumber = " + returnElements);
