@@ -1,6 +1,5 @@
-package com.parsingHTML.logic.parser;
+package com.parsingHTML.logic.element;
 
-import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -12,10 +11,10 @@ import java.util.Objects;
 /**
  * Сюда вынесины часто повторяймые операции с Element.
  */
-public class ParserHelper {
-    private static final Logger LOGGER = LogManager.getLogger(ParserHelper.class);
+public final class ElementHelper {
+    private static final Logger LOGGER = LogManager.getLogger(ElementHelper.class);
 
-    private ParserHelper() {
+    private ElementHelper() {
     }
 
 

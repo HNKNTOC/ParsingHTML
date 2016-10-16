@@ -1,9 +1,9 @@
 package com.parsingHTML.logic.parser.grouplesson;
 
+import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.element.NumeratorName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
-import com.parsingHTML.logic.parser.ParserHelper;
 import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -41,11 +41,11 @@ public class ParserLesson extends ParserHTMLAbstract {
 
     @Override
     protected Element processingElement(Element element) throws ExceptionParser {
-        Element numParaElement = ParserHelper.selectElement(element, cssQueryNumPara, 0);
+        Element numParaElement = ElementHelper.selectElement(element, cssQueryNumPara, 0);
         String number = String.valueOf(parsingNumber(numParaElement));
         String numerator = parsingNumerator(numParaElement);
 
-        Element paraElement = ParserHelper.selectElement(element, cssQueryPara, 0);
+        Element paraElement = ElementHelper.selectElement(element, cssQueryPara, 0);
         String[] split = divideString(paraElement);
         String nameTeacher = parsingNameTeacher(paraElement);
 
@@ -57,7 +57,7 @@ public class ParserLesson extends ParserHTMLAbstract {
 
     @Override
     protected Elements selectElementProcessing(Element element) throws ExceptionParser {
-        Elements elements = ParserHelper.selectElements(element, cssQueryPara);
+        Elements elements = ElementHelper.selectElements(element, cssQueryPara);
         Elements returnElements = new Elements();
         for (Element selectElement : elements) {
             returnElements.add(selectElement.parent());
@@ -117,7 +117,7 @@ public class ParserLesson extends ParserHTMLAbstract {
      * @throws ExceptionParser если не удалось найти TeacherNames.
      */
     private String parsingNameTeacher(Element paraElement) throws ExceptionParser {
-        Elements nameTeacherElement = ParserHelper.selectElements(paraElement, cssQueryNameTeacher);
+        Elements nameTeacherElement = ElementHelper.selectElements(paraElement, cssQueryNameTeacher);
         String teacherNames = "";
         int size = nameTeacherElement.size();
         for (int i = 0; i < size; i++) {

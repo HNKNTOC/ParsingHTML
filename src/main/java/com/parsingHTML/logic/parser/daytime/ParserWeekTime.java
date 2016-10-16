@@ -1,8 +1,10 @@
 package com.parsingHTML.logic.parser.daytime;
 
+import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.element.NumeratorName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
+import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Element;
@@ -28,13 +30,12 @@ public class ParserWeekTime extends ParserHTMLAbstract {
      * @return Element <week_time>.
      */
     @Override
-    public Element processingElement(Element element) {
+    public Element processingElement(Element element) throws ExceptionParser {
         return elementFactory.createWeekTime(parsingNumeratorName(element));
     }
 
-    private NumeratorName parsingNumeratorName(Element element) {
-        //TODO Add ParserHelper
-        String html = element.select(CSS_QUERY_NUMERATOR).html();
+    private NumeratorName parsingNumeratorName(Element element) throws ExceptionParser {
+        String html = ElementHelper.selectElements(element, CSS_QUERY_NUMERATOR).html();
         if (html.contains("Числитель")) {
             LOGGER.info("This week is NUMERATOR!");
             return NumeratorName.NUMERATOR;
@@ -43,8 +44,8 @@ public class ParserWeekTime extends ParserHTMLAbstract {
             LOGGER.info("This week is DENOMINATOR!");
             return NumeratorName.DENOMINATOR;
         }
-        LOGGER.warn("This week is EMPTY!");
-        //TODO throw  Exception "Failed parsingNumeratorName()"
-        return NumeratorName.EMPTY;
+        ExceptionParser e = new ExceptionParser("Failed parsingNumeratorName!!");
+        LOGGER.warn(e);
+        throw e;
     }
 }

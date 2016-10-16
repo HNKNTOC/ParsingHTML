@@ -1,8 +1,8 @@
 package com.parsingHTML.logic.parser.grouplesson;
 
+import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
-import com.parsingHTML.logic.parser.ParserHelper;
 import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -31,6 +31,6 @@ public class ParserGroupLesson extends ParserHTMLAbstract {
 
     @Override
     protected Elements selectElementProcessing(Element element) throws ExceptionParser {
-        return ParserHelper.selectElements(element, cssQueryTableDay);
+        return ElementHelper.selectElements(element, cssQueryTableDay);
     }
 }

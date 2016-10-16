@@ -1,9 +1,9 @@
 package com.parsingHTML.logic.parser.daytime;
 
 import com.parsingHTML.logic.element.AttributeName;
+import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
-import com.parsingHTML.logic.parser.ParserHelper;
 import com.parsingHTML.logic.parser.exception.ExceptionParser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -34,7 +34,6 @@ public class ParserLessonTime extends ParserHTMLAbstract {
     @Override
     protected Element processingElement(final Element element) throws ExceptionParser {
         String[] time = getTime(element);
-        //TODO ADD ElementHELPER get Attr
         String attr = element.attr(AttributeName.NUMBER.getName());
         return elementFactory.createLessonTime(attr, time[0], time[1], time[2], time[3]);
     }
@@ -53,19 +52,18 @@ public class ParserLessonTime extends ParserHTMLAbstract {
             return new Elements();
         }
 
-        Elements elements = ParserHelper.selectElements(element, CSS_QUERY_TIME_LESSON);
+        Elements elements = ElementHelper.selectElements(element, CSS_QUERY_TIME_LESSON);
         for (int i = 0; i < elements.size(); i++) {
             elements.get(i).attr(AttributeName.NUMBER.getName(), String.valueOf(i + 1));
         }
         return elements;
     }
 
-    private String[] getTime(Element child) {
+    private String[] getTime(Element child) throws ExceptionParser {
         String[] split = child.text().replace("–", " ").split(" ");
         if (split.length < 4) {
-            //TODO ADD Exception
             LOGGER.warn("Failed getTime split.length = "+split.length);
-            return new String[]{"","","",""};
+            throw new ExceptionParser("Failed getTime split.length = " + split.length);
         }
         return split;
     }

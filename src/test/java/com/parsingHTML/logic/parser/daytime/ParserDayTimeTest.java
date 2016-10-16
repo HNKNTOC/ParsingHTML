@@ -1,11 +1,11 @@
 package com.parsingHTML.logic.parser.daytime;
 
 import com.parsingHTML.logic.element.AttributeName;
+import com.parsingHTML.logic.element.ElementHelper;
 import com.parsingHTML.logic.element.ElementJsoupBuilder;
 import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.parser.ParserHTMLAbstract;
 import com.parsingHTML.logic.parser.ParserHTMLFactory;
-import com.parsingHTML.logic.parser.ParserHelper;
 import com.parsingHTML.logic.parsing.html.ParserXMLCheck;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -25,14 +25,14 @@ public class ParserDayTimeTest {
             wrapper.appendChild(parserHTMLAbstract.parsing(element));
         }
 
-        ParserHelper.checkElementSize(wrapper.children(), ElementName.DAY_TIME.getName(), 6);
+        ElementHelper.checkElementSize(wrapper.children(), ElementName.DAY_TIME.getName(), 6);
         int dayTimeNumber = 2;
         for (Element element : wrapper.children()) {
-            ParserHelper.checkTagName(element, ElementName.DAY_TIME.getName());
-            ParserHelper.checkElementAttribute(
+            ElementHelper.checkTagName(element, ElementName.DAY_TIME.getName());
+            ElementHelper.checkElementAttribute(
                     element, AttributeName.DAY_TIME_NUMBER.getName(), String.valueOf(dayTimeNumber));
             if (dayTimeNumber == 3 || dayTimeNumber == 4 || dayTimeNumber == 5 || dayTimeNumber == 6) {
-                ParserHelper.checkElementAttribute(
+                ElementHelper.checkElementAttribute(
                         element, AttributeName.OVERRIDE.getName(), "2");
             }
             dayTimeNumber++;
@@ -44,7 +44,7 @@ public class ParserDayTimeTest {
         Element elementResults = ParserXMLCheck.parsingElement("DayTime.html");
         ParserHTMLAbstract parser = ParserHTMLFactory.createParserDayTime();
         Elements elements = parser.selectElementForParsing(elementResults);
-        ParserHelper.checkElementSize(elements, 6);
+        ElementHelper.checkElementSize(elements, 6);
     }
 
 }
