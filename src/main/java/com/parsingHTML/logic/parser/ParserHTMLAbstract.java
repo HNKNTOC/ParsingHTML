@@ -186,10 +186,7 @@ public abstract class ParserHTMLAbstract implements Parser<Element, Element> {
      * @param element {@link Element} который нужно спарсить.
      * @return Element c XML.
      */
-    protected Element processingElement(Element element) throws ExceptionParser {
-        //TODO set Abstract.
-        return ElementJsoupBuilder.createElementEmpty();
-    }
+    protected abstract Element processingElement(Element element) throws ExceptionParser;
 
     /**
      * Оборачивает {@link Elements} в {@link Element}.

@@ -16,26 +16,26 @@ public class Lesson implements Serializable {
     private String description;
     private int number;
     private NumeratorName numeratorName;
-    private String teacher;
+    private String teacherNames;
     private String time1;
     private String time2;
 
 
-    public Lesson(String name, String description, int number, NumeratorName numeratorName, String teacher) {
+    public Lesson(String name, String description, int number, NumeratorName numeratorName, String teacherNames) {
         this.name = name;
         this.description = description;
         this.number = number;
         this.numeratorName = numeratorName;
-        this.teacher = teacher;
+        this.teacherNames = teacherNames;
         LOGGER.debug("Create " + toString());
     }
 
-    public Lesson(String name, String description, int number, NumeratorName numeratorName, String teacher, String time1, String time2) {
+    public Lesson(String name, String description, int number, NumeratorName numeratorName, String teacherNames, String time1, String time2) {
         this.name = name;
         this.description = description;
         this.number = number;
         this.numeratorName = numeratorName;
-        this.teacher = teacher;
+        this.teacherNames = teacherNames;
         this.time1 = time1;
         this.time2 = time2;
         LOGGER.debug("Create " + toString());
@@ -76,12 +76,12 @@ public class Lesson implements Serializable {
         this.numeratorName = numeratorName;
     }
 
-    public String getTeacher() {
-        return teacher;
+    public String getTeacherNames() {
+        return teacherNames;
     }
 
-    public void setTeacher(String teacher) {
-        this.teacher = teacher;
+    public void setTeacherNames(String teacherNames) {
+        this.teacherNames = teacherNames;
     }
 
     public String getTime1() {
@@ -111,7 +111,8 @@ public class Lesson implements Serializable {
         if (name != null ? !name.equals(lesson.name) : lesson.name != null) return false;
         if (description != null ? !description.equals(lesson.description) : lesson.description != null) return false;
         if (numeratorName != lesson.numeratorName) return false;
-        if (teacher != null ? !teacher.equals(lesson.teacher) : lesson.teacher != null) return false;
+        if (teacherNames != null ? !teacherNames.equals(lesson.teacherNames) : lesson.teacherNames != null)
+            return false;
         if (time1 != null ? !time1.equals(lesson.time1) : lesson.time1 != null) return false;
         return time2 != null ? time2.equals(lesson.time2) : lesson.time2 == null;
 
@@ -123,7 +124,7 @@ public class Lesson implements Serializable {
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + number;
         result = 31 * result + (numeratorName != null ? numeratorName.hashCode() : 0);
-        result = 31 * result + (teacher != null ? teacher.hashCode() : 0);
+        result = 31 * result + (teacherNames != null ? teacherNames.hashCode() : 0);
         result = 31 * result + (time1 != null ? time1.hashCode() : 0);
         result = 31 * result + (time2 != null ? time2.hashCode() : 0);
         return result;
@@ -136,7 +137,7 @@ public class Lesson implements Serializable {
                 ", description='" + description + '\'' +
                 ", number=" + number +
                 ", numeratorName=" + numeratorName +
-                ", teacher='" + teacher + '\'' +
+                ", teacherNames='" + teacherNames + '\'' +
                 ", time1='" + time1 + '\'' +
                 ", time2='" + time2 + '\'' +
                 '}';

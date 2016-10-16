@@ -31,7 +31,7 @@ public class Main {
         start();
     }
 
-    private static void testSchedule() throws IOException, TransformerException {
+    private static void testSchedule() throws Exception {
         LessonTime lessonTime1 = ExtractorSchedule.extractDayTime(DayName.THURSDAY, 7, start());
         System.out.println(lessonTime1);
     }

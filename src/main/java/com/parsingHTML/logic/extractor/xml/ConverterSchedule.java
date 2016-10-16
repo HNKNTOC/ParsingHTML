@@ -4,6 +4,7 @@ import com.parsingHTML.logic.element.AttributeName;
 import com.parsingHTML.logic.element.NumeratorName;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jsoup.helper.Validate;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
@@ -16,19 +17,21 @@ public class ConverterSchedule {
 
     public static Lesson convertLesson(Node node) {
         LOGGER.debug("convertLesson = " + node);
+        Validate.notNull(node, "Node must not be null!");
         NamedNodeMap attributes = node.getAttributes();
 
-        final String name, teacher, description;
+        final String name, teacherNames, description;
 
         name = toAttributeValue(attributes, AttributeName.LESSON_NAME);
-        teacher = toAttributeValue(attributes, AttributeName.TEACHER);
+        teacherNames = toAttributeValue(attributes, AttributeName.TEACHER);
         description = toAttributeValue(attributes, AttributeName.DESCRIPTION);
 
         final int number = Integer.parseInt(toAttributeValue(attributes, AttributeName.NUMBER, defaultValueForNumber));
         final NumeratorName numeratorName = NumeratorName.fromString(
                 toAttributeValue(attributes, AttributeName.NUMERATOR));
-
-        return new Lesson(name, description, number, numeratorName, teacher);
+        Lesson lesson = new Lesson(name, description, number, numeratorName, teacherNames);
+        LOGGER.debug("convertLesson return = " + lesson);
+        return lesson;
     }
 
     public static LessonTime convertDayTime(Node item) {
@@ -70,8 +73,10 @@ public class ConverterSchedule {
      * @return значение атрибута.
      */
     public static String toAttributeValue(NamedNodeMap namedNodeMap, AttributeName attributeName, String defaultValue) {
+        LOGGER.debug("toAttributeValue() namedNodeMap = " + namedNodeMap + " attributeName = " + attributeName + " defaultValue = " + defaultValue);
         String resulted = toAttributeValue(namedNodeMap, attributeName);
         if (resulted == null) return defaultValue;
+        LOGGER.debug("toAttributeValue() return " + resulted);
         return resulted;
     }
 }

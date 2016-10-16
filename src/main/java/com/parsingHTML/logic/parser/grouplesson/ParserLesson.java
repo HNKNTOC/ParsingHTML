@@ -42,7 +42,7 @@ public class ParserLesson extends ParserHTMLAbstract {
     @Override
     protected Element processingElement(Element element) throws ExceptionParser {
         Element numParaElement = ParserHelper.selectElement(element, cssQueryNumPara, 0);
-        String number = parsingNumber(numParaElement);
+        String number = String.valueOf(parsingNumber(numParaElement));
         String numerator = parsingNumerator(numParaElement);
 
         Element paraElement = ParserHelper.selectElement(element, cssQueryPara, 0);
@@ -137,15 +137,11 @@ public class ParserLesson extends ParserHTMLAbstract {
      * @param element элемент у которого нужно получить номер.
      * @return null если получить не удалось.
      */
-    private String parsingNumber(final Element element) throws ExceptionParser {
+    private int parsingNumber(final Element element) throws ExceptionParser {
         String text = element.text();
         LOGGER.debug("parsingNumber txt = " + text);
-        if (text.length() != 1) {
-            String number = text.split(" ")[0];
-            LOGGER.debug("parsingNumber return " + number);
-            return number;
-        }
-        LOGGER.warn("parsingNumber failed! return null");
-        return "null";
+        int number = Integer.parseInt(text.substring(0, 1));
+        LOGGER.debug("return parsingNumber = " + number);
+        return number;
     }
 }
