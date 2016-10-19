@@ -1,6 +1,7 @@
 package com.parsingHTML.logic.extractor.xml;
 
 import com.parsingHTML.logic.element.DayName;
+import com.parsingHTML.logic.element.NumeratorName;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -10,11 +11,21 @@ import static org.junit.Assert.assertEquals;
  */
 public class XPathExpressionTest {
     @Test
-    public void selectLesson() throws Exception {
-        String s = XPathExpression.selectLesson(DayName.MONDAY);
-        assertEquals(s, "schedule/university/group_lesson/day_lesson[@day-number='2']/lesson");
-        String s2 = XPathExpression.selectLesson(DayName.WEDNESDAY);
-        assertEquals(s2, "schedule/university/group_lesson/day_lesson[@day-number='4']/lesson");
+    public void selectLessonDENOMINATOR() throws Exception {
+        String s = XPathExpression.selectLesson(DayName.WEDNESDAY, NumeratorName.DENOMINATOR);
+        assertEquals(s, "schedule/university/group_lesson/day_lesson[@day-number='4']/lesson[@numerator='Знам.' or @numerator='empty']");
+    }
+
+    @Test
+    public void selectLessonEMPTY() throws Exception {
+        String s = XPathExpression.selectLesson(DayName.WEDNESDAY, NumeratorName.EMPTY);
+        assertEquals(s, "schedule/university/group_lesson/day_lesson[@day-number='4']/lesson[@numerator='empty' or @numerator='empty']");
+    }
+
+    @Test
+    public void selectLessonNUMERATOR() throws Exception {
+        String s = XPathExpression.selectLesson(DayName.MONDAY, NumeratorName.NUMERATOR);
+        assertEquals(s, "schedule/university/group_lesson/day_lesson[@day-number='2']/lesson[@numerator='Числ.' or @numerator='empty']");
     }
 
     @Test

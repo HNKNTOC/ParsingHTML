@@ -3,6 +3,7 @@ package com.parsingHTML.logic.extractor.xml;
 import com.parsingHTML.logic.element.AttributeName;
 import com.parsingHTML.logic.element.DayName;
 import com.parsingHTML.logic.element.ElementName;
+import com.parsingHTML.logic.element.NumeratorName;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -24,7 +25,9 @@ public final class XPathExpression {
                 .addNodeName(ElementName.GROUP_LESSON)
                 .addNodeName(ElementName.DAY_LESSON)
                 .addAttributes(AttributeName.DAY_NUMBER, "'{0}'")
-                .addNodeName(ElementName.LESSON);
+                .addNodeName(ElementName.LESSON)
+                //TODO Слишком много ' ' ' кавычек
+                .addAttributes(AttributeName.NUMERATOR, "'{1}'' or @numerator=''empty'");
         expressionLesson = new MessageFormat(builder.getExpression());
         builder.clear();
         LOGGER.debug("expressionLesson = " + expressionLesson);
@@ -47,10 +50,10 @@ public final class XPathExpression {
      * @param dayName имя дня.
      * @return выражение.
      */
-    public static String selectLesson(final DayName dayName) {
-        LOGGER.debug("selectLesson() dayName = " + dayName);
+    public static String selectLesson(final DayName dayName, final NumeratorName numerator) {
+        LOGGER.debug("selectLesson() dayName = " + dayName + " numerator = " + numerator);
 
-        return expressionLesson.format(new Object[]{dayName});
+        return expressionLesson.format(new Object[]{dayName, numerator.getName()});
     }
 
     /**

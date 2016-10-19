@@ -1,6 +1,7 @@
 package com.parsingHTML.logic.extractor.xml;
 
 import com.parsingHTML.logic.element.DayName;
+import com.parsingHTML.logic.element.NumeratorName;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
@@ -42,11 +43,13 @@ public class ExtractorSchedule {
     /**
      * Получить все уроки на конкретный день.
      *
+     * @param numerator Нумератор дня.
      * @param dayName Имя дня.
      * @return все уроки на этот день.
      */
-    public static ArrayList<Lesson> extractLesson(final DayName dayName, final Document document) {
-        NodeList select = executeSelect(XPathExpression.selectLesson(dayName), document);
+    //TODO Не передовать множиство параметров передать только 1 обьект в котором будут все параметры.
+    public static ArrayList<Lesson> extractLesson(final DayName dayName, final NumeratorName numerator, final Document document) {
+        NodeList select = executeSelect(XPathExpression.selectLesson(dayName, numerator), document);
         ArrayList<Lesson> lessons = new ArrayList<>();
         for (int i = 0; i < select.getLength(); i++) {
             lessons.add(ConverterSchedule.convertLesson(select.item(i)));
@@ -55,7 +58,6 @@ public class ExtractorSchedule {
     }
 
 
-    //TODO Не передовать множиство параметров передать только 1 обьект в котором будут все параметры.
     public static LessonTime extractDayTime(final DayName dayName, final int number, final Document document) throws Exception {
         LOGGER.debug("extractDayTime dayName " + dayName + " number = " + number);
         NodeList select = executeSelect(XPathExpression.selectLessonTime(dayName, number), document);
@@ -70,8 +72,8 @@ public class ExtractorSchedule {
         return ConverterSchedule.convertDayTime(item);
     }
 
-    public static ArrayList<Lesson> extractLessonWhitTime(final DayName dayName, final Document document) throws Exception {
-        ArrayList<Lesson> lessons = extractLesson(dayName, document);
+    public static ArrayList<Lesson> extractLessonWhitTime(final DayName dayName, NumeratorName numerator, final Document document) throws Exception {
+        ArrayList<Lesson> lessons = extractLesson(dayName, numerator, document);
         for (Lesson lesson : lessons) {
             LessonTime lessonTime = extractDayTime(dayName, lesson.getNumber(), document);
             lesson.setTime1(lessonTime.getTimeFirstLesson());

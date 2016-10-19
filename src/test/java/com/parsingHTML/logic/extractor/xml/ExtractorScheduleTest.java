@@ -39,36 +39,93 @@ public class ExtractorScheduleTest {
 
     @Test
     public void select() throws Exception {
-        NodeList select = ExtractorSchedule.executeSelect(XPathExpression.selectLesson(DayName.WEDNESDAY), doc);
+        NodeList select = ExtractorSchedule.executeSelect(
+                XPathExpression.selectLesson(DayName.SATURDAY, NumeratorName.NUMERATOR), doc);
         assertTrue(select.getLength() == 4);
     }
 
     @Test
-    public void extractLesson() throws Exception {
-        ArrayList<Lesson> lessons = ExtractorSchedule.extractLesson(DayName.TUESDAY, doc);
-        assertTrue(lessons.size() == 6);
-        Lesson lesson0 = new Lesson("Русский язык и литература", "Практическое занятие 310н", 2, NumeratorName.NUMERATOR, "преп. Дмитрийчук А.Ю.");
-        Lesson lesson1 = new Lesson("Русский язык и литература", "Практическое занятие 305н", 2, NumeratorName.DENOMINATOR, "преп. Дмитрийчук А.Ю.");
-        Lesson lesson2 = new Lesson("Естествознание", "Лекционное занятие 303н", 3, NumeratorName.NUMERATOR, "ст. преп. Абраменко Л.И.");
-        Lesson lesson3 = new Lesson("История 9", "Лекционное занятие 411н", 3, NumeratorName.DENOMINATOR, "ст. преп. Нестерова Л.И.");
-        Lesson lesson4 = new Lesson("Физика", "Лабораторное занятие 503ан", 4, NumeratorName.NUMERATOR, "асс. Омельченко Е.И.");
-        Lesson lesson5 = new Lesson("Математика: алгебра, начала математического анализа, геометрия", "Практическое занятие 514н", 4, NumeratorName.DENOMINATOR, "ст. преп. Колосова И.В.");
-        assertEquals(lessons.get(0), lesson0);
-        assertEquals(lessons.get(1), lesson1);
-        assertEquals(lessons.get(2), lesson2);
-        assertEquals(lessons.get(3), lesson3);
-        assertEquals(lessons.get(4), lesson4);
-        assertEquals(lessons.get(5), lesson5);
+    public void extractLessonWednesdayDenominator() throws Exception {
+        ArrayList<Lesson> lessons = ExtractorSchedule.extractLesson(DayName.WEDNESDAY, NumeratorName.DENOMINATOR, doc);
+        assertTrue(lessons.size() == 3);
+        assertEquals(lessons.get(0),
+                new Lesson("Информатика 9", "Лабораторное занятие 432, 432", 2,
+                        NumeratorName.DENOMINATOR, "ст. преп. Гостищева Т.В.,преп. Чепелева Н.В."));
+        assertEquals(lessons.get(1),
+                new Lesson("Иностранный язык 9", "Практическое занятие 013", 3,
+                        NumeratorName.EMPTY, "ст. преп. Петряева Н.И."));
+        assertEquals(lessons.get(2),
+                new Lesson("Физическая культура", "Физическая культура -, -, -", 4,
+                        NumeratorName.EMPTY, "ст. преп. Гончаров В.М.,асс. Павлова И.А.,асс. Павлова И.А."));
+    }
+
+    @Test
+    public void extractLessonTuesdayNumerator() throws Exception {
+        ArrayList<Lesson> lessons = ExtractorSchedule.extractLesson(DayName.TUESDAY,
+                NumeratorName.NUMERATOR, doc);
+        assertTrue(lessons.size() == 3);
+        assertEquals(lessons.get(0),
+                new Lesson("Русский язык и литература", "Практическое занятие 310н", 2,
+                        NumeratorName.NUMERATOR, "преп. Дмитрийчук А.Ю."));
+        assertEquals(lessons.get(1),
+                new Lesson("Естествознание", "Лекционное занятие 303н", 3,
+                        NumeratorName.NUMERATOR, "ст. преп. Абраменко Л.И."));
+        assertEquals(lessons.get(2),
+                new Lesson("Физика", "Лабораторное занятие 503ан", 4,
+                        NumeratorName.NUMERATOR, "асс. Омельченко Е.И."));
+    }
+
+    @Test
+    public void extractLessonTuesdayEmpty() throws Exception {
+        ArrayList<Lesson> lessons = ExtractorSchedule.extractLesson(DayName.FRIDAY, NumeratorName.EMPTY, doc);
+        assertTrue(lessons.size() == 3);
+
+        assertEquals(lessons.get(0),
+                new Lesson("Информатика 9", "Лабораторное занятие 106, 108, 108", 2,
+                        NumeratorName.EMPTY, "преп. Чепелева Н.В.,ст. преп. Гостищева Т.В.,ст. преп. Гостищева Т.В."));
+        assertEquals(lessons.get(1),
+                new Lesson("История 9", "Практическое занятие 104н", 3,
+                        NumeratorName.EMPTY, "ст. преп. Нестерова Л.И."));
+        assertEquals(lessons.get(2),
+                new Lesson("Обществознание (вкл. экономику и право)", "Практическое занятие 513н", 4,
+                        NumeratorName.EMPTY, "асс. Скоков А.Л."));
 
     }
 
     @Test
+    public void extractLessonTuesdayAll() throws Exception {
+        ArrayList<Lesson> lessons = ExtractorSchedule.extractLesson(null, NumeratorName.EMPTY, doc);
+        assertTrue(lessons.size() == 6);
+        assertEquals(lessons.get(0),
+                new Lesson("Русский язык и литература", "Практическое занятие 310н", 2,
+                        NumeratorName.NUMERATOR, "преп. Дмитрийчук А.Ю."));
+        assertEquals(lessons.get(1),
+                new Lesson("Русский язык и литература", "Практическое занятие 305н", 2,
+                        NumeratorName.DENOMINATOR, "преп. Дмитрийчук А.Ю."));
+        assertEquals(lessons.get(2),
+                new Lesson("Естествознание", "Лекционное занятие 303н", 3,
+                        NumeratorName.NUMERATOR, "ст. преп. Абраменко Л.И."));
+        assertEquals(lessons.get(3),
+                new Lesson("История 9", "Лекционное занятие 411н", 3,
+                        NumeratorName.DENOMINATOR, "ст. преп. Нестерова Л.И."));
+        assertEquals(lessons.get(4),
+                new Lesson("Физика", "Лабораторное занятие 503ан", 4,
+                        NumeratorName.NUMERATOR, "асс. Омельченко Е.И."));
+        assertEquals(lessons.get(5),
+                new Lesson("Математика: алгебра, начала математического анализа, геометрия", "Практическое занятие 514н", 4,
+                        NumeratorName.DENOMINATOR, "ст. преп. Колосова И.В."));
+
+    }
+
+
+    @Test
     public void extractLessonWhitTime() throws Exception {
-        ArrayList<Lesson> lessons = ExtractorSchedule.extractLessonWhitTime(DayName.THURSDAY, doc);
+        ArrayList<Lesson> lessons = ExtractorSchedule.extractLessonWhitTime(DayName.THURSDAY, NumeratorName.EMPTY, doc);
         assertTrue(lessons.size() == 5);
         Lesson lesson = lessons.get(3);
 
-        Lesson outResult = new Lesson("Введение в специальность", "Лекционное занятие 115", 5, NumeratorName.NUMERATOR, "асс. Коптелова Л.В.");
+        Lesson outResult = new Lesson("Введение в специальность", "Лекционное занятие 115", 5,
+                NumeratorName.NUMERATOR, "асс. Коптелова Л.В.");
         outResult.setTime1("16:20-17:05");
         outResult.setTime2("17:10-17:55");
 
