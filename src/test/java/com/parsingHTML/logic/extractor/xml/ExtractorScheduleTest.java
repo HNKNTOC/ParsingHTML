@@ -1,7 +1,9 @@
 package com.parsingHTML.logic.extractor.xml;
 
 
+import com.parsingHTML.logic.element.AttributeName;
 import com.parsingHTML.logic.element.DayName;
+import com.parsingHTML.logic.element.ElementName;
 import com.parsingHTML.logic.element.NumeratorName;
 import org.junit.Test;
 import org.w3c.dom.Document;
@@ -39,24 +41,21 @@ public class ExtractorScheduleTest {
 
     @Test
     public void select() throws Exception {
+        XPathBuilder.XPathElement xPathLesson = new XPathBuilder.XPathElement(ElementName.LESSON);
+        xPathLesson.addAttr(AttributeName.NUMERATOR, NumeratorName.NUMERATOR.getName());
+
         NodeList select = ExtractorSchedule.executeSelect(
-                XPathExpression.selectLesson(DayName.SATURDAY, NumeratorName.NUMERATOR), doc);
-        assertTrue(select.getLength() == 4);
+                LessonExpression.createXPathForLesson(DayName.SATURDAY, xPathLesson), doc);
+        assertTrue(select.getLength() == 3);
     }
 
     @Test
     public void extractLessonWednesdayDenominator() throws Exception {
         ArrayList<Lesson> lessons = ExtractorSchedule.extractLesson(DayName.WEDNESDAY, NumeratorName.DENOMINATOR, doc);
-        assertTrue(lessons.size() == 3);
+        assertTrue(lessons.size() == 1);
         assertEquals(lessons.get(0),
                 new Lesson("Информатика 9", "Лабораторное занятие 432, 432", 2,
                         NumeratorName.DENOMINATOR, "ст. преп. Гостищева Т.В.,преп. Чепелева Н.В."));
-        assertEquals(lessons.get(1),
-                new Lesson("Иностранный язык 9", "Практическое занятие 013", 3,
-                        NumeratorName.EMPTY, "ст. преп. Петряева Н.И."));
-        assertEquals(lessons.get(2),
-                new Lesson("Физическая культура", "Физическая культура -, -, -", 4,
-                        NumeratorName.EMPTY, "ст. преп. Гончаров В.М.,асс. Павлова И.А.,асс. Павлова И.А."));
     }
 
     @Test
@@ -94,7 +93,8 @@ public class ExtractorScheduleTest {
 
     @Test
     public void extractLessonTuesdayAll() throws Exception {
-        ArrayList<Lesson> lessons = ExtractorSchedule.extractLesson(null, NumeratorName.EMPTY, doc);
+        XPathBuilder.XPathElement xPathLesson = new XPathBuilder.XPathElement(ElementName.LESSON);
+        ArrayList<Lesson> lessons = ExtractorSchedule.extractLesson(DayName.TUESDAY, xPathLesson, doc);
         assertTrue(lessons.size() == 6);
         assertEquals(lessons.get(0),
                 new Lesson("Русский язык и литература", "Практическое занятие 310н", 2,
@@ -120,9 +120,9 @@ public class ExtractorScheduleTest {
 
     @Test
     public void extractLessonWhitTime() throws Exception {
-        ArrayList<Lesson> lessons = ExtractorSchedule.extractLessonWhitTime(DayName.THURSDAY, NumeratorName.EMPTY, doc);
-        assertTrue(lessons.size() == 5);
-        Lesson lesson = lessons.get(3);
+        ArrayList<Lesson> lessons = ExtractorSchedule.extractLessonWhitTime(DayName.THURSDAY, NumeratorName.NUMERATOR, doc);
+        assertTrue(lessons.size() == 2);
+        Lesson lesson = lessons.get(1);
 
         Lesson outResult = new Lesson("Введение в специальность", "Лекционное занятие 115", 5,
                 NumeratorName.NUMERATOR, "асс. Коптелова Л.В.");

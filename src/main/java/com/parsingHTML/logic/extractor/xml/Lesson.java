@@ -12,13 +12,13 @@ import java.io.Serializable;
  */
 public class Lesson implements Serializable {
     transient private static final Logger LOGGER = LogManager.getLogger(Lesson.class);
-    private String name;
-    private String description;
-    private int number;
-    private NumeratorName numeratorName;
-    private String teacherNames;
-    private String time1;
-    private String time2;
+    private String name = null;
+    private String description = null;
+    private int number = -1;
+    private NumeratorName numeratorName = null;
+    private String teacherNames = null;
+    private String time1 = null;
+    private String time2 = null;
 
 
     public Lesson(String name, String description, int number, NumeratorName numeratorName, String teacherNames) {
