@@ -64,8 +64,8 @@ public class ExtractorSchedule {
     public static ArrayList<Lesson> extractLesson(
             final DayName dayName, final NumeratorName numeratorName, final Document doc) {
         LOGGER.debug("extractDayTime dayName " + dayName + " numeratorName = " + numeratorName);
-        XPathElement xPathLesson = new XPathElement(ElementName.LESSON);
-        xPathLesson.addAttr(AttributeName.NUMERATOR, numeratorName.getName());
+        XPathElement xPathLesson = new XPathElement(ElementName.LESSON)
+                .addAttr(AttributeName.NUMERATOR, numeratorName.getName());
         return extractLesson(dayName, xPathLesson, doc);
     }
 
@@ -86,8 +86,8 @@ public class ExtractorSchedule {
 
     public static LessonTime extractDayTime(final DayName dayName, final int number, final Document doc) throws Exception {
         LOGGER.debug("extractDayTimeDayName " + dayName + " number = " + number);
-        XPathElement xPathTime = new XPathElement(ElementName.LESSON_TIME);
-        xPathTime.addAttr(AttributeName.NUMBER, number);
+        XPathElement xPathTime = new XPathElement(ElementName.LESSON_TIME)
+                .addAttr(AttributeName.NUMBER, number);
         return extractDayTime(dayName, xPathTime, doc);
     }
 
@@ -103,8 +103,8 @@ public class ExtractorSchedule {
     }
 
     public static ArrayList<Lesson> extractLessonWhitTime(final DayName dayName, final NumeratorName numerator, final Document doc) throws Exception {
-        XPathElement xPathLesson = new XPathElement(ElementName.LESSON);
-        xPathLesson.addAttr(AttributeName.NUMERATOR, numerator.getName());
+        XPathElement xPathLesson = new XPathElement(ElementName.LESSON)
+                .addAttr(AttributeName.NUMERATOR, numerator.getName());
         return extractLessonWhitTime(dayName, xPathLesson, doc);
     }
 

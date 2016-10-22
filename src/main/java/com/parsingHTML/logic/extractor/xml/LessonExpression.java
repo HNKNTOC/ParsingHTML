@@ -60,8 +60,8 @@ public class LessonExpression {
         for (XPathElement pathElement : PATH_ELEMENT_TO_LESSON) {
             addXPathElementInPath(pathElement);
         }
-        XPathElement elementLesson = new XPathElement(ElementName.DAY_LESSON);
-        elementLesson.addAttr(AttributeName.DAY_NUMBER, String.valueOf(dayName.getDayNumber()));
+        XPathElement elementLesson = new XPathElement(ElementName.DAY_LESSON)
+                .addAttr(AttributeName.DAY_NUMBER, dayName.getDayNumber());
         addXPathElementInPath(elementLesson);
         addXPathElementInPath(xPathLesson);
         return getXPath();
@@ -72,8 +72,9 @@ public class LessonExpression {
         for (XPathElement pathElement : PATH_ELEMENT_TO_TIME) {
             addXPathElementInPath(pathElement);
         }
-        XPathElement elementTime = new XPathElement(ElementName.DAY_TIME);
-        elementTime.addAttr(AttributeName.DAY_TIME_NUMBER, overrideDayName(dayName).getDayNumber());
+        int dayNumber = overrideDayName(dayName).getDayNumber();
+        XPathElement elementTime = new XPathElement(ElementName.DAY_TIME)
+                .addAttr(AttributeName.DAY_TIME_NUMBER, dayNumber);
         addXPathElementInPath(elementTime);
         addXPathElementInPath(xPathTime);
         return getXPath();
@@ -88,10 +89,12 @@ public class LessonExpression {
      * @param dayName DayName который нужно переопределить.
      * @return переопределенный DayName.
      */
-    private static DayName overrideDayName(DayName dayName) {
+    private static DayName overrideDayName(final DayName dayName) {
         if (dayName == DayName.SATURDAY) {
+            LOGGER.debug("Got DayName = " + dayName + " return " + DayName.SATURDAY);
             return DayName.SATURDAY;
         } else {
+            LOGGER.debug("Got DayName = " + dayName + " return " + DayName.MONDAY);
             return DayName.MONDAY;
         }
     }
