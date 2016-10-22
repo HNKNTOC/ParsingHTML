@@ -125,12 +125,14 @@ public class XPathBuilder {
             }
         }
 
-        public void addAttr(AttributeName attributeName, String value) {
+        public XPathElement addAttr(AttributeName attributeName, String value) {
             attributeNames.add(new Attribute(attributeName, value));
+            return this;
         }
 
-        public void addAttr(AttributeName attributeName, int value) {
+        public XPathElement addAttr(AttributeName attributeName, int value) {
             addAttr(attributeName, String.valueOf(value));
+            return this;
         }
 
         public List<Attribute> getAttributeNames() {

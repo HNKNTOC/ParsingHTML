@@ -20,23 +20,21 @@ public class XPathBuilderTest {
 
     @Test
     public void addNodeName() throws Exception {
-        /*builder.addNodeName(ElementName.DAY_TIME)
-                .addNodeName(ElementName.WEEK_TIME);*/
+        builder.add(new XPathElement(ElementName.DAY_TIME))
+                .add(new XPathElement(ElementName.WEEK_TIME));
         String result = builder.getExpression();
         LOGGER.debug("result = " + builder.toString());
         assertEquals(result, String.format("%s/%s",
                 ElementName.DAY_TIME, ElementName.WEEK_TIME));
-        assertTrue(false);
     }
 
     @Test
     public void addMultipleAttributes() throws Exception {
-        XPathElement elementWeekTime = new XPathElement(ElementName.WEEK_TIME);
-        elementWeekTime.addAttr(AttributeName.DAY_NUMBER, 4);
-        elementWeekTime.addAttr(AttributeName.DAY_NUMBER, 3);
-        elementWeekTime.addAttr(AttributeName.DAY_NUMBER, 1);
         builder.add(new XPathElement(ElementName.DAY_TIME))
-                .add(elementWeekTime)
+                .add(new XPathElement(ElementName.WEEK_TIME)
+                        .addAttr(AttributeName.DAY_NUMBER, 4)
+                        .addAttr(AttributeName.DAY_NUMBER, 3)
+                        .addAttr(AttributeName.DAY_NUMBER, 1))
                 .add(new XPathElement(ElementName.LESSON));
 
         String result = builder.getExpression();
@@ -47,26 +45,24 @@ public class XPathBuilderTest {
 
     @Test
     public void addOneAttribute() throws Exception {
-        /*builder.addNodeName(ElementName.DAY_TIME)
-                .addNodeName(ElementName.WEEK_TIME)
-                .addAttributes(AttributeName.DAY_NUMBER, "4")
-                .addNodeName(ElementName.LESSON);*/
+        builder.add(new XPathElement(ElementName.DAY_TIME))
+                .add(new XPathElement(ElementName.WEEK_TIME)
+                        .addAttr(AttributeName.DAY_NUMBER, 4))
+                .add(new XPathElement(ElementName.LESSON));
 
         String result = builder.getExpression();
         LOGGER.debug("Result XPath = " + result);
         assertEquals(result, "day_time/week_time[@day-number='4']/lesson");
-        assertTrue(false);
     }
 
     @Test
-    public void clear() throws Exception {
-/*        builder.addNodeName(ElementName.LESSON);
+    public void checkClear() throws Exception {
+        builder.add(new XPathElement(ElementName.LESSON));
         builder.clear();
         assertTrue(builder.getExpression().length() == 0);
-        builder.addNodeName(ElementName.LESSON);
+        builder.add(new XPathElement(ElementName.LESSON));
         builder.clear();
-        assertTrue(builder.getExpression().length() == 0);*/
-        assertTrue(false);
+        assertTrue(builder.getExpression().length() == 0);
     }
 
 }
