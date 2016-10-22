@@ -18,12 +18,12 @@ import javax.xml.xpath.XPathFactory;
 import java.util.ArrayList;
 
 /**
- * Используется для получения информации о расписание из xml.
+ * Используется для получения информации о расписание из Document.
  */
 public class ExtractorSchedule {
     private static final Logger LOGGER = LogManager.getLogger(ExtractorSchedule.class);
     private static XPath xPath = XPathFactory.newInstance().newXPath();
-    
+
 
     /**
      * Применение expression на Document.
@@ -31,7 +31,7 @@ public class ExtractorSchedule {
      * @param expression выражение для получения NodeList.
      * @return результат.
      */
-    public static NodeList executeSelect(final String expression, final Document document) {
+    public static NodeList executeSelect(final String expression, final Document document) throws XPathExpressionException {
         LOGGER.info("executeSelect() expression = " + expression);
         try {
             NodeList evaluate = (NodeList) xPath.compile(expression).evaluate(document, XPathConstants.NODESET);
@@ -39,19 +39,20 @@ public class ExtractorSchedule {
             return evaluate;
         } catch (XPathExpressionException e) {
             LOGGER.error("Failed executeSelect() " + expression, e);
-            return new MockNodeList();
+            throw e;
         }
     }
 
     /**
-     * Получить все уроки на конкретный день.
+     * Получить все уроки по переданным параметрам в xPathLesson.
      *
-     * @param xPathLesson Expression для получания Lesson.
-     * @param dayName Имя дня.
-     * @return все уроки на этот день.
+     * @param xPathLesson Document для получения Lesson.
+     * @param dayName     Имя дня.
+     * @return все уроки подходящие по переданным параметрам.
+     * @throws XPathExpressionException если не удалось получить Lesson.
      */
     public static ArrayList<Lesson> extractLesson(
-            final DayName dayName, final XPathElement xPathLesson, final Document doc) {
+            final DayName dayName, final XPathElement xPathLesson, final Document doc) throws XPathExpressionException {
         LOGGER.debug("extractDayTime dayName " + dayName + " xPathLesson = " + xPathLesson);
         NodeList select = executeSelect(LessonExpression.createXPathForLesson(dayName, xPathLesson), doc);
         ArrayList<Lesson> lessons = new ArrayList<>();
@@ -61,8 +62,17 @@ public class ExtractorSchedule {
         return lessons;
     }
 
+    /**
+     * Получить все уроки на конкретный день.
+     *
+     * @param dayName       Имя дня.
+     * @param numeratorName Нумератор дня.
+     * @param doc           Document из которого нужно получить день.
+     * @return все уроки подходящие по переданным параметрам.
+     * @throws XPathExpressionException если не удалось получить Lesson.
+     */
     public static ArrayList<Lesson> extractLesson(
-            final DayName dayName, final NumeratorName numeratorName, final Document doc) {
+            final DayName dayName, final NumeratorName numeratorName, final Document doc) throws XPathExpressionException {
         LOGGER.debug("extractDayTime dayName " + dayName + " numeratorName = " + numeratorName);
         XPathElement xPathLesson = new XPathElement(ElementName.LESSON)
                 .addAttr(AttributeName.NUMERATOR, numeratorName.getName());
@@ -85,7 +95,7 @@ public class ExtractorSchedule {
     }
 
     public static LessonTime extractDayTime(final DayName dayName, final int number, final Document doc) throws Exception {
-        LOGGER.debug("extractDayTimeDayName " + dayName + " number = " + number);
+        LOGGER.debug("extractDayTimeDayName dayName = " + dayName + " number = " + number);
         XPathElement xPathTime = new XPathElement(ElementName.LESSON_TIME)
                 .addAttr(AttributeName.NUMBER, number);
         return extractDayTime(dayName, xPathTime, doc);
@@ -93,6 +103,7 @@ public class ExtractorSchedule {
 
     public static ArrayList<Lesson> extractLessonWhitTime(
             final DayName dayName, final XPathElement xPathLesson, final Document doc) throws Exception {
+        LOGGER.debug("extractLessonWhitTime dayName = " + dayName + " xPathLesson = " + xPathLesson);
         ArrayList<Lesson> lessons = extractLesson(dayName, xPathLesson, doc);
         for (Lesson lesson : lessons) {
             LessonTime lessonTime = extractDayTime(dayName, lesson.getNumber(), doc);
@@ -103,28 +114,9 @@ public class ExtractorSchedule {
     }
 
     public static ArrayList<Lesson> extractLessonWhitTime(final DayName dayName, final NumeratorName numerator, final Document doc) throws Exception {
+        LOGGER.debug("extractLessonWhitTime dayName = " + dayName + " numerator = " + numerator);
         XPathElement xPathLesson = new XPathElement(ElementName.LESSON)
                 .addAttr(AttributeName.NUMERATOR, numerator.getName());
         return extractLessonWhitTime(dayName, xPathLesson, doc);
-    }
-
-    /**
-     * Используется для возвращения пустого NodeList дабы не возвращать Null.
-     */
-    //TODO заменить на Exception.
-    private static class MockNodeList implements NodeList {
-        private static final Logger LOGGER = LogManager.getLogger(MockNodeList.class);
-
-        @Override
-        public Node item(int index) {
-            LOGGER.warn("Use item() MockNodeList!!");
-            return null;
-        }
-
-        @Override
-        public int getLength() {
-            LOGGER.warn("Use getLength() MockNodeList!!");
-            return 0;
-        }
     }
 }
